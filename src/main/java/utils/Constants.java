@@ -18,6 +18,7 @@ public class Constants {
   public static final String MUNDO_CLARO = "Mundo Claro";
   public static final String PAGA_TU_FACTURA = "Paga tu factura";
   public static final String POSTPAGO = "Postpago";
+  public static final String HOGAR = "Hogar";
   public static final String PREPAGO = "Prepago";
   public static final String VER_DETALLE = "Ver detalle";
   public static final String ELEGIR = "Elegir";

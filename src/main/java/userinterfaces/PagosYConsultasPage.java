@@ -163,6 +163,11 @@ public class PagosYConsultasPage {
   public static final Target LBL_ELEGIR_OTRO_MEDIO_PAGO =
       Target.the("Texto Elegir otro medio de pago")
           .located(By.xpath("//*[@text='Elegir otro medio de pago']"));
+  public static final Target LBL_FECHA_VALOR =
+          Target.the("valor fecha pago oportuno")
+                  .located(By.xpath(
+                          "//android.widget.TextView[@text='Fecha de pago oportuno:']/following-sibling::android.widget.TextView"
+                  ));
 
   public static final Target CUADRO_RESUMEN =
       Target.the("Cuadro de ver resumen del paquete")

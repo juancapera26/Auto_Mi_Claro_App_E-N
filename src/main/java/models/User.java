@@ -17,6 +17,7 @@ public class User {
   private String cantidadDatosArmar;
   private String imei;
   private String referencia;
+  private String cuentaHogar;
 
   public String getEmail() {
     return email;
@@ -134,5 +135,10 @@ public class User {
     this.imei = imei;
   }
 
+  public String getCuentaHogar() {return cuentaHogar;}
+  public void setCuentaHogar(String cuentaHogar) { this.cuentaHogar = cuentaHogar;}
+
   public User() {}
+
+
 }

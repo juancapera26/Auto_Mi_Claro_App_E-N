@@ -1,4 +1,4 @@
-package tasks.ExplorayCompra;
+package tasks.PagaTuFactura;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
