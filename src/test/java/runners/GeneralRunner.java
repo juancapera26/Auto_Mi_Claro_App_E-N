@@ -15,12 +15,12 @@ import utils.DataToFeature;
     glue = {"stepDefinitions", "utils", "hooks", "listeners"},
     snippets = SnippetType.CAMELCASE,
     plugin = {"pretty"},
-    tags = "@SF01")
+    tags = "@SF02")
 public class GeneralRunner {
   @BeforeSuite
   public static void generateFeatureFiles() throws InvalidFormatException, IOException {
-    System.out.println("📄 [INFO] Generando archivos .feature desde Excel...");
+    System.out.println("[INFO] Generando archivos .feature desde Excel...");
     DataToFeature.overrideFeatureFiles("src/test/resources/features");
-    System.out.println("✅ [INFO] Generación de features completada.");
+    System.out.println("[INFO] Generación de features completada.");
   }
 }

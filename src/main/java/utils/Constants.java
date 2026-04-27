@@ -77,7 +77,7 @@ public class Constants {
   public static final String TARJETAS_INSCRITAS = "Tarjetas inscritas";
   public static final String DESCARGA_TU_FACTURA = "Descarga tu factura";
   public static final String ENCUENTRA_LAS_ULTIMAS_FACTURAS =
-      "Encuentra las últimas 6 facturas de tu cuenta postpago";
+      "Encuentra las últimas 6 facturas de tu cuenta hogar";
   public static final String ESTE_ARCHIVO_ESTA_PROTEGIDO = "Este archivo está protegido";
   public static final String ABRIR = "Abrir";
   public static final String TOTAL_A_PAGAR = "TOTAL A PAGAR:";

@@ -135,6 +135,9 @@ public class LoginPage {
 
   public static final Target MENU_USUARIO =
       Target.the("Menú del perfil").located(By.id("com.clarocolombia.miclaro:id/iv_menu"));
+  public static final Target BTN_CERRAR =
+          Target.the("Botón cerrar modal usuario")
+                  .located(By.xpath("//android.widget.ImageView[@resource-id='com.clarocolombia.miclaro:id/iv_close']"));
 
   public static final Target BANER_INICIO =
       Target.the("Banner de pantalla de inicio")

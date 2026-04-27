@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import models.User;
 import net.serenitybdd.screenplay.actions.Click;
 import tasks.PagaTuFactura.ClaroPay;
+import tasks.PagosYConsultas.DescargaFactura;
 import tasks.PagosYConsultas.PagaTuFactura;
 import utils.TestDataProvider;
 
@@ -18,6 +19,12 @@ public class FavoriteServicesDefinitions {
   public void ingresaAServiciosFavoritosPagaTuFactura() {
     theActorInTheSpotlight().attemptsTo(
             PagaTuFactura.pagaTuFactura()
+    );
+  }
+  @And("^DESCARGAR FACTURA$")
+  public void DescargarFactura() {
+    theActorInTheSpotlight().attemptsTo(
+            DescargaFactura.descargarFactura()
     );
   }
 }

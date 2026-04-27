@@ -39,13 +39,13 @@ public class DescargaFactura implements Task {
     // Seleccionar "Descarga tu factura"
     actor.attemptsTo(
         ClickTextoQueContengaX.elTextoContiene(DESCARGA_TU_FACTURA),
-        WaitForResponse.withText(POSTPAGO));
+        WaitForResponse.withText(HOGAR));
 
     // Verificar número de celular en pantalla
     actor.attemptsTo(
-        ValidarTexto.validarTexto(POSTPAGO),
+        ValidarTexto.validarTexto(HOGAR),
         ValidarTexto.validarTexto(DESCARGA_TU_FACTURA),
-        ValidarTextoQueContengaX.elTextoContiene(user.getNumero().replace(" ", "")),
+        ValidarTextoQueContengaX.elTextoContiene(user.getCuentaHogar().replace(" ", "")),
         ValidarTextoQueContengaX.elTextoContiene(ENCUENTRA_LAS_ULTIMAS_FACTURAS));
     EvidenciaUtils.registrarCaptura(paso2);
 

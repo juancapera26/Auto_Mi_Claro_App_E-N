@@ -1,6 +1,7 @@
 package tasks.Login;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.LoginPage.BTN_CERRAR;
 import static userinterfaces.LoginPage.MENU_USUARIO;
 import static utils.Constants.*;
 
@@ -28,7 +29,10 @@ public class VersionSuperApp implements Task {
 
     EvidenciaUtils.registrarCaptura(paso);
 
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(MUNDO_CLARO));
+    actor.attemptsTo(
+    Click.on(BTN_CERRAR));
+
+
   }
 
   public static Performable validarVersion() {
