@@ -5,6 +5,7 @@ public class User {
   private String nombreUsuario;
   private String password;
   private String email;
+  private String emailSecundario;
   private String cedula;
   private String numero;
   private String montoPagoParcial;
@@ -26,6 +27,16 @@ public class User {
   public void setEmail(String email) {
     this.email = email;
   }
+
+  public String getemailSecundario() {
+    return emailSecundario;
+  }
+
+  public void setemailSecundario(String emailSecundario) {
+    this.emailSecundario = emailSecundario;
+  }
+
+
 
   public String getNombreUsuario() {
     return nombreUsuario;

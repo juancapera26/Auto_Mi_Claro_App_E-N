@@ -12,6 +12,8 @@ public class Constants {
   public static final String VERSION = "Versión";
   public static final String OTROS_METODOS_DE_INGRESO = "Otros métodos de ingreso";
   public static final String CORREO_ELECTRONICO = "Correo electrónico";
+  public static final String CORREO_ELECTRONICO_PRINCIPAL = "Correo principal";
+  public static final String CORREO_ELECTRONICO_SECUNDARIO = "Correo secundario";
   public static final String PERFIL = "Perfil";
   public static final String PAGOS_Y_CONSULTAS = "Pagos y consultas";
   public static final String VER_MAS = "Ver más";
@@ -82,6 +84,7 @@ public class Constants {
   public static final String ABRIR = "Abrir";
   public static final String TOTAL_A_PAGAR = "TOTAL A PAGAR:";
   public static final String FACTURA_POR_CORREO_ELECTRONICO = "Factura por correo electrónico";
+  public static final String INFORMACION_ENVIO_DE_FACTURA = "Envía tu factura hasta a 3 correos electrónicos";
   public static final String ULTIMOS_PAGOS = "Últimos pagos";
   public static final String RECIBE_TU_FACTURA_A_TRAVES_CORREO = "Recibe tu factura a través";
   public static final String NUMERO_CELULAR = "Número celular";

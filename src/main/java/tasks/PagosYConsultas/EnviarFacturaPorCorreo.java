@@ -18,8 +18,8 @@ import utils.TestDataProvider;
 public class EnviarFacturaPorCorreo implements Task {
   private final User user = TestDataProvider.getRealUser();
   private static final String paso1 = "Seleccionar Factura por correo electrónico";
-  private static final String paso2 = "Verificar número de celular";
-  private static final String paso3 = "Validar opciones en Más información";
+  private static final String paso2 = "Verificar numero de cuenta hogar informacion de envio de factura por correo";
+  private static final String paso3 = "Validar opciones de envio de factura por correo";
 
   @Override
   public <T extends Actor> void performAs(T actor) {
@@ -29,26 +29,22 @@ public class EnviarFacturaPorCorreo implements Task {
     actor.attemptsTo(
         ScrollHastaTexto.conTexto(ULTIMOS_PAGOS),
         ClickTextoQueContengaX.elTextoContiene(FACTURA_POR_CORREO_ELECTRONICO),
-        WaitForResponse.withText(POSTPAGO));
+        WaitForResponse.withText(HOGAR));
 
     // Verificar número de celular en pantalla
     actor.attemptsTo(
-        ValidarTextoQueContengaX.elTextoContiene(user.getNumero()),
-        ValidarTextoQueContengaX.elTextoContiene(RECIBE_TU_FACTURA_A_TRAVES_CORREO));
+        ValidarTextoQueContengaX.elTextoContiene(user.getCuentaHogar()),
+        ValidarTextoQueContengaX.elTextoContiene(INFORMACION_ENVIO_DE_FACTURA));
     EvidenciaUtils.registrarCaptura(paso2);
 
-    // Verificar campos de información (número y email)
+    // Verificar campos de información (número cuenta y email y imail secundario)
     actor.attemptsTo(
-        ValidarTexto.validarTexto(NUMERO_CELULAR),
-        ValidarTexto.validarTexto(CORREO_ELECTRONICO),
-        ValidarTextoQueContengaX.elTextoContiene(user.getNumero().replace(" ", "")),
-        ValidarTexto.validarTexto(MAS_INFORMACION),
-
-        // Validar opciones disponibles en "Más información"
-        ValidarTextoQueContengaX.elTextoContiene(SUSCRIPCIONES_MODIFICACIONES_DESACTIVACIONES),
-        ValidarTextoQueContengaX.elTextoContiene(NOTIFICACIONES_POR_EMAIL_SMS),
-        ValidarTextoQueContengaX.elTextoContiene(NOTIFICACIONES_PUBLICACION_FACTURA));
-
+            ValidarTexto.validarTexto(CORREO_ELECTRONICO_PRINCIPAL),
+            ValidarTexto.validarTexto(CORREO_ELECTRONICO_SECUNDARIO),
+            ValidarTextoQueContengaX.elTextoContiene(
+                    user.getemailSecundario().replace(" ", "")
+            )
+    );
     EvidenciaUtils.registrarCaptura(paso3);
   }
 
