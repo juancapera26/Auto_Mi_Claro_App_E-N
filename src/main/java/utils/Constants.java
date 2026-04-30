@@ -96,7 +96,7 @@ public class Constants {
       "Notificaciones publicación de factura";
   public static final String DETALLE_ULTIMA_FACTURACION = "Detalle última facturación";
   public static final String TU_FACTURA_ESTARA_DISPONIBLE =
-      "Tu factura estará disponible 7 días después de la fecha de corte";
+      "Tu factura estará disponible 4 días después de la fecha de corte";
   public static final String GERENCIA_DCT = "GERENCIA GERENCIA DCT";
   public static final String PAGA_AQUI = "Paga aquí";
 

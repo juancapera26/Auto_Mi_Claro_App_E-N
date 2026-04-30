@@ -67,7 +67,7 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
-  @SA081 
+  @SCC001
   Scenario: Ingresar a entretenimiento y validar redirección a Claro Club
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO

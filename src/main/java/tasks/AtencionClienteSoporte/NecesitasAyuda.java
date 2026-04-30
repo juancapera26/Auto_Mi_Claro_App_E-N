@@ -24,7 +24,7 @@ public class NecesitasAyuda implements Task {
 
     actor.attemptsTo(
         ClickTextoQueContengaX.elTextoContiene(NECESITAS_AYUDA),
-        WaitForResponse.withText(POSTPAGO));
+        WaitForResponse.withText(HOGAR));
   }
 
   public static Performable ingresar() {
@@ -38,10 +38,10 @@ public class NecesitasAyuda implements Task {
     public <T extends Actor> void performAs(T actor) {
       EvidenciaUtils.registrarCaptura("Seleccionar línea y Continuar - Necesitas ayuda");
 
-      AndroidObject.scrollCorto2(actor, LINEA + " " + user.getNumero() + " " + CONTINUAR);
+      AndroidObject.scrollCorto2(actor, CUENTA + " " + user.getCuentaHogar() + " " + CONTINUAR);
 
       actor.attemptsTo(
-          ClickTextoQueContengaX.elTextoContiene(user.getNumero()),
+          ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()),
           WaitForResponse.withAnyText(CLAROBOT));
     }
 

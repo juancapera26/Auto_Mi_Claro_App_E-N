@@ -6,6 +6,7 @@ import static utils.Constants.*;
 
 import interactions.Click.ClickElementByText;
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.Scroll.ScrollHastaTexto;
 import interactions.validations.ValidarTexto;
 import interactions.wait.WaitFor;
 import interactions.wait.WaitForResponse;
@@ -28,6 +29,9 @@ public class EstadoServiciosTecnicos implements Task {
     EvidenciaUtils.registrarCaptura("Ingresar a Estado Servicios Técnicos");
 
     actor.attemptsTo(
+            ClickTextoQueContengaX.elTextoContiene(VER_MAS),
+
+
         ClickTextoQueContengaX.elTextoContiene(ESTADO_SERVICIOS_TECNICOS),
         WaitForResponse.withText(POSTPAGO));
   }

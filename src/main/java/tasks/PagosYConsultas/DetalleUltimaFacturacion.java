@@ -1,6 +1,7 @@
 package tasks.PagosYConsultas;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.ConsultarConsumosPage.BTN_AUTENTICACION;
 import static utils.Constants.*;
 
 import interactions.Click.ClickElementByText;
@@ -13,6 +14,8 @@ import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.AndroidObject;
@@ -50,9 +53,13 @@ public class DetalleUltimaFacturacion implements Task {
 
     // 🔹 Si no aparece popup, continuar flujo normal
     actor.attemptsTo(
-        ClickElementByText.clickElementByText(ACEPTAR_2), WaitForResponse.withText(GERENCIA_DCT));
+        ClickElementByText.clickElementByText(ACEPTAR_2), WaitForResponse.withText(GERENCIA_DCT),
+        Click.on(BTN_AUTENTICACION),
+        Enter.theValue(user.getCuentaHogar()).into(BTN_AUTENTICACION));
+
 
     actor.attemptsTo(
+
         ValidarTextoQueContengaX.elTextoContiene(GERENCIA_DCT),
         ValidarTextoQueContengaX.elTextoContiene(PAGA_AQUI),
         ValidarTextoQueContengaX.elTextoContiene(VALOR_TOTAL_A_PAGAR),

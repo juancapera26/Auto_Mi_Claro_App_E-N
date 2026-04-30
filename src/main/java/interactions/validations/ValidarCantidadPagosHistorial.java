@@ -27,7 +27,7 @@ public class ValidarCantidadPagosHistorial implements Interaction {
         AndroidObject.androidDriver(actor)
             .findElements(
                 new MobileBy.ByAndroidUIAutomator(
-                    "new UiSelector().textContains(\"Canal de pago:\")"));
+                    "new UiSelector().textContains(\"Fecha de Pago:\")"));
 
     int cantidadPagos = registrosPagos.size();
     System.out.println("Registros de pagos encontrados: " + cantidadPagos);

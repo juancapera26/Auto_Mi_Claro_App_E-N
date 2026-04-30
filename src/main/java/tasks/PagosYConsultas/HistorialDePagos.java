@@ -33,11 +33,11 @@ public class HistorialDePagos implements Task {
     // Seleccionar "Historial de pagos"
     actor.attemptsTo(
         ClickTextoQueContengaX.elTextoContiene(HISTORIAL_DE_PAGOS),
-        WaitForResponse.withText(POSTPAGO));
+        WaitForResponse.withText(HOGAR));
 
     // Verificar información principal del historial
     actor.attemptsTo(
-        ValidarTexto.validarTexto(POSTPAGO),
+        ValidarTexto.validarTexto(HOGAR),
         ValidarTexto.validarTexto(HISTORIAL_DE_PAGOS),
         ValidarTextoQueContengaX.elTextoContiene(ESTOS_SON_LOS_ULTIMOS_6_PAGOS));
 
@@ -46,7 +46,6 @@ public class HistorialDePagos implements Task {
     // Validar información detallada de los pagos (sin valores específicos)
     actor.attemptsTo(
         // Validar campos comunes de todos los pagos
-        ValidarTexto.validarTexto(CANAL_DE_PAGO),
         ValidarTexto.validarTexto(FECHA_DE_PAGO),
         ValidarTexto.validarTexto(VALOR_DE_PAGO),
 

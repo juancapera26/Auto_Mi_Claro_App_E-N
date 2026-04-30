@@ -110,6 +110,10 @@ public class AtencionClienteSoporteDefinitions {
   public void seleccionaLaOpcionNecesitasAyuda() {
     theActorInTheSpotlight().attemptsTo(NecesitasAyuda.ingresar());
   }
+  @And("^SELECCIONA LA OPCION NECESITAS AYUDA HOGAR$")
+  public void seleccionaLaOpcionNecesitasAyudaHogar() {
+    theActorInTheSpotlight().attemptsTo(NecesitasAyudaHogar.ingresar());
+  }
 
   @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE NECESITAS AYUDA$")
   public void desplazaHastaLineaYSeleccionaVerDetalleNecesitasAyuda() {
@@ -126,8 +130,9 @@ public class AtencionClienteSoporteDefinitions {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());
   }
 
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS$")
-  public void desplazaHastaLineaYSeleccionaVerDetalleServiciosTecnicos() {
+
+  @And("^DESPLAZA HASTA CUENTA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS$")
+  public void desplazaHastaCuetaYSeleccionaVerDetalleServiciosTecnicos() {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.seleccionarLineaYVerDetalle());
   }
 
