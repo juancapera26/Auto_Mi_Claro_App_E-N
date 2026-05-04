@@ -24,6 +24,9 @@ public class Versiones {
   public static final String MINI_VERSION_ESTADO_SERVICIOS_TECNICOS_CONSTANT =
       "Versión 1.4.6 (2025-05-14)";
 
+  public static final String MINI_VERSION_VISITAS_TECNICAS_CONSTANT =
+          "Versión 1.1.20 (2026-04-28)";
+
   public static final String MINI_VERSION_CONSULTAR_PQR_CONSTANT = "Versión 1.4.13 (2025-11-11)";
 
   public static final String MINI_VERSION_DETALLE_DE_TU_PLAN_CONSTANT =

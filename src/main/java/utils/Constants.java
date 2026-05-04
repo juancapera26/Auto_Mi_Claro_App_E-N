@@ -582,6 +582,7 @@ public class Constants {
 
   // ENTRETENIMIENTO
 
+
   // Tus plataformas favoritas
   public static final String TUS_PLATAFORMAS_FAVORITAS = "Tus plataformas favoritas";
   public static final String TUS_SERVICIOS_FAVORITOS = "Tus servicios favoritos";
@@ -741,7 +742,13 @@ public class Constants {
   public static final String NECESITAS_AYUDA = "¿Necesitas ayuda?";
 
   // Estado servicios técnicos
+  public static final String VISITAS_TECNICOS = "Visitas Técnicas";
   public static final String ESTADO_SERVICIOS_TECNICOS = "Estado Servicios Técnicos";
+  public static final String VISITAS_TECNICOS_WHATSAPP = "Ir a WhatsApp";
+  public static final String VISITAS_TECNICOS_WHATSAPP_MENSAJE = "Tengo fallas en mi servicio de Claro hogar";
+  public static final String SOLICITUD_TRASLADO= "Solicitar traslado";
+  public static final String SOLICITUD_TRASLADO_WHATSAPP_MENSAJE = "Programar traslado";
+
   public static final String ORDENES_DE_SERVICIO = "Órdenes de servicio";
   public static final String NUMERO_DE_CELULAR = "Número de celular";
   public static final String IMEI = "IMEI";

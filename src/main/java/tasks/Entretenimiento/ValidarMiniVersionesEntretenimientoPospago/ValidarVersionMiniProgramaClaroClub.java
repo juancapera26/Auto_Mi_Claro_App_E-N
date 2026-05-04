@@ -50,7 +50,7 @@ public class ValidarVersionMiniProgramaClaroClub implements Task {
     actor.attemptsTo(Click.on(BTN_VOLVER));
     // **********************************************************************************
     actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(HOGAR));
-    AndroidObject.scrollCorto2(actor, LINEA + " " + user.getCuentaHogar() + " " + VER_DETALLE);
+    AndroidObject.scrollCorto2(actor, CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE);
     EvidenciaUtils.registrarCaptura(paso4);
     actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()));
   }

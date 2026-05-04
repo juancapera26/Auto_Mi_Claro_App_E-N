@@ -129,6 +129,10 @@ public class AtencionClienteSoporteDefinitions {
   public void seleccionaLaOpcionEstadoServiciosTecnicos() {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());
   }
+  @And("^SELECCIONA LA OPCION VISITAS TECNICAS$")
+  public void seleccionaLaOpcionVisitasTecnicas() {
+    theActorInTheSpotlight().attemptsTo(VisitasTecnicas.ingresar());
+  }
 
 
   @And("^DESPLAZA HASTA CUENTA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS$")
