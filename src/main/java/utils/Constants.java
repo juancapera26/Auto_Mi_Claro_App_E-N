@@ -744,6 +744,7 @@ public class Constants {
   // Estado servicios técnicos
   public static final String VISITAS_TECNICOS = "Visitas Técnicas";
   public static final String ESTADO_SERVICIOS_TECNICOS = "Estado Servicios Técnicos";
+  public static final String GESTION_VISITAS_TECNICAS = "Gestiona las visitas técnicas";
   public static final String VISITAS_TECNICOS_WHATSAPP = "Ir a WhatsApp";
   public static final String VISITAS_TECNICOS_WHATSAPP_MENSAJE = "Tengo fallas en mi servicio de Claro hogar";
   public static final String SOLICITUD_TRASLADO= "Solicitar traslado";

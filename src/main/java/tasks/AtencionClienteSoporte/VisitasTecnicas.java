@@ -1,10 +1,14 @@
 package tasks.AtencionClienteSoporte;
 
+import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.ScrollHastaTexto;
+import interactions.Scroll.ScrollHorizontal;
+import interactions.Scroll.ScrollHorizontalCoordenadas;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.validations.VerificarVersionModulo;
 import interactions.wait.WaitForResponse;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
@@ -19,12 +23,16 @@ import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static userinterfaces.ConsultarConsumosPage.BTN_WHATSAPP;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_VISITAS_TECNICAS_CONSTANT;
+import net.thucydides.core.webdriver.WebDriverFacade;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
 public class VisitasTecnicas implements Task {
 
@@ -83,20 +91,32 @@ public class VisitasTecnicas implements Task {
                 Click.on(BTN_VOLVER)
         );
 
-
         // 🔽 Selección cuenta
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene(
                         CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE
                 ),
-                ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()),
-                ValidarTextoQueContengaX.elTextoContiene("Gestiona las visitas técnicas")
+                ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar())
+
         );
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         EvidenciaUtils.registrarCaptura(paso4);
+
+
 
         // =========================
         // 🔹 WHATSAPP - VISITA TÉCNICA
         // =========================
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene(GESTION_VISITAS_TECNICAS),
+                ValidarTextoQueContengaX.elTextoContiene(VISITAS_TECNICOS_WHATSAPP)
+        );
+
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(VISITAS_TECNICOS_WHATSAPP),
                 WaitForResponse.withText("Claro Colombia"),
@@ -132,42 +152,81 @@ public class VisitasTecnicas implements Task {
                 ClickTextoQueContengaX.elTextoContiene("Todas"),
                 ValidarTextoQueContengaX.elTextoContiene("Todas")
         );
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         EvidenciaUtils.registrarCaptura(paso8);
 
         actor.attemptsTo(
-                ScrollHastaTexto.conTexto("Completadas"),
+
                 ClickTextoQueContengaX.elTextoContiene("Completadas"),
                 ValidarTextoQueContengaX.elTextoContiene("Completadas")
         );
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         EvidenciaUtils.registrarCaptura(paso9);
 
         actor.attemptsTo(
-                ScrollHastaTexto.conTexto("No realizadas"),
+
                 ClickTextoQueContengaX.elTextoContiene("No realizadas"),
                 ValidarTextoQueContengaX.elTextoContiene("No realizadas")
         );
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         EvidenciaUtils.registrarCaptura(paso10);
 
         actor.attemptsTo(
-                ScrollHastaTexto.conTexto("Canceladas"),
-                ClickTextoQueContengaX.elTextoContiene("Canceladas"),
-                ValidarTextoQueContengaX.elTextoContiene("Canceladas")
+                ScrollHorizontalCoordenadas.desde(
+                        610, 695,   // inicio
+                        200, 1200    // final (hacia la izquierda visual = scroll derecha)
+                )
         );
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Canceladas"),
+                ValidarTextoQueContengaX.elTextoContiene("Cancelada")
+        );
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         EvidenciaUtils.registrarCaptura(paso11);
 
         actor.attemptsTo(
-                ScrollHastaTexto.conTexto("Suspendidas"),
+
                 ClickTextoQueContengaX.elTextoContiene("Suspendidas"),
                 ValidarTextoQueContengaX.elTextoContiene("Suspendidas")
         );
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         EvidenciaUtils.registrarCaptura(paso12);
     }
 
-    // 🔥 MÉTODO REUTILIZABLE (CLAVE)
     private void volverALaApp(Actor actor) {
 
-        WebDriver webDriver = net.serenitybdd.screenplay.abilities
-                .BrowseTheWeb.as(actor).getDriver();
+        WebDriver webDriver = BrowseTheWeb.as(actor).getDriver();
+
+        // 🔥 Obtener el driver real (el de Appium)
+        if (webDriver instanceof WebDriverFacade) {
+            webDriver = ((WebDriverFacade) webDriver).getProxiedDriver();
+        }
 
         if (webDriver instanceof AndroidDriver) {
 

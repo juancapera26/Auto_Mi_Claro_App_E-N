@@ -1,27 +1,31 @@
 package tasks.Entretenimiento.ValidarRedirecciones;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static utils.Constants.*;
 
+import interactions.Click.ClickTextoQueContengaX;
 import interactions.validations.ValidarTexto;
+import interactions.validations.ValidarTextoQueContengaX;
+import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import utils.AndroidObject;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 public class ValidarRedireccionPlayStoreClaroVideo implements Task {
 
   private static final String paso = "Validar redirección a la Play Store";
+  private static final User user = TestDataProvider.getRealUser();
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    /* // Obtener el driver original de Appium desde el facade de Serenity
-    WebDriverFacade facade = (WebDriverFacade) BrowseTheWeb.as(actor).getDriver();
-    AndroidDriver driver = (AndroidDriver) facade.getProxiedDriver();
 
-    // Activar la app Play Store
-    driver.activateApp("com.android.vending");*/
-
-    // Esperar unos segundos para que la Play Store cargue
+    ValidarTextoQueContengaX.elTextoContiene(
+            CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE
+    );
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()));
     try {
       Thread.sleep(10000);
     } catch (InterruptedException e) {

@@ -79,10 +79,7 @@ public class AtencionClienteSoporteDefinitions {
     theActorInTheSpotlight().attemptsTo(ConsultarPQR.ingresar());
   }
 
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE$")
-  public void desplazaHastaLineaYSeleccionaVerDetalle() {
-    theActorInTheSpotlight().attemptsTo(ConsultarPQR.seleccionarLineaYVerDetalle());
-  }
+
 
   @Then("^VERIFICA REDIRECCION CORRECTA A PAGINA CLARO$")
   public void verificaRedireccionAPaginaClaro() {
@@ -137,7 +134,7 @@ public class AtencionClienteSoporteDefinitions {
 
   @And("^DESPLAZA HASTA CUENTA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS$")
   public void desplazaHastaCuetaYSeleccionaVerDetalleServiciosTecnicos() {
-    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.seleccionarLineaYVerDetalle());
+    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());
   }
 
   @And("^VERIFICA REDIRECCION ORDENES DE SERVICIO$")
@@ -146,20 +143,20 @@ public class AtencionClienteSoporteDefinitions {
     EvidenciaUtils.registrarCaptura("Verificar redirección Órdenes de servicio");
   }
 
-  @And("^CONSULTA POR NUMERO DE DOCUMENTO$")
-  public void consultaPorNumeroDeDocumento() {
-    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroDocumento());
-  }
+  //@And("^CONSULTA POR NUMERO DE DOCUMENTO$")
+  //public void consultaPorNumeroDeDocumento() {
+  //  theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroDocumento());
+  //}
 
-  @And("^CONSULTA POR NUMERO DE CELULAR$")
-  public void consultaPorNumeroDeCelular() {
-    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroCelular());
-  }
+  //@And("^CONSULTA POR NUMERO DE CELULAR$")
+  //public void consultaPorNumeroDeCelular() {
+  // theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroCelular());
+  //}
 
-  @Then("^CONSULTA POR IMEI$")
-  public void consultaPorImei() {
-    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorImei());
-  }
+  //@Then("^CONSULTA POR IMEI$")
+  // public void consultaPorImei() {
+  //theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorImei());
+  //}
 
   @And("^VALIDA VERSION DE MINIPROGRAMA NECESITAS AYUDA$")
   public void validaVersionMiniprogramaNecesitasAyuda() {

@@ -65,11 +65,6 @@ Feature: Tus servicios favoritos
     And SELECCIONA LA OPCION NECESITAS AYUDA HOGAR
 
 
-  @SFST001
-  Scenario: Ingresar a servicios favoritos y necesitas ayuda
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO
-    Then VERIFICA VERSION DE LA SUPER APP
-    And SELECCIONA LA OPCION VISITAS TECNICAS
+
 
 

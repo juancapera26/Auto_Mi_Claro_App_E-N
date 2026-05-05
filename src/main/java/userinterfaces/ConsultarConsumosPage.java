@@ -199,9 +199,9 @@ public class ConsultarConsumosPage {
   public static final Target LBL_OTROS =
           Target.the("Otros").located(By.xpath("//*[@text='Otros']"));
 
-  public static final Target BTN_VER_DETALLE_SALDO =
-          Target.the("Ver detalle del saldo").located(By.xpath("//*[@text='Ver detalle']"));
-
+  public static final Target BTN_WHATSAPP =
+          Target.the("Botón Ir a WhatsApp")
+                  .located(By.xpath("//android.widget.Button[@text='Ir a WhatsApp']"));
   // Loading
   public static final Target LBL_ESPERA_UN_MOMENTO =
           Target.the("Mensaje Espera un momento").located(By.xpath("//*[@text='Espera un momento']"));

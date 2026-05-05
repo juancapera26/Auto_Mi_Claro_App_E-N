@@ -49,10 +49,7 @@ public class ValidarVersionMiniProgramaClaroVideo implements Task {
     // **********************************************************************************
     actor.attemptsTo(Click.on(BTN_VOLVER));
     // **********************************************************************************
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(POSTPAGO));
-    AndroidObject.scrollCorto2(actor, LINEA + " " + user.getNumero() + " " + VER_DETALLE);
-    EvidenciaUtils.registrarCaptura(paso4);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getNumero()));
+
   }
 
   public static Performable validar() {

@@ -47,11 +47,12 @@ public class ValidarVersionMiniProgramaClaroMusica implements Task {
     // **********************************************************************************
     actor.attemptsTo(Click.on(BTN_VOLVER));
     // **********************************************************************************
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(POSTPAGO));
-    AndroidObject.scrollCorto2(actor, LINEA + " " + user.getNumero() + " " + VER_DETALLE);
+    ValidarTextoQueContengaX.elTextoContiene(
+            CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE
+    );
     EvidenciaUtils.registrarCaptura(paso4);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getNumero()));
-    ;
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()));
+
   }
 
   public static Performable validar() {

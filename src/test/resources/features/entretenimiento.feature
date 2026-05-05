@@ -2,7 +2,7 @@ Feature: Ingresar al módulo de entretenimiento
 
   ############################################### pospago prioridad por barra entretenimiento
 
-  @SA059 
+  @EN001
   Scenario: Ingresar a entretenimiento y validar Claro Video
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -11,8 +11,16 @@ Feature: Ingresar al módulo de entretenimiento
     And   VALIDA VERSION DE MINIPROGRAMA CLARO VIDEO
     Then  VALIDA REDIRECCION APP STORE CLARO VIDEO
 
+  @EN0002
+  Scenario: Ingresar a entretenimiento y validar redirección a Claro Club
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA EL BOTON CLARO CLUB
+    And   VALIDA VERSION DE MINIPROGRAMA CLARO CLUB
+    Then  VALIDA REDIRECCION CLARO CLUB
 
-  @SA062 
+  @EN003
   Scenario: Ingresar a entretenimiento y validar Claro Música
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -20,6 +28,15 @@ Feature: Ingresar al módulo de entretenimiento
     And   SELECCIONA EL BOTON CLARO MUSICA
     And   VALIDA VERSION DE MINIPROGRAMA CLARO MUSICA
     Then  VALIDA REDIRECCION CLARO MUSICA APP
+
+  @EN0002
+  Scenario: Ingresar a entretenimiento y validar redirección a Claro Club
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA EL BOTON CLARO CLUB
+    And   VALIDA VERSION DE MINIPROGRAMA CLARO CLUB
+    Then  VALIDA REDIRECCION CLARO CLUB
 
 
   @SA063 
@@ -67,14 +84,7 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
-  @SCC001
-  Scenario: Ingresar a entretenimiento y validar redirección a Claro Club
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO
-    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    And   SELECCIONA EL BOTON CLARO CLUB
-    And   VALIDA VERSION DE MINIPROGRAMA CLARO CLUB
-    Then  VALIDA REDIRECCION CLARO CLUB
+
 
 
   ############################################################## pospago prioridad por tus servicios favoritos

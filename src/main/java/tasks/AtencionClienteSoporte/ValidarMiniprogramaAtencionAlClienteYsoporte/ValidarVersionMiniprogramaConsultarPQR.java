@@ -5,7 +5,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotP
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.EntretenimientoPage.LBL_ESPERA_UN_MOMENTO;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
-import static utils.Constants.CONSULTAR_PQR;
+import static utils.Constants.*;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_CONSULTAR_PQR_CONSTANT;
 
 import interactions.Click.ClickTextoQueContengaX;
@@ -45,6 +45,7 @@ public class ValidarVersionMiniprogramaConsultarPQR implements Task {
     EvidenciaUtils.registrarCaptura(paso3);
     // **********************************************************************************
     actor.attemptsTo(Click.on(BTN_VOLVER));
+
   }
 
   public static Performable validar() {

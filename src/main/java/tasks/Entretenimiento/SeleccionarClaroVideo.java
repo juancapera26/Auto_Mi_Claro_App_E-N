@@ -14,12 +14,14 @@ import utils.EvidenciaUtils;
 /** Task para seleccionar Claro Video */
 public class SeleccionarClaroVideo implements Task {
   private static final String paso = "Buscar y seleccionar Claro Video en pantalla";
+  private static final String paso1 = "validar redirecion al modulo Claro video";
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     WaitForResponse.withText(CLARO_VIDEO);
     EvidenciaUtils.registrarCaptura(paso);
     actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(CLARO_VIDEO));
+    EvidenciaUtils.registrarCaptura(paso1);
   }
 
   public static Performable seleccionar() {
