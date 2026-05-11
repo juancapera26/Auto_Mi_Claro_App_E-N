@@ -40,6 +40,40 @@ Feature: Ingresar al módulo de entretenimiento
 
   #///////////////////////////////////////////////////////////////
 
+  @EN005
+  Scenario: Ingresar a entretenimiento y validar Disney+premium
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA BOTON DISNEY PLUS
+    And   VALIDAR VERSION DE MINIPROGRAMA DISNEY
+    And   SELECCIONA PLAN PREMIUM DISNEY
+    And   VALIDA TERMINOS Y CONDICIONES DISNEY PREMIUM
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
+  @EN
+  Scenario: Ingresar a entretenimiento y validar Disney+ plan estándar
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA BOTON DISNEY PLUS
+    And   VALIDAR VERSION DE MINIPROGRAMA DISNEY
+    And   SELECCIONA PLAN ESTANDAR DISNEY
+    And   VALIDA TERMINOS Y CONDICIONES DISNEY ESTANDAR
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
+
+  @EN006
+  Scenario: Ingresar a entretenimiento y validar HotGo
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA BOTON HOTGO
+    And   VALIDAR VERSION DE MINIPROGRAMA HOTGO
+    And   SELECCIONA PLAN HOTGO
+    And   VALIDA TERMINOS Y CONDICIONES HOTGO
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
 
 #  @SA063
 #  Scenario: Ingresar a entretenimiento y validar Netflix con términos y condiciones

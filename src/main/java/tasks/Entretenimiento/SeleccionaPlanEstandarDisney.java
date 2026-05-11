@@ -42,7 +42,7 @@ public class SeleccionaPlanEstandarDisney implements Task {
     EvidenciaUtils.registrarCaptura(paso + " - Plan encontrado");
 
     /*  actor.attemptsTo(
-    // Click en el botón Elegir Plan
+    Click en el botón Elegir Plan
     Click.on(BTN_ELEGIR_PLAN_PREMIUM)); */
 
     ejecutarAdbTap(523, 1786); // Simula un toque en las coordenadas

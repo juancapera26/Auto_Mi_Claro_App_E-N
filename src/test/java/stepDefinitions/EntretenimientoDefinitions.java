@@ -174,6 +174,7 @@ public class EntretenimientoDefinitions {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesDisneyEstandar.validar());
   }
 
+
   @Then("^VALIDA TERMINOS Y CONDICIONES DISNEY PREMIUM$")
   public void validaTerminosYCondicionesDisneyPremium() {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesDisneyPremium.validar());
@@ -288,6 +289,19 @@ public class EntretenimientoDefinitions {
   @Then("^VALIDA REDIRECCION A PAGINA HOTGO$")
   public void validaRedireccionAPaginaHotGo() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionHotGo.validar());
+  }
+  @And("^VALIDAR VERSION DE MINIPROGRAMA HOTGO$")
+  public void validarVersionDeMiniprogramaHotgo() {
+    theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaHotgo.validar());
+  }
+  @And("^SELECCIONA PLAN HOTGO$")
+  public void seleccionaPlanHotGo() {
+    theActorInTheSpotlight().attemptsTo(seleccionaPlanHotGo.seleccionar());
+  }
+
+  @Then("^VALIDA TERMINOS Y CONDICIONES HOTGO$")
+  public void validaTerminosYCondicionesHotGo() {
+    theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesHotGo.validar());
   }
 }
 

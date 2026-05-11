@@ -15,6 +15,8 @@ public class Versiones {
 
   public static final String MINI_VERSION_DISNEY_CONSTANT = "Versión 1.0.65 (2026-02-04)";
 
+  public static final String MINI_VERSION_HOTGO_CONSTANT = "Versión 1.0.20 (2026-03-31)";
+
   public static final String MINI_VERSION_PAGA_TU_FACTURA_CONSTANT = "Versión 1.1.15 (2026-02-03)";
 
   public static final String MINI_VERSION_RECARGAS_Y_PAQUETES_CONSTANT =

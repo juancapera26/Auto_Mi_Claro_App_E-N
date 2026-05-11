@@ -52,9 +52,13 @@ public class ValidarVersionMiniprogramaDisney implements Task {
     actor.attemptsTo(Click.on(BTN_VOLVER));
     // **********************************************************************************
     EvidenciaUtils.registrarCaptura(paso4);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(POSTPAGO));
-    AndroidObject.scrollCorto2(actor, CUENTA + " " + user.getNumero() + " " + VER_DETALLE);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getNumero()));
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(HOGAR));
+    actor.attemptsTo(
+            ValidarTextoQueContengaX.elTextoContiene(
+                    CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE
+            )
+    );
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()));
   }
 
   public static Performable validar() {

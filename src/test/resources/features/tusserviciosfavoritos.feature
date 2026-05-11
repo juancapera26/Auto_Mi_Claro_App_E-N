@@ -49,13 +49,6 @@ Feature: Tus servicios favoritos
     And INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
     And  VALIDA HISTORIAL DE PAGOS
 
-  @SFPF007
-  Scenario: Ingresar a servicios favoritos y pagar factura por correo
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO
-    Then VERIFICA VERSION DE LA SUPER APP
-    And INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    And  VALIDA HISTORIAL DE PAGOS
 
   @SFNA001
   Scenario: Ingresar a servicios favoritos y necesitas ayuda
