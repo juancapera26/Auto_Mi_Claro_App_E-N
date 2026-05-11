@@ -19,7 +19,7 @@ public class AccederVerMasPlataformas implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        ScrollHastaTexto.conTexto(TUS_PLATAFORMAS_FAVORITAS),
+
         ClickTextoQueContengaX.elTextoContiene(VER_MAS),
         WaitFor.aTime(3000));
 

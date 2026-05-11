@@ -120,6 +120,12 @@ public class EntretenimientoDefinitions {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionClaroMusicaApp.validar());
   }
 
+
+
+  // ===========================================
+  // @EN004 - HBOmax
+  // ===========================================
+
   // ===========================================
   // SA063 - Netflix
   // ===========================================
@@ -259,10 +265,16 @@ public class EntretenimientoDefinitions {
     theActorInTheSpotlight().attemptsTo(SeleccionarHBOmax.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION PAGINA A HBOMAX$")
+  @Then("^VALIDA REDIRECCION PAGINA A HBO MAX$")
   public void validaRedireccionPaginaAHBOmax() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionHBOmax.validar());
   }
+
+  @And("^VALIDA VERSION DE MINIPROGRAMA HBO MAX$")
+  public void validaVersionMiniProgramaHBOmax() {
+    theActorInTheSpotlight().attemptsTo(validaVersionMiniProgramaHBOmax.validar());
+  }
+
 
   // ===========================================
   // SA068 - HotGo

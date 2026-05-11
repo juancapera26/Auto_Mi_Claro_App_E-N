@@ -604,6 +604,7 @@ public class Constants {
   public static final String HOTGO = "HotGo";
   public static final String RED_NOTICIAS = "RED + NOTICIAS";
   public static final String CUPONES = "Cupones";
+  public static final String HBO_MAX = "HBO Max";
 
   // Elegir Plan
   public static final String ELEGIR_PLAN = "Elegir plan";
