@@ -75,6 +75,33 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
+  @EN007
+  Scenario: Ingresar a entretenimiento y validar Amazon Prime
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA BOTON AMAZON PRIME
+    And   VALIDAR VERSION DE MINIPROGRAMA AMAZONPRIME
+    And   SELECCIONA PLAN AMAZON PRIME
+    And   VALIDA TERMINOS Y CONDICIONES AMAZON PRIME
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
+
+  @EN008
+  Scenario: Ingresar a entretenimiento y validar Claro gaming cloud
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
+    And   SELECCIONA BOTON GAMING CLOUD
+    And   VALIDAR VERSION DE MINIPROGRAMA GAMING CLOUD
+    And   SELECCIONA PLAN GAMING CLOUD
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD
+
+  @EN009
+  Scenario: Ingresar a entretenimiento y validar Claro win pay
+
+
+
 #  @SA063
 #  Scenario: Ingresar a entretenimiento y validar Netflix con términos y condiciones
 #    Given EL USUARIO ABRE LA SUPER APP

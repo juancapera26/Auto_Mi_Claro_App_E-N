@@ -8,6 +8,7 @@ import java.util.Collections;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -24,26 +25,51 @@ public class ClickEnCoordenadas implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
+
     WebDriver driver = BrowseTheWeb.as(actor).getDriver();
 
-    if (!(driver instanceof AppiumDriver)) {
-      throw new IllegalStateException("El driver actual no es un AppiumDriver.");
-    }
+    AppiumDriver<?> appiumDriver =
+            (AppiumDriver<?>) ((WebDriverFacade) driver).getProxiedDriver();
 
-    AppiumDriver<?> appiumDriver = (AppiumDriver<?>) driver;
+    PointerInput finger = new PointerInput(
+            PointerInput.Kind.TOUCH,
+            "finger"
+    );
 
-    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
     Sequence tap = new Sequence(finger, 1);
 
-    // Mueve y hace tap en la coordenada indicada
-    tap.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), x, y));
-    tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-    tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+    // mover a coordenada
+    tap.addAction(
+            finger.createPointerMove(
+                    Duration.ZERO,
+                    PointerInput.Origin.viewport(),
+                    x,
+                    y
+            )
+    );
+
+    // presionar
+    tap.addAction(
+            finger.createPointerDown(
+                    PointerInput.MouseButton.LEFT.asArg()
+            )
+    );
+
+    // soltar
+    tap.addAction(
+            finger.createPointerUp(
+                    PointerInput.MouseButton.LEFT.asArg()
+            )
+    );
 
     appiumDriver.perform(Collections.singletonList(tap));
   }
 
   public static ClickEnCoordenadas en(int x, int y) {
-    return instrumented(ClickEnCoordenadas.class, x, y);
+    return instrumented(
+            ClickEnCoordenadas.class,
+            x,
+            y
+    );
   }
 }

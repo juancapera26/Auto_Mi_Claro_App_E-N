@@ -4,6 +4,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
 
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
 import interactions.wait.WaitFor;
 import net.serenitybdd.screenplay.Actor;
@@ -27,7 +28,8 @@ public class SeleccionarAmazonPrime implements Task {
 
     EvidenciaUtils.registrarCaptura(paso);
 
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(VER_MAS));
+
+    actor.attemptsTo( Scroll.scrollUnaVista(),ClickTextoQueContengaX.elTextoContiene(VER_MAS));
 
     EvidenciaUtils.registrarCaptura(paso2);
 

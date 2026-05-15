@@ -13,6 +13,8 @@ public class Versiones {
 
   public static final String MINI_VERSION_AMAZON_PRIME_CONSTANT = "Versión 1.4.32 (2026-02-04)";
 
+  public static final String MINI_VERSION_GAMING_CLOUD_PRIME_CONSTANT = "Versión 1.01.109 (2025-10-08)";
+
   public static final String MINI_VERSION_DISNEY_CONSTANT = "Versión 1.0.65 (2026-02-04)";
 
   public static final String MINI_VERSION_HOTGO_CONSTANT = "Versión 1.0.20 (2026-03-31)";

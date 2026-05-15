@@ -36,6 +36,10 @@ public class EntretenimientoDefinitions {
   public void validaRedireccionamientoIdClaro() {
     theActorInTheSpotlight().attemptsTo(ValidaRedireccionamientoIdClaro.validar());
   }
+  @Then("^VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD$")
+  public void validaRedireccionamientoIdClaroGamingCloud() {
+    theActorInTheSpotlight().attemptsTo(validaRedireccionamientoIdClaroGamingCloud.validar());
+  }
 
   @And("^VALIDA VERSION DE MINIPROGRAMA PRE CLARO VIDEO$")
   public void validaVersionMiniProgramaClaroVideoPre() {
@@ -303,6 +307,34 @@ public class EntretenimientoDefinitions {
   public void validaTerminosYCondicionesHotGo() {
     theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesHotGo.validar());
   }
+
+  // ===========================================
+// SA069 - Gaming Cloud
+// ===========================================
+  @And("^SELECCIONA BOTON GAMING CLOUD$")
+  public void seleccionaBotonGamingCloud() {
+    theActorInTheSpotlight().attemptsTo(SeleccionarGamingCloud.seleccionar());
+  }
+
+  @Then("^VALIDA REDIRECCION A PAGINA GAMING CLOUD$")
+  public void validaRedireccionAPaginaGamingCloud() {
+ //   theActorInTheSpotlight().attemptsTo(ValidarRedireccionGamingCloud.validar());
+  }
+  @And("^VALIDAR VERSION DE MINIPROGRAMA GAMING CLOUD$")
+  public void validarVersionDeMiniprogramaGamingCloud() {
+    theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaGamingCloud.validar());
+  }
+  @And("^SELECCIONA PLAN GAMING CLOUD$")
+  public void seleccionaPlanGamingCloud() {
+    theActorInTheSpotlight().attemptsTo(seleccionaPlanGamingCloud.seleccionar());
+  }
+
+  //@Then("^VALIDA TERMINOS Y CONDICIONES GAMING CLOUD$")
+  //public void validaTerminosYCondicionesGamingCloud() {
+   // theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesGamingCloud.validar());
+  //}
 }
+
+
 
 // ===========================================

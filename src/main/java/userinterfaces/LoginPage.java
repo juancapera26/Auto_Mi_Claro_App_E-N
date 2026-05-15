@@ -35,6 +35,8 @@ public class LoginPage {
           .located(By.id("animation_splash_lottie"));
   public static final Target BTN_ACEPTAR =
       Target.the("Boton Aceptar").located(By.xpath("//*[@text='Aceptar']"));
+  public static final Target BTN_ACEPTAR_HOTGO =
+          Target.the("Boton Aceptar").located(By.xpath("//android.widget.Button[@text=\"Aceptar\"]"));
   public static final Target BTN_PERMISO_UBICACION =
       Target.the("Botón mientras la app está en uso")
           .located(

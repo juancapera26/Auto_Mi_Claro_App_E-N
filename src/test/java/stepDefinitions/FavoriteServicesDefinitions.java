@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import tasks.PagaTuFactura.ClaroPay;
 import tasks.PagosYConsultas.DescargaFactura;
 import tasks.PagosYConsultas.PagaTuFactura;
+import tasks.PagosYConsultas.ingresaAServiciosFavoritosPagaTuFactura;
 import utils.TestDataProvider;
 
 public class FavoriteServicesDefinitions {
@@ -18,7 +19,7 @@ public class FavoriteServicesDefinitions {
   @And("^INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA$")
   public void ingresaAServiciosFavoritosPagaTuFactura() {
     theActorInTheSpotlight().attemptsTo(
-            PagaTuFactura.pagaTuFactura()
+            ingresaAServiciosFavoritosPagaTuFactura.pagaTuFactura()
     );
   }
   @And("^DESCARGAR FACTURA$")

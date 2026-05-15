@@ -31,7 +31,7 @@ public class ValidarVersionMiniProgramaAmazonPrime implements Task {
   private static final String paso2 = "Ingresar al menú de tres puntos y seleccionar 'Acerca de'";
   private static final String paso3 = "Validar versión de mini app Amazon Prime";
   private static final String paso4 =
-      "Seleccionar la línea postpago y Hacer scroll a la línea del usuario y ver detalle";
+      "Seleccionar cuenta hogar ver detalle";
 
   @Override
   public <T extends Actor> void performAs(T actor) {
@@ -52,10 +52,14 @@ public class ValidarVersionMiniProgramaAmazonPrime implements Task {
     // **********************************************************************************
     actor.attemptsTo(Click.on(BTN_VOLVER));
     // **********************************************************************************
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(POSTPAGO));
-    AndroidObject.scrollCorto2(actor, LINEA + " " + LINEA_NUMERO);
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(HOGAR));
+    actor.attemptsTo(
+            ValidarTextoQueContengaX.elTextoContiene(
+                    CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE
+            )
+    );
     EvidenciaUtils.registrarCaptura(paso4);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(LINEA_NUMERO));
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()));
   }
 
   public static Performable validar() {

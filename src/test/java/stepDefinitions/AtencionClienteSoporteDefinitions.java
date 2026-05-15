@@ -122,6 +122,7 @@ public class AtencionClienteSoporteDefinitions {
     theActorInTheSpotlight().attemptsTo(NecesitasAyuda.verificarRedireccionClarobot());
   }
 
+
   @And("^SELECCIONA LA OPCION ESTADO SERVICIOS TECNICOS$")
   public void seleccionaLaOpcionEstadoServiciosTecnicos() {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());

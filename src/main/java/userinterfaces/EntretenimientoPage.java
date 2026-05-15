@@ -252,6 +252,13 @@ public class EntretenimientoPage {
   public static final Target BTN_PLAN_PREMIUM =
       Target.the("Botón Plan Premium Disney+").located(By.xpath("//*[@text='Plan Premium']"));
 
+  public static final Target CHECK_TERMINOS_HOTGO =
+          Target.the("Check de aceptar términos y condiciones")
+                  .located(
+                          By.xpath(
+                                  "//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.widget.TextView"));
+
+
   public static final Target CHECK_TERMINOS =
       Target.the("Check de aceptar términos y condiciones")
           .located(
@@ -269,6 +276,13 @@ public class EntretenimientoPage {
           .located(
               By.xpath(
                   "//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.TextView"));
+
+  public static final Target CHECK_TERMINOS_CLARO_GAMING_CLOUD =
+          Target.the("Check de aceptar términos y condiciones")
+                  .located(
+                          By.xpath(
+                                  "//android.widget.RadioGroup/android.widget.RadioButton/android.widget.TextView"));
+
 
   public static final Target DISNEY_ESTANDAR_EN_CONTENT =
       Target.the("Texto Disney+ Estándar dentro del content_id")

@@ -1,5 +1,14 @@
 Feature: Ingresar al modulo pagos y consultas
 
+  @PC001
+ Scenario: Ingresar a devolucion de equipo
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+    And   INGRESA AL PORTAL DE PAGA TU FACTURA
+    And   VALIDAR REDIRECCION BOTON PAGAR FACTURA
+    Then  VALIDAR REDIRECCION DE LOS MEDIOS DE PAGO
+
 #  @SA004
 #  Scenario: Ingresar a paga tu factura
 #    Given EL USUARIO ABRE LA SUPER APP

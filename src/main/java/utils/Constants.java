@@ -591,6 +591,7 @@ public class Constants {
   public static final String NETFLIX = "Netflix";
   public static final String HBOMAX = "HBOmax";
   public static final String AMAZON_PRIME = "Amazon Prime";
+  public static final String GAMING_CLOUD = "Claro Gaming Cloud";
 
   // Titulos Entretenimiento
   public static final String CLARO_TV_PLUS = "Claro tv +";

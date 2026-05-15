@@ -5,6 +5,7 @@ import static userinterfaces.EntretenimientoPage.*;
 import static utils.Constants.*;
 
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.Scroll.Scroll;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitForResponse;
 import net.serenitybdd.screenplay.Actor;
@@ -20,8 +21,11 @@ public class SeleccionarPlanAmazonPrime implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        WaitForResponse.withText(ELEGIR_PLAN),
-        ValidarTextoQueContengaX.elTextoContiene("Amazon Prime"));
+        WaitForResponse.withText("Amazon Prime"),
+        ValidarTextoQueContengaX.elTextoContiene("Amazon Prime"),
+            Scroll.scrollUnaVista()
+    );
+
     EvidenciaUtils.registrarCaptura(paso);
     actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(ELEGIR_PLAN));
   }
