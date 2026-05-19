@@ -26,13 +26,13 @@ public class ValidarRedireccionHBOmax implements Task {
 
 
     actor.attemptsTo(
-            ClickTextoQueContengaX.elTextoContiene("Consultar Términos y condiciones"),
+            ClickTextoQueContengaX.elTextoContiene("Consulta Términos y condiciones"),
             WaitFor.aTime(5000)
 
     );
 
     EvidenciaUtils.registrarCaptura(paso1);
-    actor.attemptsTo(Click.on(BTN_VOLVER));
+    actor.attemptsTo(Click.on(BTN_VOLVER_TC_HBO_MAX));
 
     actor.attemptsTo(
             ClickTextoQueContengaX.elTextoContiene("Ir a HBO Max"));

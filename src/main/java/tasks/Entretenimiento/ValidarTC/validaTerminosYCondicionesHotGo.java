@@ -23,13 +23,15 @@ import static utils.Constants.*;
 public class validaTerminosYCondicionesHotGo implements Task {
     private static final User user = TestDataProvider.getRealUser();
     // private static final String paso = "Validar Plan y Términos y Condiciones Disney+";
-    private static final String paso2 = "Aceptar TC";
+    private static final String paso2 = "Validar terminos y condiciones HotGo";
     private static final String paso3 = "Aceptar";
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(WaitFor.aTime(5000) ,
+
                 Click.on(CHECK_TERMINOS_HOTGO),
                 ClickTextoQueContengaX.elTextoContiene(ACTIVAR));
 
