@@ -31,7 +31,7 @@ public class validarVersionDeMiniprogramaHotgo implements Task {
     private static final String paso2 = "Ingresar al menú de tres puntos y seleccionar 'Acerca de'";
     private static final String paso3 = "Validar versión de mini app Hotgo";
     private static final String paso4 =
-            "Seleccionar la línea postpago y Hacer scroll a la línea del usuario y ver detalle";
+            "Seleccionar la línea hogar y ver detalle";
 
     @Override
     public <T extends Actor> void performAs(T actor) {

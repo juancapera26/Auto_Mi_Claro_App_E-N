@@ -20,6 +20,7 @@ public class ValidarRedireccionHBOmax implements Task {
   private static final String paso = "Validar Modulo HBOmax";
   private static final String paso1 = "Validar terminos y condiciones ";
   private static final String paso2 = "Validar Redirección HBOmax";
+  private static final String paso3 = "Validar Redirección login mi claro";
 
   @Override
   public <T extends Actor> void performAs(T actor) {
@@ -46,6 +47,12 @@ public class ValidarRedireccionHBOmax implements Task {
         WaitFor.aTime(5000));
 
     EvidenciaUtils.registrarCaptura(paso2);
+
+    actor.attemptsTo(
+            Click.on(HBO_MAX_MI_CLARO),
+            WaitFor.aTime(5000)
+    );
+    EvidenciaUtils.registrarCaptura(paso3);
 
   }
 

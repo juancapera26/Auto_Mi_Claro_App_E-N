@@ -38,7 +38,6 @@ Feature: Ingresar al módulo de entretenimiento
     And   VALIDA VERSION DE MINIPROGRAMA HBO MAX
     Then  VALIDA REDIRECCION PAGINA A HBO MAX
 
-  #///////////////////////////////////////////////////////////////
 
   @EN005
   Scenario: Ingresar a entretenimiento y validar Disney+premium
@@ -51,19 +50,18 @@ Feature: Ingresar al módulo de entretenimiento
     And   VALIDA TERMINOS Y CONDICIONES DISNEY PREMIUM
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
-  #@EN
-  #Scenario: Ingresar a entretenimiento y validar Disney+ plan estándar
-    #Given EL USUARIO ABRE LA SUPER APP
-   # When  REALIZA EL INGRESO
-   # And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    #And   SELECCIONA BOTON DISNEY PLUS
-    #And   VALIDAR VERSION DE MINIPROGRAMA DISNEY
-    #And   SELECCIONA PLAN ESTANDAR DISNEY
-    #And   VALIDA TERMINOS Y CONDICIONES DISNEY ESTANDAR
-   # Then  VALIDA REDIRECCIONAMIENTO ID ClARO
-
-
   @EN006
+  Scenario: Ingresar a entretenimiento y validar Disney+ plan estándar
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA BOTON DISNEY PLUS
+    And   VALIDAR VERSION DE MINIPROGRAMA DISNEY
+    And   SELECCIONA PLAN ESTANDAR DISNEY
+    And   VALIDA TERMINOS Y CONDICIONES DISNEY ESTANDAR
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
+
+  @EN007
   Scenario: Ingresar a entretenimiento y validar HotGo
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -75,7 +73,7 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
-  @EN007
+  @EN008
   Scenario: Ingresar a entretenimiento y validar Amazon Prime
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -87,7 +85,7 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
-  @EN008
+  @EN009
   Scenario: Ingresar a entretenimiento y validar Claro gaming cloud
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -97,8 +95,15 @@ Feature: Ingresar al módulo de entretenimiento
     And   SELECCIONA PLAN GAMING CLOUD
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD
 
-  #@EN009
-  #Scenario: Ingresar a entretenimiento y validar Claro win pay
+  @EN0010
+  Scenario: Ingresar a entretenimiento y validar Claro win PlAY
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   SELECCIONA BOTON WIN PLAY
+    And   VALIDAR VERSION DE MINIPROGRAMA WIN PLAY
+    And   SELECCIONA PLAN WIN PLAY
+    And   VALIDA TERMINOS Y CONDICIONES WIN PLAY
+    Then  VALIDA REDIRECCIONAMIENTO ID ClARO
 
 
 
@@ -258,7 +263,7 @@ Feature: Ingresar al módulo de entretenimiento
 #    And   VALIDA REDIRECCION A ENTRETENIMIENTO
 #    And   DESPLAZARSE HASTA EL MODULO TUS PLATAFORMAS FAVORITAS
 #    And   SELECCIONA BOTON VER MAS PLATAFORMAS
-#    And   SELECCIONA BOTON HOTGO
+#    And   SELECCIONA BOTON PlAY
 #    Then  VALIDA REDIRECCION A PAGINA HOTGO
 #
 #  @SA065

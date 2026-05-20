@@ -100,7 +100,7 @@ public class VisitasTecnicas implements Task {
 
         );
         try {
-            Thread.sleep(30000);
+            Thread.sleep(35000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

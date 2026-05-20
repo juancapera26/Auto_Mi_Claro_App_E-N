@@ -208,25 +208,6 @@ public class EntretenimientoDefinitions {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesAmazonPrime.validar());
   }
   // ===========================================
-  // SA064 - Win Play
-  // ===========================================
-
-  @And("^SELECCIONA BOTON VER MAS PLATAFORMAS$")
-  public void seleccionaBotonVerMasPlataformas() {
-    theActorInTheSpotlight().attemptsTo(AccederVerMasPlataformas.acceder());
-  }
-
-  @And("^SELECCIONA BOTON WIN PLAY$")
-  public void seleccionaBotonWinPlay() {
-    theActorInTheSpotlight().attemptsTo(SeleccionarWinPlay.seleccionar());
-  }
-
-  @Then("^VALIDA REDIRECCION A PAGINA WIN PLAY$")
-  public void validaRedireccionAPaginaWinPlay() {
-    theActorInTheSpotlight().attemptsTo(ValidarRedireccionWinPlay.validar());
-  }
-
-  // ===========================================
   // SA060 - RED + TV EN VIVO
   // ===========================================
 
@@ -333,7 +314,34 @@ public class EntretenimientoDefinitions {
   //public void validaTerminosYCondicionesGamingCloud() {
    // theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesGamingCloud.validar());
   //}
+
+  // ===========================================
+// SA069 - WIN PlAY
+// ===========================================
+  @And("^SELECCIONA BOTON WIN PLAY$")
+  public void seleccionaBotonWinPlay() {
+    theActorInTheSpotlight().attemptsTo(SeleccionarWinPlay.seleccionar());
+  }
+
+  @Then("^VALIDA REDIRECCION A PAGINA WIN PLAY$")
+  public void validaRedireccionAPaginaWinPlay() {
+    theActorInTheSpotlight().attemptsTo(ValidarRedireccionWinPlay.validar());
+  }
+  @And("^VALIDAR VERSION DE MINIPROGRAMA WIN PLAY$")
+  public void validarVersionDeMiniprogramaWinPlay() {
+    theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaWinPlay.validar());
+  }
+  @And("^SELECCIONA PLAN WIN PLAY$")
+  public void seleccionaPlanWinPlay() {
+    theActorInTheSpotlight().attemptsTo(seleccionaPlanWinPlay.seleccionar());
+  }
+
+  @Then("^VALIDA TERMINOS Y CONDICIONES WIN PLAY$")
+  public void validaTerminosYCondicionesWinPlay() {
+    theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesWinPlay.validar());
+  }
 }
+
 
 
 

@@ -33,6 +33,13 @@ public class EntretenimientoPage {
                           By.xpath(
                                   "//android.widget.FrameLayout[@resource-id=\"com.clarocolombia.miclaro:id/back_button\"]"));
 
+  public static final Target HBO_MAX_MI_CLARO =
+          Target.the("Botón mi claro dentro de HBO max")
+                  .located(
+                          By.xpath(
+                                  "//android.widget.Image[@content-desc=\"App Mi Claro\"]"));
+
+
 
   public static final Target BTN_ACEPTAR_ET =
       Target.the("Botón 'Aceptar'").locatedBy("//android.widget.Button[@text='Aceptar']");
@@ -50,7 +57,7 @@ public class EntretenimientoPage {
 
   public static final Target BTN_ELEGIR_PLAN_ESTANDAR =
       Target.the("Segundo botón 'Elegir plan'")
-          .located(By.xpath("(//android.widget.Button[@text=\"Elegir plan\"])[2]"));
+          .located(By.xpath("//android.widget.Button[@text=\"Elegir plan\"]"));
 
   // Sección Hecho para ti
   public static final Target LBL_HECHO_PARA_TI =

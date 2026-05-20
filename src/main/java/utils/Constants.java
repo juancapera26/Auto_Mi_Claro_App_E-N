@@ -581,7 +581,7 @@ public class Constants {
       "Disfruta más de tu tiempo con Mi Claro";
 
   // ENTRETENIMIENTO
-
+  public static final String TUS_LUGAR_PARA_EL_MUNDIAL = "Tu lugar para el Mundial";
 
   // Tus plataformas favoritas
   public static final String TUS_PLATAFORMAS_FAVORITAS = "Tus plataformas favoritas";
