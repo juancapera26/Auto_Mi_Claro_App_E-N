@@ -5,9 +5,30 @@ Feature: Ingresar al modulo pagos y consultas
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
     And   INGRESA AL MENU PAGOS Y CONSULTAS
-    And   INGRESA AL PORTAL DE PAGA TU FACTURA
-    And   VALIDAR REDIRECCION BOTON PAGAR FACTURA
-    Then  VALIDAR REDIRECCION DE LOS MEDIOS DE PAGO
+    Then  INGRESA A DEVOLUCION DE EQUIPOS
+
+  @PC002
+  Scenario: Ingresar a Solicitar traslado
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+    Then  INGRESA A SOLICITAR TRASLADOS
+
+  @PC003
+  Scenario: Ingresar a reiniciar modem
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+    Then  INGRESA A REINICIAR MODEM
+
+  @PC004
+  Scenario: Ingresar a Detalle de tu plan
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+    Then   VALIDA DETALLE DE TU PLAN
+
+
 
 #  @SA004
 #  Scenario: Ingresar a paga tu factura
@@ -106,12 +127,12 @@ Feature: Ingresar al modulo pagos y consultas
 #    Then  GESTIONA COMPRAS RECURRENTES
 #
 #
-#  @SA015
-#  Scenario: Ingresar a Detalle de tu plan
-#    Given EL USUARIO ABRE LA SUPER APP
-#    When  REALIZA EL INGRESO
-#    And   INGRESA AL MENU PAGOS Y CONSULTAS
-#    Then   VALIDA DETALLE DE TU PLAN
+ @SA015
+ Scenario: Ingresar a Detalle de tu plan
+   Given EL USUARIO ABRE LA SUPER APP
+  When  REALIZA EL INGRESO
+  And   INGRESA AL MENU PAGOS Y CONSULTAS
+  Then   VALIDA DETALLE DE TU PLAN
 #
 #
 #  @SA016

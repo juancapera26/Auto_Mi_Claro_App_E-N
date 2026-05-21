@@ -42,7 +42,7 @@ public class PagosYConsultasDefinitions {
         .attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(VER_MAS),
             ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS),
-             Scroll.scrollUnaVista(),Scroll.scrollUnaVista());
+             Scroll.scrollUnaVista());
     EvidenciaUtils.registrarCaptura(paso);
   }
 
@@ -496,5 +496,22 @@ public class PagosYConsultasDefinitions {
         .attemptsTo(IngresarLineaPostpagoServicioActivo.ingresarLineaPostpagoServicioActivo());
 
     ReportHooks.setLinea(user.getNumero());
+  }
+
+
+  @Then("^INGRESA A DEVOLUCION DE EQUIPOS$")
+  public void ingresarDevolucionEquipos() {
+    theActorInTheSpotlight()
+            .attemptsTo(ingresarDevolucionEquipos.IngresarDevolucionEquipos());
+  }
+  @Then("^INGRESA A SOLICITAR TRASLADOS$")
+  public void ingresarSolicitarTraslado() {
+    theActorInTheSpotlight()
+            .attemptsTo(ingresarSolicitarTraslado.IngresarSolicitarTraslado());
+  }
+  @Then("^INGRESA A REINICIAR MODEM")
+  public void ingresarReiniciarModem() {
+    theActorInTheSpotlight()
+            .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
   }
 }

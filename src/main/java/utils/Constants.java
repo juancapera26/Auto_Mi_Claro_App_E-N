@@ -122,20 +122,32 @@ public class Constants {
   public static final String ACTUALMENTE_NO_CUENTAS_CON_PAQUETES =
       "Actualmente no cuentas con paquetes o recargas recurrentes activas.";
   public static final String CERRAR = "Cerrar";
+  public static final String DETALLE_DE_TU_PLAN_MINIPROGRAMA = "Detalle de tu plan hogar";
   public static final String DETALLE_DE_TU_PLAN = "Detalle de tu plan";
   public static final String DETALLE_DE_TU_PLAN_POSTPAGO = "Detalle de tu plan postpago";
   public static final String CONSULTA_LA_FACTURA_DE_TU_PLAN_POSTPAGO =
       "Consulta la factura de tu plan postpago";
+  public static final String CONSULTA_LA_FACTURA_DE_TU_PLAN_HOGAR =
+      "Consulta la factura de tu plan hogar";
   public static final String VER_FACTURA = "Ver factura";
   public static final String TU_PLAN = "Tu Plan";
   public static final String DATOS = "Datos";
+  public static final String INTERNET = "Internet";
+  public static final String TELEVISION = "Televisión";
+  public static final String TELEFONIA = "Telefonía";
   public static final String TU_PLAN_INCLUYE = "Tu plan incluye";
   public static final String VER_DETALLE_DE_REDES = "Ver detalle de redes";
+  public static final String VER_DETALLE_DE_INTERNET = "Ver detalle de internet";
+  public static final String VER_CANALES_INCLUIDOS = "Ver canales incluidos";
+  public static final String VER_INDICATIVOS = "Ver indicativos";
   public static final String CARGO_FIJO_MENSUAL_IVA_INCLUIDO = "Cargo fijo mensual (IVA incluido)";
   public static final String VOZ = "Voz";
   public static final String SEGUNDOS_PARA_LLAMAR =
       "Segundos para llamar a cualquier operador móvil o fijo nacional.";
   public static final String SMS = "SMS";
+  public static final String PORTAL_VOZ = "Ir al portal de voz";
+  public static final String DESCARGA_TELEFONO_VIRTUAL = "Descarga teléfono virtual";
+
 
   // Constantes para validaciones del plan móvil
   public static final String LARGA_DISTANCIA_INTERNACIONAL = "Larga Distancia Internacional";
@@ -772,4 +784,17 @@ public class Constants {
 
   public static final String CODIGO_6_DIGITOS_DAVIPLATA =
       "Ingresa el codigo de 6 dígitos que DaviPlata envió a tu número de celular. No compartas esta información con nadie";
+
+
+
+//devolucion de equipo
+public static final String DEVOLUCION_EQUIPO2 = "Devolución de equipos";
+public static final String DESEAS_DEVOLVER_EQUIPO = "¿Deseas devolver tus equipos?";
+
+  public static final String SOLICITAR_TRASLADO = "Solicitar traslado";
+  public static final String SOLICITAR_TRASLADO_WHATSAPP = "SolicitarTraslado";
+
+  //REINICIO DE MODEM
+  public static final String REINICIAR_MODEM = "Reiniciar Módem";
+
 }

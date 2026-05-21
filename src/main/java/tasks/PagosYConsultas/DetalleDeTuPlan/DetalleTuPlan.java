@@ -1,6 +1,7 @@
 package tasks.PagosYConsultas.DetalleDeTuPlan;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_DETALLE_DE_TU_PLAN_CONSTANT;
@@ -25,7 +26,7 @@ import utils.TestDataProvider;
 public class DetalleTuPlan implements Task {
   private static final User user = TestDataProvider.getRealUser();
   private static final String paso1 = "Seleccionar Detalle de tu plan";
-  private static final String paso2 = "Seleccionar línea postpago " + user.getNumero();
+  private static final String paso2 = "Seleccionar cuenta hogar " + user.getCuentaHogar();
   private static final String paso3 = "Validar versión de miniprograma";
   private static final String paso4 = "Validar información detalle del plan";
   private static final String paso5 = "Validar opciones disponibles";
@@ -38,15 +39,15 @@ public class DetalleTuPlan implements Task {
     // Seleccionar "Detalle de tu plan"
     actor.attemptsTo(
         ClickTextoQueContengaX.elTextoContiene(DETALLE_DE_TU_PLAN),
-        WaitForResponse.withText(POSTPAGO));
+        WaitForResponse.withText(HOGAR));
 
     EvidenciaUtils.registrarCaptura(paso2);
 
     // Seleccionar línea postpago
-    AndroidObject.scrollCorto2(actor, LINEA + " " + user.getNumero() + " " + VER_DETALLE);
+    AndroidObject.scrollCorto2(actor, CUENTA + " " + user.getCuentaHogar() + " " + VER_DETALLE);
 
     actor.attemptsTo(
-        ClickTextoQueContengaX.elTextoContiene(user.getNumero()),
+        ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()),
         WaitForResponse.withText(DETALLE_DE_TU_PLAN));
 
     // Validar versión de miniprograma
@@ -54,51 +55,55 @@ public class DetalleTuPlan implements Task {
         WaitFor.aTime(2000),
         Click.on(BTN_TRES_PUNTOS_MAS),
         ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
-        WaitForResponse.withText(DETALLE_DE_TU_PLAN_POSTPAGO),
-        ValidarTexto.validarTexto(DETALLE_DE_TU_PLAN_POSTPAGO),
+        WaitForResponse.withText(DETALLE_DE_TU_PLAN_MINIPROGRAMA),
+        ValidarTexto.validarTexto(DETALLE_DE_TU_PLAN_MINIPROGRAMA),
         ValidarTexto.validarTexto(DECLARACION_SERVICIO),
-        ValidarTextoQueContengaX.elTextoContiene(VER));
+        ValidarTextoQueContengaX.elTextoContiene(VER),
+            VerificarVersionModulo.conLaEsperada(MINI_VERSION_DETALLE_DE_TU_PLAN_CONSTANT));
+
 
     EvidenciaUtils.registrarCaptura(paso3);
-
-    actor.attemptsTo(
-        VerificarVersionModulo.conLaEsperada(MINI_VERSION_DETALLE_DE_TU_PLAN_CONSTANT));
-
     // Validar información detalle del plan
     actor.attemptsTo(
         Atras.irAtras(),
-        ValidarTexto.validarTexto(CONSULTA_LA_FACTURA_DE_TU_PLAN_POSTPAGO),
+        ValidarTexto.validarTexto(CONSULTA_LA_FACTURA_DE_TU_PLAN_HOGAR),
         ValidarTexto.validarTexto(VER_FACTURA),
         //ValidarTexto.validarTexto(TU_PLAN),
         //ValidarTextoQueContengaX.elTextoContiene(CARGO_FIJO_MENSUAL_IVA_INCLUIDO),
 
         // Validar datos del plan
-        ValidarTexto.validarTexto(DATOS),
-        ValidarTextoQueContengaX.elTextoContiene(TU_PLAN_INCLUYE),
-        ValidarTextoQueContengaX.elTextoContiene(VER_DETALLE_DE_REDES),
+        ValidarTexto.validarTexto(INTERNET),
+            ValidarTextoQueContengaX.elTextoContiene(VER_DETALLE_DE_INTERNET),
 
-        // Validar voz
-        ValidarTexto.validarTexto(VOZ),
-        ValidarTextoQueContengaX.elTextoContiene(SEGUNDOS_PARA_LLAMAR));
+        // Validar television
+            ValidarTextoQueContengaX.elTextoContiene(TELEVISION),
+        ValidarTextoQueContengaX.elTextoContiene(VER_CANALES_INCLUIDOS),
+
+            // Validar telefonia
+            ValidarTextoQueContengaX.elTextoContiene(TELEFONIA),
+            ValidarTextoQueContengaX.elTextoContiene(VER_INDICATIVOS)
+
+
+    );
+
 
     EvidenciaUtils.registrarCaptura(paso4);
 
     actor.attemptsTo(
-        // Validar SMS
-        ValidarTexto.validarTexto(SMS),
+        // ir al portal de voz
         Scroll.scrollUnaVista(),
+            WaitFor.aTime(2000),
+            ValidarTexto.validarTexto(PORTAL_VOZ),
+        ClickTextoQueContengaX.elTextoContiene(PORTAL_VOZ),
+        ClickTextoQueContengaX.elTextoContiene(ACEPTAR_2),
+            WaitFor.aTime(2000),
+        Click.on(BTN_VOLVER),
 
-        // Validar Larga Distancia Internacional
-        ValidarTexto.validarTexto(LARGA_DISTANCIA_INTERNACIONAL),
-
-        // Validar texto botones
-        Scroll.scrollUnaVista(),
-        ValidarTexto.validarTexto(DESCRIPCION_DEL_PLAN),
-        ValidarTexto.validarTexto(FAMILIA_Y_AMIGOS),
-        ValidarTexto.validarTexto(APLICACIONES_ELEGIBLES),
-        ValidarTexto.validarTexto(PAQUETES_ADICIONALES),
-        ValidarTexto.validarTexto(ADMINISTRAR_ROAMING),
-        ValidarTexto.validarTexto(GESTIONAR_MI_PLAN));
+        // Descarga teléfono virtual
+            ValidarTexto.validarTexto(DESCARGA_TELEFONO_VIRTUAL),
+            ClickTextoQueContengaX.elTextoContiene(DESCARGA_TELEFONO_VIRTUAL),
+            WaitFor.aTime(2000)
+    );
 
     EvidenciaUtils.registrarCaptura(paso5);
   }

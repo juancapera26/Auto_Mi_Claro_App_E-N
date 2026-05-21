@@ -37,7 +37,7 @@ public class Versiones {
   public static final String MINI_VERSION_CONSULTAR_PQR_CONSTANT = "Versión 1.4.13 (2025-11-11)";
 
   public static final String MINI_VERSION_DETALLE_DE_TU_PLAN_CONSTANT =
-      "Versión 1.1.126 (2026-03-04)";
+      "Versión 1.0.275 (2025-12-10)";
 
   public static final String MINI_VERSION_ADQUIRIR_PRODUCTOS_CONSTANT =
       "Versión 1.0.311 (2026-04-08)";
@@ -51,4 +51,9 @@ public class Versiones {
       "Versión 1.0.261 (2025-07-11)";
 
   public static final String MINI_VERSION_RECARGAS_Y_PAQUETES_PRE = "Versión 1.2.4 (2026-01-20)";
+  public static final String MINI_VERSION_DEVOLUCION_DE_EQUIPOS = "Versión 1.0.42 (2025-07-02)";
+  public static final String MINI_VERSION_REINICIAR_MODEM = "Versión 1.0.240 (2026-03-16)";
 }
+
+
+

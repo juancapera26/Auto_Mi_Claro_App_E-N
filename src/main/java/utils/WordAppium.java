@@ -74,8 +74,8 @@ public class WordAppium {
       reemplazarTexto(doc, "{{FECHA}}", FORMATTER.format(LocalDateTime.now()));
       reemplazarTexto(doc, "{{LINEA}}", numero);
       reemplazarTexto(doc, "{{DURACION}}", duracionFormato);
-      //  reemplazarTexto(doc, "{{CONCLUSION}}", generarConclusion(pasosEjecutados, pasoFallido,
-      // estadoFinal, linea));
+      reemplazarTexto(doc, "{{CONCLUSION}}", generarConclusion(pasosEjecutados, pasoFallido,
+      estadoFinal, numero));
       agregarPasosYCapturas(doc, pasosEjecutados, capturas);
 
       doc.write(fos);
@@ -151,8 +151,12 @@ public class WordAppium {
 
     conclusion.append("\n");
     return "FAILED".equalsIgnoreCase(estadoFinal)
-        ? conclusion.append("⚠️ La prueba finalizó con errores.").toString()
-        : conclusion.append(" ").toString();
+            ? conclusion
+              .append("La prueba finaliza con inconsistencias funcionales.")
+              .toString()
+            : conclusion
+              .append("La prueba finaliza exitosamente validando el flujo esperado.")
+              .toString();
   }
 
   private static String obtenerDescripcionPaso(String paso) {
