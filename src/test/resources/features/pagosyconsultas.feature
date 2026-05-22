@@ -28,6 +28,13 @@ Feature: Ingresar al modulo pagos y consultas
     And   INGRESA AL MENU PAGOS Y CONSULTAS
     Then   VALIDA DETALLE DE TU PLAN
 
+  @PC005
+  Scenario: Ingresar a Administrar tu red wifi
+    Given EL USUARIO ABRE LA SUPER APP
+    When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+    Then   VALIDA DETALLE DE TU PLAN
+
 
 
 #  @SA004

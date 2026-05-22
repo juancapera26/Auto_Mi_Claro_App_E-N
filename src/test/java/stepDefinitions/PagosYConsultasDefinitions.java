@@ -514,4 +514,10 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight()
             .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
   }
+
+  @Then("^INGRESA A ADMINISTRADOR ")
+  public void ingresarReiniciarModem() {
+    theActorInTheSpotlight()
+            .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
+  }
 }
