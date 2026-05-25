@@ -51,8 +51,17 @@ public class Versiones {
       "Versión 1.0.261 (2025-07-11)";
 
   public static final String MINI_VERSION_RECARGAS_Y_PAQUETES_PRE = "Versión 1.2.4 (2026-01-20)";
+
   public static final String MINI_VERSION_DEVOLUCION_DE_EQUIPOS = "Versión 1.0.42 (2025-07-02)";
+
   public static final String MINI_VERSION_REINICIAR_MODEM = "Versión 1.0.240 (2026-03-16)";
+
+  public static final String MINI_VERSION_ADMINISTRAR_RED_WIFI = "Versión 0.0.373 (2026-04-20)";
+
+  public static final String MINI_VERSION_ADQUIRIRI_PRODUCTOS = "Versión 1.0.311 (2026-04-08)";
+  public static final String MINI_VERSION_CONFIGURACION_CONTROL_REMOTO = "Versión 1.4.8 (2025-04-04)";
+
+
 }
 
 

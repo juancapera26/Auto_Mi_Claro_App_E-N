@@ -159,6 +159,10 @@ public class PagosYConsultasPage {
   public static final Target LBL_FECHA_PAGO_OPORTUNO =
       Target.the("Texto Fecha de pago oportuno:")
           .located(By.xpath("//*[@text='Fecha de pago oportuno:']"));
+  public static final Target BTN_ACEPTAR =
+          Target.the("Botón Aceptar").located(net.serenitybdd.core.annotations.findby.By.xpath("//android.widget.Button[@text='Aceptar']"));
+
+
 
   public static final Target LBL_ELEGIR_OTRO_MEDIO_PAGO =
       Target.the("Texto Elegir otro medio de pago")
@@ -168,6 +172,7 @@ public class PagosYConsultasPage {
                   .located(By.xpath(
                           "//android.widget.TextView[@text='Fecha de pago oportuno:']/following-sibling::android.widget.TextView"
                   ));
+
 
   public static final Target CUADRO_RESUMEN =
       Target.the("Cuadro de ver resumen del paquete")
@@ -186,4 +191,6 @@ public class PagosYConsultasPage {
                       + ".textContains(\""
                       + user.getNumeroFamiliayAmigos()
                       + "\")"));
+
+
 }

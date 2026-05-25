@@ -19,8 +19,8 @@ import java.util.List;
 import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import tasks.PagosYConsultas.*;
-import tasks.PagosYConsultas.AdquirirProductos.MiniprogramaAdquirirProductos;
-import tasks.PagosYConsultas.AdquirirProductos.ValidarPaginaClaro;
+import tasks.PagosYConsultas.AdquirirProductos.*;
+import tasks.PagosYConsultas.ConfiguracionControlRemoto.*;
 import tasks.PagosYConsultas.DetalleDeTuPlan.*;
 import tasks.PagosYConsultas.Portabilidad.*;
 import tasks.PagosYConsultas.RecargasyPaquetes.*;
@@ -381,10 +381,7 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight().attemptsTo(MiniprogramaAdquirirProductos.validarVersion());
   }
 
-  @Then("VALIDA REDIRECCIONAMIENTO A PAGINA CLARO")
-  public void validaRedireccionamientoAPaginaClaro() {
-    theActorInTheSpotlight().attemptsTo(ValidarPaginaClaro.validarRedireccionamiento());
-  }
+
 
   @And("INGRESA A ESIM CLARO")
   public void ingresaAEsimClaro() {
@@ -509,15 +506,80 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight()
             .attemptsTo(ingresarSolicitarTraslado.IngresarSolicitarTraslado());
   }
-  @Then("^INGRESA A REINICIAR MODEM")
+  @Then("^INGRESA A REINICIAR MODEM$")
   public void ingresarReiniciarModem() {
     theActorInTheSpotlight()
             .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
   }
 
-  @Then("^INGRESA A ADMINISTRADOR ")
-  public void ingresarReiniciarModem() {
+  @Then("^INGRESA A ADMINISTRAR TU RED WIFI$")
+  public void ingresarAdministrarTuRedWifi() {
     theActorInTheSpotlight()
-            .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
+            .attemptsTo(ingresarAdministrarTuRedWifi.IngresarAdministrarTuRedWifi());
   }
+
+  // adquirir porducto
+
+  @And("^INGRESA ADQUIRIR PRODUCTO$")
+  public void adquirirProducto() {
+    theActorInTheSpotlight()
+            .attemptsTo(AdquirirProducto.adquirir());
+  }
+  @And("^VALIDA MODULO INTERNET$")
+  public void validaModuloInternet() {
+    theActorInTheSpotlight()
+            .attemptsTo(ValidarModuloInternet.validar());
+  }
+
+  @And("^VALIDA MODULO TELEVISION$")
+  public void validaModuloTelevision() {
+    theActorInTheSpotlight()
+            .attemptsTo(ValidarModuloTelevision.validar());
+  }
+
+  @And("^VALIDA MODULO TELEFONO$")
+  public void validaModuloTelefono() {
+    theActorInTheSpotlight()
+            .attemptsTo(ValidarModuloTelefono.validar());
+  }
+
+  @Then("^VALIDA MODULO ULTRA WIFI$")
+  public void validaModuloUltraWifi() {
+    theActorInTheSpotlight()
+            .attemptsTo(ValidarModuloUltraWifi.validar());
+  }
+  // configuracion control remoto
+
+
+  @And("^INGRESAR A CONFIGURACION CONTROL REMOTO$")
+  public void validarConfiguracionControlRemoto() {
+    theActorInTheSpotlight()
+            .attemptsTo(
+                    ValidarConfiguracionControlRemoto.validar()
+            );
+  }@And("^VALIDA INFORMACION CONFIGURACION CONTROL REMOTO$")
+  public void validarInformacionConfiguracionControlRemoto() {
+    theActorInTheSpotlight()
+            .attemptsTo(validarInformacionConfiguracionControlRemoto.validar());
+  }
+  @Then("^COMPAR CONTROL REMOTO$")
+  public void comparControlRemoto() {
+    theActorInTheSpotlight()
+            .attemptsTo(comparControlRemoto.validar());
+  }
+  @Then("^VALIDAR CONFIGURACIONES DE LOS CONTROLES REMOTOS$")
+  public void validarConfiguracionesDeLosControlesRemotos() {
+    theActorInTheSpotlight()
+            .attemptsTo(validarConfiguracionesDeLosControlesRemotos.validar());
+  }
+  @Then("^VALIDAR CONFIGURACION DEL DECODIFICARDOR$")
+  public void validarConfiguracionDelDecodificador() {
+    theActorInTheSpotlight()
+            .attemptsTo(validarConfiguracionDelDecodificador.validar());
+  }
+
+
+
+
+
 }

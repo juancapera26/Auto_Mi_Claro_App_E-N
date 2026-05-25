@@ -761,6 +761,7 @@ public class Constants {
   public static final String GESTION_VISITAS_TECNICAS = "Gestiona las visitas técnicas";
   public static final String VISITAS_TECNICOS_WHATSAPP = "Ir a WhatsApp";
   public static final String VISITAS_TECNICOS_WHATSAPP_MENSAJE = "Tengo fallas en mi servicio de Claro hogar";
+  public static final String VISITAS_TECNICOS_WHATSAPP_MENSAJE_AP = "Bienvenido a Claro";
   public static final String SOLICITUD_TRASLADO= "Solicitar traslado";
   public static final String SOLICITUD_TRASLADO_WHATSAPP_MENSAJE = "Programar traslado";
 
@@ -792,9 +793,32 @@ public static final String DEVOLUCION_EQUIPO2 = "Devolución de equipos";
 public static final String DESEAS_DEVOLVER_EQUIPO = "¿Deseas devolver tus equipos?";
 
   public static final String SOLICITAR_TRASLADO = "Solicitar traslado";
+
   public static final String SOLICITAR_TRASLADO_WHATSAPP = "SolicitarTraslado";
 
   //REINICIO DE MODEM
   public static final String REINICIAR_MODEM = "Reiniciar Módem";
 
+  public static final String ADMINISTRA_TU_RED_WIFI = "Administra tu red WiFi";
+  public static final String NOMBRE_DE_RED = "Nombre de la red WiFi";
+  public static final String CONFIGURAR_RED = "Configura los datos de tu red WiFi";
+  public static final String CONTRASENA = "Contrase\u00f1a";
+  public static final String ADMINISTRAR_TU_ULTRA_WIFI = "Administra tu Ultra WiFi";
+  public static final String ULTRA_WIFI = "Ultra WiFi";
+  public static final String AGREGAR_EQUIPOS = "Agregar equipos";
+  public static final String MEJORA_TU_COBERTURA = "Mejora tu cobertura";
+  public static final String COMO_AGREGAR_EQUIPOS = "Como agregar equipos";
+  public static final String INSTRUCCIONES_POR_PRODUCTOS = "Instrucciones por productos";
+  public static final String COMO_AGREGAR_EQUIPOS_ULTRA_WIFI =
+      "C\u00f3mo agregar equipos";
+
+  // Constantes para configuracion control remoto
+  public static final String CONFIGURACION_CONTROL_REMOTO = "Configurar control remoto";
+
+
+
 }
+
+
+
+
