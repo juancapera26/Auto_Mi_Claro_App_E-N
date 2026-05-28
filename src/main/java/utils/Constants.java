@@ -21,6 +21,7 @@ public class Constants {
   public static final String PAGA_TU_FACTURA = "Paga tu factura";
   public static final String POSTPAGO = "Postpago";
   public static final String HOGAR = "Hogar";
+  public static final String HOGAR_MULTIPAY = "Hogar y Multiplay";
   public static final String PREPAGO = "Prepago";
   public static final String VER_DETALLE = "Ver detalle";
   public static final String ELEGIR = "Elegir";
@@ -814,7 +815,6 @@ public static final String DESEAS_DEVOLVER_EQUIPO = "¿Deseas devolver tus equip
 
   // Constantes para configuracion control remoto
   public static final String CONFIGURACION_CONTROL_REMOTO = "Configurar control remoto";
-
 
 
 }

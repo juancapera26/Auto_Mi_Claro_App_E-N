@@ -60,6 +60,8 @@ public class Versiones {
 
   public static final String MINI_VERSION_ADQUIRIRI_PRODUCTOS = "Versión 1.0.311 (2026-04-08)";
   public static final String MINI_VERSION_CONFIGURACION_CONTROL_REMOTO = "Versión 1.4.8 (2025-04-04)";
+  public static final String MINI_VERSION_CERTIFICADO_CUETA_AL_DIA = "Versión 1.0.61 (2026-05-26)";
+
 
 
 }

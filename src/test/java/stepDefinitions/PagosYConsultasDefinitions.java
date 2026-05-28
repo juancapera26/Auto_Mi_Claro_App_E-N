@@ -304,10 +304,6 @@ public class PagosYConsultasDefinitions {
             WaitForResponse.withText(POSTPAGO));
   }
 
-  @And("VALIDA DIRECCIONAMIENTO CORRECTO")
-  public void validaDireccionamientoCorrectol() {
-    theActorInTheSpotlight().attemptsTo(AdelantaSaldo.validarDireccionamiento());
-  }
 
   @Then("VERIFICA POPUP ADELANTO")
   public void verificaPopupAdelanto() {
@@ -433,7 +429,7 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight().attemptsTo(VehiculoConectado.validarDireccionamiento());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO CORRECTO PAGOS")
+  @Then("DIRECCIONAMIENTO CORRECTO PAGOS")
   public void validaDireccionamientoCorrectoPagos() {
     theActorInTheSpotlight().attemptsTo(Pagos.validarDireccionamiento());
   }
@@ -576,6 +572,12 @@ public class PagosYConsultasDefinitions {
   public void validarConfiguracionDelDecodificador() {
     theActorInTheSpotlight()
             .attemptsTo(validarConfiguracionDelDecodificador.validar());
+  }
+
+  @Then("^VALIDAR CERTIFIACIDO CUENTA AL DIA$")
+  public void validarCertificadoCuentaAlDia() {
+    theActorInTheSpotlight()
+            .attemptsTo(validarCertificadoCuentaAlDia.validar());
   }
 
 

@@ -96,7 +96,7 @@ Feature: Ingresar al módulo de entretenimiento
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD
 
   @EN0010
-  Scenario: Ingresar a entretenimiento y validar Claro win PlAY
+  Scenario: Ingresar a entretenimiento y validar Claro win Play
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
     And   SELECCIONA BOTON WIN PLAY
@@ -104,6 +104,7 @@ Feature: Ingresar al módulo de entretenimiento
     And   SELECCIONA PLAN WIN PLAY
     And   VALIDA TERMINOS Y CONDICIONES WIN PLAY
     Then  VALIDA REDIRECCIONAMIENTO ID ClARO
+
 
 
 

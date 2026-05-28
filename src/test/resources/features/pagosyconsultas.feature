@@ -75,6 +75,20 @@ Feature: Ingresar al modulo pagos y consultas
     Then VALIDAR CONFIGURACION DEL DECODIFICARDOR
 
 
+  @PC010
+  Scenario: Ingresar a certificado cuenta al dia
+    Given EL USUARIO ABRE LA SUPER APP
+    When REALIZA EL INGRESO
+    And INGRESA AL MENU PAGOS Y CONSULTAS
+    Then GESTIONA CERTIFICACION CUENTA AL DIA
+
+  @PC011
+ Scenario: Ingresar a Pagos
+   Given EL USUARIO ABRE LA SUPER APP
+   When  REALIZA EL INGRESO
+    And   INGRESA AL MENU PAGOS Y CONSULTAS
+   Then  DIRECCIONAMIENTO CORRECTO PAGOS
+
 
 #  @SA004
 #  Scenario: Ingresar a paga tu factura
