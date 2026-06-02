@@ -46,8 +46,8 @@ public class EstadoServiciosTecnicos implements Task {
 
     actor.attemptsTo(
             WaitUntil.the(LBL_ESPERA_UN_MOMENTO, isNotPresent())
-                    .forNoMoreThan(30).seconds(),
-            WaitFor.aTime(2000)
+                    .forNoMoreThan(30).seconds()
+
     );
 
     EvidenciaUtils.registrarCaptura("Pantalla cargada");
@@ -62,6 +62,7 @@ public class EstadoServiciosTecnicos implements Task {
             ValidarTextoQueContengaX.elTextoContiene(ESTADO_SERVICIOS_TECNICOS),
             VerificarVersionModulo.conLaEsperada(MINI_VERSION_ESTADO_SERVICIOS_TECNICOS_CONSTANT),
             Click.on(BTN_VOLVER)
+
     );
 
     EvidenciaUtils.registrarCaptura("Seleccionar línea y ver detalle");
@@ -69,7 +70,8 @@ public class EstadoServiciosTecnicos implements Task {
     actor.attemptsTo(
             ScrollHastaTexto.conTexto(user.getCuentaHogar() + " " + VER_DETALLE),
             ClickTextoQueContengaX.elTextoContiene(user.getCuentaHogar()),
-            WaitForResponse.withText(ORDENES_DE_SERVICIO)
+            WaitForResponse.withText(ORDENES_DE_SERVICIO),
+            WaitFor.aTime(4000)
     );
 
     // ======================================================
@@ -80,7 +82,7 @@ public class EstadoServiciosTecnicos implements Task {
     actor.attemptsTo(
             Click.on(COMBO_CRITERIO_BUSQUEDA),
             ClickTextoQueContengaX.elTextoContiene(NUMERO_DE_DOCUMENTO),
-            Enter.theValue(user.getContrasena()).into(TXT_INGRESA_NUMERO),
+            Enter.theValue(user.getCedula()).into(TXT_INGRESA_NUMERO),
             Click.on(BTN_CONSULTAR),
             WaitFor.aTime(25000),
             ValidarTexto.validarTexto(NO_SE_ENCONTRO_INFORMACION),

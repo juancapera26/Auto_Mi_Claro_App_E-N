@@ -20,12 +20,12 @@ public class SeleccionarWinPlay  implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    actor.attemptsTo(ScrollHastaTexto.conTexto(TUS_LUGAR_PARA_EL_MUNDIAL),
-            Scroll.scrollUnaVista()
+    actor.attemptsTo(ScrollHastaTexto.conTexto(TUS_LUGAR_PARA_EL_MUNDIAL)
+
     );
     EvidenciaUtils.registrarCaptura(paso);
 
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(WIN_PLAY));
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(IR_WIN_PLAY));
 
   }
 

@@ -55,4 +55,22 @@ public class AtencionClienteSoportePage {
           .located(
               By.xpath(
                   "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]"));
+
+  public static final Target LST_TIPO_DOCUMENTO =
+          Target.the("Ventana de información")
+                  .located(
+                          By.xpath(
+                                  "//android.view.View[@resource-id='DocTypes']"));
+public static final Target NUM_DOCUMENTO =
+          Target.the("Ventana de información")
+                  .located(
+                          By.xpath(
+                                  "//android.widget.EditText[@resource-id=\"DocNumber\"]"));
+
+  public static final Target TIPO_DE_SERVICIO =
+          Target.the("Ventana de información")
+                  .located(
+                          By.xpath(
+                                  "//android.view.View[@resource-id=\"serviceTypeFija\"]"));
+
 }

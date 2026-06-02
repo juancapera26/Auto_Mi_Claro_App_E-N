@@ -42,7 +42,7 @@ public class SeleccionaPlanEstandarDisney implements Task {
 
     actor.attemptsTo(
             WaitFor.aTime(5000),
-            ClickEnCoordenadas.en(533, 1871)
+            ClickEnCoordenadas.en(536, 1609)
     );
 
     // ejecutarAdbTap(523, 1786);  // Simula un toque en las coordenadas

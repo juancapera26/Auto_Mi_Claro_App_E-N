@@ -175,18 +175,8 @@ public class AtencionClienteSoporteDefinitions {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniprogramaConsultarPQR.validar());
   }
 
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE NECESITAS AYUDA PRE$")
-  public void desplazaHastaLineaYSeleccionaVerDetalleNecesitasAyudaPre() {
-    theActorInTheSpotlight().attemptsTo(NecesitasAyudaPRE.seleccionarLineaYVerDetalle());
-  }
-
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS PRE$")
-  public void desplazaHastaLineaYSeleccionaVerDetalleServiciosTecnicosPre() {
-    theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicosPRE.seleccionarLineaYVerDetalle());
-  }
-
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE CONSULTA PQR PRE$")
-  public void desplazaHastaLineaYSeleccionaVerDetalleConsultaPQRPre() {
-    theActorInTheSpotlight().attemptsTo(ConsultarPQRPre.seleccionarLineaYVerDetalle());
+  @And("^VER DETALLE CONSULTA PQR$")
+  public void DetallePQR() {
+    theActorInTheSpotlight().attemptsTo(DetallePQR.detallePQR());
   }
 }

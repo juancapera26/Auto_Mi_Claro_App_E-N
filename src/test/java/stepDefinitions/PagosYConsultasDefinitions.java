@@ -41,8 +41,8 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight()
         .attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(VER_MAS),
-            ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS),
-             Scroll.scrollUnaVista());
+            ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS)
+             );
     EvidenciaUtils.registrarCaptura(paso);
   }
 

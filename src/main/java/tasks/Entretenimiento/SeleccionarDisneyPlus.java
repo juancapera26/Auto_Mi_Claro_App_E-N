@@ -20,10 +20,13 @@ public class SeleccionarDisneyPlus implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    actor.attemptsTo(ScrollHastaTexto.conTexto(TUS_LUGAR_PARA_EL_MUNDIAL),
-            Scroll.scrollUnaVista()
+    actor.attemptsTo(ScrollHastaTexto.conTexto(TUS_LUGAR_PARA_EL_MUNDIAL)
+
             );
     EvidenciaUtils.registrarCaptura(paso);
+
+    actor.attemptsTo( ClickTextoQueContengaX.elTextoContiene(VER_MAS));
+
     EvidenciaUtils.registrarCaptura(paso2);
     actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(DISNEY_PLUS));
   }

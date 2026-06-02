@@ -11,7 +11,7 @@ Feature: Ingresar al módulo de entretenimiento
     And   VALIDA VERSION DE MINIPROGRAMA CLARO VIDEO
     Then  VALIDA REDIRECCION APP STORE CLARO VIDEO
 
-  @EN0002
+  @EN002
   Scenario: Ingresar a entretenimiento y validar redirección a Claro Club
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
@@ -43,7 +43,6 @@ Feature: Ingresar al módulo de entretenimiento
   Scenario: Ingresar a entretenimiento y validar Disney+premium
     Given EL USUARIO ABRE LA SUPER APP
     When  REALIZA EL INGRESO
-    And   SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
     And   SELECCIONA BOTON DISNEY PLUS
     And   VALIDAR VERSION DE MINIPROGRAMA DISNEY
     And   SELECCIONA PLAN PREMIUM DISNEY

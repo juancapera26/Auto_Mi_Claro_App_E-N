@@ -8,6 +8,7 @@ import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_CONSULTAR_PQR_CONSTANT;
 
+import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
@@ -44,7 +45,10 @@ public class ValidarVersionMiniprogramaConsultarPQR implements Task {
         ValidarTextoQueContengaX.elTextoContiene(MINI_VERSION_CONSULTAR_PQR_CONSTANT));
     EvidenciaUtils.registrarCaptura(paso3);
     // **********************************************************************************
-    actor.attemptsTo(Click.on(BTN_VOLVER));
+    actor.attemptsTo(
+            WaitFor.aTime(1000),
+            Click.on(BTN_VOLVER)
+    );
 
   }
 

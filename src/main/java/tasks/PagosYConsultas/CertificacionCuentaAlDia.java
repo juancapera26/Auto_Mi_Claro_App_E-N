@@ -11,6 +11,7 @@ import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_CERTIFICADO_CU
 
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.Scroll.Scroll;
 import interactions.comunes.Atras;
 import interactions.validations.ValidarElemento;
 import interactions.validations.ValidarTexto;
@@ -44,6 +45,7 @@ public class CertificacionCuentaAlDia implements Task {
 
     // Ingresar al módulo
     actor.attemptsTo(
+            Scroll.scrollUnaVista(),
             ClickTextoQueContengaX.elTextoContiene(CERTIFICACION_CUENTA_AL_DIA),
             WaitForResponse.withText(CERTIFICACION_CUENTA_AL_DIA),
             ValidarTextoQueContengaX.elTextoContiene("Cuenta Hogar")

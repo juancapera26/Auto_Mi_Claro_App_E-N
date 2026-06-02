@@ -614,6 +614,7 @@ public class Constants {
   public static final String CLARO_CLUB = "Claro Club";
   public static final String NETFLIX_TITULO = "Netflix";
   public static final String WIN_PLAY = "Win Play";
+  public static final String IR_WIN_PLAY = "Ir a Win";
   public static final String DISNEY_PLUS = "Disney+";
   public static final String HOTGO = "HotGo";
   public static final String RED_NOTICIAS = "RED + NOTICIAS";
