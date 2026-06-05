@@ -32,7 +32,7 @@ public class LoginDefinitions {
     EvidenciaUtils.reiniciarContador(); // Reinicia el conteo de pasos para este escenario
   }
 
-  @Given("EL USUARIO ABRE LA SUPER APP")
+  @Given("^QUE EL USUARIO INGRESE A SUPER APP$")
   public void abrirSuperApp() {
     theActorCalled("actor")
         .attemptsTo(
