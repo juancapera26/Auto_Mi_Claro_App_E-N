@@ -16,13 +16,13 @@ public class FavoriteServicesDefinitions {
 
   private final User user = TestDataProvider.getRealUser();
 
-  @And("^INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA$")
+  @And("^ingresa a tus servicios favoritos paga tu factura$")
   public void ingresaAServiciosFavoritosPagaTuFactura() {
     theActorInTheSpotlight().attemptsTo(
             ingresaAServiciosFavoritosPagaTuFactura.pagaTuFactura()
     );
   }
-  @And("^DESCARGAR FACTURA$")
+  @And("^descargar factura$")
   public void DescargarFactura() {
     theActorInTheSpotlight().attemptsTo(
             DescargaFactura.descargarFactura()

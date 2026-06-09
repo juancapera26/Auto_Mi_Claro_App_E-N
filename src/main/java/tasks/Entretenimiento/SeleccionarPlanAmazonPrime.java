@@ -27,7 +27,7 @@ public class SeleccionarPlanAmazonPrime implements Task {
     );
 
     EvidenciaUtils.registrarCaptura(paso);
-    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(ELEGIR_PLAN));
+    actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(MES_CORTECIA));
   }
 
   public static Performable seleccionar() {

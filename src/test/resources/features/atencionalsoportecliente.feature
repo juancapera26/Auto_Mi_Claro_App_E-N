@@ -1,27 +1,27 @@
 # language: es
 
-Característica: Ingresar al módulo de Atención al Cliente y Soporte
+Característica: ingresar al módulo de atención al cliente y soporte
 
-  @ACVT001
-  Escenario: Ingresar a Atención al Cliente - Visitas Técnicas
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y SELECCIONA LA OPCION VISITAS TECNICAS
+  @acvt001
+  Escenario: ingresar a atención al cliente - visitas técnicas
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y selecciona la opcion visitas tecnicas
 
-  @ACVT002
-  Escenario: Ingresar a Atención al Cliente - Estado de Servicios Técnicos
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y SELECCIONA LA OPCION ESTADO SERVICIOS TECNICOS
+  @acvt002
+  Escenario: ingresar a atención al cliente - estado de servicios técnicos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y selecciona la opcion estado servicios tecnicos
 
-  @ACVT003
-  Escenario: Ingresar a Atención al Cliente - Consultar PQR
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A LA OPCION CONSULTAR PQR
-    Y VALIDA VERSION DE MINIPROGRAMA CONSULTAR PQR
-    Y VER DETALLE CONSULTA PQR
+  @acvt003
+  Escenario: ingresar a atención al cliente - consultar pqr
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a la opcion consultar pqr
+    Y valida version de miniprograma consultar pqr
+    Y ver detalle consulta pqr
 

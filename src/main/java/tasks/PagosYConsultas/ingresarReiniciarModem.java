@@ -23,10 +23,10 @@ import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_REINICIAR_MODE
 
 public class ingresarReiniciarModem implements Task {
     private final User user = TestDataProvider.getRealUser();
-    private static final String paso1 = "Hacer clic en Reiniciar Modem";
+    private static final String paso1 = "Hacer clic en Reiniciar módem";
     private static final String paso2 = "Verificar versión de miniprograma";
-    private static final String paso3 = "Validar redireccion a reiniciar modem";
-    private static final String paso4 = "Validar mensaje de confirmacion de redireccion a reiniciar modem";
+    private static final String paso3 = "Validar la redirección a Reiniciar módem";
+    private static final String paso4 = "Validar el mensaje de confirmación de redirección a Reiniciar módem";
 
     @Override
     public <T extends Actor> void performAs(T actor) {

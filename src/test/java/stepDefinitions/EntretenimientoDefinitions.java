@@ -22,41 +22,41 @@ public class EntretenimientoDefinitions {
   // Generales
   // ===========================================
 
-  @When("^SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR$")
+  @When("^selecciona el boton entretenimiento en la barra inferior$")
   public void seleccionaBotonEntretenimiento() {
     theActorInTheSpotlight().attemptsTo(AccederEntretenimiento.acceder());
   }
 
-  @When("^SELECCIONA EL BOTON VER MAS EN SECCION TUS SERVCICOS FAVORITOS$")
+  @When("^selecciona el boton ver mas en seccion tus servcicos favoritos$")
   public void seleccionaVerMasEnTusServiciosFavoritos() {
     theActorInTheSpotlight().attemptsTo(AccederVerMasTusServiciosFavoritos.acceder());
   }
 
-  @Then("^VALIDA REDIRECCIONAMIENTO ID ClARO$")
+  @Then("^valida redireccionamiento id claro$")
   public void validaRedireccionamientoIdClaro() {
     theActorInTheSpotlight().attemptsTo(ValidaRedireccionamientoIdClaro.validar());
   }
-  @Then("^VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD$")
+  @Then("^valida redireccionamiento id claro gaming cloud$")
   public void validaRedireccionamientoIdClaroGamingCloud() {
     theActorInTheSpotlight().attemptsTo(validaRedireccionamientoIdClaroGamingCloud.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA PRE CLARO VIDEO$")
+  @And("^valida version de miniprograma pre claro video$")
   public void validaVersionMiniProgramaClaroVideoPre() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroVideoPre.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA PRE CLARO MUSICA$")
+  @And("^valida version de miniprograma pre claro musica$")
   public void validaVersionMiniProgramaClaroMusicaPre() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroMusicaPre.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA PRE CLARO CLUB$")
+  @And("^valida version de miniprograma pre claro club$")
   public void validaVersionMiniProgramaClaroClubPre() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroClubPre.validar());
   }
 
-  /*@And("^VALIDA REDIRECCION A ENTRETENIMIENTO$")
+  /*@And("^valida redireccion a entretenimiento$")
   public void validaRedireccionEntretenimiento() {
       theActorInTheSpotlight().attemptsTo(
               ValidarRedireccionEntretenimiento.validar()
@@ -67,17 +67,17 @@ public class EntretenimientoDefinitions {
   // SA059 - Claro Video
   // ===========================================
 
-  @And("^SELECCIONA EL BOTON CLARO VIDEO$")
+  @And("^selecciona el boton claro video$")
   public void seleccionaBotonClaroVideo() {
     theActorInTheSpotlight().attemptsTo(SeleccionarClaroVideo.seleccionar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA CLARO VIDEO$")
+  @And("^valida version de miniprograma claro video$")
   public void validaVersionMiniProgramaClaroVideo() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroVideo.validar());
   }
 
-  @Then("^VALIDA REDIRECCION APP STORE CLARO VIDEO$")
+  @Then("^valida redireccion app store claro video$")
   public void ValidarRedireccionAppStoreClaroVideo() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionPlayStoreClaroVideo.validar());
   }
@@ -85,22 +85,22 @@ public class EntretenimientoDefinitions {
   // ===========================================
   // SA070 - Claro Club
   // ===========================================
-  @And("^SELECCIONA EL BOTON CUPONES EN EXPLORA Y COMPRA$")
+  @And("^selecciona el boton cupones en explora y compra$")
   public void seleccionaBotonClaroClubEnExploraYCompra() {
     theActorInTheSpotlight().attemptsTo(SeleccionarClaroClubEnExploraYCompra.seleccionar());
   }
 
-  @And("^SELECCIONA EL BOTON CLARO CLUB$")
+  @And("^selecciona el boton claro club$")
   public void seleccionaBotonClaroClub() {
     theActorInTheSpotlight().attemptsTo(SeleccionarClaroClub.seleccionar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA CLARO CLUB$")
+  @And("^valida version de miniprograma claro club$")
   public void validaVersionMiniProgramaClaroClub() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroClub.validar());
   }
 
-  @Then("^VALIDA REDIRECCION CLARO CLUB$")
+  @Then("^valida redireccion claro club$")
   public void ValidarRedireccionClaroClub() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionClaroClub.validar());
   }
@@ -109,17 +109,17 @@ public class EntretenimientoDefinitions {
   // SA059 - Claro Musica
   // ===========================================
 
-  @And("^SELECCIONA EL BOTON CLARO MUSICA$")
+  @And("^selecciona el boton claro musica$")
   public void seleccionaBotonClaroMusica() {
     theActorInTheSpotlight().attemptsTo(SeleccionarClaroMusica.seleccionar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA CLARO MUSICA$")
+  @And("^valida version de miniprograma claro musica$")
   public void validaVersionMiniProgramaClaroMusica() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaClaroMusica.validar());
   }
 
-  @Then("^VALIDA REDIRECCION CLARO MUSICA APP$")
+  @Then("^valida redireccion claro musica app$")
   public void ValidarRedireccionClaroMusicaApp() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionClaroMusicaApp.validar());
   }
@@ -134,17 +134,17 @@ public class EntretenimientoDefinitions {
   // SA063 - Netflix
   // ===========================================
 
-  @And("^SELECCIONA BOTON NETFLIX$")
+  @And("^selecciona boton netflix$")
   public void seleccionaBotonNetflix() {
     theActorInTheSpotlight().attemptsTo(SeleccionarNetflix.seleccionar());
   }
 
-  @And("VALIDA VERSION DE MINIPROGRAMA NETFLIX")
+  @And("valida version de miniprograma netflix")
   public void validaRedireccionamientoNetflix() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaNetflix.validar());
   }
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES NETFLIX$")
+  @Then("^valida terminos y condiciones netflix$")
   public void validaTerminosYCondicionesNetflix() {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesNetflix.validar());
   }
@@ -153,33 +153,33 @@ public class EntretenimientoDefinitions {
   // SA066 - Disney+ Plan Estándar
   // ===========================================
 
-  @And("^SELECCIONA BOTON DISNEY PLUS$")
+  @And("^selecciona boton disney plus$")
   public void seleccionaBotonDisneyPlus() {
     theActorInTheSpotlight().attemptsTo(SeleccionarDisneyPlus.seleccionar());
   }
 
-  @And("^VALIDAR VERSION DE MINIPROGRAMA DISNEY$")
+  @And("^validar version de miniprograma disney$")
   public void validarVersionDeMiniprogramaDisney() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniprogramaDisney.validar());
   }
 
-  @And("^SELECCIONA PLAN ESTANDAR DISNEY$")
+  @And("^selecciona plan estandar disney$")
   public void seleccionaPlanEstandarDisney() {
     theActorInTheSpotlight().attemptsTo(SeleccionaPlanEstandarDisney.seleccionar());
   }
 
-  @And("^SELECCIONA PLAN PREMIUM DISNEY$")
+  @And("^selecciona plan premium disney$")
   public void seleccionaPlanPremiumDisney() {
     theActorInTheSpotlight().attemptsTo(SeleccionarPlanPremiumDisney.seleccionar());
   }
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES DISNEY ESTANDAR$")
+  @Then("^valida terminos y condiciones disney estandar$")
   public void validaTerminosYCondicionesDisneyEstandar() {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesDisneyEstandar.validar());
   }
 
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES DISNEY PREMIUM$")
+  @Then("^valida terminos y condiciones disney premium$")
   public void validaTerminosYCondicionesDisneyPremium() {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesDisneyPremium.validar());
   }
@@ -188,22 +188,22 @@ public class EntretenimientoDefinitions {
   // SA069 - Amazon Prime
   // ===========================================
 
-  @And("^SELECCIONA BOTON AMAZON PRIME$")
+  @And("^selecciona boton amazon prime$")
   public void seleccionaBotonAmazonPrime() {
     theActorInTheSpotlight().attemptsTo(SeleccionarAmazonPrime.seleccionar());
   }
 
-  @And("^VALIDAR VERSION DE MINIPROGRAMA AMAZONPRIME$")
+  @And("^validar version de miniprograma amazonprime$")
   public void validarVersionDeMiniProgramaAmazonPrime() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniProgramaAmazonPrime.validar());
   }
 
-  @And("^SELECCIONA PLAN AMAZON PRIME$")
+  @And("^selecciona plan amazon prime$")
   public void seleccionaPlanAmazonPrime() {
     theActorInTheSpotlight().attemptsTo(SeleccionarPlanAmazonPrime.seleccionar());
   }
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES AMAZON PRIME$")
+  @Then("^valida terminos y condiciones amazon prime$")
   public void validaTerminosYCondicionesAmazonPrime() {
     theActorInTheSpotlight().attemptsTo(ValidarTerminosCondicionesAmazonPrime.validar());
   }
@@ -211,12 +211,12 @@ public class EntretenimientoDefinitions {
   // SA060 - RED + TV EN VIVO
   // ===========================================
 
-  @And("^SELECCIONA EL BOTON RED PLUS TV EN VIVO$")
+  @And("^selecciona el boton red plus tv en vivo$")
   public void seleccionaBotonRedPlusTVEnVivo() {
     theActorInTheSpotlight().attemptsTo(SeleccionarRedTVEnVivo.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION A RED PLUS TV EN VIVO$")
+  @Then("^valida redireccion a red plus tv en vivo$")
   public void validaRedireccionRedPlusTVEnVivo() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionRedTV.validar());
   }
@@ -225,17 +225,17 @@ public class EntretenimientoDefinitions {
   // SA061 - RED + NOTICIAS
   // ===========================================
 
-  @And("^DESPLAZARSE HASTA EL MODULO TUS PLATAFORMAS FAVORITAS$")
+  @And("^desplazarse hasta el modulo tus plataformas favoritas$")
   public void desplazarseHastaModuloTusPlataformasFavoritas() {
     theActorInTheSpotlight().attemptsTo(AccederVerMasPlataformas.acceder());
   }
 
-  @And("^SELECCIONA BOTON RED PLUS NOTICIAS$")
+  @And("^selecciona boton red plus noticias$")
   public void seleccionaBotonRedPlusNoticias() {
     theActorInTheSpotlight().attemptsTo(SeleccionarRedNoticias.seleccionar());
   }
   /*
-  @Then("^VALIDA REDIRECCION RED PLUS NOTICIAS$")
+  @Then("^valida redireccion red plus noticias$")
   public void validaRedireccionRedPlusNoticias() {
       theActorInTheSpotlight().attemptsTo(
               ValidarRedireccionRedNoticias.validar()
@@ -246,17 +246,17 @@ public class EntretenimientoDefinitions {
   // SA065 - HBO Max
   // ===========================================
 
-  @And("^SELECCIONA BOTON HBOMAX$")
+  @And("^selecciona boton hbomax$")
   public void seleccionaBotonHBOmax() {
     theActorInTheSpotlight().attemptsTo(SeleccionarHBOmax.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION PAGINA A HBO MAX$")
+  @Then("^valida redireccion pagina a hbo max$")
   public void validaRedireccionPaginaAHBOmax() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionHBOmax.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA HBO MAX$")
+  @And("^valida version de miniprograma hbo max$")
   public void validaVersionMiniProgramaHBOmax() {
     theActorInTheSpotlight().attemptsTo(validaVersionMiniProgramaHBOmax.validar());
   }
@@ -266,25 +266,25 @@ public class EntretenimientoDefinitions {
   // SA068 - HotGo
   // ===========================================
 
-  @And("^SELECCIONA BOTON HOTGO$")
+  @And("^selecciona boton hotgo$")
   public void seleccionaBotonHotGo() {
     theActorInTheSpotlight().attemptsTo(SeleccionarHotGo.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION A PAGINA HOTGO$")
+  @Then("^valida redireccion a pagina hotgo$")
   public void validaRedireccionAPaginaHotGo() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionHotGo.validar());
   }
-  @And("^VALIDAR VERSION DE MINIPROGRAMA HOTGO$")
+  @And("^validar version de miniprograma hotgo$")
   public void validarVersionDeMiniprogramaHotgo() {
     theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaHotgo.validar());
   }
-  @And("^SELECCIONA PLAN HOTGO$")
+  @And("^selecciona plan hotgo$")
   public void seleccionaPlanHotGo() {
     theActorInTheSpotlight().attemptsTo(seleccionaPlanHotGo.seleccionar());
   }
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES HOTGO$")
+  @Then("^valida terminos y condiciones hotgo$")
   public void validaTerminosYCondicionesHotGo() {
     theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesHotGo.validar());
   }
@@ -292,25 +292,25 @@ public class EntretenimientoDefinitions {
   // ===========================================
 // SA069 - Gaming Cloud
 // ===========================================
-  @And("^SELECCIONA BOTON GAMING CLOUD$")
+  @And("^selecciona boton gaming cloud$")
   public void seleccionaBotonGamingCloud() {
     theActorInTheSpotlight().attemptsTo(SeleccionarGamingCloud.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION A PAGINA GAMING CLOUD$")
+  @Then("^valida redireccion a pagina gaming cloud$")
   public void validaRedireccionAPaginaGamingCloud() {
  //   theActorInTheSpotlight().attemptsTo(ValidarRedireccionGamingCloud.validar());
   }
-  @And("^VALIDAR VERSION DE MINIPROGRAMA GAMING CLOUD$")
+  @And("^validar version de miniprograma gaming cloud$")
   public void validarVersionDeMiniprogramaGamingCloud() {
     theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaGamingCloud.validar());
   }
-  @And("^SELECCIONA PLAN GAMING CLOUD$")
+  @And("^selecciona plan gaming cloud$")
   public void seleccionaPlanGamingCloud() {
     theActorInTheSpotlight().attemptsTo(seleccionaPlanGamingCloud.seleccionar());
   }
 
-  //@Then("^VALIDA TERMINOS Y CONDICIONES GAMING CLOUD$")
+  //@Then("^valida terminos y condiciones gaming cloud$")
   //public void validaTerminosYCondicionesGamingCloud() {
    // theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesGamingCloud.validar());
   //}
@@ -318,25 +318,25 @@ public class EntretenimientoDefinitions {
   // ===========================================
 // SA069 - WIN PlAY
 // ===========================================
-  @And("^SELECCIONA BOTON WIN PLAY$")
+  @And("^selecciona boton win play$")
   public void seleccionaBotonWinPlay() {
     theActorInTheSpotlight().attemptsTo(SeleccionarWinPlay.seleccionar());
   }
 
-  @Then("^VALIDA REDIRECCION A PAGINA WIN PLAY$")
+  @Then("^valida redireccion a pagina win play$")
   public void validaRedireccionAPaginaWinPlay() {
     theActorInTheSpotlight().attemptsTo(ValidarRedireccionWinPlay.validar());
   }
-  @And("^VALIDAR VERSION DE MINIPROGRAMA WIN PLAY$")
+  @And("^validar version de miniprograma win play$")
   public void validarVersionDeMiniprogramaWinPlay() {
     theActorInTheSpotlight().attemptsTo(validarVersionDeMiniprogramaWinPlay.validar());
   }
-  @And("^SELECCIONA PLAN WIN PLAY$")
+  @And("^selecciona plan win play$")
   public void seleccionaPlanWinPlay() {
     theActorInTheSpotlight().attemptsTo(seleccionaPlanWinPlay.seleccionar());
   }
 
-  @Then("^VALIDA TERMINOS Y CONDICIONES WIN PLAY$")
+  @Then("^valida terminos y condiciones win play$")
   public void validaTerminosYCondicionesWinPlay() {
     theActorInTheSpotlight().attemptsTo(validaTerminosYCondicionesWinPlay.validar());
   }

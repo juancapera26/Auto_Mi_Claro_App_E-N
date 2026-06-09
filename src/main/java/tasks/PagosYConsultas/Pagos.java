@@ -20,10 +20,10 @@ import utils.EvidenciaUtils;
 
 public class Pagos implements Task {
 
-  private static final String paso1 = "Hacer clic en Pagos";
-  private static final String paso2 = "Verificar versión de miniprograma";
-  private static final String paso3 = "Verificar opciones disponibles";;
-  private static final String paso4 = "Validar Cuenta hogar y direccionamiento portal pagos Claro";
+  private static final String paso1 = "Seleccionar la opción Pagos";
+  private static final String paso2 = "Verificar la versión del miniprograma";
+  private static final String paso3 = "Verificar las opciones disponibles";
+  private static final String paso4 = "Validar la cuenta Hogar y la redirección al portal de pagos de Claro";
 
   @Override
   public <T extends Actor> void performAs(T actor) {

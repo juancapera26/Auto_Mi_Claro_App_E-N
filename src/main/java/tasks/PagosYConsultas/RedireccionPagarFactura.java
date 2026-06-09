@@ -18,8 +18,8 @@ import utils.TestDataProvider;
 
 public class RedireccionPagarFactura implements Task {
   private final User user = TestDataProvider.getRealUser();
-  private static final String paso = "Clic boton Pagar factura";
-  private static final String paso2 = "Validar redirección botón Pagar Factura";
+  private static final String paso = "Seleccionar la opción Pagar factura";
+  private static final String paso2 = "Validar la redirección a medios de pago";
 
   @Override
   public <T extends Actor> void performAs(T actor) {

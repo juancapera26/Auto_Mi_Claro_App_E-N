@@ -35,33 +35,32 @@ public class PagosYConsultasDefinitions {
 
   private final User user = TestDataProvider.getRealUser();
 
-  @And("^INGRESA AL MENU PAGOS Y CONSULTAS$")
+  @And("^el usuario hace scroll hasta el menú Pagos y consultas$")
   public void menuPagosYConsultas() {
-    final String paso = "Menu Pagos y consultas";
+    final String paso = "El usuario hace scroll hasta el menú Pagos y consultas";
     theActorInTheSpotlight()
         .attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(VER_MAS),
-            ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS)
-             );
+            ClickTextoQueContengaX.elTextoContiene(VER_MAS),
+            ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS));
     EvidenciaUtils.registrarCaptura(paso);
   }
 
-  @And("^INGRESA AL PORTAL DE PAGA TU FACTURA SERVICIOS FAVORITOS$")
+  @And("^ingresa al portal de paga tu factura servicios favoritos$")
   public void portalPagaTuFacturaServiciosFavoritos() {
     theActorInTheSpotlight().attemptsTo(ingresaAServiciosFavoritosPagaTuFactura.pagaTuFactura());
   }
 
-  @And("^INGRESA AL PORTAL DE PAGA TU FACTURA$")
+  @And("^ingresa al portal de paga tu factura$")
   public void portalPagaTuFactura() {
     theActorInTheSpotlight().attemptsTo(PagaTuFactura.pagaTuFactura());
   }
 
-  @And("^VALIDAR REDIRECCION BOTON PAGAR FACTURA$")
+  @And("^validar redireccion boton pagar factura$")
   public void botonPagarFactura() {
     theActorInTheSpotlight().attemptsTo(RedireccionPagarFactura.redireccionPagarFactura());
   }
 
-  @And("INGRESA AL PORTAL DE RECARGAS Y PAQUETES")
+  @And("ingresa al portal de recargas y paquetes")
   public void ingresaPortalRecargas() {
     theActorInTheSpotlight()
         .attemptsTo(
@@ -71,33 +70,33 @@ public class PagosYConsultasDefinitions {
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @And("INGRESA AL PORTAL DE RECARGAS Y PAQUETES EN PREPAGO")
+  @And("ingresa al portal de recargas y paquetes en prepago")
   public void ingresaPortalRecargasPrepago() {
     theActorInTheSpotlight()
         .attemptsTo(SeleccionLineaPrepago.seleccionar(), ValidarInfoRecargas.validarInfoRecargas());
   }
 
-  @Then("VALIDA PAQUETES LDI")
+  @Then("valida paquetes ldi")
   public void validaPaquetesLDI() {
     theActorInTheSpotlight().attemptsTo(PaquetesLDI.seleccionarPaquetes());
   }
 
-  @Then("VALIDA PAQUETES DE DATOS")
+  @Then("valida paquetes de datos")
   public void validaPaquetesDatos() {
     theActorInTheSpotlight().attemptsTo(PaquetesDatos.seleccionarPaquetes());
   }
 
-  @Then("VALIDAR REDIRECCION DE LOS MEDIOS DE PAGO")
+  @Then("validar redireccion de los medios de pago")
   public void redireccionMediosPago() {
     theActorInTheSpotlight().attemptsTo(RedireccionMedioPago.redireccionarMediosDePago());
   }
 
-  @And("^REALIZA PAGO PARCIAL$")
+  @And("^realiza pago parcial$")
   public void realizaPagoParcial() {
     theActorInTheSpotlight().attemptsTo(RealizarPagoParcial.conLosDatos());
   }
 
-  @Then("^VALIDA LA REDIRECCION A MEDIOS DE PAGO DISPONIBLES$")
+  @Then("^valida la redireccion a medios de pago disponibles$")
   public void redireccionMediosPagoDisponibles() {
     List<WebElementFacade> lblelegirotromediopago =
         LBL_ELEGIR_OTRO_MEDIO_PAGO.resolveAllFor(theActorInTheSpotlight());
@@ -118,138 +117,138 @@ public class PagosYConsultasDefinitions {
     }
   }
 
-  @Then("^VALIDA PAGOS AUTOMATICOS$")
+  @Then("^valida pagos automaticos$")
   public void validaPagosAutomaticos() {
     theActorInTheSpotlight().attemptsTo(PagosAutomaticos.validarPagosAutomaticos());
   }
 
-  @Then("^DESCARGA FACTURA$")
+  @Then("^descarga factura$")
   public void descargaFactura() {
     theActorInTheSpotlight().attemptsTo(DescargaFactura.descargarFactura());
   }
 
-  @Then("^ENVIA FACTURA POR CORREO$")
+  @Then("^envia factura por correo$")
   public void enviaFacturaPorCorreo() {
     theActorInTheSpotlight().attemptsTo(EnviarFacturaPorCorreo.enviarFacturaPorCorreo());
   }
 
-  @Then("^VALIDA DETALLE ULTIMA FACTURACION$")
+  @Then("^valida detalle ultima facturacion$")
   public void validaDetalleUltimaFacturacion() {
     theActorInTheSpotlight().attemptsTo(DetalleUltimaFacturacion.validarDetalleUltimaFacturacion());
   }
 
-  @Then("^VALIDA HISTORIAL DE PAGOS$")
+  @Then("^valida historial de pagos$")
   public void validaHistorialDePagos() {
     theActorInTheSpotlight().attemptsTo(HistorialDePagos.validarHistorialDePagos());
   }
 
-  @Then("^SELECCIONA RECARGAS$")
+  @Then("^selecciona recargas$")
   public void seleccionaRecargas() {
     theActorInTheSpotlight().attemptsTo(Recargas.seleccionarRecargas());
   }
 
-  @Then("^GESTIONA COMPRAS RECURRENTES$")
+  @Then("^gestiona compras recurrentes$")
   public void gestionaComprasRecurrentes() {
     theActorInTheSpotlight()
         .attemptsTo(GestionarComprasRecurrentes.validarGestionarComprasRecurrentes());
   }
 
-  @Then("^VALIDA DETALLE DE TU PLAN$")
+  @Then("^valida detalle de tu plan$")
   public void validaDetalleTuPlan() {
     theActorInTheSpotlight().attemptsTo(DetalleTuPlan.validarDetalleTuPlan());
 
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @Then("^VALIDA DETALLE DE TU PLAN PARA LINEA QUE NO PERMITE COMPRAR APLICACIONES$")
+  @Then("^valida detalle de tu plan para linea que no permite comprar aplicaciones$")
   public void validaDetalleTuPlanLineaNoCompraApp() {
     theActorInTheSpotlight().attemptsTo(DetalleTuPlanCompraApp.validarDetalleTuPlan());
   }
 
-  @And("VALIDA DESCRIPCION DEL PLAN")
+  @And("valida descripcion del plan")
   public void validaDescripcionDelPlan() {
     theActorInTheSpotlight().attemptsTo(ValidarDescripcionDelPlan.validarInformacionDescripcion());
   }
 
-  @And("INGRESA VER FACTURA")
+  @And("ingresa ver factura")
   public void ingresaVerFactura() {
     theActorInTheSpotlight().attemptsTo(IngresarVerFactura.ingresarVerFactura());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO PAGAR FACTURA")
+  @Then("valida direccionamiento pagar factura")
   public void validaDireccionamientoPagarFactura() {
     theActorInTheSpotlight()
         .attemptsTo(ValidarDireccionamientoPagarFactura.validarDireccionamientoPagarFactura());
   }
 
-  @And("INGRESA FAMILIA Y AMIGOS")
+  @And("ingresa familia y amigos")
   public void ingresaFamiliaYAmigos() {
     theActorInTheSpotlight().attemptsTo(FamiliaYAmigos.ingresarFamiliaYAmigos());
   }
 
-  @And("SELECCIONA LINEA POSTPAGO")
+  @And("selecciona linea postpago")
   public void seleccionaLineaPostpago() {
     theActorInTheSpotlight().attemptsTo(SeleccionarLineaPostpago.seleccionarLinea());
 
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @And("VALIDA DIRECCIONAMIENTO FAMILIA Y AMIGOS")
+  @And("valida direccionamiento familia y amigos")
   public void validaDireccionamientoFamiliaYAmigos() {
     theActorInTheSpotlight().attemptsTo(ValidarFamiliaYAmigos.validarDireccionamiento());
   }
 
-  @And("INGRESA OPCION FAMILIA Y AMIGOS")
+  @And("ingresa opcion familia y amigos")
   public void ingresaOpcionFamiliaYAmigos() {
     theActorInTheSpotlight().attemptsTo(IngresarFamiliaYAmigos.ingresarOpcion());
   }
 
-  @And("VALIDA EL GRUPO DE FAMILIA Y AMIGOS")
+  @And("valida el grupo de familia y amigos")
   public void validaElGrupoDeFamiliaYAmigos() {
     theActorInTheSpotlight().attemptsTo(GrupoFamiliaYAmigos.validarGrupo());
   }
 
-  @And("REGRESA ATRAS")
+  @And("regresa atras")
   public void regresaAtras() {
     theActorInTheSpotlight().attemptsTo(Atras.irAtras());
   }
 
-  @And("INGRESA OPCION ELEGIDOS TODO DESTINO")
+  @And("ingresa opcion elegidos todo destino")
   public void ingresaOpcionElegidosTodoDestino() {
     theActorInTheSpotlight().attemptsTo(ElegidosTodoDestino.ingresarOpcion());
   }
 
-  @And("VALIDA DIRECCIONAMIENTO ELEGIDOS TODO DESTINO")
+  @And("valida direccionamiento elegidos todo destino")
   public void validaDireccionamientoElegidosTodoDestino() {
     theActorInTheSpotlight().attemptsTo(ValidarElegidosTodoDestino.validarDireccionamiento());
   }
 
-  @Then("VE TERMINOS Y CONDICIONES")
+  @Then("ve terminos y condiciones")
   public void veTerminosYCondiciones() {
     theActorInTheSpotlight().attemptsTo(VerTerminosYCondiciones.verTerminos());
   }
 
-  @And("INGRESA Y VALIDA APLICACIONES ELEGIBLES")
+  @And("ingresa y valida aplicaciones elegibles")
   public void ingresaYValidaAplicacionesElegibles() {
     theActorInTheSpotlight().attemptsTo(AplicacionesElegibles.ingresarYValidar());
   }
 
-  @And("INGRESA Y VALIDA COMPRAR APLICACIONES")
+  @And("ingresa y valida comprar aplicaciones")
   public void ingresaYValidaComprarAplicaciones() {
     theActorInTheSpotlight().attemptsTo(ComprarAplicaciones.ingresarYValidar());
   }
 
-  @Then("ADMINISTRA APLICACIONES INCLUIDAS Y VALIDA POPUP")
+  @Then("administra aplicaciones incluidas y valida popup")
   public void administraAplicacionesIncluidasYValidaPopup() {
     theActorInTheSpotlight().attemptsTo(AdministrarAplicacionesIncluidas.administrarYValidar());
   }
 
-  @Then("^VALIDAR COMPRAR APLICACIONES NO PERMITIDO$")
+  @Then("^validar comprar aplicaciones no permitido$")
   public void validarComprarAplicacionesNoPermitido() {
     theActorInTheSpotlight().attemptsTo(ComprarAplicacionesNoPermitido.ingresarYValidar());
   }
 
-  @And("INGRESA MEJORAR PLAN")
+  @And("ingresa mejorar plan")
   public void ingresaMejorarPlan() {
     EvidenciaUtils.registrarCaptura("Ingresar opción Gestionar mi plan - Mejorar plan");
 
@@ -260,12 +259,12 @@ public class PagosYConsultasDefinitions {
             WaitForResponse.withText(VER_PLANES_ESPECIALES));
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO MEJORAR PLAN")
+  @Then("valida direccionamiento mejorar plan")
   public void validaDireccionamientoMejorarPlan() {
     theActorInTheSpotlight().attemptsTo(MejorarPlan.validarDireccionamiento());
   }
 
-  @And("INGRESA PAQUETES ADICIONALES")
+  @And("ingresa paquetes adicionales")
   public void ingresaPaquetesAdicionales() {
     EvidenciaUtils.registrarCaptura("Ingresar opción Paquetes adicionales");
 
@@ -274,27 +273,27 @@ public class PagosYConsultasDefinitions {
             ClickTextoQueContengaX.elTextoContiene(PAQUETES_ADICIONALES), WaitFor.aTime(3000));
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO PAQUETES ADICIONALES")
+  @Then("valida direccionamiento paquetes adicionales")
   public void validaDireccionamientoPaquetesAdicionales() {
     theActorInTheSpotlight().attemptsTo(PaquetesAdicionales.validarDireccionamiento());
   }
 
-  @And("INGRESA ADMINISTRAR ROAMING")
+  @And("ingresa administrar roaming")
   public void ingresaAdministrarRoaming() {
     theActorInTheSpotlight().attemptsTo(AdministrarRoaming.ingresarRoaming());
   }
 
-  @And("ADMINISTRAR ROAMING SERVICIO ACTIVO")
+  @And("administrar roaming servicio activo")
   public void administrarRoaServActivo() {
     theActorInTheSpotlight().attemptsTo(AdministrarRoamingActivo.ingresarRoaming());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO ROAMING")
+  @Then("valida direccionamiento roaming")
   public void validaDireccionamientoRoaming() {
     theActorInTheSpotlight().attemptsTo(DireccionamientoRoaming.validarDireccionamiento());
   }
 
-  @And("HACE CLIC EN ADELANTA TU SALDO")
+  @And("hace clic en adelanta tu saldo")
   public void haceClicEnAdelantaTuSaldo() {
     EvidenciaUtils.registrarCaptura("Hacer clic en Adelanta tu saldo");
 
@@ -305,27 +304,27 @@ public class PagosYConsultasDefinitions {
   }
 
 
-  @Then("VERIFICA POPUP ADELANTO")
+  @Then("verifica popup adelanto")
   public void verificaPopupAdelanto() {
     theActorInTheSpotlight().attemptsTo(PopupAdelanto.verificarPopup());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO AGENDAR TURNOS")
+  @Then("valida direccionamiento agendar turnos")
   public void validaDireccionamientoAgendarTurnos() {
     theActorInTheSpotlight().attemptsTo(AgendarTurnos.validarDireccionamiento());
   }
 
-  @Then("INGRESA A FAMILIA Y AMIGOS Y GESTIONA NUMEROS")
+  @Then("ingresa a familia y amigos y gestiona numeros")
   public void ingresaAFamiliaYAmigosYGestionaNumeros() {
     theActorInTheSpotlight().attemptsTo(DesactivarFamiliaYAmigos.gestionarFamiliaYAmigos());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO A ROAMING")
+  @Then("valida direccionamiento a roaming")
   public void validaDireccionamientoARoaming() {
     theActorInTheSpotlight().attemptsTo(ValidarDireccionamientoARoaming.validarDireccionamiento());
   }
 
-  @And("INGRESA A PORTABILIDAD")
+  @And("ingresa a portabilidad")
   public void ingresaAPortabilidad() {
     EvidenciaUtils.registrarCaptura("Hacer clic en Portabilidad");
 
@@ -335,32 +334,32 @@ public class PagosYConsultasDefinitions {
             WaitForResponse.withText(ESTADO_DE_PORTABILIDAD));
   }
 
-  @And("VALIDA VERSION DE MINIPROGRAMA PORTABILIDAD")
+  @And("valida version de miniprograma portabilidad")
   public void validaVersionDeMiniprogramaPortabilidad() {
     theActorInTheSpotlight().attemptsTo(MiniprogramaPortabilidad.validarVersion());
   }
 
-  @Then("VALIDA ESTADO DE PORTABILIDAD Y REDIRECCION")
+  @Then("valida estado de portabilidad y redireccion")
   public void validaEstadoDePortabilidadYRedireccion() {
     theActorInTheSpotlight().attemptsTo(EstadoPortabilidad.validarEstadoYRedireccion());
   }
 
-  @Then("VALIDA ENVIO DE SIM CARD Y REDIRECCION")
+  @Then("valida envio de sim card y redireccion")
   public void validaEnvioSimCardYRedireccion() {
     theActorInTheSpotlight().attemptsTo(EnvioSimCard.validarEnvioSimCard());
   }
 
-  @Then("VALIDA PORTABILIDAD PREPAGO Y REDIRECCION")
+  @Then("valida portabilidad prepago y redireccion")
   public void validaPortabilidadPrepagoYRedireccion() {
     theActorInTheSpotlight().attemptsTo(PortabilidadPrepago.validarPortabilidadPrepago());
   }
 
-  @Then("VALIDA PORTABILIDAD POSTPAGO Y REDIRECCION")
+  @Then("valida portabilidad postpago y redireccion")
   public void validaPortabilidadPostpagoYRedireccion() {
     theActorInTheSpotlight().attemptsTo(PortabilidadPostpago.validarPortabilidadPostpago());
   }
 
-  @And("INGRESA A ADQUIRIR PRODUCTOS")
+  @And("ingresa a adquirir productos")
   public void ingresaAAdquirirProductos() {
     theActorInTheSpotlight().attemptsTo(ScrollHastaTexto.conTexto(ADQUIRIR_PRODUCTOS));
 
@@ -372,14 +371,14 @@ public class PagosYConsultasDefinitions {
             WaitForResponse.withText(POSTPAGO));
   }
 
-  @And("VALIDA VERSION DE MINIPROGRAMA ADQUIRIR")
+  @And("valida version de miniprograma adquirir")
   public void validaVersionDeMiniprogramaAdquirir() {
     theActorInTheSpotlight().attemptsTo(MiniprogramaAdquirirProductos.validarVersion());
   }
 
 
 
-  @And("INGRESA A ESIM CLARO")
+  @And("ingresa a esim claro")
   public void ingresaAEsimClaro() {
     theActorInTheSpotlight().attemptsTo(ScrollHastaTexto.conTexto(ESIM_CLARO));
 
@@ -390,14 +389,14 @@ public class PagosYConsultasDefinitions {
             ClickTextoQueContengaX.elTextoContiene(ESIM_CLARO), WaitForResponse.withText(POSTPAGO));
   }
 
-  @Then("INGRESAR LINEA POSTPAGO eSIM")
+  @Then("ingresar linea postpago esim")
   public void ingresarLineaPostpagoeSIM() {
     theActorInTheSpotlight().attemptsTo(SeleccionarLineaPostEsim.seleccionarLinea());
 
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @And("PRESIONA BOTON SIGUIENTE")
+  @And("presiona boton siguiente")
   public void presionaBotonSiguiente() {
     EvidenciaUtils.registrarCaptura("Boton Siguiente");
 
@@ -408,82 +407,82 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight().attemptsTo(ClickTextoQueContengaX.elTextoContiene(SIGUIENTE));
   }
 
-  @And("VALIDA VERSION DE MINIPROGRAMA ESIM")
+  @And("valida version de miniprograma esim")
   public void validaVersionDeMiniprogramaEsim() {
     theActorInTheSpotlight().attemptsTo(MiniprogramaEsim.validarVersion());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO OPCIONES ESIM")
+  @Then("valida direccionamiento opciones esim")
   public void validaDireccionamientoOpcionesEsim() {
     theActorInTheSpotlight().attemptsTo(ValidarOpcionesEsim.validarOpciones());
   }
 
-  @Then("GESTIONA CERTIFICACION CUENTA AL DIA")
+  @Then("gestiona certificacion cuenta al dia")
   public void gestionaCertificacionCuentaAlDia() {
     theActorInTheSpotlight().attemptsTo(CertificacionCuentaAlDia.gestionarCertificacion());
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO VEHICULO CONECTADO")
+  @Then("valida direccionamiento vehiculo conectado")
   public void validaDireccionamientoVehiculoConectado() {
     theActorInTheSpotlight().attemptsTo(VehiculoConectado.validarDireccionamiento());
   }
 
-  @Then("DIRECCIONAMIENTO CORRECTO PAGOS")
+  @Then("valida la redirección a Pagos")
   public void validaDireccionamientoCorrectoPagos() {
     theActorInTheSpotlight().attemptsTo(Pagos.validarDireccionamiento());
   }
 
-  @Then("VALIDA DIRECCIONAMIENTO CORRECTO LEGALIZACION")
+  @Then("valida direccionamiento correcto legalizacion")
   public void validaDireccionamientoCorrectoLegalizacion() {
     theActorInTheSpotlight().attemptsTo(LegalizacionLineas.validarDireccionamiento());
   }
 
-  @Then("^VALIDA DIRECCIONAMIENTO CORRECTO BENEFICIOS$")
+  @Then("^valida direccionamiento correcto beneficios$")
   public void validaDireccionamientoCorrectoBeneficios() {
     theActorInTheSpotlight().attemptsTo(Beneficios.validarDireccionamiento());
   }
 
-  @And("^SELECCIONAR LINEA POSTPAGO QUE PERMITA ADMINISTRAR APPS$")
+  @And("^seleccionar linea postpago que permita administrar apps$")
   public void seleccionarLineaPostpagoQuePermitaAdministrarApps() {
     theActorInTheSpotlight().attemptsTo(DetalleTuPlanLineaEspecifica.seleccionarLinea());
   }
 
-  @Then("^ADMINISTRAR Y VALIDAR APLICACIONES INCLUIDAS$")
+  @Then("^administrar y validar aplicaciones incluidas$")
   public void administrarYValidarAplicacionesIncluidas() {
     theActorInTheSpotlight()
         .attemptsTo(AdministrarAplicacionesIncluidasPermitido.administrarYValidar());
   }
 
-  @Then("^ADMINISTRAR Y VALIDAR APLICACIONES NO PERMITIDO$")
+  @Then("^administrar y validar aplicaciones no permitido$")
   public void administrarYValidarAplicacionesNoPermitido() {
     theActorInTheSpotlight().attemptsTo(AdministrarAplicacionesNoPermitido.administrarYValidar());
   }
 
-  @And("^VALIDA DETALLE DE TU PLAN LINEA ESPECIFICA$")
+  @And("^valida detalle de tu plan linea especifica$")
   public void validaDetalleDeTuPlanLineaEspecifica() {
     theActorInTheSpotlight()
         .attemptsTo(DetalleTuPlanLineaEspecificaPaquetes.validarDetalleTuPlan());
   }
 
-  @Then("^VALIDA POPUP NO TIENE PAQUETES$")
+  @Then("^valida popup no tiene paquetes$")
   public void validaPopupNoTienePaquetes() {
     theActorInTheSpotlight().attemptsTo(PaquetesAdicionalesNoTienePaquetes.validarPopup());
   }
 
-  @Then("VALIDA VIGENCIA Y PLANES ROAMING")
+  @Then("valida vigencia y planes roaming")
   public void validaRoamingVigenciaPlanes() {
     theActorInTheSpotlight().attemptsTo(AdministrarRoamingCompleto.validarFlujoCompleto());
   }
 
-  @Then("^VALIDA DIRECCIONAMIENTO PAQUETES COMPLEMENTARIOS$")
+  @Then("^valida direccionamiento paquetes complementarios$")
   public void validaDireccionamientoPaquetesComplementarios() {
     theActorInTheSpotlight().attemptsTo(PaquetesComplementarios.validarDireccionamiento());
 
     ReportHooks.setLinea(user.getNumero());
   }
 
-  @And("INGRESAR LINEA POSTPAGO SERVICIO FAMILIA ACTIVO")
+  @And("ingresar linea postpago servicio familia activo")
   public void ingresarLineaPostpagoServicioActivo() {
     theActorInTheSpotlight()
         .attemptsTo(IngresarLineaPostpagoServicioActivo.ingresarLineaPostpagoServicioActivo());
@@ -492,23 +491,23 @@ public class PagosYConsultasDefinitions {
   }
 
 
-  @Then("^INGRESA A DEVOLUCION DE EQUIPOS$")
+  @Then("^ingresa a devolución de equipos$")
   public void ingresarDevolucionEquipos() {
     theActorInTheSpotlight()
             .attemptsTo(ingresarDevolucionEquipos.IngresarDevolucionEquipos());
   }
-  @Then("^INGRESA A SOLICITAR TRASLADOS$")
+  @Then("^ingresa a solicitar traslado$")
   public void ingresarSolicitarTraslado() {
     theActorInTheSpotlight()
             .attemptsTo(ingresarSolicitarTraslado.IngresarSolicitarTraslado());
   }
-  @Then("^INGRESA A REINICIAR MODEM$")
+  @Then("^ingresa a reiniciar módem$")
   public void ingresarReiniciarModem() {
     theActorInTheSpotlight()
             .attemptsTo(ingresarReiniciarModem.IngresarReiniciarModem());
   }
 
-  @Then("^INGRESA A ADMINISTRAR TU RED WIFI$")
+  @Then("^ingresa a administrar tu red wifi$")
   public void ingresarAdministrarTuRedWifi() {
     theActorInTheSpotlight()
             .attemptsTo(ingresarAdministrarTuRedWifi.IngresarAdministrarTuRedWifi());
@@ -516,30 +515,30 @@ public class PagosYConsultasDefinitions {
 
   // adquirir porducto
 
-  @And("^INGRESA ADQUIRIR PRODUCTO$")
+  @And("^ingresa a adquirir producto$")
   public void adquirirProducto() {
     theActorInTheSpotlight()
             .attemptsTo(AdquirirProducto.adquirir());
   }
-  @And("^VALIDA MODULO INTERNET$")
+  @And("^valida el módulo internet$")
   public void validaModuloInternet() {
     theActorInTheSpotlight()
             .attemptsTo(ValidarModuloInternet.validar());
   }
 
-  @And("^VALIDA MODULO TELEVISION$")
+  @And("^valida el módulo televisión$")
   public void validaModuloTelevision() {
     theActorInTheSpotlight()
             .attemptsTo(ValidarModuloTelevision.validar());
   }
 
-  @And("^VALIDA MODULO TELEFONO$")
+  @And("^valida el módulo teléfono$")
   public void validaModuloTelefono() {
     theActorInTheSpotlight()
             .attemptsTo(ValidarModuloTelefono.validar());
   }
 
-  @Then("^VALIDA MODULO ULTRA WIFI$")
+  @Then("^valida el módulo ultra wifi$")
   public void validaModuloUltraWifi() {
     theActorInTheSpotlight()
             .attemptsTo(ValidarModuloUltraWifi.validar());
@@ -547,34 +546,34 @@ public class PagosYConsultasDefinitions {
   // configuracion control remoto
 
 
-  @And("^INGRESAR A CONFIGURACION CONTROL REMOTO$")
+  @And("^ingresar a configuracion control remoto$")
   public void validarConfiguracionControlRemoto() {
     theActorInTheSpotlight()
             .attemptsTo(
                     ValidarConfiguracionControlRemoto.validar()
             );
-  }@And("^VALIDA INFORMACION CONFIGURACION CONTROL REMOTO$")
+  }@And("^valida informacion configuracion control remoto$")
   public void validarInformacionConfiguracionControlRemoto() {
     theActorInTheSpotlight()
             .attemptsTo(validarInformacionConfiguracionControlRemoto.validar());
   }
-  @Then("^COMPAR CONTROL REMOTO$")
+  @Then("^compar control remoto$")
   public void comparControlRemoto() {
     theActorInTheSpotlight()
             .attemptsTo(comparControlRemoto.validar());
   }
-  @Then("^VALIDAR CONFIGURACIONES DE LOS CONTROLES REMOTOS$")
+  @Then("^validar configuraciones de los controles remotos$")
   public void validarConfiguracionesDeLosControlesRemotos() {
     theActorInTheSpotlight()
             .attemptsTo(validarConfiguracionesDeLosControlesRemotos.validar());
   }
-  @Then("^VALIDAR CONFIGURACION DEL DECODIFICARDOR$")
+  @Then("^validar configuracion del decodificardor$")
   public void validarConfiguracionDelDecodificador() {
     theActorInTheSpotlight()
             .attemptsTo(validarConfiguracionDelDecodificador.validar());
   }
 
-  @Then("^VALIDAR CERTIFIACIDO CUENTA AL DIA$")
+  @Then("^validar certifiacido cuenta al dia$")
   public void validarCertificadoCuentaAlDia() {
     theActorInTheSpotlight()
             .attemptsTo(validarCertificadoCuentaAlDia.validar());

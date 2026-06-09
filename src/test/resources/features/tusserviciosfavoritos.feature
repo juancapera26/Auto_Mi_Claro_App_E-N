@@ -1,57 +1,57 @@
 # language: es
 
-Característica: Gestión de servicios favoritos
+Característica: gestión de servicios favoritos
 
-  @SFPF001
-  Escenario: Acceder a Paga tu factura desde Servicios Favoritos
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
+  @sfpf001
+  Escenario: acceder a paga tu factura desde servicios favoritos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
 
-  @SFPF002
-  Escenario: Descargar factura desde Paga tu factura
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    Y DESCARGAR FACTURA
+  @sfpf002
+  Escenario: descargar factura desde paga tu factura
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
+    Y descargar factura
 
-  @SFPF003
-  Escenario: Consultar pagos automáticos desde Paga tu factura
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    Y VALIDA PAGOS AUTOMATICOS
+  @sfpf003
+  Escenario: consultar pagos automáticos desde paga tu factura
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
+    Y valida pagos automaticos
 
-  @SFPF004
-  Escenario: Enviar factura por correo electrónico
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    Y ENVIA FACTURA POR CORREO
+  @sfpf004
+  Escenario: enviar factura por correo electrónico
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
+    Y envia factura por correo
 
-  @SFPF005
-  Escenario: Consultar detalle de la última facturación
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    Y VALIDA DETALLE ULTIMA FACTURACION
+  @sfpf005
+  Escenario: consultar detalle de la última facturación
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
+    Y valida detalle ultima facturacion
 
-  @SFPF006
-  Escenario: Consultar historial de pagos
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y INGRESA A TUS SERVICIOS FAVORITOS PAGA TU FACTURA
-    Y VALIDA HISTORIAL DE PAGOS
+  @sfpf006
+  Escenario: consultar historial de pagos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresa a tus servicios favoritos paga tu factura
+    Y valida historial de pagos
 
-  @SFNA001
-  Escenario: Acceder a la opción Necesitas Ayuda Hogar
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Entonces VERIFICA VERSION DE LA SUPER APP
-    Y SELECCIONA LA OPCION NECESITAS AYUDA HOGAR
+  @sfna001
+  Escenario: acceder a la opción necesitas ayuda hogar
+    Dado que el usuario ingrese a super app
+    Cuando realiza el ingreso
+    Entonces verifica version de la super app
+    Y selecciona la opcion necesitas ayuda hogar

@@ -32,41 +32,46 @@ public class LoginDefinitions {
     EvidenciaUtils.reiniciarContador(); // Reinicia el conteo de pasos para este escenario
   }
 
-  @Given("^QUE EL USUARIO INGRESE A SUPER APP$")
+  @Given("^que el usuario ingrese a super app$")
   public void abrirSuperApp() {
-    theActorCalled("actor")
+    theActorCalled("usuario valida")
         .attemptsTo(
             WaitUntil.the(LOADING_SPLASH, isNotPresent()),
             WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(40).seconds(),
             WaitFor.aTime(2000));
   }
 
-  @When("^REALIZA EL INGRESO$")
+  @Given("^el usuario abre la super app$")
+  public void abreLaSuperApp() {
+    abrirSuperApp();
+  }
+
+  @When("^el usuario realiza el ingreso$")
   public void ingresoSuperApp() {
     theActorInTheSpotlight().attemptsTo(IngresoSuperApp.ingresoSuperApp());
   }
 
-  @Then("^VERIFICA VERSION DE LA SUPER APP$")
+  @Then("^verifica version de la super app$")
   public void verificaVersion() {
     theActorInTheSpotlight().attemptsTo(VersionSuperApp.validarVersion());
   }
 
-  @When("^REALIZA EL INGRESO CON CEDULA$")
+  @When("^el usuario realiza el ingreso con cedula$")
   public void ingresoConCedula() {
     theActorInTheSpotlight().attemptsTo(LoginConCedula.conCedula());
   }
 
-  @When("^REALIZA EL INGRESO CON CORREO$")
+  @When("^el usuario realiza el ingreso con correo$")
   public void ingresoCorreo() {
     theActorInTheSpotlight().attemptsTo(LoginOrquestado.con(LoginOrquestado.Metodo.CORREO));
   }
 
-  @When("^REALIZA EL INGRESO CON DOCUMENTO$")
+  @When("^el usuario realiza el ingreso con documento$")
   public void ingresoDocumento() {
     theActorInTheSpotlight().attemptsTo(LoginOrquestado.con(LoginOrquestado.Metodo.DOCUMENTO));
   }
 
-  @When("^REALIZA EL INGRESO CON PIN$")
+  @When("^el usuario realiza el ingreso con pin$")
   public void ingresoPIN() {
     theActorInTheSpotlight().attemptsTo(LoginOrquestado.con(LoginOrquestado.Metodo.PIN));
   }

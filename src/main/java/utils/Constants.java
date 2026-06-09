@@ -623,6 +623,7 @@ public class Constants {
 
   // Elegir Plan
   public static final String ELEGIR_PLAN = "Elegir plan";
+  public static final String MES_CORTECIA = "Te damos 1 mes de cortesía";
 
   // Terminos y condiciones
   public static final String ESCRIBIR_CODIGO_VENDEDOR = "Escribe el código del vendedor";

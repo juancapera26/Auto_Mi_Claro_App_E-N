@@ -1,35 +1,35 @@
-Feature: Ingreso a la Super App
+Feature: ingreso a la super app
 
-  @SA001
-    Scenario: Login exitoso con correo electrónico
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO
-    Then  VERIFICA VERSION DE LA SUPER APP
+  @sa001
+    Scenario: login exitoso con correo electrónico
+    Given el usuario abre la super app
+    When el usuario realiza el ingreso
+    Then verifica version de la super app
 
-  @SA002
-  Scenario: Login exitoso con cédula
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO CON CEDULA
-    Then  VERIFICA VERSION DE LA SUPER APP
+  @sa002
+  Scenario: login exitoso con cédula
+    Given el usuario abre la super app
+    When el usuario realiza el ingreso con cedula
+    Then verifica version de la super app
 
 
     ################################################################################################
 
   #Login
 
-  @LOGIN_CORREO_01
-  Scenario: Login exitoso con correo electrónico
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO CON CORREO
+  @login_correo_01
+  Scenario: login exitoso con correo electrónico
+    Given el usuario abre la super app
+    When el usuario realiza el ingreso con correo
 
 
-  @LOGIN_DOCUMENTO_01
-  Scenario: Login exitoso con documento
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO CON DOCUMENTO
+  @login_documento_01
+  Scenario: login exitoso con documento
+    Given el usuario abre la super app
+    When el usuario realiza el ingreso con documento
 
 
-  @LOGIN_PIN_01
-  Scenario: Login exitoso con pin
-    Given EL USUARIO ABRE LA SUPER APP
-    When  REALIZA EL INGRESO CON PIN
+  @login_pin_01
+  Scenario: login exitoso con pin
+    Given el usuario abre la super app
+    When el usuario realiza el ingreso con pin

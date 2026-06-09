@@ -12,9 +12,9 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
 
 public class ingresarSolicitarTraslado implements Task {
-    private static final String paso1 = "Hacer clic en Devolucion de equipos";
+    private static final String paso1 = "Hacer clic en Solicitar traslado";
 
-    private static final String paso3 = "validar redireccion whatsApp ";
+    private static final String paso3 = "Validar la redirección a WhatsApp";
 
     @Override
     public <T extends Actor> void performAs(T actor) {

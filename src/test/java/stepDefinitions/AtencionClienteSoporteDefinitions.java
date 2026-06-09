@@ -24,158 +24,158 @@ public class AtencionClienteSoporteDefinitions {
 
   private final User user = TestDataProvider.getRealUser();
 
-  @And("^DESPLAZA HASTA LA OPCION ATENCION AL CLIENTE Y SOPORTE$")
+  @And("^desplaza hasta la opcion atencion al cliente y soporte$")
   public void desplazaHastaAtencionClienteSoporte() {
     theActorInTheSpotlight()
         .attemptsTo(ScrollHastaTexto.conTexto(ATENCION_AL_CLIENTE), Scroll.scrollUnaVista());
     EvidenciaUtils.registrarCaptura("Desplazarse hasta Atención al cliente y soporte");
   }
 
-  @And("^INGRESA AL BOTON MEDICION DE RED$")
+  @And("^ingresa al boton medicion de red$")
   public void ingresaAlBotonMedicionDeRed() {
     theActorInTheSpotlight().attemptsTo(MedicionDeRed.ingresarMedicionRed());
   }
 
-  @And("^VERIFICA EL MENSAJE DE AUTORIZACION EN PANTALLA$")
+  @And("^verifica el mensaje de autorizacion en pantalla$")
   public void verificaMensajeAutorizacion() {
     theActorInTheSpotlight().attemptsTo(ValidarTexto.validarTexto(AUTORIZO_MEDICION_CALIDAD_RED));
     EvidenciaUtils.registrarCaptura("Verificar mensaje de autorización");
   }
 
-  @And("^ACEPTA LA AUTORIZACION DE MEDICION$")
+  @And("^acepta la autorizacion de medicion$")
   public void aceptaAutorizacionMedicion() {
     theActorInTheSpotlight().attemptsTo(Click.on(CHK_AUTORIZAR_MEDICION));
   }
 
-  @And("^REALIZA TEST DE VELOCIDAD$")
+  @And("^realiza test de velocidad$")
   public void realizaTestVelocidad() {
     theActorInTheSpotlight()
         .attemptsTo(ClickTextoQueContengaX.elTextoContiene(REALIZAR_TEST_VELOCIDAD));
   }
 
-  @Then("^VERIFICA LA INFORMACION EN PANTALLA Y MANEJA CONDICIONALES$")
+  @Then("^verifica la informacion en pantalla y maneja condicionales$")
   public void verificaInformacionYManejaCondicionales() {
     theActorInTheSpotlight().attemptsTo(ManejarCondicionalMedicionRed.verificarYManejar());
   }
 
-  @And("^INGRESA A LA OPCION SOPORTE HOGAR$")
+  @And("^ingresa a la opcion soporte hogar$")
   public void ingresaASoporteHogar() {
     theActorInTheSpotlight().attemptsTo(SoporteHogar.ingresar());
   }
 
-  @Then("^SELECCIONA WHATSAPP Y VALIDA REDIRECCION$")
+  @Then("^selecciona whatsapp y valida redireccion$")
   public void seleccionaWhatsappYValidaRedireccion() {
     theActorInTheSpotlight().attemptsTo(SoporteHogar.seleccionarWhatsappYValidar());
   }
 
-  @And("^SELECCIONA LA OPCION VER MAS$")
+  @And("^selecciona la opcion ver mas$")
   public void seleccionaLaOpcionVerMas() {
     theActorInTheSpotlight().attemptsTo(ClickTextoQueContengaX.elTextoContiene(VER_MAS));
     EvidenciaUtils.registrarCaptura("Seleccionar opción Ver más");
   }
 
-  @And("^INGRESA A LA OPCION CONSULTAR PQR$")
+  @And("^ingresa a la opcion consultar pqr$")
   public void ingresaAConsultarPQR() {
     theActorInTheSpotlight().attemptsTo(ConsultarPQR.ingresar());
   }
 
 
 
-  @Then("^VERIFICA REDIRECCION CORRECTA A PAGINA CLARO$")
+  @Then("^verifica redireccion correcta a pagina claro$")
   public void verificaRedireccionAPaginaClaro() {
     theActorInTheSpotlight()
         .attemptsTo(ValidarTextoQueContengaX.elTextoContiene(CLARO_COLOMBIA_PQR));
     EvidenciaUtils.registrarCaptura("Verificar redirección a página Claro");
   }
 
-  @And("^INGRESA A LA OPCION PUNTOS DE ATENCION$")
+  @And("^ingresa a la opcion puntos de atencion$")
   public void ingresaAPuntosDeAtencion() {
     theActorInTheSpotlight().attemptsTo(PuntosDeAtencion.ingresar());
   }
 
-  @And("^MANEJA PERMISOS DE UBICACION$")
+  @And("^maneja permisos de ubicacion$")
   public void manejaPermisosUbicacion() {
     theActorInTheSpotlight().attemptsTo(PuntosDeAtencion.manejarPermisosUbicacion());
   }
 
-  @Then("^VERIFICA QUE ESTE PRESENTE EL MAPA$")
+  @Then("^verifica que este presente el mapa$")
   public void verificaQueEstePresenteElMapa() {
     theActorInTheSpotlight().attemptsTo(PuntosDeAtencion.verificarMapa());
   }
 
-  @And("^SELECCIONA LA OPCION NECESITAS AYUDA$")
+  @And("^selecciona la opcion necesitas ayuda$")
   public void seleccionaLaOpcionNecesitasAyuda() {
     theActorInTheSpotlight().attemptsTo(NecesitasAyuda.ingresar());
   }
-  @And("^SELECCIONA LA OPCION NECESITAS AYUDA HOGAR$")
+  @And("^selecciona la opcion necesitas ayuda hogar$")
   public void seleccionaLaOpcionNecesitasAyudaHogar() {
     theActorInTheSpotlight().attemptsTo(NecesitasAyudaHogar.ingresar());
   }
 
-  @And("^DESPLAZA HASTA LINEA Y SELECCIONA VER DETALLE NECESITAS AYUDA$")
+  @And("^desplaza hasta linea y selecciona ver detalle necesitas ayuda$")
   public void desplazaHastaLineaYSeleccionaVerDetalleNecesitasAyuda() {
     theActorInTheSpotlight().attemptsTo(NecesitasAyuda.seleccionarLineaYVerDetalle());
   }
 
-  @Then("^VERIFICA REDIRECCION A CLAROBOT$")
+  @Then("^verifica redireccion a clarobot$")
   public void verificaRedireccionAClarobot() {
     theActorInTheSpotlight().attemptsTo(NecesitasAyuda.verificarRedireccionClarobot());
   }
 
 
-  @And("^SELECCIONA LA OPCION ESTADO SERVICIOS TECNICOS$")
+  @And("^selecciona la opcion estado servicios tecnicos$")
   public void seleccionaLaOpcionEstadoServiciosTecnicos() {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());
   }
-  @And("^SELECCIONA LA OPCION VISITAS TECNICAS$")
+  @And("^selecciona la opcion visitas tecnicas$")
   public void seleccionaLaOpcionVisitasTecnicas() {
     theActorInTheSpotlight().attemptsTo(VisitasTecnicas.ingresar());
   }
 
 
-  @And("^DESPLAZA HASTA CUENTA Y SELECCIONA VER DETALLE SERVICIOS TECNICOS$")
+  @And("^desplaza hasta cuenta y selecciona ver detalle servicios tecnicos$")
   public void desplazaHastaCuetaYSeleccionaVerDetalleServiciosTecnicos() {
     theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.ingresar());
   }
 
-  @And("^VERIFICA REDIRECCION ORDENES DE SERVICIO$")
+  @And("^verifica redireccion ordenes de servicio$")
   public void verificaRedireccionOrdenesDeServicio() {
     theActorInTheSpotlight().attemptsTo(ValidarTexto.validarTexto(ORDENES_DE_SERVICIO));
     EvidenciaUtils.registrarCaptura("Verificar redirección Órdenes de servicio");
   }
 
-  //@And("^CONSULTA POR NUMERO DE DOCUMENTO$")
+  //@And("^consulta por numero de documento$")
   //public void consultaPorNumeroDeDocumento() {
   //  theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroDocumento());
   //}
 
-  //@And("^CONSULTA POR NUMERO DE CELULAR$")
+  //@And("^consulta por numero de celular$")
   //public void consultaPorNumeroDeCelular() {
   // theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorNumeroCelular());
   //}
 
-  //@Then("^CONSULTA POR IMEI$")
+  //@Then("^consulta por imei$")
   // public void consultaPorImei() {
   //theActorInTheSpotlight().attemptsTo(EstadoServiciosTecnicos.consultarPorImei());
   //}
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA NECESITAS AYUDA$")
+  @And("^valida version de miniprograma necesitas ayuda$")
   public void validaVersionMiniprogramaNecesitasAyuda() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniprogramaNecesitasAyuda.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA ESTADO SERVICIOS TECNICOS$")
+  @And("^valida version de miniprograma estado servicios tecnicos$")
   public void ValidarVersionMiniprogramaEstadoServiciosTecnicos() {
     theActorInTheSpotlight()
         .attemptsTo(ValidarVersionMiniprogramaEstadoServiciosTecnicos.validar());
   }
 
-  @And("^VALIDA VERSION DE MINIPROGRAMA CONSULTAR PQR$")
+  @And("^valida version de miniprograma consultar pqr$")
   public void ValidarVersionMiniprogramaConsultarPQR() {
     theActorInTheSpotlight().attemptsTo(ValidarVersionMiniprogramaConsultarPQR.validar());
   }
 
-  @And("^VER DETALLE CONSULTA PQR$")
+  @And("^ver detalle consulta pqr$")
   public void DetallePQR() {
     theActorInTheSpotlight().attemptsTo(DetallePQR.detallePQR());
   }

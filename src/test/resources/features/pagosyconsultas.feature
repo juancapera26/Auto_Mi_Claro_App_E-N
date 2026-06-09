@@ -1,57 +1,57 @@
 
 # language: es
 
-Característica: Acceso a las funcionalidades del módulo Pagos y Consultas
+Característica: acceso a las funcionalidades del módulo pagos y consultas
 
-  @PC001
-  Escenario: Acceder a la opción Devolución de equipos
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces INGRESA A DEVOLUCION DE EQUIPOS
+  @pc001
+  Escenario: acceder a la opción devolución de equipos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces ingresa a devolución de equipos
 
-  @PC002
-  Escenario: Acceder a la opción Solicitar traslado
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces INGRESA A SOLICITAR TRASLADOS
+  @pc002
+  Escenario: acceder a la opción solicitar traslado
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces ingresa a solicitar traslado
 
-  @PC003
-  Escenario: Acceder a la opción Reiniciar módem
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces INGRESA A REINICIAR MODEM
+  @pc003
+  Escenario: acceder a la opción reiniciar módem
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces ingresa a reiniciar módem
 
-  @PC004
-  Escenario: Consultar el detalle del plan
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces VALIDA DETALLE DE TU PLAN
+  @pc004
+  Escenario: consultar el detalle del plan
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces valida detalle de tu plan
 
-  @PC005
-  Escenario: Acceder a la opción Administrar tu red WiFi
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces INGRESA A ADMINISTRAR TU RED WIFI
+  @pc005
+  Escenario: acceder a la opción administrar tu red wifi
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces ingresa a administrar tu red wifi
 
-  @PC006
-  Escenario: Consultar productos disponibles para adquirir
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Y INGRESA ADQUIRIR PRODUCTO
-    Y VALIDA MODULO INTERNET
-    Y VALIDA MODULO TELEVISION
-    Y VALIDA MODULO TELEFONO
-    Entonces VALIDA MODULO ULTRA WIFI
+  @pc006
+  Escenario: consultar productos disponibles para adquirir
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Y ingresa a adquirir producto
+    Y valida el módulo internet
+    Y valida el módulo televisión
+    Y valida el módulo teléfono
+    Entonces valida el módulo ultra wifi
 
-  @PC011
-  Escenario: Acceder al módulo de Pagos
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y INGRESA AL MENU PAGOS Y CONSULTAS
-    Entonces DIRECCIONAMIENTO CORRECTO PAGOS
+  @pc011
+  Escenario: acceder al módulo de pagos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y el usuario hace scroll hasta el menú Pagos y consultas
+    Entonces valida la redirección a Pagos

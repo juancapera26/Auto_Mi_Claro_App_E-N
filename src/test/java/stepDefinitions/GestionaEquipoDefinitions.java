@@ -12,7 +12,7 @@ import tasks.GestionaEquipo.*;
  */
 public class GestionaEquipoDefinitions {
 
-  @And("^INGRESA AL MODULO GESTIONA TU EQUIPO$")
+  @And("^ingresa al modulo gestiona tu equipo$")
   public void ingresaModuloGestionaEquipo() {
     theActorInTheSpotlight().attemptsTo(AccederGestionaEquipo.acceder());
   }
@@ -21,17 +21,17 @@ public class GestionaEquipoDefinitions {
   // SA020 - Registrar Equipo
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION REGISTRAR EQUIPO$")
+  @And("^selecciona la opcion registrar equipo$")
   public void seleccionaRegistrarEquipo() {
     theActorInTheSpotlight().attemptsTo(RegistrarEquipo.registrar());
   }
 
-  @And("^SELECCIONA EL BOTON REGISTRAR$")
+  @And("^selecciona el boton registrar$")
   public void seleccionaBotonRegistrar() {
     theActorInTheSpotlight().attemptsTo(ConfirmarRegistroEquipo.confirmar());
   }
 
-  @Then("^CONFIRMA INGRESO AL REGISTRO DE EQUIPO$")
+  @Then("^confirma ingreso al registro de equipo$")
   public void confirmaIngresoRegistroEquipo() {
     theActorInTheSpotlight().attemptsTo(RegistrarEquipo.registrar());
   }
@@ -40,12 +40,12 @@ public class GestionaEquipoDefinitions {
   // SA021 - Reportar por Robo o Pérdida
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION REPORTAR POR ROBO O PERDIDA$")
+  @And("^selecciona la opcion reportar por robo o perdida$")
   public void seleccionaReportarRoboPerdida() {
     theActorInTheSpotlight().attemptsTo(ReportarRoboPerdida.reportar());
   }
 
-  @Then("^CONFIRMA INGRESO A LA OPCION Y VALIDA TEXTOS DISPONIBLES$")
+  @Then("^confirma ingreso a la opcion y valida textos disponibles$")
   public void confirmaIngresoYValidaTextos() {
     theActorInTheSpotlight().attemptsTo(ConfirmarIngresoReporte.confirmar());
   }
@@ -54,12 +54,12 @@ public class GestionaEquipoDefinitions {
   // SA022 - Solucionar IMEI Duplicado
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION SOLUCIONAR EQUIPO CON IMEI DUPLICADO$")
+  @And("^selecciona la opcion solucionar equipo con imei duplicado$")
   public void seleccionaSolucionarIMEIDuplicado() {
     theActorInTheSpotlight().attemptsTo(SolucionarIMEIDuplicado.solucionar());
   }
 
-  @Then("^VERIFICA QUE SE MUESTREN LAS DOS OPCIONES EN PANTALLA$")
+  @Then("^verifica que se muestren las dos opciones en pantalla$")
   public void verificaOpcionesIMEIDuplicado() {
     theActorInTheSpotlight().attemptsTo(VerificarOpcionesIMEI.verificar());
   }
@@ -68,12 +68,12 @@ public class GestionaEquipoDefinitions {
   // SA023 - Reconectar por Robo o Pérdida
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION RECONECTAR POR ROBO O PERDIDA$")
+  @And("^selecciona la opcion reconectar por robo o perdida$")
   public void seleccionaReconectarRoboPerdida() {
     theActorInTheSpotlight().attemptsTo(ReconectarRoboPerdida.reconectar());
   }
 
-  @Then("^VALIDA TEXTO DISPONIBLE Y CIERRA MODAL$")
+  @Then("^valida texto disponible y cierra modal$")
   public void validaTextoYCierraModal() {
     theActorInTheSpotlight().attemptsTo(ValidarTextoYCerrar.validarYCerrar());
   }
@@ -82,12 +82,12 @@ public class GestionaEquipoDefinitions {
   // SA024 - Consultar Equipo
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION CONSULTAR EQUIPO$")
+  @And("^selecciona la opcion consultar equipo$")
   public void seleccionaConsultarEquipo() {
     theActorInTheSpotlight().attemptsTo(ConsultarEquipo.consultar());
   }
 
-  @Then("^VERIFICA INFORMACION DISPONIBLE DEL EQUIPO$")
+  @Then("^verifica informacion disponible del equipo$")
   public void verificaInformacionEquipo() {
     theActorInTheSpotlight().attemptsTo(VerificarInformacionEquipo.verificar());
   }
@@ -96,12 +96,12 @@ public class GestionaEquipoDefinitions {
   // SA025 - Actualizar Datos de Equipo
   // ===========================================
 
-  @And("^SELECCIONA LA OPCION ACTUALIZAR DATOS DE TU EQUIPO$")
+  @And("^selecciona la opcion actualizar datos de tu equipo$")
   public void seleccionaActualizarDatos() {
     theActorInTheSpotlight().attemptsTo(ActualizarDatosEquipo.actualizar());
   }
 
-  @Then("^VERIFICA LA INFORMACION DISPONIBLE DE EQUIPOS$")
+  @Then("^verifica la informacion disponible de equipos$")
   public void verificaInformacionDisponible() {
     theActorInTheSpotlight().attemptsTo(VerificarInformacionDisponible.verificar());
   }

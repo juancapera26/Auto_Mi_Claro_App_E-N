@@ -22,9 +22,9 @@ import static utils.Constants.LOGO_CLARO;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_DEVOLUCION_DE_EQUIPOS;
 
 public class ingresarDevolucionEquipos implements Task {
-    private static final String paso1 = "Hacer clic en Devolucion de equipos";
+    private static final String paso1 = "Hacer clic en Devolución de equipos";
     private static final String paso2 = "Verificar versión de miniprograma";
-    private static final String paso3 = "Verificar direccionamiento a formulario";
+    private static final String paso3 = "Verificar la redirección al formulario";
 
     @Override
     public <T extends Actor> void performAs(T actor) {

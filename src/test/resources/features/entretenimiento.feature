@@ -1,103 +1,103 @@
 # language: es
 
-Característica: Ingresar al módulo de entretenimiento
+Característica: ingresar al módulo de entretenimiento
 
   ############################################### Hogar prioridad por barra entretenimiento
 
-  @EN001
-  Escenario: Ingresar a entretenimiento y validar Claro Video
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA EL BOTON CLARO VIDEO
-    Y VALIDA VERSION DE MINIPROGRAMA CLARO VIDEO
-    Entonces VALIDA REDIRECCION APP STORE CLARO VIDEO
+  @en001
+  Escenario: ingresar a entretenimiento y validar claro video
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona el boton claro video
+    Y valida version de miniprograma claro video
+    Entonces valida redireccion app store claro video
 
-  @EN002
-  Escenario: Ingresar a entretenimiento y validar redirección a Claro Club
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA EL BOTON CLARO CLUB
-    Y VALIDA VERSION DE MINIPROGRAMA CLARO CLUB
-    Entonces VALIDA REDIRECCION CLARO CLUB
+  @en002
+  Escenario: ingresar a entretenimiento y validar redirección a claro club
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona el boton claro club
+    Y valida version de miniprograma claro club
+    Entonces valida redireccion claro club
 
-  @EN003
-  Escenario: Ingresar a entretenimiento y validar Claro Música
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA EL BOTON CLARO MUSICA
-    Y VALIDA VERSION DE MINIPROGRAMA CLARO MUSICA
-    Entonces VALIDA REDIRECCION CLARO MUSICA APP
+  @en003
+  Escenario: ingresar a entretenimiento y validar claro música
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona el boton claro musica
+    Y valida version de miniprograma claro musica
+    Entonces valida redireccion claro musica app
 
-  @EN004
-  Escenario: Ingresar a entretenimiento y validar HBO max
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA BOTON HBOMAX
-    Y VALIDA VERSION DE MINIPROGRAMA HBO MAX
-    Entonces VALIDA REDIRECCION PAGINA A HBO MAX
+  @en004
+  Escenario: ingresar a entretenimiento y validar hbo max
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona boton hbomax
+    Y valida version de miniprograma hbo max
+    Entonces valida redireccion pagina a hbo max
 
-  @EN005
-  Escenario: Ingresar a entretenimiento y validar Disney+premium
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA BOTON DISNEY PLUS
-    Y VALIDAR VERSION DE MINIPROGRAMA DISNEY
-    Y SELECCIONA PLAN PREMIUM DISNEY
-    Y VALIDA TERMINOS Y CONDICIONES DISNEY PREMIUM
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO
+  @en005
+  Escenario: ingresar a entretenimiento y validar disney+premium
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona boton disney plus
+    Y validar version de miniprograma disney
+    Y selecciona plan premium disney
+    Y valida terminos y condiciones disney premium
+    Entonces valida redireccionamiento id claro
 
-  @EN006
-  Escenario: Ingresar a entretenimiento y validar Disney+ plan estándar
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA BOTON DISNEY PLUS
-    Y VALIDAR VERSION DE MINIPROGRAMA DISNEY
-    Y SELECCIONA PLAN ESTANDAR DISNEY
-    Y VALIDA TERMINOS Y CONDICIONES DISNEY ESTANDAR
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO
+  @en006
+  Escenario: ingresar a entretenimiento y validar disney+ plan estándar
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona boton disney plus
+    Y validar version de miniprograma disney
+    Y selecciona plan estandar disney
+    Y valida terminos y condiciones disney estandar
+    Entonces valida redireccionamiento id claro
 
-  @EN007
-  Escenario: Ingresar a entretenimiento y validar HotGo
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA BOTON HOTGO
-    Y VALIDAR VERSION DE MINIPROGRAMA HOTGO
-    Y SELECCIONA PLAN HOTGO
-    Y VALIDA TERMINOS Y CONDICIONES HOTGO
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO
+  @en007
+  Escenario: ingresar a entretenimiento y validar hotgo
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona boton hotgo
+    Y validar version de miniprograma hotgo
+    Y selecciona plan hotgo
+    Y valida terminos y condiciones hotgo
+    Entonces valida redireccionamiento id claro
 
-  @EN008
-  Escenario: Ingresar a entretenimiento y validar Amazon Prime
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA BOTON AMAZON PRIME
-    Y VALIDAR VERSION DE MINIPROGRAMA AMAZONPRIME
-    Y SELECCIONA PLAN AMAZON PRIME
-    Y VALIDA TERMINOS Y CONDICIONES AMAZON PRIME
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO
+  @en008
+  Escenario: ingresar a entretenimiento y validar amazon prime
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona boton amazon prime
+    Y validar version de miniprograma amazonprime
+    Y selecciona plan amazon prime
+    Y valida terminos y condiciones amazon prime
+    Entonces valida redireccionamiento id claro
 
-  @EN009
-  Escenario: Ingresar a entretenimiento y validar Claro gaming cloud
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA EL BOTON ENTRETENIMIENTO EN LA BARRA INFERIOR
-    Y SELECCIONA BOTON GAMING CLOUD
-    Y VALIDAR VERSION DE MINIPROGRAMA GAMING CLOUD
-    Y SELECCIONA PLAN GAMING CLOUD
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO GAMING CLOUD
+  @en009
+  Escenario: ingresar a entretenimiento y validar claro gaming cloud
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona el boton entretenimiento en la barra inferior
+    Y selecciona boton gaming cloud
+    Y validar version de miniprograma gaming cloud
+    Y selecciona plan gaming cloud
+    Entonces valida redireccionamiento id claro gaming cloud
 
-  @EN0010
-  Escenario: Ingresar a entretenimiento y validar Claro win Play
-    Dado QUE EL USUARIO INGRESE A SUPER APP
-    Cuando REALIZA EL INGRESO
-    Y SELECCIONA BOTON WIN PLAY
-    Y VALIDAR VERSION DE MINIPROGRAMA WIN PLAY
-    Y SELECCIONA PLAN WIN PLAY
-    Y VALIDA TERMINOS Y CONDICIONES WIN PLAY
-    Entonces VALIDA REDIRECCIONAMIENTO ID ClARO
+  @en0010
+  Escenario: ingresar a entretenimiento y validar claro win play
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y selecciona boton win play
+    Y validar version de miniprograma win play
+    Y selecciona plan win play
+    Y valida terminos y condiciones win play
+    Entonces valida redireccionamiento id claro

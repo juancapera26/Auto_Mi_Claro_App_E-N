@@ -26,7 +26,7 @@ public class DescargaFactura implements Task {
   private final User user = TestDataProvider.getRealUser();
   private static final String paso1 = "Seleccionar Descarga tu factura";
   private static final String paso2 = "Verificar número de celular";
-  private static final String paso3 = "Validar 6 facturas disponibles";
+  private static final String paso3 = "Validar 4 facturas disponibles";
   private static final String paso4 = "Descargar factura";
   private static final String paso5 = "Ingresar contraseña";
   private static final String paso6 = "Verificar factura descargada";

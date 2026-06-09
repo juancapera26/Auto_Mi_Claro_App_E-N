@@ -42,7 +42,7 @@ public class AdquirirProducto implements Task {
                 WaitForResponse.withText(HOGAR));
 
 
-        actor.attemptsTo(
+            actor.attemptsTo(
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene("Acerca de"),
                 WaitForResponse.withText("Ver"),
