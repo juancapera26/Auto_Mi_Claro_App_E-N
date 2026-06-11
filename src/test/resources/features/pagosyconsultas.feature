@@ -49,6 +49,42 @@ Característica: acceso a las funcionalidades del módulo pagos y consultas
     Y valida el módulo teléfono
     Entonces valida el módulo ultra wifi
 
+  @PC007
+  Escenario: Ingresar a Configuracion control remoto ,comprar control remoto
+  Dado que el usuario ingrese a super app
+  Cuando el usuario realiza el ingreso
+  Y el usuario hace scroll hasta el menú Pagos y consultas
+  Y ingresar a configuracion control remoto
+  Y valida informacion configuracion control remoto
+  Entonces compar control remoto
+
+  @PC008
+  Escenario: Ingresar a Configuracion control remoto
+  Dado que el usuario ingrese a super app
+  Cuando el usuario realiza el ingreso
+  Y el usuario hace scroll hasta el menú Pagos y consultas
+  Y ingresar a configuracion control remoto
+  Y valida informacion configuracion control remoto
+  Entonces validar configuraciones de los controles remotos
+
+
+  @PC009
+  Escenario: Ingresar a Configuracion control remoto ,Configuración con el decodificador
+  Dado que el usuario ingrese a super app
+  Cuando el usuario realiza el ingreso
+  Y el usuario hace scroll hasta el menú Pagos y consultas
+  Y ingresar a configuracion control remoto
+  Y valida informacion configuracion control remoto
+  Entonces validar configuracion del decodificardor
+
+
+  @PC010
+  Escenario: Ingresar a certificado cuenta al dia
+  Dado que el usuario ingrese a super app
+  Cuando el usuario realiza el ingreso
+  Y el usuario hace scroll hasta el menú Pagos y consultas
+  Entonces validar certifiacido cuenta al dia
+
   @PC011
   Escenario: acceder al módulo de pagos
     Dado que el usuario ingrese a super app
