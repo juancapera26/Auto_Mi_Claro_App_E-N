@@ -1,12 +1,12 @@
 Feature: ingreso a la super app
 
-  @sa001
+  @SA001
     Scenario: login exitoso con correo electrónico
     Given el usuario abre la super app
     When el usuario realiza el ingreso
     Then verifica version de la super app
 
-  @sa002
+  @SA002
   Scenario: login exitoso con cédula
     Given el usuario abre la super app
     When el usuario realiza el ingreso con cedula
