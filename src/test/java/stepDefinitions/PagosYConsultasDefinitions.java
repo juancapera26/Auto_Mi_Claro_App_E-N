@@ -39,16 +39,16 @@ public class PagosYConsultasDefinitions {
   public void menuPagosYConsultas() {
     final String paso = "El usuario hace scroll hasta el menú Pagos y consultas";
     theActorInTheSpotlight()
-        .attemptsTo(
-            ClickTextoQueContengaX.elTextoContiene(VER_MAS),
-            ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS));
+            .attemptsTo(
+                    ClickTextoQueContengaX.elTextoContiene(VER_MAS),
+                    ScrollHastaTexto.conTexto(PAGOS_Y_CONSULTAS));
     EvidenciaUtils.registrarCaptura(paso);
   }
 
-  @And("^ingresa al portal de paga tu factura servicios favoritos$")
-  public void portalPagaTuFacturaServiciosFavoritos() {
-    theActorInTheSpotlight().attemptsTo(ingresaAServiciosFavoritosPagaTuFactura.pagaTuFactura());
-  }
+//@And("^ingresa al portal de paga tu factura servicios favoritos$")
+  //public void portalPagaTuFacturaServiciosFavoritos() {
+    //theActorInTheSpotlight().attemptsTo(ingresaAServiciosFavoritosPagaTuFactura.pagaTuFactura());
+  //}
 
   @And("^ingresa al portal de paga tu factura$")
   public void portalPagaTuFactura() {

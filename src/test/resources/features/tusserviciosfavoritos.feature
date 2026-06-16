@@ -2,12 +2,13 @@
 
 Característica: gestión de servicios favoritos
 
-  @SFPF001
-  Escenario: acceder a paga tu factura desde servicios favoritos
+  @E&N001
+  Escenario: acceder a empresas y negocios en guia y novedades
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y ingresa a tus servicios favoritos paga tu factura
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresar a Guia y Novedades
 
   @SFPF002
   Escenario: descargar factura desde paga tu factura

@@ -16,6 +16,10 @@ public class Constants {
   public static final String CORREO_ELECTRONICO_SECUNDARIO = "Correo secundario";
   public static final String PERFIL = "Perfil";
   public static final String PAGOS_Y_CONSULTAS = "Pagos y consultas";
+  public static final String EMPRESAS_Y_NEGOCIOS = "Empresas y negocios";
+  public static final String GUIAS_Y_NOVEDADES = "Guías y Novedades";
+  public static final String GUIA_Y_NOVEDADES = "Guía y Novedades";
+
   public static final String VER_MAS = "Ver más";
   public static final String MUNDO_CLARO = "Mundo Claro";
   public static final String PAGA_TU_FACTURA = "Paga tu factura";
