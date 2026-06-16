@@ -92,7 +92,7 @@ Característica: ingresar al módulo de entretenimiento
     Y selecciona plan gaming cloud
     Entonces valida redireccionamiento id claro gaming cloud
 
-  @EN0010
+  @EN010
   Escenario: ingresar a entretenimiento y validar claro win play
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
