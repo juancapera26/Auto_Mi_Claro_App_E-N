@@ -148,4 +148,8 @@ public class LoginPage {
   public static final Target LBL_NOMBRE_USUARIO =
       Target.the("Label que contiene el nombre de usuario")
           .located(By.id("com.clarocolombia.miclaro:id/profile_welcome_title"));
+
+  public static final Target INGRESAR_EMPREZA =
+      Target.the("ingresas a la opcion de claro emprezas")
+          .located(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.clarocolombia.miclaro:id/card_openswitch\"]"));
 }

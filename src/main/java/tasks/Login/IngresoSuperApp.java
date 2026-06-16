@@ -103,7 +103,8 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void loginConEmail(T actor) {
     actor.attemptsTo(
-        ClickElementByText.clickElementByText(OTROS_METODOS_DE_INGRESO),
+
+        Click.on(INGRESAR_EMPREZA),
         ClickElementByText.clickElementByText(CORREO_ELECTRONICO),
         WaitElement.isEnable(TXT_USERNAME),
         Enter.theValue(user.getEmail()).into(TXT_USERNAME),
@@ -112,7 +113,7 @@ public class IngresoSuperApp implements Task {
         ClickElementByText.clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
     validarLogin(actor);
-  }
+  } 
 
   private <T extends Actor> void loginConCedula(T actor) {
     actor.attemptsTo(
