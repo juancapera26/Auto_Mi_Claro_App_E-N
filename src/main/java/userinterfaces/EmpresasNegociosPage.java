@@ -13,5 +13,14 @@ public class EmpresasNegociosPage {
             Target.the("Ingresar a los anuncions y validar redireccion")
                     .located(By.xpath("//android.view.View/android.widget.Image"));
 
+    public static final Target SELECIONAR_ANUNCIO_2 =
+            Target.the("Ingresar a los anuncions y validar redireccion")
+                    .located(By.xpath("//android.view.View/android.widget.Image"));
+
+
+}
+
+
+
 
 }

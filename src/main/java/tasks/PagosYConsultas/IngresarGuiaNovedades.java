@@ -1,6 +1,9 @@
 package tasks.PagosYConsultas;
 
+import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.Scroll.Scroll;
+import interactions.Scroll.ScrollHorizontalCoordenadas;
 import interactions.comunes.Atras;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
@@ -24,11 +27,12 @@ import static utils.Constants.*;
 import static utils.Constants.FECHA_PAGO_OPORTUNO;
 import static utils.ConstantsMiniVersiones.Versiones.MINI_VERSION_PAGA_TU_FACTURA_CONSTANT;
 
-public class IngresarGuiaNovedades implements Task {
+public class    IngresarGuiaNovedades implements Task {
     private static final User user = TestDataProvider.getRealUser();
     private static final String paso = "Ingreso a Guias y novedades";
     private static final String paso2 = "Validar Mini Versión";
-    private static final String paso3 = "Validar rericionamiento de anuncios";
+    private static final String paso3 = "Validar rericionamiento de anuncio 1";
+    private static final String paso4 = "Validar rericionamiento de anuncio 2";
 
 
     @Override
@@ -52,8 +56,18 @@ public class IngresarGuiaNovedades implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER));
 
         actor.attemptsTo(
+                Click.on(SELECIONAR_ANUNCIO));
+
+        EvidenciaUtils.registrarCaptura(paso3);
+
+        actor.attemptsTo(
+                ClickEnCoordenadas.en(60, 190),
+                ScrollHorizontalCoordenadas.desde(980, 980, 320, 980),
+                WaitFor.aTime(4000),
                 Click.on(SELECIONAR_ANUNCIO)
         );
+        EvidenciaUtils.registrarCaptura(paso4);
+
     }
 
     public static Performable ingresarGuiaNovedades() {
