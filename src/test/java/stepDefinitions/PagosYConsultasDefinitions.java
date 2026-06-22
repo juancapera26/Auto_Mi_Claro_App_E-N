@@ -122,10 +122,10 @@ public class PagosYConsultasDefinitions {
     theActorInTheSpotlight().attemptsTo(PagosAutomaticos.validarPagosAutomaticos());
   }
 
-  @Then("^descarga factura$")
-  public void descargaFactura() {
-    theActorInTheSpotlight().attemptsTo(DescargaFactura.descargarFactura());
-  }
+  //@Then("^descarga factura$")
+  //public void descargaFactura() {
+    //theActorInTheSpotlight().attemptsTo(DescargaFactura.descargarFactura());
+  //}
 
   @Then("^envia factura por correo$")
   public void enviaFacturaPorCorreo() {

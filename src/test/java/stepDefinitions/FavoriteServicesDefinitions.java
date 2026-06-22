@@ -4,16 +4,15 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static utils.Constants.*;
 
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
 import models.User;
-import net.serenitybdd.screenplay.actions.Click;
-import tasks.PagaTuFactura.ClaroPay;
-import tasks.PagosYConsultas.DescargaFactura;
-import tasks.PagosYConsultas.IngresarGuiaNovedades;
-import tasks.PagosYConsultas.PagaTuFactura;
+import tasks.EmpresasyNegocios.AcederIformacionTramites;
+import tasks.EmpresasyNegocios.ValidarCambioDePlan;
+import tasks.EmpresasyNegocios.ValidarCesionDeContrato;
+
+import tasks.EmpresasyNegocios.IngresarGuiaNovedades;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
@@ -39,10 +38,23 @@ public class FavoriteServicesDefinitions {
             IngresarGuiaNovedades.ingresarGuiaNovedades()
     );
   }
-  @And("^descargar factura$")
-  public void DescargarFactura() {
+  @And("^ingresa a informacion de tramintes$")
+  public void AcederIformacionTramites() {
     theActorInTheSpotlight().attemptsTo(
-            DescargaFactura.descargarFactura()
+            AcederIformacionTramites.acederIformacionTramites()
+    );
+  }
+  @And("^validar cession de contrato$")
+  public void ValidarCesionDeContrato() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarCesionDeContrato.validarCesionDeContrato()
+    );
+
+  }
+  @And("^validar cambio de plan$")
+  public void ValidarCambioDePlan() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarCambioDePlan.validarCambioDePlan()
     );
   }
 }

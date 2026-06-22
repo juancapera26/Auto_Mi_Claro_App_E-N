@@ -16,9 +16,15 @@ public class Constants {
   public static final String CORREO_ELECTRONICO_SECUNDARIO = "Correo secundario";
   public static final String PERFIL = "Perfil";
   public static final String PAGOS_Y_CONSULTAS = "Pagos y consultas";
+
+  //EMPREZAS Y NEGOCIOS
   public static final String EMPRESAS_Y_NEGOCIOS = "Empresas y negocios";
-  public static final String GUIAS_Y_NOVEDADES = "Guías y Novedades";
+  public static final String INFORMACION_TRAMITE = "Información de trámites";
   public static final String GUIA_Y_NOVEDADES = "Guía y Novedades";
+  public static final String CESION_CONTRATO = "Cesión de contrato";
+  public static final String SLUCIONES_MOVILES = "Soluciones móviles";
+  public static final String SLUCIONES_FIJAS = "Soluciones fijas";
+  public static final String CAMBIO_DE_PLAN = "Cambio de plan";
 
   public static final String VER_MAS = "Ver más";
   public static final String MUNDO_CLARO = "Mundo Claro";
@@ -821,6 +827,9 @@ public static final String DESEAS_DEVOLVER_EQUIPO = "¿Deseas devolver tus equip
 
   // Constantes para configuracion control remoto
   public static final String CONFIGURACION_CONTROL_REMOTO = "Configurar control remoto";
+
+//emprezas y negocios
+
 
 
 }
