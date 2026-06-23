@@ -1,8 +1,6 @@
 package tasks.EmpresasyNegocios;
 
-import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
-import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHorizontalCoordenadas;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
@@ -21,13 +19,13 @@ import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
-public class ValidarCambioDePlan implements Task {
+public class ValidarCambioDeSimCard implements Task {
     private final User user = TestDataProvider.getRealUser();
 
     private static final String paso1 = "validar version de miniprograma";
-    private static final String paso2 = "ingresar Cambio de plan";
-    private static final String paso3 = "como pudo realizar el cambio de plan";
-    private static final String paso4 = "scroll hasta el link de clarocloud";
+    private static final String paso2 = "ingresar Traslado";
+    private static final String paso3 = "como pudo realizar el cabio de SIM card para mi empresa";
+    private static final String paso4 = "scroll para validar informacion";
     private static final String paso5 = "ver puntos de atencion";
 
     @Override
@@ -50,12 +48,12 @@ public class ValidarCambioDePlan implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER));
 
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(CAMBIO_DE_PLAN));
+                ClickTextoQueContengaX.elTextoContiene(CAMBIO_SIM_CARD));
 
         EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene("¿Cómo puedo realizar un cambio de plan?")
+                ValidarTextoQueContengaX.elTextoContiene("¿Cómo hago el cambio de SIM card para mi empresa?")
 
         );
 
@@ -77,11 +75,10 @@ public class ValidarCambioDePlan implements Task {
         );
         EvidenciaUtils.registrarCaptura(paso5);
 
-
-
     }
 
-    public static Performable validarCambioDePlan() {
-        return instrumented(ValidarCambioDePlan.class);
+    public static Performable validarCambioDeSimCard() {
+        return instrumented(ValidarCambioDeSimCard.class);
     }
 }
+

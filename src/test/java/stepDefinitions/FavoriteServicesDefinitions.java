@@ -8,11 +8,8 @@ import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
 import models.User;
-import tasks.EmpresasyNegocios.AcederIformacionTramites;
-import tasks.EmpresasyNegocios.ValidarCambioDePlan;
-import tasks.EmpresasyNegocios.ValidarCesionDeContrato;
+import tasks.EmpresasyNegocios.*;
 
-import tasks.EmpresasyNegocios.IngresarGuiaNovedades;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
@@ -55,6 +52,26 @@ public class FavoriteServicesDefinitions {
   public void ValidarCambioDePlan() {
     theActorInTheSpotlight().attemptsTo(
             ValidarCambioDePlan.validarCambioDePlan()
+    );
+  }
+  @And("^validar traslados$")
+  public void ValidarTraslados() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarTraslados.validarTraslados()
+    );
+
+  }
+  @And("^validar cambio de SIM card$")
+  public void ValidarCambioDeSimCard() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarCambioDeSimCard.validarCambioDeSimCard()
+    );
+  }
+
+  @And("^validar portafolio de soluciones$")
+  public void ValidarPortafolioDeSoluciones() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarPortafolioDeSoluciones.validarPortafolioDeSoluciones()
     );
   }
 }

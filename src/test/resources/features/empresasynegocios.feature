@@ -20,7 +20,7 @@ Característica: empresas y negocios
     Y validar cession de contrato
 
   @E&N003
-  Escenario: consultar pagos automáticos desde paga tu factura
+  Escenario: ingresar y validar informacion de tramintes cambio de plan
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
@@ -28,30 +28,33 @@ Característica: empresas y negocios
     Y ingresa a informacion de tramintes
     Y validar cambio de plan
 
-  @SFPF004
-  Escenario: enviar factura por correo electrónico
+
+  @E&N004
+  Escenario: ingresar y validar informacion de tramintes validar traslados
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y ingresa a tus servicios favoritos paga tu factura
-    Y envia factura por correo
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar traslados
 
-  @SFPF005
-  Escenario: consultar detalle de la última facturación
+  @E&N005
+  Escenario: ingresar y validar informacion de tramintes cambio de SIM card
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y ingresa a tus servicios favoritos paga tu factura
-    Y valida detalle ultima facturacion
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar cambio de SIM card
 
-  @SFPF006
-  Escenario: consultar historial de pagos
+  @E&N006
+  Escenario: consultar empresas y negocios portafolio de soluciones
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y ingresa a tus servicios favoritos paga tu factura
-    Y valida historial de pagos
-
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar cambio de SIM card
   @SFNA001
   Escenario: acceder a la opción necesitas ayuda hogar
     Dado que el usuario ingrese a super app
