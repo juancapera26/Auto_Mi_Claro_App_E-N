@@ -14,14 +14,18 @@ public class EmpresasNegociosPage {
                     .located(By.xpath("//android.view.View/android.widget.Image"));
 
     public static final Target SELECIONAR_ANUNCIO_2 =
-            Target.the("Ingresar a los anuncions y validar redireccion")
+            Target.the("Ingresar a selecionar anuncio ")
                     .located(By.xpath("//android.view.View[@resource-id=\"1\"]/android.widget.Image"));
     public static final Target SCROLL_SELECIONAR_ANUNCIO =
-            Target.the("Scroll Ingresar a anuncios y validar redireccion")
+            Target.the("Scroll selecionar anuncio")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.widget.Button[2]"));
 public static final Target VER_PUNTOS_ATENCION =
-            Target.the("Scroll Ingresar a anuncios y validar redireccion")
+            Target.the("ver puntos de atencion")
                     .located(By.xpath("//android.widget.TextView[@text=\"Ver puntos de atención\"]"));
+
+public static final Target MAS_INFORMACION =
+            Target.the("mas informacion elige tipo de servicio")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.view.View"));
 
 
 }

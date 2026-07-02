@@ -53,8 +53,8 @@ Característica: empresas y negocios
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y ingresa a informacion de tramintes
-    Y validar cambio de SIM card
+    Y validar portafolio de soluciones
+
   @SFNA001
   Escenario: acceder a la opción necesitas ayuda hogar
     Dado que el usuario ingrese a super app
