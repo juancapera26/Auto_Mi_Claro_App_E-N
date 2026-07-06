@@ -1,6 +1,6 @@
 Feature: ingreso a la super app
 
-  @loginE&N_01
+  @loginEYN_01
     Scenario: login exitoso con correo electrónico
     Given el usuario abre la super app
     When el usuario realiza el ingreso
