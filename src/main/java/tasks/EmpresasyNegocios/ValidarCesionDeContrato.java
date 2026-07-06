@@ -67,16 +67,9 @@ public class ValidarCesionDeContrato  implements Task {
         );
         EvidenciaUtils.registrarCaptura(paso4);
 
-        actor.attemptsTo(
-                WaitFor.aTime(2000)
-        );
-
 
         actor.attemptsTo(
-                Click.on(BTN_VOLVER)
-        );
-
-        actor.attemptsTo(
+                WaitFor.aTime(2000),
                 ClickTextoQueContengaX.elTextoContiene(SLUCIONES_MOVILES),
                 ValidarTextoQueContengaX.elTextoContiene("consultor Comercial")
         );

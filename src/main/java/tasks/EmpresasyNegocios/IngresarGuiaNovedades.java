@@ -55,7 +55,7 @@ public class    IngresarGuiaNovedades implements Task {
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),
-                ClickEnCoordenadas.en(60, 190),
+                Click.on(BTN_VOLVER),
                 Click.on(SCROLL_SELECIONAR_ANUNCIO),
                 WaitFor.aTime(4000),
                 Click.on(SELECIONAR_ANUNCIO_2),
