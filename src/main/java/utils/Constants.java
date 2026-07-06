@@ -33,9 +33,9 @@ public class Constants {
   public static final String SOLUCIONES_MOVILES = "Soluciones móviles";
   public static final String INTERNET_BANDA_ANCHA = "Internet banda ancha";
   public static final String TELEVISION_EMRESAS = "Televisión";
-  public static final String INTERNET_DE_LAS_COSAS = "Internet de las cosas";
+  public static final String INTERNET_DE_LAS_COSAS = "Internet de";
   public static final String MI_NEGOCIO_DIGITAL = "Mi negocio digital";
-  public static final String ADMINISTRAR_TU_NEGOCIO = "Administrar tu negocio";
+  public static final String ADMINISTRAR_TU_NEGOCIO = "Administrar";
 
   public static final String VER_MAS = "Ver más";
   public static final String MUNDO_CLARO = "Mundo Claro";
