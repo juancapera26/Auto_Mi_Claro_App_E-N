@@ -83,10 +83,5 @@ public class FavoriteServicesDefinitions {
             ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
     );
   }
-  @And("^vaingresar a tu cuenta empresas y negocios$")
-  public void ValidarIngresoEnpresasNegocios() {
-    theActorInTheSpotlight().attemptsTo(
-            ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
-    );
-  }
+
 }
