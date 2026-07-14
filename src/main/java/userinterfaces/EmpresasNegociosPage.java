@@ -27,6 +27,10 @@ public static final Target MAS_INFORMACION =
             Target.the("mas informacion elige tipo de servicio")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.view.View"));
 
+public static final Target MENU_BURGES_EMPRESA =
+            Target.the("Menu burges claro empresas")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.view.View/android.widget.Image"));
+
 
 }
 

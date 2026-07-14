@@ -1,4 +1,3 @@
-
 package tasks.EmpresasyNegocios;
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
@@ -22,34 +21,33 @@ import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static userinterfaces.EmpresasNegociosPage.MENU_BURGES_EMPRESA;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
-public class ValidarPortafolioDeSoluciones implements Task {
+public class ValidarIngresoEnpresasNegocios implements Task {
     private final User user = TestDataProvider.getRealUser();
-    private static final String paso1 = "Ingresar a Portafolio de soluciones";
+    private static final String paso1 = "Ingresar a la cuenta de empresas";
     private static final String paso2 = "validar version de miniprograma";
-    private static final String paso3 = "redireccionar a WhatsApp";
-    private static final String paso4 = "ingresar a la opcion de clud";
-    private static final String paso5 = "ingresar a la opcion de Soluciones moviles";
-    private static final String paso6 = "ingresar a la opcion Internet banda ancha";
-    private static final String paso7 = "ingresar a la opcion Televición";
-    private static final String paso8 = "ingresar a la opcion Internet de las cosas";
-    private static final String paso9 = "ingresar a Mi negocio digital";
+    private static final String paso3 = "validar anuncios";
+    private static final String paso4 = "validar ingresar a la cuenta de empresas";
+    private static final String paso5 = "validar menu";
+    private static final String paso6 = "validar informacion administrar perfil";
+    private static final String paso7 = "validar informacion gestionar la cuenta";
+    private static final String paso8 = "validar redireccion adquirir producto";
+    private static final String paso9 = "validar terminos y condiciones";
     private static final String paso10 = "ingresar a Mi Administrador tu negocio";
     private static final String paso11 = "ingresar a conocer mas";
-
-
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(PORTAFOLIO_DE_SOLUCIONES),
-                WaitForResponse.withText(PORTAFOLIO_DE_SOLUCIONES)
-        );
+                ClickTextoQueContengaX.elTextoContiene(INGRESA_A_TU_CUENTA),
+                WaitFor.aTime(3000)
+                );
 
         EvidenciaUtils.registrarCaptura(paso1);
 
@@ -58,7 +56,7 @@ public class ValidarPortafolioDeSoluciones implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
-                ValidarTexto.validarTexto(PORTAFOLIO_DE_SOLUCIONES),
+                ValidarTexto.validarTexto(INGRESA_A_TU_CUENTA),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
@@ -69,94 +67,49 @@ public class ValidarPortafolioDeSoluciones implements Task {
 
         actor.attemptsTo(Click.on(BTN_VOLVER));
 
-        actor.attemptsTo(
-                WaitFor.aTime(2000),
-                ClickTextoQueContengaX.elTextoContiene("Adquirir servicio"),
-                WaitFor.aTime(3000)
-
-        );
         EvidenciaUtils.registrarCaptura(paso3);
-        volverALaApp(actor);
+
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),
-                ClickTextoQueContengaX.elTextoContiene(CLOUD),
-                WaitFor.aTime(2000),
-                ValidarTextoQueContengaX.elTextoContiene("¿qué es Claro Cloud?")
+                ClickTextoQueContengaX.elTextoContiene("Continuar"),
+                WaitFor.aTime(1000),
+                ClickTextoQueContengaX.elTextoContiene("Continuar"),
+                WaitFor.aTime(1000),
+                ClickTextoQueContengaX.elTextoContiene("Continuar"),
+                WaitFor.aTime(6000)
         );
 
         EvidenciaUtils.registrarCaptura(paso4);
 
-        actor.attemptsTo(Click.on(BTN_VOLVER));
-
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(SOLUCIONES_MOVILES),
-                WaitFor.aTime(2000),
-                ValidarTextoQueContengaX.elTextoContiene("Los mejores planes de voz y datos para tu negocio")
+                Click.on(MENU_BURGES_EMPRESA)
         );
-
         EvidenciaUtils.registrarCaptura(paso5);
-
-        actor.attemptsTo(Click.on(BTN_VOLVER));
-
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(INTERNET),
-                WaitFor.aTime(2000)
-
+                ClickEnCoordenadas.en(361, 460)
         );
-
         EvidenciaUtils.registrarCaptura(paso6);
 
-        actor.attemptsTo(Click.on(BTN_VOLVER));
-
+        actor.attemptsTo(ClickEnCoordenadas.en(44, 129));
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(TELEVISION),
-                WaitFor.aTime(2000)
-
+                ClickEnCoordenadas.en(361, 642)
         );
-
         EvidenciaUtils.registrarCaptura(paso7);
-
-        actor.attemptsTo(Click.on(BTN_VOLVER));
+        actor.attemptsTo(ClickEnCoordenadas.en(44, 129));
 
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(INTERNET_DE_LAS_COSAS),
-                WaitFor.aTime(2000)
-
+                ClickEnCoordenadas.en(361, 815)
         );
-
         EvidenciaUtils.registrarCaptura(paso8);
-
-        actor.attemptsTo(Click.on(BTN_VOLVER));
-
+        volverALaApp(actor);
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(MI_NEGOCIO_DIGITAL),
-                WaitFor.aTime(2000)
-
+                ClickEnCoordenadas.en(361, 1132)
         );
-
         EvidenciaUtils.registrarCaptura(paso9);
 
-        actor.attemptsTo(Click.on(BTN_VOLVER));
-
-        actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(ADMINISTRAR_TU_NEGOCIO),
-                WaitFor.aTime(2000)
-        );
-
-
-        EvidenciaUtils.registrarCaptura(paso10);
-        actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene("Conoce más"),
-                WaitFor.aTime(2000),
-                ClickEnCoordenadas.en(299, 1398),
-                WaitFor.aTime(2000)
-        );
-
-        EvidenciaUtils.registrarCaptura(paso11);
 
     }
-
     private void volverALaApp(Actor actor) {
 
         WebDriver webDriver = BrowseTheWeb.as(actor).getDriver();
@@ -182,8 +135,7 @@ public class ValidarPortafolioDeSoluciones implements Task {
                         .forNoMoreThan(40).seconds()
         );
     }
-
-    public static Performable validarPortafolioDeSoluciones() {
-        return instrumented(ValidarPortafolioDeSoluciones.class);
+    public static Performable validarIngresoEnpresasNegocios() {
+        return instrumented(ValidarIngresoEnpresasNegocios.class);
     }
 }

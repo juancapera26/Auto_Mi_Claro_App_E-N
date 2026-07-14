@@ -55,6 +55,23 @@ Característica: empresas y negocios
     Y el usuario hace scroll hasta el menú Empresas y negocios
     Y validar portafolio de soluciones
 
+  @EYN007
+  Escenario: validar el ingreso a empresas y negocios
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+
+  @EYN008
+  Escenario: validar el ingreso a empresas y negocios
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+
   @SYNA001
   Escenario: acceder a la opción necesitas ayuda hogar
     Dado que el usuario ingrese a super app

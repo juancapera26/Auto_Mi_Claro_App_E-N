@@ -28,6 +28,7 @@ public class Constants {
   public static final String TRASLADOS = "Traslados";
   public static final String CAMBIO_SIM_CARD = "Cambio de SIM card";
   public static final String PORTAFOLIO_DE_SOLUCIONES = "Portafolio de soluciones";
+  public static final String INGRESA_A_TU_CUENTA = "Ingresa a tu cuenta";
   public static final String SOLUCIONES_EMPRESARIALES = "Soluciones empresariales";
   public static final String CLOUD = "Cloud";
   public static final String SOLUCIONES_MOVILES = "Soluciones móviles";

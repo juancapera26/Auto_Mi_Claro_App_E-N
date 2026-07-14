@@ -73,5 +73,20 @@ public class FavoriteServicesDefinitions {
     theActorInTheSpotlight().attemptsTo(
             ValidarPortafolioDeSoluciones.validarPortafolioDeSoluciones()
     );
+
+
+  }
+
+  @And("^validar ingreso a tu cuenta empresas y negocios$")
+  public void ValidarIngresoEnpresasNegocios() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
+    );
+  }
+  @And("^vaingresar a tu cuenta empresas y negocios$")
+  public void ValidarIngresoEnpresasNegocios() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
+    );
   }
 }
