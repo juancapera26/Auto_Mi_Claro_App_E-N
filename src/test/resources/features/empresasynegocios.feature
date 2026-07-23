@@ -96,7 +96,7 @@ Característica: empresas y negocios
     Y ingresa a detalle de tu plan
     Y ingresa a administra tu factura
 
-  @EYN010
+  @EYN011
   Escenario: Validar Administrar Pagos
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
