@@ -83,5 +83,43 @@ public class FavoriteServicesDefinitions {
             ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
     );
   }
+  @And("^validar ingreso a tu cuenta empresas y negocios menu$")
+  public void ValidarIngresoEnpresasNegociosMenu() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarIngresoEnpresasNegociosMenu.validarIngresoEnpresasNegociosMenu()
+    );
+  }
+
+    @And("^ingresa a Soluciones moviles$")
+    public void IngresaSolucionesmoviles() {
+      theActorInTheSpotlight().attemptsTo(
+              IngresaSolucionesmoviles.ingresaSolucionesmoviles()
+      );
+  }
+
+  @And("^ingresa a Roaming internacional$")
+  public void IngresaRoaminginternacional() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaRoaminginternacional.ingresaRoaminginternacional()
+    );
+  }
+  @And("^ingresa a detalle de tu plan$")
+  public void IngresaDetalleTuPlan() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaDetalleTuPlan.ingresaDetalleTuPlan()
+    );
+  }
+  @And("^ingresa a administra tu factura$")
+  public void IngresadministraTuFactura() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresadministraTuFactura.ingresadministraTuFactura()
+    );
+  }
+  @And("^ingresa a administra Pagos$")
+  public void IngresadministraPagos() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresadministraPagos.ingresadministraPagos()
+    );
+  }
 
 }

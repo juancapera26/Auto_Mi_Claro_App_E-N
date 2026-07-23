@@ -31,7 +31,7 @@ public class Constants {
   public static final String INGRESA_A_TU_CUENTA = "Ingresa a tu cuenta";
   public static final String SOLUCIONES_EMPRESARIALES = "Soluciones empresariales";
   public static final String CLOUD = "Cloud";
-  public static final String SOLUCIONES_MOVILES = "Soluciones móviles";
+  public static final String SOLUCIONES_MOVILES = "móviles";
   public static final String INTERNET_BANDA_ANCHA = "Internet banda ancha";
   public static final String TELEVISION_EMRESAS = "Televisión";
   public static final String INTERNET_DE_LAS_COSAS = "Internet de";

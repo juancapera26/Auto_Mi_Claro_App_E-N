@@ -77,63 +77,10 @@ public class ValidarIngresoEnpresasNegocios implements Task {
                 ClickTextoQueContengaX.elTextoContiene("Continuar"),
                 WaitFor.aTime(1000),
                 ClickTextoQueContengaX.elTextoContiene("Continuar"),
-                WaitFor.aTime(6000)
+                WaitFor.aTime(10000)
         );
 
         EvidenciaUtils.registrarCaptura(paso4);
-
-        actor.attemptsTo(
-                Click.on(MENU_BURGES_EMPRESA)
-        );
-        EvidenciaUtils.registrarCaptura(paso5);
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(361, 460)
-        );
-        EvidenciaUtils.registrarCaptura(paso6);
-
-        actor.attemptsTo(ClickEnCoordenadas.en(44, 129));
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(361, 642)
-        );
-        EvidenciaUtils.registrarCaptura(paso7);
-        actor.attemptsTo(ClickEnCoordenadas.en(44, 129));
-
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(361, 815)
-        );
-        EvidenciaUtils.registrarCaptura(paso8);
-        volverALaApp(actor);
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(361, 1132)
-        );
-        EvidenciaUtils.registrarCaptura(paso9);
-
-
-    }
-    private void volverALaApp(Actor actor) {
-
-        WebDriver webDriver = BrowseTheWeb.as(actor).getDriver();
-
-        // 🔥 Obtener el driver real (el de Appium)
-        if (webDriver instanceof WebDriverFacade) {
-            webDriver = ((WebDriverFacade) webDriver).getProxiedDriver();
-        }
-
-        if (webDriver instanceof AndroidDriver) {
-
-            AndroidDriver<?> driver = (AndroidDriver<?>) webDriver;
-
-            driver.activateApp("com.clarocolombia.miclaro");
-
-        } else {
-            throw new IllegalStateException("El driver no es AndroidDriver");
-        }
-
-        actor.attemptsTo(
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
-                        .forNoMoreThan(40).seconds()
-        );
     }
     public static Performable validarIngresoEnpresasNegocios() {
         return instrumented(ValidarIngresoEnpresasNegocios.class);

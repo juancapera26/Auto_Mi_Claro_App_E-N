@@ -30,6 +30,12 @@ public static final Target MAS_INFORMACION =
 public static final Target MENU_BURGES_EMPRESA =
             Target.the("Menu burges claro empresas")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.view.View/android.widget.Image"));
+public static final Target SELECIONAR_FACTURA =
+            Target.the("Selecionar una factura")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
+public static final Target SELECIONAR_MEDIOS_DE_PAGO =
+            Target.the("Selecionar medios de pagos")
+                    .located(By.xpath("//android.view.View[@resource-id=\"select\"]"));
 
 
 }

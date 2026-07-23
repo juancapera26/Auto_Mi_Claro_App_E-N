@@ -56,25 +56,53 @@ Característica: empresas y negocios
     Y validar portafolio de soluciones
 
   @EYN007
-  Escenario: validar el ingreso a empresas y negocios
+  Escenario: validar el ingreso a empresas y negocios y menu
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y el usuario hace scroll hasta el menú Empresas y negocios
     Y validar ingreso a tu cuenta empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios menu
+
 
   @EYN008
-  Escenario: validar el ingreso a empresas y negocios
+  Escenario: validar Roaming internacional
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y el usuario hace scroll hasta el menú Empresas y negocios
     Y validar ingreso a tu cuenta empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
+    Y ingresa a Soluciones moviles
+    Y ingresa a Roaming internacional
 
-  @SYNA001
-  Escenario: acceder a la opción necesitas ayuda hogar
+  @EYN009
+  Escenario: Validar detalle de tu plan
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y selecciona la opcion necesitas ayuda hogar
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+    Y ingresa a Soluciones moviles
+    Y ingresa a detalle de tu plan
+
+  @EYN010
+  Escenario: Validar Administrar facura
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+    Y ingresa a Soluciones moviles
+    Y ingresa a detalle de tu plan
+    Y ingresa a administra tu factura
+
+  @EYN010
+  Escenario: Validar Administrar Pagos
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y validar ingreso a tu cuenta empresas y negocios
+    Y ingresa a administra Pagos
+
+

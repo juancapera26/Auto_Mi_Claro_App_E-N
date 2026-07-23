@@ -51,7 +51,7 @@ public class LoginDefinitions {
     theActorInTheSpotlight().attemptsTo(IngresoSuperApp.ingresoSuperApp());
   }
 
-  @Then("^verifica version de la super app$")
+    @Then("^verifica version de la super app$")
   public void verificaVersion() {
     theActorInTheSpotlight().attemptsTo(VersionSuperApp.validarVersion());
   }

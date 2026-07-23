@@ -1,0 +1,84 @@
+package tasks.EmpresasyNegocios;
+
+import interactions.Click.ClickEnCoordenadas;
+import interactions.Click.ClickTextoQueContengaX;
+import interactions.validations.ValidarTexto;
+import interactions.validations.ValidarTextoQueContengaX;
+import interactions.wait.WaitFor;
+import models.User;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import utils.EvidenciaUtils;
+import utils.TestDataProvider;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
+import static utils.Constants.*;
+
+public class IngresaRoaminginternacional implements Task {
+    private final User user = TestDataProvider.getRealUser();
+    private static final String paso1 = "Ingresar a ingreso Roaming internacional ";
+    private static final String paso2 = "validar version miniprogrma";
+    private static final String paso3 = "validar Informacion Paquete";
+    private static final String paso4 = "validar Informacion Paquete2";
+    private static final String paso5 = "validar Informacion Paquete3";
+
+
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Roaming"),
+                WaitFor.aTime(3000)
+        );
+
+        EvidenciaUtils.registrarCaptura(paso1);
+
+
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene(ROAMING_INTERNACIONAL),
+                ValidarTextoQueContengaX.elTextoContiene("322 691 8354"),
+                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+
+
+        );
+        EvidenciaUtils.registrarCaptura(paso3);
+
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
+                WaitFor.aTime(2000)
+
+        );
+        actor.attemptsTo(
+                ClickEnCoordenadas.en(385, 988),
+                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+
+        );
+
+        EvidenciaUtils.registrarCaptura(paso4);
+
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
+                WaitFor.aTime(2000)
+
+        );
+        actor.attemptsTo(
+                ClickEnCoordenadas.en(450, 988),
+                WaitFor.aTime(2000),
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+
+        );
+        EvidenciaUtils.registrarCaptura(paso5);
+
+
+
+
+    }
+    public static Performable ingresaRoaminginternacional() {
+        return instrumented(IngresaRoaminginternacional.class);
+    }
+
+}
