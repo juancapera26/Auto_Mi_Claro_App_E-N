@@ -48,7 +48,7 @@ Característica: empresas y negocios
     Y validar cambio de SIM card
 
   @EYN006
-  Escenario: validar el ingreso a empresas y negocios y menu
+  Escenario: validar ingreso a Administar perfiles Empresas
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app

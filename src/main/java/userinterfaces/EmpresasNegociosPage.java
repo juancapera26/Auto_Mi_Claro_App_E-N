@@ -56,9 +56,21 @@ public static final Target SELECIONAR_CAMPO_DE_TEXTO =
             Target.the("Validar medio de pago PSE")
                     .locatedBy("//android.view.View[@content-desc=\"confirmacionEmpresasURLConvivenciaParcial\"]/android.widget.TextView");
 
-public static final Target CAMPO_CODIGO_OTP =
-            Target.the("ingresar codigo OTP")
-                    .locatedBy("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[3]/android.widget.TextView");
+public static final Target SELECCION_BANCO_PSE =
+            Target.the("selecionar banco en medio de pago PSE")
+                    .locatedBy("//android.view.View[@resource-id=\"BANCO\"]");
+public static final Target SELECCION_CLIENTE_PSE =
+            Target.the("selecionar tipo de cliente de pago PSE")
+                    .locatedBy("//android.view.View[@resource-id=\"TIPO_CLIENTE\"]");
+    public static final Target SELECCION_TIPO_DOCUMENTO_PSE =
+            Target.the("selecionar selecionar tipo de documento en medio pago PSE")
+                    .locatedBy("//android.view.View[@resource-id=\"TIPO_DOCUMENTO\"]");
+    public static final Target ESCRIBIR_DOCUMENTO_PSE =
+            Target.the("selecionar y escribir documento en medio pago PSE")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"NUMERO_DOCUMENTO\"]");
+public static final Target ESCRIBIR_NUMERO_PSE =
+            Target.the("selecionar numero telefonico en medio de pago PSE")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"TELEFONO\"]");
 
 
 }
