@@ -19,32 +19,44 @@ import static utils.Constants.*;
 public class IngresaRoaminginternacional implements Task {
     private final User user = TestDataProvider.getRealUser();
     private static final String paso1 = "Ingresar a ingreso Roaming internacional ";
-    private static final String paso2 = "validar version miniprogrma";
-    private static final String paso3 = "validar Informacion Paquete";
-    private static final String paso4 = "validar Informacion Paquete2";
-    private static final String paso5 = "validar Informacion Paquete3";
+    private static final String paso2 = "ingresar numero al que quieras administrar";
+    private static final String paso3 = "validar Informacion de Roaming internacional";
+    private static final String paso4 = "validar Informacion Paquete";
+    private static final String paso5 = "validar Informacion Paquete2";
+    private static final String paso6 = "validar Informacion Paquete3";
 
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitFor.aTime(7000)
+        );
+        EvidenciaUtils.registrarCaptura(paso1);
+        actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Roaming"),
                 WaitFor.aTime(3000)
         );
+        EvidenciaUtils.registrarCaptura(paso2);
 
-        EvidenciaUtils.registrarCaptura(paso1);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
+                WaitFor.aTime(3000)
+        );
 
 
         actor.attemptsTo(
+                WaitFor.aTime(2000),
                 ValidarTextoQueContengaX.elTextoContiene(ROAMING_INTERNACIONAL),
-                ValidarTextoQueContengaX.elTextoContiene("322 691 8354"),
-                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
-
+                ValidarTextoQueContengaX.elTextoContiene("3226918354")
 
         );
         EvidenciaUtils.registrarCaptura(paso3);
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
+                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+        );
+        EvidenciaUtils.registrarCaptura(paso4);
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
@@ -58,7 +70,7 @@ public class IngresaRoaminginternacional implements Task {
 
         );
 
-        EvidenciaUtils.registrarCaptura(paso4);
+        EvidenciaUtils.registrarCaptura(paso5);
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
@@ -71,7 +83,7 @@ public class IngresaRoaminginternacional implements Task {
                 ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
 
         );
-        EvidenciaUtils.registrarCaptura(paso5);
+        EvidenciaUtils.registrarCaptura(paso6);
 
 
 

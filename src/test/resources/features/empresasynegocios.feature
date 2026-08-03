@@ -47,62 +47,100 @@ Característica: empresas y negocios
     Y ingresa a informacion de tramintes
     Y validar cambio de SIM card
 
-    @EYN006
-  Escenario: consultar empresas y negocios portafolio de soluciones
-    Dado que el usuario ingrese a super app
-    Cuando el usuario realiza el ingreso
-    Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar portafolio de soluciones
-
-  @EYN007
+  @EYN006
   Escenario: validar el ingreso a empresas y negocios y menu
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios menu
+    Y ingresar a otras fucionalidades
+    Y validar ingreso a Administar perfiles Empresas
 
-
-  @EYN008
+  @EYN007
   Escenario: validar Roaming internacional
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
-    Y ingresa a Soluciones moviles
+    Y ingresar a soluciones moviles
     Y ingresa a Roaming internacional
 
-  @EYN009
+  @EYN008
   Escenario: Validar detalle de tu plan
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
-    Y ingresa a Soluciones moviles
+    Y ingresar a soluciones moviles
     Y ingresa a detalle de tu plan
+
+  @EYN009
+  Escenario: Validar detalle de tu plan sona de invitados
+    Dado que el usuario ingrese a super app
+    Cuando el usuario cierra la sesion
+    Entonces ingresa a Consulta tu plan EYP
+
 
   @EYN010
   Escenario: Validar Administrar facura
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
-    Y ingresa a Soluciones moviles
+    Y ingresar a soluciones moviles
     Y ingresa a detalle de tu plan
     Y ingresa a administra tu factura
 
   @EYN011
-  Escenario: Validar Administrar Pagos
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Redirección a PSE
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario hace scroll hasta el menú Empresas y negocios
-    Y validar ingreso a tu cuenta empresas y negocios
-    Y ingresa a administra Pagos
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago PSE
+
+  @EYN012
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Tarjeta de Crédito - Débito
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago Tarjeta de Crédito - Débito
+
+  @EYN013
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Redirección a Bancolombia
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago Bancolombia
+
+  @EYN014
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Redirección a PSE
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago PSE
+
+  @EYN015
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Tarjeta de Crédito - Débito
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago Tarjeta de Crédito - Débito
+
+  @EYN016
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Redirección a Bancolombia
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago Bancolombia
+
+
 
 

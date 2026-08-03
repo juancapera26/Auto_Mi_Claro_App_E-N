@@ -33,9 +33,32 @@ public static final Target MENU_BURGES_EMPRESA =
 public static final Target SELECIONAR_FACTURA =
             Target.the("Selecionar una factura")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
+public static final Target SELECIONAR_FACTURA_FIJAS_HFC =
+            Target.the("Selecionar una factura")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.widget.CheckBox/android.widget.CheckBox"));
 public static final Target SELECIONAR_MEDIOS_DE_PAGO =
             Target.the("Selecionar medios de pagos")
                     .located(By.xpath("//android.view.View[@resource-id=\"select\"]"));
+public static final Target SELECIONAR_CAMPO_DE_TEXTO =
+            Target.the("Selecionar campo de texto de registro en claro empresas")
+                    .located(By.xpath("//android.widget.EditText"));
+
+    public static final Target PERFIL_DE_CONSULTA =
+            Target.the("Eliminar ususario")
+                    .located(By.xpath("//android.widget.RadioButton[@text=\"Elegir como perfil de consulta\"]/android.widget.TextView"));
+    public static final Target EMAIL =
+            Target.the("correo")
+                    .locatedBy("//*[contains(@text,'{0}')]");
+    public static final Target BOTON_ELIMINAR =
+            Target.the("Boton eliminar perfil")
+                    .locatedBy("//android.view.View[@resource-id=\"__react-content\"]/android.widget.Image[2]");
+    public static final Target VALIDAR_PSE =
+            Target.the("Validar medio de pago PSE")
+                    .locatedBy("//android.view.View[@content-desc=\"confirmacionEmpresasURLConvivenciaParcial\"]/android.widget.TextView");
+
+public static final Target CAMPO_CODIGO_OTP =
+            Target.the("ingresar codigo OTP")
+                    .locatedBy("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[3]/android.widget.TextView");
 
 
 }

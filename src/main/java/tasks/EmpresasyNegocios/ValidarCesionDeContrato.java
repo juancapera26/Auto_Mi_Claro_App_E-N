@@ -43,7 +43,9 @@ public class ValidarCesionDeContrato  implements Task {
                 WaitFor.aTime(1000),
                 ValidarTexto.validarTexto(INFORMACION_TRAMITE),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
-                ValidarTextoQueContengaX.elTextoContiene(VER));
+                ValidarTextoQueContengaX.elTextoContiene(VER)
+        );
+
 
         EvidenciaUtils.registrarCaptura(paso1);
 

@@ -2,6 +2,7 @@ package tasks.EmpresasyNegocios;
 
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.validations.ExisteTexto;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
@@ -41,7 +42,7 @@ public class IngresadministraTuFactura implements Task {
 
 
         actor.attemptsTo(
-                WaitFor.aTime(1000),
+                WaitFor.aTime(3000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
@@ -52,7 +53,7 @@ public class IngresadministraTuFactura implements Task {
         EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(Click.on(BTN_VOLVER),
-                WaitFor.aTime(1000)
+                WaitFor.aTime(7000)
         );
 
 
@@ -65,20 +66,25 @@ public class IngresadministraTuFactura implements Task {
 
         );
         EvidenciaUtils.registrarCaptura(paso3);
+
+        if (actor.asksFor(ExisteTexto.con(PAGAR))) {
+
+            actor.attemptsTo(
+                    ClickEnCoordenadas.en(360, 902),
+                    WaitFor.aTime(2000),
+                    ClickEnCoordenadas.en(351, 847),
+                    WaitFor.aTime(1000)
+            );
+
+            EvidenciaUtils.registrarCaptura(paso4);
+
+            actor.attemptsTo(
+                    ClickEnCoordenadas.en(46, 126)
+            );
+        }
+
         actor.attemptsTo(
-                ClickEnCoordenadas.en(360, 902),
-                WaitFor.aTime(2000),
-                ClickEnCoordenadas.en(351, 847),
-                WaitFor.aTime(1000)
-        );
-        EvidenciaUtils.registrarCaptura(paso4);
-
-        actor.attemptsTo(ClickEnCoordenadas.en(46, 126),
-                WaitFor.aTime(4000)
-        );
-
-
-        actor.attemptsTo(
+                WaitFor.aTime(5000),
                 ClickTextoQueContengaX.elTextoContiene("Historial"),
                 ValidarTextoQueContengaX.elTextoContiene("Histórico de pagos en Línea"),
                 ValidarTextoQueContengaX.elTextoContiene("Valor"),

@@ -70,6 +70,9 @@ public class LoginDefinitions {
   public void ingresoDocumento() {
     theActorInTheSpotlight().attemptsTo(LoginOrquestado.con(LoginOrquestado.Metodo.DOCUMENTO));
   }
+  @When("^el usuario cierra la sesion$")
+  public void CierreSesionSuperApp() {
+    theActorInTheSpotlight().attemptsTo(CierreSesionSuperApp.cierreSesionSuperApp());}
 
   @When("^el usuario realiza el ingreso con pin$")
   public void ingresoPIN() {
@@ -85,4 +88,5 @@ public class LoginDefinitions {
               ValidateLocatorsWithOllama.using(xmlFileName, locatorsOrTexts, maxLocatorsToSend)
       );
   }*/
+
 }

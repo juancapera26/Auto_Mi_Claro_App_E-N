@@ -1,5 +1,8 @@
 package tasks.EmpresasyNegocios;
+
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.validations.EscribirOTP;
+import interactions.validations.ObtenerOtp;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
@@ -16,31 +19,46 @@ import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
-public class IngresaDetalleTuPlan implements Task {
+public class IngresaDetalleTuPlanEYP implements Task {
+
     private final User user = TestDataProvider.getRealUser();
-    private static final String paso1 = "ingresar a detalle de tu plan";
-    private static final String paso2 = "ingresar numero al que quieras administrar";
-    private static final String paso3 = "validar version miniprogrma";
-    private static final String paso4 = "validar Informacion detalle de tu plan";
 
-
+    private static final String paso1 = "Ingresar a Consulta tu plan";
+    private static final String paso2 = "Pantalla ingreso del numero a consultar";
+    private static final String paso3 = "Ingreso de código OTP";
+    private static final String paso4 = "Validar versión del miniprograma";
+    private static final String paso5 = "Validar información detalle de tu plan";
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene("Detalle de"),
+                ClickTextoQueContengaX.elTextoContiene("Claro Empresas"),
+                WaitFor.aTime(3000),
+                ClickTextoQueContengaX.elTextoContiene("Consulta tu plan"),
                 WaitFor.aTime(3000)
         );
 
+        // Pantalla Consulta tu plan
         EvidenciaUtils.registrarCaptura(paso1);
+
+        // Captura antes de presionar Continuar
+        EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
-                WaitFor.aTime(6000)
+                WaitFor.aTime(10000)
         );
-        EvidenciaUtils.registrarCaptura(paso2);
 
+        // Ya cargó la pantalla para ingresar el OTP
+        EvidenciaUtils.registrarCaptura(paso3);
 
+        String otp = ObtenerOtp.obtener(actor);
+
+        actor.attemptsTo(
+                EscribirOTP.con(otp),
+                WaitFor.aTime(3000)
+        );
 
         actor.attemptsTo(
                 WaitFor.aTime(1000),
@@ -51,27 +69,24 @@ public class IngresaDetalleTuPlan implements Task {
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
-        EvidenciaUtils.registrarCaptura(paso3);
 
-        actor.attemptsTo(Click.on(BTN_VOLVER),
+        EvidenciaUtils.registrarCaptura(paso4);
+
+        actor.attemptsTo(
+                Click.on(BTN_VOLVER),
                 WaitFor.aTime(1000)
-                );
-
+        );
 
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),
                 ValidarTextoQueContengaX.elTextoContiene("322 691 8354"),
                 ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
-
         );
-        EvidenciaUtils.registrarCaptura(paso4);
 
-
-
-    }
-    public static Performable ingresaDetalleTuPlan() {
-        return instrumented(IngresaDetalleTuPlan.class);
+        EvidenciaUtils.registrarCaptura(paso5);
     }
 
+    public static Performable ingresaDetalleTuPlanEYP() {
+        return instrumented(IngresaDetalleTuPlanEYP.class);
+    }
 }
-

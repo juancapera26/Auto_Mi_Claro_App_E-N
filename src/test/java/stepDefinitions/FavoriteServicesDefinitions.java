@@ -4,6 +4,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static utils.Constants.*;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
@@ -67,40 +68,44 @@ public class FavoriteServicesDefinitions {
             ValidarCambioDeSimCard.validarCambioDeSimCard()
     );
   }
-
-  @And("^validar portafolio de soluciones$")
-  public void ValidarPortafolioDeSoluciones() {
+  @And("^ingresar a otras fucionalidades$")
+  public void IngresarOtrasFucionalidades() {
     theActorInTheSpotlight().attemptsTo(
-            ValidarPortafolioDeSoluciones.validarPortafolioDeSoluciones()
-    );
-
-
-  }
-
-  @And("^validar ingreso a tu cuenta empresas y negocios$")
-  public void ValidarIngresoEnpresasNegocios() {
-    theActorInTheSpotlight().attemptsTo(
-            ValidarIngresoEnpresasNegocios.validarIngresoEnpresasNegocios()
-    );
-  }
-  @And("^validar ingreso a tu cuenta empresas y negocios menu$")
-  public void ValidarIngresoEnpresasNegociosMenu() {
-    theActorInTheSpotlight().attemptsTo(
-            ValidarIngresoEnpresasNegociosMenu.validarIngresoEnpresasNegociosMenu()
+            IngresarOtrasFucionalidades.ingresarOtrasFucionalidades()
     );
   }
 
-    @And("^ingresa a Soluciones moviles$")
-    public void IngresaSolucionesmoviles() {
-      theActorInTheSpotlight().attemptsTo(
-              IngresaSolucionesmoviles.ingresaSolucionesmoviles()
-      );
+  @And("^ingresar a soluciones moviles$")
+  public void IngresarSolucionesMoviles() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarSolucionesMoviles.ingresarSolucionesMoviles()
+    );
+  }
+//////////////////////////////////////////
+  @And("^ingresar a pagos y facturas$")
+  public void IngresarPagosFacuras() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarPagosFacuras.ingresarPagosFacuras()
+    );
+  }
+  @And("^validar ingreso a Administar perfiles Empresas$")
+  public void ValidarAdministrarPerfilEmpreas() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarAdministrarPerfilEmpreas.validarAdministrarPerfilEmpreas()
+    );
   }
 
   @And("^ingresa a Roaming internacional$")
   public void IngresaRoaminginternacional() {
     theActorInTheSpotlight().attemptsTo(
             IngresaRoaminginternacional.ingresaRoaminginternacional()
+    );
+  }
+
+  @Then("^ingresa a Consulta tu plan EYP$")
+  public void IngresaDetalleTuPlanEYP() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaDetalleTuPlanEYP.ingresaDetalleTuPlanEYP()
     );
   }
   @And("^ingresa a detalle de tu plan$")
@@ -115,11 +120,42 @@ public class FavoriteServicesDefinitions {
             IngresadministraTuFactura.ingresadministraTuFactura()
     );
   }
-  @And("^ingresa a administra Pagos$")
-  public void IngresadministraPagos() {
+  @And("^ingresa a Pagos en linea Soluciones moviles")
+  public void IngresarPagosLineaSolucionesMovlies() {
     theActorInTheSpotlight().attemptsTo(
-            IngresadministraPagos.ingresadministraPagos()
+            IngresarPagosLineaSolucionesMovlies.ingresarPagosLineaSolucionesMovlies()
+    );
+  }
+  @And("^ingresa a Pagos en linea Soluciones Fijas HFC")
+  public void IngresarPagosLineaSolucionesFiHFC() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarPagosLineaSolucionesFiHFC.ingresarPagosLineaSolucionesFiHFC()
+    );
+  }
+  @And("^ingresa a Pagos en linea Soluciones Fijas FO")
+  public void IngresarPagosLineaSolucionesFO() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarPagosLineaSolucionesFO.ingresarPagosLineaSolucionesFO()
+    );
+  }
+  @And("^Validar medio de pago PSE$")
+  public void ValidarMedioDePagoPSE() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarMedioDePagoPSE.validarMedioDePagoPSE()
     );
   }
 
+  @And("^Validar medio de pago Tarjeta de Crédito - Débito$")
+  public void ValidarMedioDePagoTarjetaCreditoDebito() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarMedioDePagoTarjetaCreditoDebito.validarMedioDePagoTarjetaCreditoDebito()
+    );
+  }
+
+  @And("^Validar medio de pago Bancolombia$")
+  public void ValidarMedioDePagoBancolombia() {
+    theActorInTheSpotlight().attemptsTo(
+            ValidarMedioDePagoBancolombia.validarMedioDePagoBancolombia()
+    );
+  }
 }
