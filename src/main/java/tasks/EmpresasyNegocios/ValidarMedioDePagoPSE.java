@@ -27,6 +27,7 @@ public class ValidarMedioDePagoPSE implements Task {
     private static final String paso1 = "Validar redirección al Portal de Pagos Claro";
     private static final String paso2 = "Validar medio de pago PSE";
     private static final String paso3 = "Ingresar modolo de pago PSE";
+    private static final String paso4 = "validar redirecionamiento a PSE";
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -70,8 +71,10 @@ public class ValidarMedioDePagoPSE implements Task {
         EvidenciaUtils.registrarCaptura(paso3);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Confirmar"),
-                WaitFor.aTime(10000)
+                WaitFor.aTime(10000),
+                ValidarTextoQueContengaX.elTextoContiene("PSE A UN CLIC")
         );
+        EvidenciaUtils.registrarCaptura(paso3);
     }
 
     public static Performable validarMedioDePagoPSE() {

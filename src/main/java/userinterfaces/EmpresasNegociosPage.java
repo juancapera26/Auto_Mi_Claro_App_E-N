@@ -55,6 +55,8 @@ public static final Target SELECIONAR_CAMPO_DE_TEXTO =
     public static final Target VALIDAR_PSE =
             Target.the("Validar medio de pago PSE")
                     .locatedBy("//android.view.View[@content-desc=\"confirmacionEmpresasURLConvivenciaParcial\"]/android.widget.TextView");
+//medioos de pago PSE
+
 
 public static final Target SELECCION_BANCO_PSE =
             Target.the("selecionar banco en medio de pago PSE")
@@ -71,7 +73,37 @@ public static final Target SELECCION_CLIENTE_PSE =
 public static final Target ESCRIBIR_NUMERO_PSE =
             Target.the("selecionar numero telefonico en medio de pago PSE")
                     .locatedBy("//android.widget.EditText[@resource-id=\"TELEFONO\"]");
+// ===============================
+// MEDIO DE PAGO - TARJETA DE CRÉDITO
+// ===============================
 
+    public static final Target ESCRIBIR_NUMERO_TARJETA =
+            Target.the("escribir número de la tarjeta de crédito")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"NUMERO_TARJETA\"]");
+
+    public static final Target SELECCIONAR_MES_VENCIMIENTO =
+            Target.the("seleccionar mes de vencimiento de la tarjeta")
+                    .locatedBy("//android.view.View[@resource-id=\"FECHA_VENC_MES\"]");
+
+    public static final Target SELECCIONAR_ANO_VENCIMIENTO =
+            Target.the("seleccionar año de vencimiento de la tarjeta")
+                    .locatedBy("//android.view.View[@resource-id=\"FECHA_VENC_ANNO\"]");
+
+    public static final Target ESCRIBIR_CODIGO_SEGURIDAD =
+            Target.the("escribir código de seguridad de la tarjeta")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"CODIGO_SEGURIDAD\"]");
+
+    public static final Target SELECCIONAR_NUMERO_CUOTAS =
+            Target.the("seleccionar número de cuotas")
+                    .locatedBy("//android.view.View[@resource-id=\"CUOTAS\"]");
+
+    public static final Target NOMBRE_APELLIDO =
+            Target.the("seleccionar número de cuotas")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"NOMBRE_TARJETA\"]");
+
+    public static final Target ESCRIBIR_NUMERO_TELEFONO =
+            Target.the("escribir número telefónico")
+                    .locatedBy("//android.widget.EditText[@resource-id=\"TELEFONO\"]");
 
 }
 

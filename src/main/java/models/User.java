@@ -152,4 +152,7 @@ public class User {
   public User() {}
 
 
+    public CharSequence getNumeroTarjeta() {
+        return null;
+    }
 }
