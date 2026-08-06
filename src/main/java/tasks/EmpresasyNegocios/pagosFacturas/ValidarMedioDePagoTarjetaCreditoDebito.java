@@ -41,7 +41,6 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
         actor.attemptsTo(
                 ScrollHorizontalCoordenadas.desde(339, 1490, 339, 200),
                 WaitFor.aTime(2000),
-                ClickEnCoordenadas.en(185, 212),
                 Click.on(SELECIONAR_MEDIOS_DE_PAGO),
                 WaitFor.aTime(1000),
                 ClickTextoQueContengaX.elTextoContiene("Tarjeta de Crédito - Débito"),
