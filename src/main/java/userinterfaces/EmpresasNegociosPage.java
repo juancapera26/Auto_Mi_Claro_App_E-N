@@ -55,6 +55,9 @@ public static final Target SELECIONAR_CAMPO_DE_TEXTO =
     public static final Target VALIDAR_PSE =
             Target.the("Validar medio de pago PSE")
                     .locatedBy("//android.view.View[@content-desc=\"confirmacionEmpresasURLConvivenciaParcial\"]/android.widget.TextView");
+    public static final Target CAMPO_INGRESO_SERIAL =
+            Target.the("ingresar los ultimos 12 digitos del seria de la SIM")
+                    .locatedBy("//android.widget.TextView[@text=\"Escribe los números restantes\"]");
 //medioos de pago PSE
 
 

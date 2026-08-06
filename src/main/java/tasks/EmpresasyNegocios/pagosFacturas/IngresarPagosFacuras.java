@@ -1,4 +1,4 @@
-package tasks.EmpresasyNegocios;
+package tasks.EmpresasyNegocios.pagosFacturas;
 
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;

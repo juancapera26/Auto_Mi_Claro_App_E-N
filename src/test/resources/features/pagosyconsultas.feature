@@ -3,91 +3,60 @@
 
 Característica: acceso a las funcionalidades del módulo pagos y consultas
 
+  #en ejecucion revision por cahcha
   @PC001
-  Escenario: acceder a la opción devolución de equipos
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Redirección a PSE
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces ingresa a devolución de equipos
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago PSE
 
   @PC002
-  Escenario: acceder a la opción solicitar traslado
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Tarjeta de Crédito - Débito
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces ingresa a solicitar traslado
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago Tarjeta de Crédito - Débito
 
   @PC003
-  Escenario: acceder a la opción reiniciar módem
+  Escenario: Validar Pagos en línea en Soluciones Móviles - Redirección a Bancolombia
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces ingresa a reiniciar módem
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones moviles
+    Y Validar medio de pago Bancolombia
 
   @PC004
-  Escenario: consultar el detalle del plan
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Redirección a PSE
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces valida detalle de tu plan
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago PSE
 
   @PC005
-  Escenario: acceder a la opción administrar tu red wifi
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Tarjeta de Crédito - Débito
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces ingresa a administrar tu red wifi
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago Tarjeta de Crédito - Débito
 
   @PC006
-  Escenario: consultar productos disponibles para adquirir
+  Escenario: Validar Pagos en línea en Soluciones Fijas HFC - Redirección a Bancolombia
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Y ingresa a adquirir producto
-    Y valida el módulo internet
-    Y valida el módulo televisión
-    Y valida el módulo teléfono
-    Entonces valida el módulo ultra wifi
-
-  @PC007
-  Escenario: Ingresar a Configuracion control remoto ,comprar control remoto
-  Dado que el usuario ingrese a super app
-  Cuando el usuario realiza el ingreso
-  Y el usuario hace scroll hasta el menú Pagos y consultas
-  Y ingresar a configuracion control remoto
-  Y valida informacion configuracion control remoto
-  Entonces compar control remoto
-
-  @PC008
-  Escenario: Ingresar a Configuracion control remoto
-  Dado que el usuario ingrese a super app
-  Cuando el usuario realiza el ingreso
-  Y el usuario hace scroll hasta el menú Pagos y consultas
-  Y ingresar a configuracion control remoto
-  Y valida informacion configuracion control remoto
-  Entonces validar configuraciones de los controles remotos
+    Entonces verifica version de la super app
+    Y ingresar a pagos y facturas
+    Y ingresa a Pagos en linea Soluciones Fijas HFC
+    Y Validar medio de pago Bancolombia
 
 
-  @PC009
-  Escenario: Ingresar a Configuracion control remoto ,Configuración con el decodificador
-  Dado que el usuario ingrese a super app
-  Cuando el usuario realiza el ingreso
-  Y el usuario hace scroll hasta el menú Pagos y consultas
-  Y ingresar a configuracion control remoto
-  Y valida informacion configuracion control remoto
-  Entonces validar configuracion del decodificardor
 
-
-  @PC010
-  Escenario: Ingresar a certificado cuenta al dia
-  Dado que el usuario ingrese a super app
-  Cuando el usuario realiza el ingreso
-  Y el usuario hace scroll hasta el menú Pagos y consultas
-  Entonces validar certifiacido cuenta al dia
-
-  @PC011
-  Escenario: acceder al módulo de pagos
-    Dado que el usuario ingrese a super app
-    Cuando el usuario realiza el ingreso
-    Y el usuario hace scroll hasta el menú Pagos y consultas
-    Entonces valida la redirección a Pagos

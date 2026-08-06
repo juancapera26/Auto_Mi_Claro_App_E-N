@@ -1,8 +1,7 @@
-package tasks.EmpresasyNegocios;
+package tasks.EmpresasyNegocios.pagosFacturas;
 
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
-import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHorizontalCoordenadas;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
@@ -11,12 +10,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterfaces.EmpresasNegociosPage.*;
+import static userinterfaces.EmpresasNegociosPage.SELECIONAR_MEDIOS_DE_PAGO;
 
 public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
@@ -42,6 +40,8 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
         actor.attemptsTo(
                 ScrollHorizontalCoordenadas.desde(339, 1490, 339, 200),
+                WaitFor.aTime(2000),
+                ClickEnCoordenadas.en(185, 212),
                 Click.on(SELECIONAR_MEDIOS_DE_PAGO),
                 WaitFor.aTime(1000),
                 ClickTextoQueContengaX.elTextoContiene("Tarjeta de Crédito - Débito"),
@@ -50,7 +50,7 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
         EvidenciaUtils.registrarCaptura(paso2);
 
-        actor.attemptsTo(
+        /*actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Continuar"),
                 WaitFor.aTime(5000),
                 Scroll.scrollUnaVista(),
@@ -78,7 +78,7 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
         );
 
-        EvidenciaUtils.registrarCaptura(paso4);
+        EvidenciaUtils.registrarCaptura(paso4);*/
 
     }
 

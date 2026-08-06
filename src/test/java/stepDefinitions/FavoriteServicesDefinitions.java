@@ -11,6 +11,10 @@ import interactions.Scroll.ScrollHastaTexto;
 import models.User;
 import tasks.EmpresasyNegocios.*;
 
+import tasks.EmpresasyNegocios.pagosFacturas.IngresarPagosFacuras;
+import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoBancolombia;
+import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoPSE;
+import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoTarjetaCreditoDebito;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
@@ -156,6 +160,23 @@ public class FavoriteServicesDefinitions {
   public void ValidarMedioDePagoBancolombia() {
     theActorInTheSpotlight().attemptsTo(
             ValidarMedioDePagoBancolombia.validarMedioDePagoBancolombia()
+    );
+  }
+  @And("^ingresa a Consultar tus consumos$")
+  public void IngresaConsultarConsumos() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaConsultarConsumos.ingresaConsultarConsumos()
+    );
+  }
+  @And("^ingresa a Cambio de SIM Card$")
+  public void IngresaCambioSIMcard() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaCambioSIMcard.ingresaCambioSIMcard()
+    );
+  }@And("^ingresa a Activa eSIM Empresas$")
+  public void IngresaActivareSIMempresas() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaActivareSIMempresas.ingresaActivareSIMempresas()
     );
   }
 }
