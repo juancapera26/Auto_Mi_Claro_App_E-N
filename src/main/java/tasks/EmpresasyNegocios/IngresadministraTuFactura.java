@@ -1,7 +1,9 @@
 package tasks.EmpresasyNegocios;
 
+import interactions.Click.ClickElementByText;
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
+import interactions.comunes.Atras;
 import interactions.validations.ExisteTexto;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
@@ -11,11 +13,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
+import static userinterfaces.PagosYConsultasPage.BTN_HOME;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -32,7 +38,9 @@ public class IngresadministraTuFactura implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
+                WaitFor.aTime(3000),
                 ClickTextoQueContengaX.elTextoContiene("Administra factura"),
                 WaitFor.aTime(3000)
         );
@@ -49,6 +57,7 @@ public class IngresadministraTuFactura implements Task {
                 ValidarTexto.validarTexto("Administra tu factura"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
+
         );
         EvidenciaUtils.registrarCaptura(paso2);
 
@@ -70,22 +79,30 @@ public class IngresadministraTuFactura implements Task {
         if (actor.asksFor(ExisteTexto.con(PAGAR))) {
 
             actor.attemptsTo(
-                    ClickEnCoordenadas.en(360, 902),
-                    WaitFor.aTime(2000),
-                    ClickEnCoordenadas.en(351, 847),
-                    WaitFor.aTime(1000)
+                    WaitFor.aTime(1000),
+                    ClickElementByText.clickElementByText(PAGAR),
+                    WaitFor.aTime(5000),
+                    ValidarTextoQueContengaX.elTextoContiene("Selecciona el medio de pago"),
+                    ValidarTextoQueContengaX.elTextoContiene("Consulta"),
+                    Click.on(BTN_HOME),
+                    WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                    //  ClickEnCoordenadas.en(360, 902),
+                    // WaitFor.aTime(2000),
+                    // ClickEnCoordenadas.en(351, 847),
+                    // WaitFor.aTime(2000)
             );
 
             EvidenciaUtils.registrarCaptura(paso4);
 
-            actor.attemptsTo(
+           /* actor.attemptsTo(
                     ClickEnCoordenadas.en(46, 126)
-            );
+            );*/
         }
 
         actor.attemptsTo(
                 WaitFor.aTime(5000),
-                ClickTextoQueContengaX.elTextoContiene("Historial"),
+                ClickElementByText.clickElementByText("Historial de pagos"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Histórico de pagos en Línea"),
                 ValidarTextoQueContengaX.elTextoContiene("Valor"),
                 ValidarTextoQueContengaX.elTextoContiene("Fecha de pago")

@@ -1,5 +1,6 @@
 package tasks.EmpresasyNegocios;
 
+import interactions.Click.ClickElementByText;
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.validations.ValidarTexto;
@@ -10,9 +11,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -30,20 +34,21 @@ public class IngresaRoaminginternacional implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitFor.aTime(7000)
+                WaitFor.aTime(1000)
         );
         EvidenciaUtils.registrarCaptura(paso1);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Roaming"),
-                WaitFor.aTime(3000)
+                WaitFor.aTime(1000),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
                 WaitFor.aTime(3000)
         );
-
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),

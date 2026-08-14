@@ -156,4 +156,8 @@ public class LoginPage {
   public static final Target INGRESAR_EMPREZA =
       Target.the("ingresas a la opcion de claro emprezas")
           .located(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.clarocolombia.miclaro:id/card_openswitch\"]"));
+
+  public static final Target OTRAS_FUN =
+          Target.the("Ingresa a otras funcionalidades")
+                  .located(By.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/card_mini_program_banner_top_title_tv\"]"));
 }

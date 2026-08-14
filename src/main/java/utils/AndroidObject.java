@@ -24,6 +24,8 @@ import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
+import net.serenitybdd.core.pages.WebElementFacade;
+
 
 public class AndroidObject extends Excepciones {
 
@@ -726,4 +728,24 @@ public class AndroidObject extends Excepciones {
       System.out.println("Error en scroll horizontal izquierda: " + e.getMessage());
     }
   }
+ /* public boolean scrollUntilVisible(Actor actor, Target target, int maxIntentos) {
+    for (int intento = 0; intento < maxIntentos; intento++) {
+      if (esVisible(actor, target)) {
+        return true;
+      }
+      UnScrollAbajo(actor);
+    }
+    // última verificación por si el swipe final ya lo dejó visible
+    return esVisible(actor, target);
+  }
+
+  private boolean esVisible(Actor actor, Target target) {
+    try {
+      List<WebElementFacade> elementos = target.resolveAllFor(actor);
+      return !elementos.isEmpty() && elementos.get(0).isDisplayed();
+    } catch (Exception e) {
+      // el elemento aún no existe en el árbol -> seguimos scrolleando
+      return false;
+    }
+  }*/
 }

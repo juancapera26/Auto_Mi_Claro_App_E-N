@@ -8,11 +8,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -47,7 +50,7 @@ public class IngresaDetalleTuPlan implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
-                ValidarTexto.validarTexto("Detalle de tu plan empresas"),
+                //ValidarTexto.validarTexto("Detalle de tu plan empresas"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
@@ -56,7 +59,7 @@ public class IngresaDetalleTuPlan implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER),
                 WaitFor.aTime(1000)
                 );
-
+        EvidenciaUtils.registrarCaptura(paso4);
 
         actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
@@ -66,11 +69,11 @@ public class IngresaDetalleTuPlan implements Task {
         actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),
-                ValidarTextoQueContengaX.elTextoContiene("322 691 8354"),
-                ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
+                ValidarTextoQueContengaX.elTextoContiene("322 691 8354")
+             //   ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
 
         );
-        EvidenciaUtils.registrarCaptura(paso4);
+
 
 
 

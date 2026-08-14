@@ -37,7 +37,7 @@ public class LoginDefinitions {
     theActorCalled("usuario valida")
         .attemptsTo(
             WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-            WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(40).seconds(),
+            WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(10).seconds(),
             WaitFor.aTime(2000));
   }
 

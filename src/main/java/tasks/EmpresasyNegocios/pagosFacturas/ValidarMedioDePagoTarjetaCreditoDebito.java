@@ -10,11 +10,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_MEDIOS_DE_PAGO;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
+import static userinterfaces.PagosYConsultasPage.BTN_PAGAR;
 
 public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
@@ -30,7 +34,9 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
 
         actor.attemptsTo(
                 ClickEnCoordenadas.en(354, 1438),
-                WaitFor.aTime(3000),
+                WaitFor.aTime(4000),
+                Click.on(BTN_PAGAR),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
                 ScrollHorizontalCoordenadas.desde(339, 200, 339, 1490),
                 WaitFor.aTime(2000)

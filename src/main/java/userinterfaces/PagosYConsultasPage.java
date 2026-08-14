@@ -8,6 +8,9 @@ import utils.TestDataProvider;
 
 public class PagosYConsultasPage {
 
+  public static final Target BTN_HOME =
+          Target.the("Boton home")
+                  .located(By.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/h5_tv_nav_back_to_home\"]"));
   public static final Target BTN_TRES_PUNTOS_MAS =
       Target.the("Boton de los 3 puntos para validar la mini versión")
           .located(By.xpath("//android.widget.TextView[@content-desc=\"Más\"]"));

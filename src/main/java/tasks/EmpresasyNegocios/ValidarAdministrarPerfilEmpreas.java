@@ -80,6 +80,7 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
                 ValidarTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 ClickTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 WaitFor.aTime(1000)

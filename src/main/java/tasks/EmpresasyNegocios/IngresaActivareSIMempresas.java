@@ -64,7 +64,8 @@ public class IngresaActivareSIMempresas implements Task {
                 WaitFor.aTime(1000),
                 ValidarTexto.validarTexto("Activa eSIM Empresas"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
-                ValidarTextoQueContengaX.elTextoContiene(VER)
+                ValidarTextoQueContengaX.elTextoContiene(VER),
+                WaitFor.aTime(1000)
         );
         EvidenciaUtils.registrarCaptura(paso4);
 

@@ -1,15 +1,22 @@
 package tasks.EmpresasyNegocios;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.Scroll.ScrollHastaTexto;
+import interactions.Scroll.ScrollHorizontal;
 import interactions.Scroll.ScrollHorizontalCoordenadas;
 import interactions.wait.WaitFor;
 import models.User;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.ClickOnBy;
+import net.serenitybdd.screenplay.actions.ScrollToBy;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.LoginPage.OTRAS_FUN;
 import static utils.Constants.VER_MAS;
 
 public class IngresarOtrasFucionalidades implements Task {
