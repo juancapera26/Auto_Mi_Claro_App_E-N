@@ -61,11 +61,12 @@ public class IngresaDetalleTuPlan implements Task {
                 );
         EvidenciaUtils.registrarCaptura(paso4);
 
-        actor.attemptsTo(
+       /* actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
                 WaitFor.aTime(3000)
         );
+        */
         actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),

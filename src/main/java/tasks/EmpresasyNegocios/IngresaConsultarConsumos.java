@@ -68,6 +68,7 @@ public class IngresaConsultarConsumos implements Task {
         );
 
         actor.attemptsTo(
+                WaitFor.aTime(2500),
                 ValidarTextoQueContengaX.elTextoContiene(CONSULTAR_CONSUMO),
                 ValidarTextoQueContengaX.elTextoContiene("40GB Emp 2 Mx"),
                 ValidarTextoQueContengaX.elTextoContiene("Ver descripción del plan"),

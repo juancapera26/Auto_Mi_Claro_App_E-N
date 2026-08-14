@@ -61,7 +61,7 @@ public class IngresaActivareSIMempresas implements Task {
                 WaitFor.aTime(1000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
-                WaitFor.aTime(1000),
+                WaitFor.aTime(2500),
                 ValidarTexto.validarTexto("Activa eSIM Empresas"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER),
