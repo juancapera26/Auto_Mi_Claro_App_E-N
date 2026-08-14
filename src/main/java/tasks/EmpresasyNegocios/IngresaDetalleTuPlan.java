@@ -59,6 +59,12 @@ public class IngresaDetalleTuPlan implements Task {
 
 
         actor.attemptsTo(
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
+                WaitFor.aTime(3000)
+        );
+        actor.attemptsTo(
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),
                 ValidarTextoQueContengaX.elTextoContiene("322 691 8354"),
                 ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
