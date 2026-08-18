@@ -8,11 +8,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_FACTURA;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 
 public class IngresarPagosLineaSolucionesMovlies implements Task {
     private final User user = TestDataProvider.getRealUser();
@@ -31,6 +34,7 @@ public class IngresarPagosLineaSolucionesMovlies implements Task {
         EvidenciaUtils.registrarCaptura(paso1);
 
         actor.attemptsTo(
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene("Soluciones Móviles"),
                 WaitFor.aTime(2000),
                 Click.on(SELECIONAR_FACTURA)

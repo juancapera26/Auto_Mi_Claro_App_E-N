@@ -44,3 +44,11 @@ Característica: ingresar al módulo Soluciones moviles
     Cuando el usuario realiza el ingreso
     Y ingresar a soluciones moviles
     Y ingresa a Activa eSIM Empresas
+
+
+  # @SM007
+  # Escenario: Ir a Win play
+  #  Dado que el usuario ingrese a super app
+  #  Cuando el usuario realiza el ingreso
+  #  Y ingresar a soluciones moviles
+  #  Y

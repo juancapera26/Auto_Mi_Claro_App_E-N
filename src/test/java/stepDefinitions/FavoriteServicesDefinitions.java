@@ -178,5 +178,10 @@ public class FavoriteServicesDefinitions {
     theActorInTheSpotlight().attemptsTo(
             IngresaActivareSIMempresas.ingresaActivareSIMempresas()
     );
-  }
+  }/*@And("^ingresa a Win Play$")
+  public void IngresaWinPlay(){
+    theActorInTheSpotlight().attemptsTo(
+            IngresaWinPlay
+    );
+  }*/
 }

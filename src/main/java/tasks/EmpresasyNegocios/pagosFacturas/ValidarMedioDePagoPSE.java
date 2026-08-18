@@ -34,8 +34,7 @@ public class ValidarMedioDePagoPSE implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                ClickEnCoordenadas.en(354, 1438),
-                WaitFor.aTime(4000),
+                WaitFor.aTime(1000),
                 Click.on(BTN_PAGAR),
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
