@@ -18,6 +18,9 @@ public class LoginPage {
               By.xpath(
                   "//android.widget.ImageView[@resource-id=\"com.clarocolombia.miclaro:id/home_logo_iv\"]"));
 
+  public static final Target ACTIVAR_ESIM =
+          Target.the("Logo de activar eSIM").located(By.xpath("//android.widget.Image"));
+
   public static final Target LOADING_SPLASH =
       Target.the("Logo de espera al iniciar la App Mi Claro").located(By.id("imgLoadingSplash"));
   public static final Target LBL_ENCABEZADO_USUARIO =

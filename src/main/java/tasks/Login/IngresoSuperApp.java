@@ -1,5 +1,6 @@
 package tasks.Login;
 
+import static interactions.Click.ClickElementByText.clickElementByText;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.LoginPage.*;
@@ -36,7 +37,7 @@ public class IngresoSuperApp implements Task {
   public <T extends Actor> void performAs(T actor) {
     // Manejo del popup de sesión abierta en otro dispositivo
     if (isVisibleFast(actor, LBL_SESION_ABIERTA)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText(CONTINUAR), WaitFor.aTime(6000));
+      actor.attemptsTo(clickElementByText(CONTINUAR), WaitFor.aTime(6000));
     }
 
     if (isVisible(actor, LBL_TUS_SERVICIOS_FAVORITOS)) {
@@ -81,8 +82,10 @@ public class IngresoSuperApp implements Task {
       loginDesdeCeroCompleto(actor);
     }
 
-    // 3. Validación final de que el login fue exitoso
 
+   //CUando inicia sesion ya no esta disponible la opcion de "Mundo Claro"
+    // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(5000));
+  // 3. Validación final de que el login fue exitoso
     actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_SERVICIOS_FAVORITOS));
     EvidenciaUtils.registrarCaptura(paso);
   }
@@ -105,12 +108,12 @@ public class IngresoSuperApp implements Task {
     actor.attemptsTo(
 
         Click.on(INGRESAR_EMPREZA),
-        ClickElementByText.clickElementByText(CORREO_ELECTRONICO),
+        clickElementByText(CORREO_ELECTRONICO),
         WaitElement.isEnable(TXT_USERNAME),
         Enter.theValue(user.getEmail()).into(TXT_USERNAME),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
     validarLogin(actor);
   } 
@@ -118,9 +121,9 @@ public class IngresoSuperApp implements Task {
   private <T extends Actor> void loginConCedula(T actor) {
     actor.attemptsTo(
         Enter.theValue(user.getCedula()).into(TXT_USERNAME),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
     validarLogin(actor);
   }
@@ -133,9 +136,11 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void SesiónCerradaPorSeguridad(T actor) {
     actor.attemptsTo(
-        ClickElementByText.clickElementByText(CONTINUAR),
+
+           // Click.on(INGRESAR_EMPREZA),
+        clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
   }
 
@@ -146,9 +151,10 @@ public class IngresoSuperApp implements Task {
 
     if (isVisible(actor, BTN_CONTINUAR)) {
       actor.attemptsTo(
+           //   Click.on(INGRESAR_EMPREZA),
           ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
           Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-          ClickElementByText.clickElementByText(CONTINUAR),
+          clickElementByText(CONTINUAR),
           WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
     } else {
       loginConEmail(actor);
@@ -157,9 +163,9 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void clickAceptarSesion(T actor) {
     if (isVisible(actor, BTN_ACEPTAR)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText(ACEPTAR));
+      actor.attemptsTo(clickElementByText(ACEPTAR));
     } else {
-      actor.attemptsTo(ClickElementByText.clickElementByText(ACEPTAR_2));
+      actor.attemptsTo(clickElementByText(ACEPTAR_2));
     }
   }
 
@@ -174,13 +180,13 @@ public class IngresoSuperApp implements Task {
   }
 
   private <T extends Actor> void loginDesdeCero(T actor) {
-    actor.attemptsTo(ClickElementByText.clickElementByText(INICIAR_SESION));
+    actor.attemptsTo(clickElementByText(INICIAR_SESION));
 
     ValidarTextoQueContengaX.elTextoContiene(VERSION);
     if (isValidEmail(user.getEmail())) {
       actor.attemptsTo(
-          ClickElementByText.clickElementByText(OTROS_METODOS_DE_INGRESO),
-          ClickElementByText.clickElementByText(CORREO_ELECTRONICO),
+          clickElementByText(OTROS_METODOS_DE_INGRESO),
+          clickElementByText(CORREO_ELECTRONICO),
           WaitElement.isEnable(TXT_USERNAME),
           Enter.theValue(user.getEmail()).into(TXT_USERNAME));
     } else {
@@ -189,13 +195,13 @@ public class IngresoSuperApp implements Task {
     }
 
     try {
-      actor.attemptsTo(ClickElementByText.clickElementByText(CONTINUAR));
+      actor.attemptsTo(clickElementByText(CONTINUAR));
     } catch (Exception e) {
       // No existe CONTINUAR → continúa el flujo normal
     }
     actor.attemptsTo(
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-        ClickElementByText.clickElementByText(CONTINUAR),
+        clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
   }
 
@@ -211,6 +217,9 @@ public class IngresoSuperApp implements Task {
     maybePermisoNotificaciones(actor);
     maybeAutorizarVelocidad(actor);
 
+    //Ya no ingresa por MUNDO CLARO
+    // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(2000));
+
     // Validación final del login exitoso
     actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_SERVICIOS_FAVORITOS));
   }
@@ -218,19 +227,19 @@ public class IngresoSuperApp implements Task {
   private <T extends Actor> void maybeAceptarTerminos(T actor) {
     if (isVisibleFast(actor, LBL_TERMINOS_Y_CONDICIONES)) {
       actor.attemptsTo(
-          Click.on(CHECK_TERMINOS_Y_CONDICIONES), ClickElementByText.clickElementByText(CONTINUAR));
+          Click.on(CHECK_TERMINOS_Y_CONDICIONES), clickElementByText(CONTINUAR));
     }
   }
 
   private <T extends Actor> void maybeManejarSesionAbierta(T actor) {
     if (isVisibleFast(actor, LBL_SESION_ABIERTA)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText(CONTINUAR), WaitFor.aTime(6000));
+      actor.attemptsTo(clickElementByText(CONTINUAR), WaitFor.aTime(6000));
     }
   }
 
   private <T extends Actor> void maybeManejarBiometrico(T actor) {
     if (isVisibleFast(actor, LBL_INGRESO_BIOMETRICO)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText("En otro momento"));
+      actor.attemptsTo(clickElementByText("En otro momento"));
     }
   }
 
@@ -240,11 +249,11 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void maybeAutorizarVelocidad(T actor) {
     if (isVisibleFast(actor, TXT_AUTORIZACION_VELOCIDAD)) {
-      actor.attemptsTo(WaitFor.aTime(1000), ClickElementByText.clickElementByText(ACEPTAR));
+      actor.attemptsTo(WaitFor.aTime(1000), clickElementByText(ACEPTAR));
     }
     if (isVisibleFast(actor, TXT_AUTORIZACION_VELOCIDAD_2)) {
       actor.attemptsTo(
-          WaitFor.aTime(1000), ClickElementByText.clickElementByText(ACEPTAR), Atras.irAtras());
+          WaitFor.aTime(1000), clickElementByText(ACEPTAR), Atras.irAtras());
     }
   }
 
@@ -281,13 +290,13 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void clickSiExisteFast(T actor, Target elemento, String texto) {
     if (isVisibleFast(actor, elemento)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText(texto));
+      actor.attemptsTo(clickElementByText(texto));
     }
   }
 
   private <T extends Actor> void clickSiExiste(T actor, Target elemento, String texto) {
     if (isVisible(actor, elemento)) {
-      actor.attemptsTo(ClickElementByText.clickElementByText(texto));
+      actor.attemptsTo(clickElementByText(texto));
     } else {
       actor.attemptsTo(WaitFor.aTime(1000));
     }
@@ -296,7 +305,7 @@ public class IngresoSuperApp implements Task {
   private <T extends Actor> void clickSiExisteCheckboxYContinuar(
       T actor, Target condicion, Target checkbox, String botonTexto) {
     if (isVisible(actor, condicion)) {
-      actor.attemptsTo(Click.on(checkbox), ClickElementByText.clickElementByText(botonTexto));
+      actor.attemptsTo(Click.on(checkbox), clickElementByText(botonTexto));
     }
   }
 

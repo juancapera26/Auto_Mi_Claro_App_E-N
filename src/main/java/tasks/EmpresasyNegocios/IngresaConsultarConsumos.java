@@ -12,11 +12,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 import static utils.Constants.VER;
@@ -57,7 +60,7 @@ public class IngresaConsultarConsumos implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
-                ValidarTexto.validarTexto("Consulta tus consumos"),
+                ValidarTexto.validarTexto("Acerca de"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
@@ -68,7 +71,8 @@ public class IngresaConsultarConsumos implements Task {
         );
 
         actor.attemptsTo(
-                WaitFor.aTime(2500),
+                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene(CONSULTAR_CONSUMO),
                 ValidarTextoQueContengaX.elTextoContiene("40GB Emp 2 Mx"),
                 ValidarTextoQueContengaX.elTextoContiene("Ver descripción del plan"),

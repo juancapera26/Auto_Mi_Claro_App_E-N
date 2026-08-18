@@ -108,6 +108,12 @@ public static final Target ESCRIBIR_NUMERO_PSE =
             Target.the("escribir número telefónico")
                     .locatedBy("//android.widget.EditText[@resource-id=\"TELEFONO\"]");
 
+//Soluciones Moviles
+
+    public static final Target BOTON_CONTINUAR_ESIM =
+        Target.the("Boton continuar eSIM")
+                .locatedBy("//android.widget.Button[@text=\"Siguiente\"]");
+
 }
 
 

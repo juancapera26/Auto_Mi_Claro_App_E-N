@@ -1,8 +1,10 @@
 package tasks.EmpresasyNegocios;
 
+import interactions.Click.ClickElementByText;
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.mobile.ClickIfPresent;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
@@ -12,12 +14,20 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.Wait;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
+import static interactions.wait.WaitElement.isVisible;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
+import static userinterfaces.EmpresasNegociosPage.BOTON_CONTINUAR_ESIM;
 import static userinterfaces.EmpresasNegociosPage.CAMPO_INGRESO_SERIAL;
+import static userinterfaces.EntretenimientoPage.BTN_CONTINUAR;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.ACTIVAR_ESIM;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -54,7 +64,7 @@ public class IngresaActivareSIMempresas implements Task {
         EvidenciaUtils.registrarCaptura(paso3);
         actor.attemptsTo(
                 ClickEnCoordenadas.en(366, 1407),
-                WaitFor.aTime(6000)
+                WaitFor.aTime(3000)
         );
 
         actor.attemptsTo(
@@ -62,7 +72,7 @@ public class IngresaActivareSIMempresas implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(2500),
-                ValidarTexto.validarTexto("Activa eSIM Empresas"),
+                ValidarTexto.validarTexto("Espera un momento"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER),
                 WaitFor.aTime(1000)
@@ -73,17 +83,23 @@ public class IngresaActivareSIMempresas implements Task {
                 WaitFor.aTime(1000)
         );
 
+        actor.attemptsTo(Click.on(BTN_CONTINUAR),
+                WaitFor.aTime(1000)
+        );
         EvidenciaUtils.registrarCaptura(paso5);
 
         actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene("¡Cámbiate a eSIM y disfruta"),
-                ClickTextoQueContengaX.elTextoContiene("Recomendaciones para instalar eSIM"),
-                WaitFor.aTime(2000)
+                WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
+                WaitFor.aTime(4000),
+                Click.on(BOTON_CONTINUAR_ESIM),
+                WaitFor.aTime(2000),
+                Click.on(BOTON_CONTINUAR_ESIM),
+                 WaitFor.aTime(2000)
         );
         EvidenciaUtils.registrarCaptura(paso6);
 
         actor.attemptsTo(
-                ClickEnCoordenadas.en(326, 323),
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene("Elige la marca de tu celular"),
                 ClickTextoQueContengaX.elTextoContiene("Honor"),
                 WaitFor.aTime(1000),

@@ -12,12 +12,15 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.CAMPO_INGRESO_SERIAL;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -51,8 +54,8 @@ public class IngresaCambioSIMcard implements Task {
                 WaitFor.aTime(1000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
-                WaitFor.aTime(1000),
-                ValidarTexto.validarTexto("Cambio de SIM Card"),
+                WaitFor.aTime(1500),
+                ValidarTexto.validarTexto("Acerca de"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
@@ -64,6 +67,8 @@ public class IngresaCambioSIMcard implements Task {
 
 
         actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene(CAMBIO_SIM_CARD),
                 ValidarTextoQueContengaX.elTextoContiene("Línea móvil a la que se aplicará el cambio:"),
                 ValidarTextoQueContengaX.elTextoContiene("3226918354"),

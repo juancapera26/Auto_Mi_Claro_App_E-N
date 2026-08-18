@@ -49,6 +49,7 @@ public class    IngresarGuiaNovedades implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER));
 
         actor.attemptsTo(
+                WaitFor.aTime(3500),
                 Click.on(SELECIONAR_ANUNCIO));
 
         EvidenciaUtils.registrarCaptura(paso3);
