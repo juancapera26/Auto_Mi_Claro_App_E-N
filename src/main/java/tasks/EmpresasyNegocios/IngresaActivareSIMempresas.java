@@ -90,10 +90,10 @@ public class IngresaActivareSIMempresas implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
-                WaitFor.aTime(4000),
+               WaitFor.aTime(7500),
                 Click.on(BOTON_CONTINUAR_ESIM),
-                WaitFor.aTime(2000),
-                Click.on(BOTON_CONTINUAR_ESIM),
+                //WaitFor.aTime(2000),
+                //Click.on(BOTON_CONTINUAR_ESIM),
                  WaitFor.aTime(2000)
         );
         EvidenciaUtils.registrarCaptura(paso6);

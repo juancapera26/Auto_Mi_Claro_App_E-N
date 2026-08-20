@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static utils.Constants.*;
 
 import cucumber.api.java.en.And;
@@ -8,7 +10,9 @@ import cucumber.api.java.en.Then;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
+import interactions.validations.ValidarTexto;
 import models.User;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import tasks.EmpresasyNegocios.*;
 
 import tasks.EmpresasyNegocios.pagosFacturas.IngresarPagosFacuras;
@@ -22,14 +26,17 @@ public class FavoriteServicesDefinitions {
 
   private final User user = TestDataProvider.getRealUser();
 
-  @And("^el usuario hace scroll hasta el menú Empresas y negocios$")
+  @And("^el usuario ingresa hasta el menú Soluciones móviles$")
   public void menuEmpresasNegocios() {
-    final String paso = "El usuario hace scroll hasta el menú Empresas y negocios";
+    final String paso = "El usuario ingresa hasta el menú Soluciones móviles";
     theActorInTheSpotlight()
             .attemptsTo(
+                    ValidarTexto.validarTexto(SOLUCIONES_MOVILES),
                     ClickTextoQueContengaX.elTextoContiene(VER_MAS),
-                    ScrollHastaTexto.conTexto(EMPRESAS_Y_NEGOCIOS),
-                    Scroll.scrollUnaVista());
+                    WaitUntil.the(LOADING_SPLASH, isNotPresent())
+            );
+                    //ScrollHastaTexto.conTexto(EMPRESAS_Y_NEGOCIOS),
+                    //Scroll.scrollUnaVista());
 
     EvidenciaUtils.registrarCaptura(paso);
   }
@@ -40,10 +47,10 @@ public class FavoriteServicesDefinitions {
             IngresarGuiaNovedades.ingresarGuiaNovedades()
     );
   }
-  @And("^ingresa a informacion de tramintes$")
-  public void AcederIformacionTramites() {
+  @And("^ingresa a gestiona tu plan$")
+  public void AcederGestionaTuPlan() {
     theActorInTheSpotlight().attemptsTo(
-            AcederIformacionTramites.acederIformacionTramites()
+            IngresaGestionaTuPlan.ingresaGestionaTuPlan()
     );
   }
   @And("^validar cession de contrato$")

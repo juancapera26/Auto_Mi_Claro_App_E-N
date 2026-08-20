@@ -2,6 +2,7 @@ package tasks.EmpresasyNegocios.pagosFacturas;
 
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.Scroll.ScrollHastaTexto;
 import interactions.wait.WaitFor;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
@@ -11,7 +12,7 @@ import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static utils.Constants.VER_MAS;
+import static utils.Constants.*;
 
 public class IngresarPagosFacuras implements Task {
     private final User user = TestDataProvider.getRealUser();
@@ -22,8 +23,7 @@ public class IngresarPagosFacuras implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista()
+                ScrollHastaTexto.conTexto("Soluciones fijas")
         );
         EvidenciaUtils.registrarCaptura(paso1);
 
