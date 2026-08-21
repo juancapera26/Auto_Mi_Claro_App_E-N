@@ -1,51 +1,51 @@
 # language: es
 
 Característica: empresas y negocios
-# Ya no existe la funcionalidad de Guia y Novedades
- # @EYN001
- # Escenario: acceder a empresas y negocios en guia y novedades
-  #  Dado que el usuario ingrese a super app
-   # Cuando el usuario realiza el ingreso
-    #Entonces verifica version de la super app
-    #Y el usuario ingresa hasta el menú Empresas y negocios
-    #Y ingresar a Guia y Novedades
 
-  #@EYN002
-  #Escenario: ingresar y validar informacion de tramintes cession de contrato
-    #Dado que el usuario ingrese a super app
-    #Cuando el usuario realiza el ingreso
-    #Entonces verifica version de la super app
-    #Y el usuario ingresa hasta el menú Empresas y negocios
-    #Y ingresa a informacion de tramintes
-    #Y validar cession de contrato
+  @EYN001
+  Escenario: acceder a empresas y negocios en guia y novedades
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresar a Guia y Novedades
 
-  #@EYN003
-  #Escenario: ingresar y validar Gestiona tu plan cambio de plan
-    #Dado que el usuario ingrese a super app
-   #Cuando el usuario realiza el ingreso
-   #Entonces verifica version de la super app
-   #Y el usuario ingresa hasta el menú Empresas y negocios
-   #Y ingresa a gestiona tu plan
-   #Y validar cambio de plan
+  @EYN002
+  Escenario: ingresar y validar informacion de tramintes cession de contrato
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar cession de contrato
+
+  @EYN003
+  Escenario: ingresar y validar informacion de tramintes cambio de plan
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar cambio de plan
 
 
-  #@EYN004
-  #Escenario: ingresar y validar informacion de tramintes validar traslados
-  #  Dado que el usuario ingrese a super app
-  #  Cuando el usuario realiza el ingreso
-  #  Entonces verifica version de la super app
-  #  Y el usuario ingresa hasta el menú Empresas y negocios
-  #  Y ingresa a informacion de tramintes
-  #  Y validar traslados
+  @EYN004
+  Escenario: ingresar y validar informacion de tramintes validar traslados
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar traslados
 
- # @EYN005
- # Escenario: ingresar y validar informacion de tramintes cambio de SIM card
- #   Dado que el usuario ingrese a super app
- #   Cuando el usuario realiza el ingreso
- #   Entonces verifica version de la super app
- #   Y el usuario ingresa hasta el menú Empresas y negocios
- #   Y ingresa a informacion de tramintes
- #   Y validar cambio de SIM card
+  @EYN005
+  Escenario: ingresar y validar informacion de tramintes cambio de SIM card
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y el usuario hace scroll hasta el menú Empresas y negocios
+    Y ingresa a informacion de tramintes
+    Y validar cambio de SIM card
 
 
   @EYN006
@@ -53,7 +53,7 @@ Característica: empresas y negocios
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
-    Y el usuario ingresa hasta el menú Soluciones móviles
+    Y ingresar a soluciones moviles
     Y ingresa a detalle de tu plan
     Y ingresa a administra tu factura
 

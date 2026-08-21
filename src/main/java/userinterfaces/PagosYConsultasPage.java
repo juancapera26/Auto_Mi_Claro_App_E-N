@@ -27,12 +27,6 @@ public class PagosYConsultasPage {
           .located(
               By.xpath(
                   "//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.widget.TextView[4]"));
-  public static final Target BTN_CAMBIAR_PLAN =
-          Target.the("Boton Cambiar plan")
-                  .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View/android.view.View[9]/android.widget.TextView"));
-  public static final Target BTN_ACEPTAR_DATOS =
-          Target.the("Boton Aceptar tratamiento de mis datos personales")
-                  .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View/android.view.View[11]/android.view.View/android.widget.TextView"));
   public static final Target CBX_TIPO_PAQUETE =
       Target.the("Combo seleccion tipo de paquetes")
           .located(By.xpath("//*[@text='Paquetes de datos']"));

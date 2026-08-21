@@ -18,7 +18,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.EmpresasNegociosPage.VER_PUNTOS_ATENCION;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
-import static userinterfaces.PagosYConsultasPage.*;
+import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
 public class ValidarCambioDePlan implements Task {
@@ -37,9 +37,10 @@ public class ValidarCambioDePlan implements Task {
                 WaitFor.aTime(1000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
-                WaitFor.aTime(3000),
-                ValidarTexto.validarTexto(GESTIONA_TU_PLAN),
-                ValidarTexto.validarTexto(DECLARACION_SERVICIO)
+                WaitFor.aTime(1000),
+                ValidarTexto.validarTexto(INFORMACION_TRAMITE),
+                ValidarTexto.validarTexto(DECLARACION_SERVICIO),
+                ValidarTextoQueContengaX.elTextoContiene(VER)
         );
 
 ///
@@ -49,27 +50,17 @@ public class ValidarCambioDePlan implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER));
 
         actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene(GESTIONA_TU_PLAN),
-                ValidarTextoQueContengaX.elTextoContiene("Tipo de documento"),
-                ValidarTextoQueContengaX.elTextoContiene("Número de documento"),
-                ValidarTextoQueContengaX.elTextoContiene("Correo electrónico"),
-                ClickTextoQueContengaX.elTextoContiene("Cambiar plan"),
-                Click.on(BTN_CAMBIAR_PLAN),
-                Click.on(BTN_ACEPTAR_DATOS),
-                WaitFor.aTime(2500),
-                ClickTextoQueContengaX.elTextoContiene("Continuar")
-
-        );
+                ClickTextoQueContengaX.elTextoContiene(CAMBIO_DE_PLAN));
 
         EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene("A continuacion recibirás")
+                ValidarTextoQueContengaX.elTextoContiene("¿Cómo puedo realizar un cambio de plan?")
 
         );
 
         EvidenciaUtils.registrarCaptura(paso3);
-/*
+
         actor.attemptsTo(
                 ScrollHorizontalCoordenadas.desde(510, 1657, 510,597)
         );
@@ -87,7 +78,7 @@ public class ValidarCambioDePlan implements Task {
         EvidenciaUtils.registrarCaptura(paso5);
 
 
-*/
+
     }
 
     public static Performable validarCambioDePlan() {

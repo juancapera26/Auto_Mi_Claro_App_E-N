@@ -117,8 +117,6 @@ public class LoginPage {
   public static final Target LBL_TUS_SERVICIOS_FAVORITOS =
       Target.the("Label Tus servicios favoritos").located(By.id("card_mini_program_title_tv"));
 
-  public static final Target LBL_SOLUCIONES_MOVILES =
-          Target.the("Label Soluciones móviles").located(By.id("com.clarocolombia.miclaro:id/card_mini_program_banner_top_title_tv"));
   // LoginPage.java
   public static final Target LBL_WELCOME_BACK =
       Target.the("Pantalla Nos alegra tenerte de vuelta")
