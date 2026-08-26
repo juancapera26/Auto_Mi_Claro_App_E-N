@@ -43,7 +43,7 @@ public class IngresoSuperApp implements Task {
     if (isVisible(actor, LBL_TUS_SERVICIOS_FAVORITOS)) {
       String encabezado = LBL_TUS_SERVICIOS_FAVORITOS.resolveFor(actor).getText();
 
-      if (encabezado.contains("Tus servicios favoritos")) {
+      if (encabezado.contains("Tus favoritos Empresas")) {
         // Ya logueado, solo capturas
         EvidenciaUtils.registrarCaptura("Usuario ya tiene sesión iniciada");
         return; // Se corta aquí
@@ -86,7 +86,7 @@ public class IngresoSuperApp implements Task {
    //CUando inicia sesion ya no esta disponible la opcion de "Mundo Claro"
     // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(5000));
   // 3. Validación final de que el login fue exitoso
-    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_SERVICIOS_FAVORITOS));
+    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_FAVORITOS_EMPRESAS));
     EvidenciaUtils.registrarCaptura(paso);
   }
 
@@ -221,7 +221,7 @@ public class IngresoSuperApp implements Task {
     // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(2000));
 
     // Validación final del login exitoso
-    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_SERVICIOS_FAVORITOS));
+    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_FAVORITOS_EMPRESAS));
   }
 
   private <T extends Actor> void maybeAceptarTerminos(T actor) {

@@ -2,6 +2,7 @@ package tasks.EmpresasyNegocios;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.Scroll.ScrollHastaTexto;
+import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
@@ -22,10 +23,15 @@ public class IngresarSolucionesMoviles implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Scroll.scrollUnaVista()
-        );
-        EvidenciaUtils.registrarCaptura(paso1);
+                        Scroll.scrollUnaVista()
+                );
 
+
+       // actor.attemptsTo(
+       //         ValidarTextoQueContengaX.elTextoContiene(SOLUCIONES_MOVILES));
+
+        EvidenciaUtils.registrarCaptura(paso1);
+        WaitFor.aTime(2500);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(VER_MAS),
                 WaitFor.aTime(3000)

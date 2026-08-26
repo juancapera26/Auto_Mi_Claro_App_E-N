@@ -51,6 +51,8 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
         );
         EvidenciaUtils.registrarCaptura(paso1);
         actor.attemptsTo(
+                WaitFor.aTime(1000),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Administrar perfiles"),
                 WaitFor.aTime(3000)
         );
