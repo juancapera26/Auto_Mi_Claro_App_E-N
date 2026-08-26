@@ -9,6 +9,8 @@ import listeners.OllamaStepListener;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.steps.StepEventBus;
+import utils.CausaFallo;
+import utils.ContextoST;
 import utils.EstadoPrueba;
 import utils.WordAppium;
 
@@ -32,6 +34,10 @@ public class ReportHooks {
 
   public static void setLinea(String linea) {
     lineaUsada = linea;
+    // Contrato st-context: este método ya se llama en cada punto donde el escenario usa
+    // una línea de verdad, así que es el sitio natural para registrarla y que llegue a
+    // las alertas de Smart Tester ({{lineaPrueba}}).
+    ContextoST.registrarLinea(linea);
   }
 
   @Before(order = 0) // ✅ Ejecutar PRIMERO
@@ -40,11 +46,16 @@ public class ReportHooks {
     System.out.println("🚀 Iniciando escenario: " + scenario.getName());
     System.out.println("══════════════════════════════════════════════════════");
 
-    // 🔹 Inicializar estado de prueba
+    // 🔹 Inicializar estado de prueba. Todo esto es estático y sobrevive la corrida
+    // entera: sin limpiarlo, el escenario hereda los datos del anterior (era el caso
+    // de lineaUsada y ultimoPaso, que se colaban en el informe Word).
     EstadoPrueba.inicio = System.currentTimeMillis();
     pasosEjecutados.clear();
+    ultimoPaso = "";
+    lineaUsada = "Sin datos";
     EstadoPrueba.fallo = false;
     EstadoPrueba.pasoFallido = "";
+    ContextoST.reiniciar();
 
     // 🔹 Registrar el listener de Ollama solo una vez
     if (!listenerRegistrado) {
@@ -63,8 +74,15 @@ public class ReportHooks {
     OnStage.setTheStage(new OnlineCast());
   }
 
-  @After(order = 1) // ✅ Ejecutar DESPUÉS de otros @After
+  // order 1 = este @After corre el ÚLTIMO (Cucumber los ejecuta en orden descendente),
+  // después de ErrorScreenshotHooks (order 10), que es quien guarda Error/error.png. El
+  // informe la necesita ya escrita para insertarla.
+  @After(order = 1)
   public void generarReporteFinal(Scenario scenario) {
+    // Contrato st-context: con qué correo y línea corrió el escenario, para las alertas
+    // de Smart Tester. Va primero para que un fallo del informe Word no se lleve el dato.
+    ContextoST.registrarEscenario(scenario);
+
     EstadoPrueba.fin = System.currentTimeMillis();
 
     // Detectar fallo y último paso fallido
@@ -80,14 +98,20 @@ public class ReportHooks {
 
     String estadoFinal = scenario.isFailed() ? "FAILED" : "PASSED";
     String pasoFallido = scenario.isFailed() ? EstadoPrueba.pasoFallido : null;
+    String motivoFallo = scenario.isFailed() ? CausaFallo.descripcionCorta() : "";
+
+    // La línea sale de ContextoST (se llena donde se usa de verdad y se limpia en cada
+    // escenario), no del estático lineaUsada, que arrastraba la del escenario anterior.
+    String identificacion = ContextoST.identificacionUsada();
 
     WordAppium.generarReporte(
         scenario.getName(),
         pasosEjecutados.toArray(new String[0]),
-        lineaUsada,
+        identificacion.isEmpty() ? "Sin datos" : identificacion,
         duracionFormato,
         pasoFallido,
-        estadoFinal);
+        estadoFinal,
+        motivoFallo);
 
     System.out.println("══════════════════════════════════════════════════════");
     System.out.println("🏁 Escenario finalizado: " + scenario.getName());
@@ -97,6 +121,8 @@ public class ReportHooks {
 
     // Limpiar estado para el siguiente escenario
     pasosEjecutados.clear();
+    ultimoPaso = "";
+    lineaUsada = "Sin datos";
     EstadoPrueba.fallo = false;
     EstadoPrueba.pasoFallido = "";
   }

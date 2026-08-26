@@ -27,6 +27,12 @@ public class WordAppium {
   private static final String REPORTES_DIR =
       System.getProperty("user.dir") + File.separator + "reportes";
 
+  // Captura del momento del fallo: la deja ErrorScreenshotHooks (@After order 10), que
+  // corre ANTES que el informe (@After order 1) porque los @After van en orden
+  // descendente. Si alguien cambia esos números, el informe se queda sin la imagen.
+  private static final String ERROR_DIR = "Error";
+  private static final String ERROR_FILE = "error.png";
+
   private static final DateTimeFormatter FORMATTER =
       DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -53,9 +59,17 @@ public class WordAppium {
       String numero,
       String duracionFormato,
       String pasoFallido,
-      String estadoFinal) {
-    File[] capturas = new File(CAPTURAS_DIR).listFiles();
-    if (capturas == null || capturas.length == 0) {
+      String estadoFinal,
+      String motivoFallo) {
+    boolean fallo = "FAILED".equalsIgnoreCase(estadoFinal);
+
+    File[] listado = new File(CAPTURAS_DIR).listFiles();
+    File[] capturas = listado == null ? new File[0] : listado;
+
+    // Sin capturas y sin fallo no hay nada que documentar. Pero si FALLÓ, el informe se
+    // genera igual: antes se salía por aquí y una prueba que se caía antes de la primera
+    // captura no dejaba ningún documento — justo el caso en el que hace falta.
+    if (capturas.length == 0 && !fallo) {
       LOGGER.warning("No hay capturas para procesar.");
       return;
     }
@@ -75,8 +89,9 @@ public class WordAppium {
       reemplazarTexto(doc, "{{LINEA}}", numero);
       reemplazarTexto(doc, "{{DURACION}}", duracionFormato);
       reemplazarTexto(doc, "{{CONCLUSION}}", generarConclusion(pasosEjecutados, pasoFallido,
-      estadoFinal, numero));
+      estadoFinal, numero, motivoFallo));
       agregarPasosYCapturas(doc, pasosEjecutados, capturas);
+      agregarResultado(doc, estadoFinal, pasoFallido, motivoFallo);
 
       doc.write(fos);
       LOGGER.info("Reporte generado correctamente: " + rutaDestino);
@@ -127,8 +142,74 @@ public class WordAppium {
     return null;
   }
 
+  /**
+   * Cierra el informe con el resultado. Si la prueba falló documenta en qué paso, por qué (mensaje
+   * corto, sin la traza de código) y la captura de la pantalla en ese momento — que es lo que
+   * antes había que ir a buscar al reporte de Serenity.
+   */
+  private static void agregarResultado(
+      XWPFDocument doc, String estadoFinal, String pasoFallido, String motivoFallo)
+      throws IOException, InvalidFormatException {
+    boolean fallo = "FAILED".equalsIgnoreCase(estadoFinal);
+
+    XWPFParagraph titulo = doc.createParagraph();
+    titulo.setSpacingBefore(400);
+    XWPFRun tituloRun = titulo.createRun();
+    tituloRun.setBold(true);
+    tituloRun.setFontSize(14);
+    tituloRun.setColor(fallo ? "C00000" : "2E7D32");
+    tituloRun.setText(fallo ? "RESULTADO: FALLIDO" : "RESULTADO: EXITOSO");
+
+    if (!fallo) {
+      return;
+    }
+
+    if (pasoFallido != null && !pasoFallido.trim().isEmpty()) {
+      agregarParrafo(doc, "Paso donde falló: " + pasoFallido, true);
+    }
+
+    String motivo =
+        (motivoFallo == null || motivoFallo.trim().isEmpty())
+            ? "No se pudo determinar automáticamente (ver el reporte de Serenity)."
+            : motivoFallo;
+    agregarParrafo(doc, "Motivo del fallo: " + motivo, true);
+
+    File captura = new File(ERROR_DIR, ERROR_FILE);
+    if (captura.isFile()) {
+      agregarParrafo(doc, "Pantalla en el momento del fallo:", true);
+      try (FileInputStream is = new FileInputStream(captura)) {
+        XWPFRun imgRun = doc.createParagraph().createRun();
+        imgRun.addPicture(
+            is, Document.PICTURE_TYPE_PNG, captura.getName(), Units.toEMU(150), Units.toEMU(270));
+      }
+    } else {
+      agregarParrafo(doc, "(No se pudo capturar la pantalla del fallo)", false);
+    }
+  }
+
+  private static void agregarParrafo(XWPFDocument doc, String texto, boolean etiquetaEnNegrita) {
+    XWPFParagraph p = doc.createParagraph();
+    p.setSpacingBefore(120);
+    int corte = etiquetaEnNegrita ? texto.indexOf(':') : -1;
+
+    if (corte > 0) {
+      XWPFRun etiqueta = p.createRun();
+      etiqueta.setBold(true);
+      etiqueta.setFontSize(12);
+      etiqueta.setText(texto.substring(0, corte + 1) + " ");
+
+      XWPFRun valor = p.createRun();
+      valor.setFontSize(12);
+      valor.setText(texto.substring(corte + 1).trim());
+    } else {
+      XWPFRun run = p.createRun();
+      run.setFontSize(12);
+      run.setText(texto);
+    }
+  }
+
   private static String generarConclusion(
-      String[] pasos, String pasoFallido, String estadoFinal, String linea) {
+      String[] pasos, String pasoFallido, String estadoFinal, String linea, String motivoFallo) {
     StringBuilder conclusion = new StringBuilder();
     //    conclusion.append(messages.getString("report.initial_message").replace("{0}",
     // linea)).append("\n\n");
@@ -150,13 +231,19 @@ public class WordAppium {
     }
 
     conclusion.append("\n");
-    return "FAILED".equalsIgnoreCase(estadoFinal)
-            ? conclusion
-              .append("La prueba finaliza con inconsistencias funcionales.")
-              .toString()
-            : conclusion
-              .append("La prueba finaliza exitosamente validando el flujo esperado.")
-              .toString();
+    if (!"FAILED".equalsIgnoreCase(estadoFinal)) {
+      return conclusion
+          .append("La prueba finaliza exitosamente validando el flujo esperado.")
+          .toString();
+    }
+
+    conclusion.append("La prueba finaliza con inconsistencias funcionales.");
+    // El motivo concreto va aquí mismo: antes había que ir al reporte de Serenity a
+    // buscar qué había pasado.
+    if (motivoFallo != null && !motivoFallo.trim().isEmpty()) {
+      conclusion.append(" Motivo: ").append(motivoFallo.trim());
+    }
+    return conclusion.toString();
   }
 
   private static String obtenerDescripcionPaso(String paso) {
