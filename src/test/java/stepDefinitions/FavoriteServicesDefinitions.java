@@ -28,8 +28,9 @@ public class FavoriteServicesDefinitions {
     theActorInTheSpotlight()
             .attemptsTo(
                     ClickTextoQueContengaX.elTextoContiene(VER_MAS),
-                    ScrollHastaTexto.conTexto(EMPRESAS_Y_NEGOCIOS),
-                    Scroll.scrollUnaVista());
+                    ScrollHastaTexto.conTexto(EMPRESAS_Y_NEGOCIOS)
+                   // Scroll.scrollUnaVista()
+                    );
 
     EvidenciaUtils.registrarCaptura(paso);
   }

@@ -623,6 +623,7 @@ public class Constants {
   // Tus plataformas favoritas
   public static final String TUS_PLATAFORMAS_FAVORITAS = "Tus plataformas favoritas";
   public static final String TUS_SERVICIOS_FAVORITOS = "Tus servicios favoritos";
+  public static final String TUS_FAVORITOS_EMPRESAS = "Tus favoritos Empresas";
   public static final String EL_MEJOR_CONTENIDO_UN_SOLO_LUGAR =
       "El mejor contenido en un solo lugar";
   public static final String NETFLIX = "Netflix";
