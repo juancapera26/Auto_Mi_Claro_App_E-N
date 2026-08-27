@@ -19,7 +19,7 @@ public class User {
   private String imei;
   private String referencia;
   private String cuentaHogar;
-
+  private String numeroempresas;
   public String getEmail() {
     return email;
   }
@@ -36,6 +36,10 @@ public class User {
     this.emailSecundario = emailSecundario;
   }
 
+  public String getNumeroempresas(){return numeroempresas;}
+  public void setNumeroempresas(String numeroempresas){
+    this.numeroempresas = numeroempresas;
+  }
 
 
   public String getNombreUsuario() {

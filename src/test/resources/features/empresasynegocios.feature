@@ -20,7 +20,7 @@ Característica: empresas y negocios
     Y validar cession de contrato
 
   @EYN003
-  Escenario: ingresar y validar informacion de tramintes cambio de plan
+  Escenario: ingresar y validar informacion de tramites cambio de plan
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
@@ -30,7 +30,7 @@ Característica: empresas y negocios
 
 
   @EYN004
-  Escenario: ingresar y validar informacion de tramintes validar traslados
+  Escenario: ingresar y validar informacion de tramites validar traslados
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
@@ -39,7 +39,7 @@ Característica: empresas y negocios
     Y validar traslados
 
   @EYN005
-  Escenario: ingresar y validar informacion de tramintes cambio de SIM card
+  Escenario: ingresar y validar informacion de tramites cambio de SIM card
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
@@ -49,7 +49,7 @@ Característica: empresas y negocios
 
 
   @EYN006
-  Escenario: Validar Administrar facura
+  Escenario: Validar Administrar factura
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app

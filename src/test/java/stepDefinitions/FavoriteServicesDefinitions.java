@@ -86,6 +86,32 @@ public class FavoriteServicesDefinitions {
             IngresarSolucionesMoviles.ingresarSolucionesMoviles()
     );
   }
+  @And("^ingresar a gestionar lineas nuevas empresas$")
+  public void IngresarGestionarLineasNuevas() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarGestionarLineasNuevas.ingresarGestionarLineasNuevas()
+    );
+  }
+
+
+  @And("^ingresar a soluciones fijas$")
+  public void IngresarSolucionesFijas() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarSolucionesFijas.ingresarSolucionesFijas()
+    );
+  }
+  @And("^ingresar a consulta servicios fijos$")
+  public void IngresarConsultaServiciosfijos() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarConsultaServiciosfijos.ingresarConsultaServiciosfijos()
+    );
+  }
+  @And("^ingresar a mis beneficios HFC$")
+  public void IngresarMisbeneficiosHFC() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarBeneficiosHFC.ingresarBeneficiosHFC()
+    );
+  }
 //////////////////////////////////////////
   @And("^ingresar a pagos y facturas$")
   public void IngresarPagosFacuras() {

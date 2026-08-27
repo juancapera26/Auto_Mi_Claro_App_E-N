@@ -12,6 +12,12 @@ public class EmpresasNegociosPage {
     public static final Target SELECIONAR_ANUNCIO =
             Target.the("Ingresar a los anuncions y validar redireccion")
                     .located(By.xpath("//android.view.View/android.widget.Image"));
+    public static final Target BTN_CUENTAS_CORREO =
+            Target.the("Ingresar a Cuentas de correo")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[6]"));
+    public static final Target VER_MAS_SF =
+            Target.the("Ingresar a ver mas soluciones fijas")
+                    .located(By.xpath("(//android.widget.RelativeLayout[@resource-id=\"com.clarocolombia.miclaro:id/rl_mini_app\"])[8]"));
 
     public static final Target SELECIONAR_ANUNCIO_2 =
             Target.the("Ingresar a selecionar anuncio ")
@@ -32,7 +38,7 @@ public static final Target MENU_BURGES_EMPRESA =
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.view.View/android.widget.Image"));
 public static final Target SELECIONAR_FACTURA =
             Target.the("Selecionar una factura")
-                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
 public static final Target SELECIONAR_FACTURA_FIJAS_HFC =
             Target.the("Selecionar una factura")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.widget.CheckBox/android.widget.CheckBox"));
