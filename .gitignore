@@ -65,4 +65,4 @@ Error/
 *.apk
 
 #Reportes
-reportes/
+reportes/*.log*
