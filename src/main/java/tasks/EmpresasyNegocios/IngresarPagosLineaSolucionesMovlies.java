@@ -15,6 +15,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_FACTURA;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 
 public class IngresarPagosLineaSolucionesMovlies implements Task {
@@ -34,9 +35,9 @@ public class IngresarPagosLineaSolucionesMovlies implements Task {
         EvidenciaUtils.registrarCaptura(paso1);
 
         actor.attemptsTo(
-                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO,  isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene("Soluciones Móviles"),
-                WaitFor.aTime(2000),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 Click.on(SELECIONAR_FACTURA)
         );
 

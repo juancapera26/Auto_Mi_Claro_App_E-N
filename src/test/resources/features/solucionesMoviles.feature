@@ -47,7 +47,13 @@ Característica: ingresar al módulo Soluciones moviles
 
   @SM007
   Escenario: Ingresar a gestionar lineas nuevas empresas
-   Dado que el usuario ingrese a super app
-   Cuando el usuario realiza el ingreso
-   Y ingresar a soluciones moviles
-   Y ingresar a gestionar lineas nuevas empresas
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y ingresar a soluciones moviles
+    Y ingresar a gestionar lineas nuevas empresas
+
+  @SM008
+  Escenario: Ingresar a gestiona tu equipo empresas
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Y ingresar a soluciones moviles

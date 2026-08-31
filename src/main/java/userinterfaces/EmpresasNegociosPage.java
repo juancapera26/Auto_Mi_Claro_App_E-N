@@ -1,11 +1,8 @@
 package userinterfaces;
 
 
-import io.appium.java_client.MobileBy;
-import models.User;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
-import utils.TestDataProvider;
 
 public class EmpresasNegociosPage {
 
@@ -32,13 +29,15 @@ public static final Target VER_PUNTOS_ATENCION =
 public static final Target MAS_INFORMACION =
             Target.the("mas informacion elige tipo de servicio")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.view.View"));
-
-public static final Target MENU_BURGES_EMPRESA =
-            Target.the("Menu burges claro empresas")
-                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.view.View/android.widget.Image"));
+public static final Target INFO_ROAMING =
+            Target.the("Boton informacion")
+                    .located(By.xpath("//android.widget.Image[@resource-id=\"icon-warning\"]"));
+public static final Target VER_MAS_SM =
+            Target.the("Ver mas soluciones moviles")
+                    .located(By.xpath("(//androidx.recyclerview.widget.RecyclerView[@resource-id=\"com.clarocolombia.miclaro:id/card_mini_program_banner_mini_app_rv\"]/android.widget.RelativeLayout[@resource-id=\"com.clarocolombia.miclaro:id/rl_mini_app\"])[4]"));
 public static final Target SELECIONAR_FACTURA =
             Target.the("Selecionar una factura")
-                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
 public static final Target SELECIONAR_FACTURA_FIJAS_HFC =
             Target.the("Selecionar una factura")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.widget.CheckBox/android.widget.CheckBox"));

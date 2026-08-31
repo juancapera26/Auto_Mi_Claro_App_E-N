@@ -35,6 +35,7 @@ public class IngresarConsultaServiciosfijos implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Consulta los detalles de tus soluciones"),
                 ClickTextoQueContengaX.elTextoContiene("Consulta servicios fijos"),
+                WaitFor.aTime(3000),
                 WaitUntil.the(LOADING_SPLASH, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso1);

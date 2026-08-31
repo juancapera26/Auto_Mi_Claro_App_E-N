@@ -93,6 +93,13 @@ public class FavoriteServicesDefinitions {
     );
   }
 
+  @And("^ingresar a gestiona tu equipo empresas$")
+  public void IngresarGestionaEquipoEmpresas() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarGestionaEquipoEmpresas.ingresarGestionaEquipoEmpresas()
+    );
+  }
+
 
   @And("^ingresar a soluciones fijas$")
   public void IngresarSolucionesFijas() {

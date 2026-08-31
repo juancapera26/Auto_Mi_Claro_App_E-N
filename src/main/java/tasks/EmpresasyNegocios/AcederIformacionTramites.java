@@ -2,8 +2,10 @@ package tasks.EmpresasyNegocios;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.*;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.*;
 import static utils.Constants.*;
 
@@ -18,6 +20,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
@@ -30,7 +33,10 @@ public class AcederIformacionTramites implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
             ClickTextoQueContengaX.elTextoContiene(INFORMACION_TRAMITE),
-            WaitForResponse.withText(INFORMACION_TRAMITE));
+            WaitForResponse.withText(INFORMACION_TRAMITE),
+            WaitFor.aTime(5000),
+            WaitUntil.the(LOADING_SPLASH, isNotPresent())
+    );
 
     EvidenciaUtils.registrarCaptura(paso1);
 

@@ -8,10 +8,13 @@ import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.ClickOnBy;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.EmpresasNegociosPage.VER_MAS_SM;
 import static utils.Constants.*;
 
 public class IngresarSolucionesMoviles implements Task {
@@ -22,18 +25,10 @@ public class IngresarSolucionesMoviles implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                        Scroll.scrollUnaVista()
-                );
-
-
-       // actor.attemptsTo(
-       //         ValidarTextoQueContengaX.elTextoContiene(SOLUCIONES_MOVILES));
-
         EvidenciaUtils.registrarCaptura(paso1);
-        WaitFor.aTime(2500);
+        WaitFor.aTime(2000);
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(VER_MAS),
+                Click.on(VER_MAS_SM),
                 WaitFor.aTime(3000)
         );
         EvidenciaUtils.registrarCaptura(paso2);

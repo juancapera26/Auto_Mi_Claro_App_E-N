@@ -14,6 +14,8 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.questions.Presence;
+import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
@@ -90,12 +92,17 @@ public class IngresaActivareSIMempresas implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
-                WaitFor.aTime(4000),
+                WaitFor.aTime(6000),
                 Click.on(BOTON_CONTINUAR_ESIM),
-                WaitFor.aTime(2000),
-                Click.on(BOTON_CONTINUAR_ESIM),
-                 WaitFor.aTime(2000)
-        );
+                WaitFor.aTime(2000)
+                );
+
+        if (isVisible(actor,BOTON_CONTINUAR_ESIM)){
+            actor.attemptsTo(
+                    Click.on(BOTON_CONTINUAR_ESIM),
+                    WaitFor.aTime(2000));
+        }
+
         EvidenciaUtils.registrarCaptura(paso6);
 
         actor.attemptsTo(
@@ -110,6 +117,13 @@ public class IngresaActivareSIMempresas implements Task {
 
 
 
+    }
+    private <T extends Actor> boolean isVisible(T actor, Target element) {
+        try {
+            return !Presence.of(element).viewedBy(actor).resolveAll().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
     public static Performable ingresaActivareSIMempresas() {
         return instrumented(IngresaActivareSIMempresas.class);

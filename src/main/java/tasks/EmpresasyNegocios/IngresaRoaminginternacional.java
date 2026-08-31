@@ -11,12 +11,18 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.questions.Presence;
+import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
+
+import static interactions.Click.ClickElementByText.clickElementByText;
+import static interactions.wait.WaitElement.isVisible;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
-import static userinterfaces.LoginPage.LOADING_SPLASH;
+import static userinterfaces.EmpresasNegociosPage.INFO_ROAMING;
+import static userinterfaces.LoginPage.*;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -43,7 +49,7 @@ public class IngresaRoaminginternacional implements Task {
                 WaitUntil.the(LOADING_SPLASH, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso2);
-
+        
         actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
@@ -52,47 +58,58 @@ public class IngresaRoaminginternacional implements Task {
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),
-                ValidarTextoQueContengaX.elTextoContiene(ROAMING_INTERNACIONAL),
+                ValidarTextoQueContengaX.elTextoContiene("Roaming internacional"),
                 ValidarTextoQueContengaX.elTextoContiene("3226918354")
 
         );
         EvidenciaUtils.registrarCaptura(paso3);
-        actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
-        );
-        EvidenciaUtils.registrarCaptura(paso4);
+        if (!isVisibleFast(actor, INFO_ROAMING)) {
+            actor.attemptsTo(
+                    ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
+                    ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+            );
+            EvidenciaUtils.registrarCaptura(paso4);
 
-        actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
-                WaitFor.aTime(2000)
+            actor.attemptsTo(
+                    ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
+                    WaitFor.aTime(2000)
 
-        );
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(385, 988),
-                ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+            );
+            actor.attemptsTo(
+                    ClickEnCoordenadas.en(385, 988),
+                    ValidarTextoQueContengaX.elTextoContiene("Pass AmericaEYN"),
+                    ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
 
-        );
+            );
 
-        EvidenciaUtils.registrarCaptura(paso5);
+            EvidenciaUtils.registrarCaptura(paso5);
 
-        actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
-                WaitFor.aTime(2000)
+            actor.attemptsTo(
+                    ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete"),
+                    WaitFor.aTime(2000)
 
-        );
-        actor.attemptsTo(
-                ClickEnCoordenadas.en(450, 988),
-                WaitFor.aTime(2000),
-                ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
+            );
+            actor.attemptsTo(
+                    ClickEnCoordenadas.en(450, 988),
+                    WaitFor.aTime(2000),
+                    ClickTextoQueContengaX.elTextoContiene("Detalles del Paquete")
 
-        );
-        EvidenciaUtils.registrarCaptura(paso6);
-
-
+            );
+            EvidenciaUtils.registrarCaptura(paso6);
 
 
+
+        }
+
+
+
+    }
+    private <T extends Actor> boolean isVisibleFast(T actor, Target element) {
+        try {
+            return !Presence.of(element).viewedBy(actor).resolveAll().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
     public static Performable ingresaRoaminginternacional() {
         return instrumented(IngresaRoaminginternacional.class);

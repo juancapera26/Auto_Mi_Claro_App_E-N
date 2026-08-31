@@ -23,6 +23,9 @@ public class LoginPage {
 
   public static final Target LOADING_SPLASH =
       Target.the("Logo de espera al iniciar la App Mi Claro").located(By.id("imgLoadingSplash"));
+  public static final Target LOADING_GestionaTuEquipo =
+          Target.the("Logo de espera al ingresar en Gestiona tu equipo").located(By.xpath("//android.widget.ImageView[@resource-id=\"com.clarocolombia.miclaro:id/img_mini_program_splash\"]"));
+
   public static final Target LBL_ENCABEZADO_USUARIO =
       Target.the("Label Encabezado de usuario").located(By.id("home_user_name_tv"));
   public static final Target LBL_SESION_CERRADA_POR_SEGURIDAD =
@@ -72,6 +75,7 @@ public class LoginPage {
       Target.the("Check Acepto los términos y condiciones, el tratamiento de mis datos")
           .located(By.id("iv_protocol"));
   public static final Target TXT_USERNAME = Target.the("Ingresar Usuario").located(By.id("input"));
+
   public static final Target LBL_TERMINOS_Y_CONDICIONES =
       Target.the("Texto términos y condiciones")
           .located(By.xpath("//*[@text='¡Te damos la bienvenida!']"));

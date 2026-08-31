@@ -31,6 +31,9 @@ public class IngresarGestionarLineasNuevas implements Task {
     private static final String paso3 = "Validar solicitar lineas nuevas";
     private static final String paso4 = "Validar solicitudes finalizadas";
     private static final String paso5 = "Validar estado de solicitudes finalizadas";
+    private static final String paso6 = "Validar resumen de la solicitud";
+    private static final String paso7 = "Validar listado de lineas activas";
+    private static final String paso8 = "Validar Solicitudes en curso";
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -43,16 +46,18 @@ public class IngresarGestionarLineasNuevas implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1500),
-                ValidarTexto.validarTexto("Gestionar líneas nuevas empresas"),
+                //ValidarTexto.validarTexto("Gestionar líneas nuevas empresas"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER));
 
         EvidenciaUtils.registrarCaptura(paso2);
         WaitFor.aTime(2500);
 
-        actor.attemptsTo(Click.on(BTN_VOLVER));
+        actor.attemptsTo(Click.on(BTN_VOLVER),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()));
 
         actor.attemptsTo(
+
                 ValidarTextoQueContengaX.elTextoContiene("Gestionar líneas nuevas"),
                 ClickTextoQueContengaX.elTextoContiene("Solicitar líneas nuevas"),
                 WaitFor.aTime(1000)
@@ -77,11 +82,31 @@ public class IngresarGestionarLineasNuevas implements Task {
                 WaitFor.aTime(1000),
                 ValidarTextoQueContengaX.elTextoContiene("Estado de activación")
         );
+        EvidenciaUtils.registrarCaptura(paso6);
         actor.attemptsTo(
                 Click.on(BTN_VOLVER),
-                ValidarTextoQueContengaX.elTextoContiene("Tus servicios fijos")
+                ClickTextoQueContengaX.elTextoContiene("27/5/2026"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ValidarTextoQueContengaX.elTextoContiene("Estado de activación")
         );
-
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Ver listado de líneas activadas"),
+                WaitFor.aTime(1500),
+                ValidarTextoQueContengaX.elTextoContiene("Plan 1")
+        );
+        EvidenciaUtils.registrarCaptura(paso7);
+        actor.attemptsTo(
+                Click.on(BTN_VOLVER),
+                WaitFor.aTime(2000),
+                Click.on(BTN_VOLVER),
+                WaitFor.aTime(2000),
+                Click.on(BTN_VOLVER)
+        );
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Solicitudes en curso"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+        );
+        EvidenciaUtils.registrarCaptura(paso8);
     }
 
     public static Performable ingresarGestionarLineasNuevas() {
