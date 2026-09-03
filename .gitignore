@@ -66,3 +66,4 @@ Error/
 
 #Reportes
 reportes/*.log*
+*.log*
