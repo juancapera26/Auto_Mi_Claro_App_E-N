@@ -20,6 +20,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.CAMPO_INGRESO_SERIAL;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_CAMBIO_SIM;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
@@ -29,8 +30,9 @@ public class IngresaCambioSIMcard implements Task {
     private static final String paso1 = "ingresar a Cambio sim card";
     private static final String paso2 = "ingresar numero al que quieras administrar";
     private static final String paso3 = "validar version miniprogrma";
-    private static final String paso4 = "vvalidar informacion Cambio sim card";
-    private static final String paso5 = "vvalidar Ingreso los últimos 12 números del serial";
+    private static final String paso4 = "validar informacion Cambio sim card";
+    private static final String paso5 = "validar version miniprograma Cambio de Sim";
+    private static final String paso6 = "validar Ingreso los últimos 12 números del serial";
 
 
 
@@ -39,15 +41,14 @@ public class IngresaCambioSIMcard implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Cambio"),
-                WaitFor.aTime(3000)
+                WaitFor.aTime(2000),
+                WaitUntil.the(LOADING_CAMBIO_SIM, isNotPresent()),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
 
-        actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
-                WaitFor.aTime(6000)
-        );
         EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
@@ -77,12 +78,25 @@ public class IngresaCambioSIMcard implements Task {
         );
         EvidenciaUtils.registrarCaptura(paso4);
         actor.attemptsTo(
+                WaitFor.aTime(1000),
+                Click.on(BTN_TRES_PUNTOS_MAS),
+                ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
+                WaitFor.aTime(1500),
+                //ValidarTexto.validarTexto(CAMBIO_SIM_CARD),
+                ValidarTexto.validarTexto(DECLARACION_SERVICIO),
+                ValidarTextoQueContengaX.elTextoContiene(VER)
+        );
+        actor.attemptsTo(Click.on(BTN_VOLVER),
+                WaitFor.aTime(1000)
+        );
+        EvidenciaUtils.registrarCaptura(paso5);
+        actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Serial de la SIM Card"),
                 ValidarTextoQueContengaX.elTextoContiene("Ingresa los últimos 12 números del serial"),
                 ClickTextoQueContengaX.elTextoContiene("Escribe los números restantes")
                 //Enter.theValue("702504939445").into(CAMPO_INGRESO_SERIAL)
                 );
-        EvidenciaUtils.registrarCaptura(paso5);
+        EvidenciaUtils.registrarCaptura(paso6);
 
     }
     public static Performable ingresaCambioSIMcard() {

@@ -20,6 +20,8 @@ public class LoginPage {
 
   public static final Target ACTIVAR_ESIM =
           Target.the("Logo de activar eSIM").located(By.xpath("//android.widget.Image"));
+  public static final Target LOADING_CAMBIO_SIM =
+          Target.the("Logo de espera al ingresar a cambio de sim").located(By.id("//android.widget.RelativeLayout[@resource-id=\"com.clarocolombia.miclaro:id/content_id\"]"));
 
   public static final Target LOADING_SPLASH =
       Target.the("Logo de espera al iniciar la App Mi Claro").located(By.id("imgLoadingSplash"));

@@ -14,6 +14,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Presence;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.Wait;
@@ -24,8 +25,7 @@ import utils.TestDataProvider;
 import static interactions.wait.WaitElement.isVisible;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
-import static userinterfaces.EmpresasNegociosPage.BOTON_CONTINUAR_ESIM;
-import static userinterfaces.EmpresasNegociosPage.CAMPO_INGRESO_SERIAL;
+import static userinterfaces.EmpresasNegociosPage.*;
 import static userinterfaces.EntretenimientoPage.BTN_CONTINUAR;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.ACTIVAR_ESIM;
@@ -50,7 +50,9 @@ public class IngresaActivareSIMempresas implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Activa"),
-                WaitFor.aTime(3000)
+                WaitFor.aTime(1000),
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent())
+
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
@@ -92,16 +94,14 @@ public class IngresaActivareSIMempresas implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
-                WaitFor.aTime(6000),
-                Click.on(BOTON_CONTINUAR_ESIM),
-                WaitFor.aTime(2000)
+                WaitFor.aTime(10000),
+                Click.on(BOTON_SIGUIENTE_ESIM),
+                //WaitFor.aTime(2000),
+                //WaitUntil.the(BOTON_CONTINUAR_ESIM, WebElementStateMatchers.isEnabled()).forNoMoreThan(10).seconds(),
+                //Click.on(BOTON_CONTINUAR_ESIM),
+                ClickElementByText.clickElementByText("Continuar"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent())
                 );
-
-        if (isVisible(actor,BOTON_CONTINUAR_ESIM)){
-            actor.attemptsTo(
-                    Click.on(BOTON_CONTINUAR_ESIM),
-                    WaitFor.aTime(2000));
-        }
 
         EvidenciaUtils.registrarCaptura(paso6);
 
@@ -117,6 +117,13 @@ public class IngresaActivareSIMempresas implements Task {
 
 
 
+    }
+    private <T extends Actor> boolean visible(T actor, Target t) {
+        try {
+            return !Presence.of(t).viewedBy(actor).resolveAll().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
     private <T extends Actor> boolean isVisible(T actor, Target element) {
         try {

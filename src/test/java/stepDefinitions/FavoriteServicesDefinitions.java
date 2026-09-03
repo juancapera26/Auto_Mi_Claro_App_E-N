@@ -113,6 +113,18 @@ public class FavoriteServicesDefinitions {
             IngresarConsultaServiciosfijos.ingresarConsultaServiciosfijos()
     );
   }
+  @And("^ingresar a personaliza Red WiFi HFC$")
+  public void IngresarPersonalizaWifiHFC() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarPersonalizaWifiHFC.ingresarPersonalizaWifiHFC()
+    );
+  }
+  @And("^ingresar a Visitas y traslados$")
+  public void IngresarVisitasyTraslados() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarVisitasyTraslados.ingresarVisitasyTraslados()
+    );
+  }
   @And("^ingresar a mis beneficios HFC$")
   public void IngresarMisbeneficiosHFC() {
     theActorInTheSpotlight().attemptsTo(

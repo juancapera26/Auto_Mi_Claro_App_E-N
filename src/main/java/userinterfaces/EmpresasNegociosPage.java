@@ -115,9 +115,14 @@ public static final Target ESCRIBIR_NUMERO_PSE =
 
 //Soluciones Moviles
 
-    public static final Target BOTON_CONTINUAR_ESIM =
+    public static final Target BOTON_SIGUIENTE_ESIM =
         Target.the("Boton continuar eSIM")
-                .locatedBy("//android.widget.Button[@text=\"Siguiente\"]");
+                .located(By.xpath("//android.widget.Button[@text=\"Siguiente\"]"));
+
+
+public static final Target BOTON_CONTINUAR_ESIM =
+        Target.the("Boton continuar eSIM")
+                .located(By.xpath("//android.widget.Button[@text=\"Continuar\"]"));
 
 }
 

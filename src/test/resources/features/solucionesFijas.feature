@@ -17,3 +17,19 @@ Característica: ingresar al módulo Soluciones fijas
     Entonces verifica version de la super app
     Y ingresar a soluciones fijas
     Y ingresar a consulta servicios fijos
+
+  @SF003
+  Escenario: Ingresar a Personaliza Red WiFi HFC
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a soluciones fijas
+    Y ingresar a personaliza Red WiFi HFC
+
+  @SF004
+  Escenario: Ingresar a  Visitas y Traslados
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a soluciones fijas
+    Y ingresar a Visitas y traslados
