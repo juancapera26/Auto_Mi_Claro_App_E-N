@@ -16,6 +16,7 @@ import net.serenitybdd.screenplay.actions.ScrollToBy;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.EmpresasNegociosPage.VER_MAS_OFCN;
 import static userinterfaces.LoginPage.OTRAS_FUN;
 import static utils.Constants.VER_MAS;
 
@@ -33,12 +34,14 @@ public class IngresarOtrasFucionalidades implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+
                 ScrollHorizontalCoordenadas.desde(533, 770,300,770)
         );
         EvidenciaUtils.registrarCaptura(paso1);
 
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(VER_MAS),
+                Click.on(VER_MAS_OFCN),
                 WaitFor.aTime(3000)
         );
         EvidenciaUtils.registrarCaptura(paso2);

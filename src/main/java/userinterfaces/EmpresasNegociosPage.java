@@ -29,6 +29,9 @@ public static final Target VER_PUNTOS_ATENCION =
 public static final Target MAS_INFORMACION =
             Target.the("mas informacion elige tipo de servicio")
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.view.View"));
+public static final Target VER_MAS_OFCN =
+            Target.the("Ver mas Otras Funcionalidades")
+                    .located(By.xpath("(//android.widget.FrameLayout[@resource-id=\"com.clarocolombia.miclaro:id/mini_program_logo_container\"])[4]"));
 public static final Target INFO_ROAMING =
             Target.the("Boton informacion")
                     .located(By.xpath("//android.widget.Image[@resource-id=\"icon-warning\"]"));
@@ -49,7 +52,7 @@ public static final Target SELECIONAR_CAMPO_DE_TEXTO =
                     .located(By.xpath("//android.widget.EditText"));
 
     public static final Target PERFIL_DE_CONSULTA =
-            Target.the("Eliminar ususario")
+            Target.the("Perfil de consulta")
                     .located(By.xpath("//android.widget.RadioButton[@text=\"Elegir como perfil de consulta\"]/android.widget.TextView"));
     public static final Target EMAIL =
             Target.the("correo")

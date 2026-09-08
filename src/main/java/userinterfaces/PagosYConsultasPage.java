@@ -13,7 +13,7 @@ public class PagosYConsultasPage {
                   .located(By.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/h5_tv_nav_back_to_home\"]"));
   public static final Target BTN_TRES_PUNTOS_MAS =
       Target.the("Boton de los 3 puntos para validar la mini versión")
-          .located(By.xpath("//android.widget.TextView[@content-desc=\"Más\"]"));
+          .located(By.xpath("//android.widget.TextView[@content-desc=\" \" and @text=\"\uE904\"]"));
   public static final Target BTN_PAGAR_FACTURA =
       Target.the("Boton Pagar factura")
           .located(By.xpath("//*[@text='Pagar factura' and @class='android.widget.Button']"));

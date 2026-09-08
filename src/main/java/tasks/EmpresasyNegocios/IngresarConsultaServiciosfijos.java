@@ -30,6 +30,7 @@ public class IngresarConsultaServiciosfijos implements Task {
     private static final String paso2 = "Validar Mini Versión";
     private static final String paso3 = "Validar menu tus servicios fijos";
     private static final String paso4 = "Validar Mini version tus servicios fijos";
+    private static final String paso5 = "Validar Ingreso en Administra tu factura";
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -70,6 +71,17 @@ public class IngresarConsultaServiciosfijos implements Task {
         actor.attemptsTo(
                 Click.on(BTN_VOLVER),
                 ValidarTextoQueContengaX.elTextoContiene("Tus servicios fijos")
+        );
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Administra"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ValidarTexto.validarTexto("Administra tu factura"),
+                ValidarTexto.validarTexto("Cuenta Maestra")
+        );
+        EvidenciaUtils.registrarCaptura(paso5);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Pagar"),
+                WaitFor.aTime(3500)
         );
 
     }

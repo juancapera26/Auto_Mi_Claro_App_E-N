@@ -2,6 +2,7 @@ package tasks.EmpresasyNegocios.pagosFacturas;
 
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.Scroll.ScrollHastaTexto;
 import interactions.wait.WaitFor;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
