@@ -22,7 +22,7 @@ Característica: ingresar al módulo Soluciones moviles
   #Escenario: Validar detalle de tu plan sona de invitados
   #  Dado que el usuario ingrese a super app
   #  Cuando el usuario cierra la sesion
-  #  Entonces ingresa a Consulta tu plan EYP
+  Entonces ingresa a Consulta tu plan EYP
 
   @SM004
   Escenario: Validar Consulta tus consumos

@@ -14,7 +14,7 @@ public class EmpresasNegociosPage {
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[6]"));
     public static final Target VER_MAS_SF =
             Target.the("Ingresar a ver mas soluciones fijas")
-                    .located(By.xpath("(//android.widget.RelativeLayout[@resource-id=\"com.clarocolombia.miclaro:id/rl_mini_app\"])[8]"));
+                    .located(By.xpath("(//android.widget.ImageView[@resource-id=\"com.clarocolombia.miclaro:id/mini_program_logo_icon\"])[4]"));
 
     public static final Target SELECIONAR_ANUNCIO_2 =
             Target.the("Ingresar a selecionar anuncio ")

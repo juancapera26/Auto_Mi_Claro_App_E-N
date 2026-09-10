@@ -153,8 +153,8 @@ public class PagosYConsultasPage {
       Target.the("Segundo botón ver detalle")
           .located(By.xpath("(//android.widget.Button[@text='Ver detalle del paquete'])[2]"));
 
-  public static final Target BTN_VER_DETALLE_TERCER_PAQUETE =
-      Target.the("Tercer botón ver detalle")
+  public static final Target BTN_ATRAS =
+      Target.the("Boton atras")
           .located(By.xpath("(//android.widget.Button[@text='Ver detalle del paquete'])[3]"));
 
   public static final Target TXT_CLARO =
