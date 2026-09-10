@@ -56,9 +56,7 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 ValidarTextoQueContengaX.elTextoContiene("Administrar perfiles"),
                 WaitFor.aTime(3000)
         );
-
         EvidenciaUtils.registrarCaptura(paso2);
-
         actor.attemptsTo(
                 WaitFor.aTime(1000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
@@ -68,25 +66,16 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
-
         EvidenciaUtils.registrarCaptura(paso3);
-
         actor.attemptsTo(Click.on(BTN_VOLVER));
-
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
+                ScrollHastaTexto.conTexto("Agregar nuevo perfil"),
                 ValidarTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 ClickTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 WaitFor.aTime(1000)
-
         );
         EvidenciaUtils.registrarCaptura(paso4);
         actor.attemptsTo(
@@ -105,9 +94,6 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 WaitFor.aTime(3000),
                 Click.on(BOTON_ELIMINAR),
                 WaitFor.aTime(1000)
-
-
-
         );
         EvidenciaUtils.registrarCaptura(paso7);
         actor.attemptsTo(
