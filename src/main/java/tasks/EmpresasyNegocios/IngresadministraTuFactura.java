@@ -20,6 +20,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_HOME;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
@@ -42,7 +43,7 @@ public class IngresadministraTuFactura implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(3000),
                 ClickTextoQueContengaX.elTextoContiene("Administra factura"),
-                WaitFor.aTime(3000)
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
@@ -86,10 +87,6 @@ public class IngresadministraTuFactura implements Task {
                     ValidarTextoQueContengaX.elTextoContiene("Consulta"),
                     Click.on(BTN_HOME),
                     WaitUntil.the(LOADING_SPLASH, isNotPresent())
-                    //  ClickEnCoordenadas.en(360, 902),
-                    // WaitFor.aTime(2000),
-                    // ClickEnCoordenadas.en(351, 847),
-                    // WaitFor.aTime(2000)
             );
 
             EvidenciaUtils.registrarCaptura(paso4);
@@ -110,13 +107,13 @@ public class IngresadministraTuFactura implements Task {
         EvidenciaUtils.registrarCaptura(paso5);
 
         actor.attemptsTo(Click.on(BTN_VOLVER),
-                WaitFor.aTime(4000)
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Descarga"),
-                WaitFor.aTime(6000),
-                ValidarTextoQueContengaX.elTextoContiene("Abrir Documento")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Abrir documento",6)
         );
         EvidenciaUtils.registrarCaptura(paso6);
     }
