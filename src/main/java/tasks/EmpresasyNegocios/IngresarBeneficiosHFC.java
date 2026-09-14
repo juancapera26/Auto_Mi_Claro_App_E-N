@@ -19,8 +19,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.BTN_CUENTAS_CORREO;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
-import static userinterfaces.LoginPage.BTN_CONTINUAR;
-import static userinterfaces.LoginPage.LOADING_SPLASH;
+import static userinterfaces.LoginPage.*;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -43,7 +42,7 @@ public class IngresarBeneficiosHFC implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Soluciones HFC Emp"),
                 ClickTextoQueContengaX.elTextoContiene("Mis beneficios HFC"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso1);
         WaitFor.aTime(2500);
@@ -61,8 +60,7 @@ public class IngresarBeneficiosHFC implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Tus cuentas"),
                 ClickTextoQueContengaX.elTextoContiene("No. 56220783"),
-                WaitFor.aTime(3000),
-                ValidarTextoQueContengaX.elTextoContiene("Mis beneficios"),
+                ValidarTextoQueContengaX.porTiempo("Mis beneficios",4),
                 ValidarTextoQueContengaX.elTextoContiene("Cuenta")
         );
         EvidenciaUtils.registrarCaptura(paso3);
@@ -84,8 +82,7 @@ public class IngresarBeneficiosHFC implements Task {
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Llamadas a larga distancia"),
-                WaitFor.aTime(2500),
-                ValidarTextoQueContengaX.elTextoContiene("Llamadas a larga distancia")
+                ValidarTextoQueContengaX.porTiempo("Llamadas a larga distancia",3)
         );
         EvidenciaUtils.registrarCaptura(paso5);
 
@@ -95,8 +92,7 @@ public class IngresarBeneficiosHFC implements Task {
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Elegidos fijos"),
-                WaitFor.aTime(2500),
-                ValidarTextoQueContengaX.elTextoContiene("Elegidos líneas fijas")
+                ValidarTextoQueContengaX.porTiempo("Elegidos líneas fijas",3)
         );
         EvidenciaUtils.registrarCaptura(paso6);
         actor.attemptsTo(
@@ -105,8 +101,7 @@ public class IngresarBeneficiosHFC implements Task {
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Teléfono virtual"),
-                WaitFor.aTime(2500),
-                ValidarTextoQueContengaX.elTextoContiene("Teléfono virtual")
+                ValidarTextoQueContengaX.porTiempo("Teléfono virtual",3)
         );
         EvidenciaUtils.registrarCaptura(paso7);
         actor.attemptsTo(
