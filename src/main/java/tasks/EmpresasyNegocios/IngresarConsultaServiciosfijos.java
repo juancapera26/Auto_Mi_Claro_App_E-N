@@ -19,13 +19,13 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.*;
 import static userinterfaces.EmpresasNegociosPage.VALIDAR_PSE;
+import static userinterfaces.EntretenimientoPage.BTN_CERRAR_MINPROGRAMA;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.*;
 import static userinterfaces.PagosYConsultasPage.BTN_PAGAR;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 import interactions.EmpresasyNegocios.*;
-
 
 public class IngresarConsultaServiciosfijos implements Task {
     private static final User user = TestDataProvider.getRealUser();
@@ -38,6 +38,9 @@ public class IngresarConsultaServiciosfijos implements Task {
     private static final String paso7 = "";
     private static final String paso8 = "";
     private static final String paso9 = "";
+    private static final String paso10 = "";
+    private static final String paso11 = "";
+    private static final String paso12 = "";
     @Override
     public <T extends Actor> void performAs(T actor) {
 
@@ -45,7 +48,7 @@ public class IngresarConsultaServiciosfijos implements Task {
                 ValidarTextoQueContengaX.elTextoContiene("Consulta los detalles de tus soluciones"),
                 ClickTextoQueContengaX.elTextoContiene("Consulta servicios fijos"),
                 WaitFor.aTime(3000),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso1);
         actor.attemptsTo(
@@ -69,7 +72,7 @@ public class IngresarConsultaServiciosfijos implements Task {
         actor.attemptsTo(
                 ValidarAcercaDe.elMenu(), // Flujo optimizado
                 WaitFor.aTime(2500)
-                );
+        );
         EvidenciaUtils.registrarCaptura(paso4);
         actor.attemptsTo(
                 Click.on(BTN_VOLVER),
@@ -77,7 +80,7 @@ public class IngresarConsultaServiciosfijos implements Task {
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Administra"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTexto.validarTexto("Administra tu factura"),
                 ValidarTexto.validarTexto("Cuenta Maestra")
         );
@@ -109,7 +112,8 @@ public class IngresarConsultaServiciosfijos implements Task {
                 NavegarAtras.enElDispositivo(),
                 WaitFor.aTime(3000),
                 ClickTextoQueContengaX.elTextoContiene("Administra"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTexto.validarTexto("Administra tu factura"),
                 ValidarTexto.validarTexto("Cuenta Maestra"),
                 ClickTextoQueContengaX.elTextoContiene("Descarga tu factura"),
@@ -126,17 +130,34 @@ public class IngresarConsultaServiciosfijos implements Task {
         );
         EvidenciaUtils.registrarCaptura(paso9);
         actor.attemptsTo(
-                Click.on(BTN_VOLVER),
-                Click.on(BTN_VOLVER),
+                Click.on(BTN_CERRAR_MINPROGRAMA),
+                WaitFor.aTime(2000),
                 ValidarTextoQueContengaX.elTextoContiene("Tus servicios fijos")
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Gestiona tu visita"),
-                WaitFor.aTime(3500),
+                WaitFor.aTime(4000),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Gestiona las visitas")
         );
+        EvidenciaUtils.registrarCaptura(paso10);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Solicitar traslado"),
+                WaitFor.aTime(2000),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.elTextoContiene("Gestiona las visitas técnicas")
+        );
+        EvidenciaUtils.registrarCaptura(paso11);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Interno"),
+                WaitFor.aTime(1500),
+                ClickTextoQueContengaX.elTextoContiene("Siguiente")
+        );
+        EvidenciaUtils.registrarCaptura(paso12);
+        actor.attemptsTo(
+                Click.on(BTN_CERRAR_MINPROGRAMA)
 
+        );
 
 
 
@@ -146,3 +167,4 @@ public class IngresarConsultaServiciosfijos implements Task {
         return instrumented(IngresarConsultaServiciosfijos.class);
     }
 }
+

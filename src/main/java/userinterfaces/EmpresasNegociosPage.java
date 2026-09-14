@@ -1,6 +1,7 @@
 package userinterfaces;
 
 
+import io.appium.java_client.MobileBy;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
@@ -122,13 +123,18 @@ public static final Target ESCRIBIR_NUMERO_PSE =
         Target.the("Boton continuar eSIM")
                 .located(By.xpath("//android.widget.Button[@text=\"Siguiente\"]"));
 
+    public static final Target BOTON_CONTINUAR_ESIM =
+            Target.the("Textbox correo electrónico PSE")
+                    .located(MobileBy.AndroidUIAutomator(
+                            "//android.widget.Button[@text=\"Continuar\"]"));
 
-public static final Target BOTON_CONTINUAR_ESIM =
+/*public static final Target BOTON_CONTINUAR_ESIM =
         Target.the("Boton continuar eSIM")
                 .located(By.xpath("//android.widget.Button[@text=\"Continuar\"]"));
 
-}
 
+*/
+}
 
 
 

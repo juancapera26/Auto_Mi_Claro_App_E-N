@@ -27,6 +27,12 @@ public class EntretenimientoPage {
               By.xpath(
                   "//android.widget.ImageView[@resource-id='com.clarocolombia.miclaro:id/h5_iv_nav_back']"));
 
+  public static final Target BTN_CERRAR_MINPROGRAMA =
+          Target.the("Botón cerrar mini programa")
+                  .located(
+                          By.xpath(
+                                  "//android.widget.TextView[@content-desc=\" \" and @text=\"\uE902\"]"));
+
   public static final Target BTN_VOLVER_TC_HBO_MAX =
           Target.the("Botón volver terminos y condiciones")
                   .located(

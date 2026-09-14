@@ -34,6 +34,8 @@ public class IngresarGestionarLineasNuevas implements Task {
     private static final String paso6 = "Validar resumen de la solicitud";
     private static final String paso7 = "Validar listado de lineas activas";
     private static final String paso8 = "Validar Solicitudes en curso";
+    private static final String paso9 = "Validar Solicitudes en curso";
+    private static final String paso10 = "Validar Solicitudes en curso";
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -104,9 +106,22 @@ public class IngresarGestionarLineasNuevas implements Task {
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Solicitudes en curso"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ValidarTextoQueContengaX.elTextoContiene("Solicitudes en alistamiento")
         );
         EvidenciaUtils.registrarCaptura(paso8);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("10/9/2026"),
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ValidarTextoQueContengaX.elTextoContiene("Solicitud")
+        );
+        EvidenciaUtils.registrarCaptura(paso9);
+        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene("Ver resumen de la solicitud"),
+                WaitFor.aTime(1000),
+                ValidarTextoQueContengaX.elTextoContiene("Resumen de la solicitud")
+        );
+        EvidenciaUtils.registrarCaptura(paso10);
     }
 
     public static Performable ingresarGestionarLineasNuevas() {

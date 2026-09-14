@@ -9,13 +9,16 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static interactions.Click.ClickElementByText.clickElementByText;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_FACTURA;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_FACTURA_FIJAS_HFC;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static utils.Constants.TUS_SERVICIOS_FAVORITOS;
 
 public class IngresarPagosLineaSolucionesFiHFC implements Task {
@@ -31,13 +34,13 @@ public class IngresarPagosLineaSolucionesFiHFC implements Task {
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Pagos en línea"),
-                WaitFor.aTime(3000)
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso1);
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Soluciones Fijas HFC"),
-                WaitFor.aTime(2000),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 Click.on(SELECIONAR_FACTURA_FIJAS_HFC)
         );
 

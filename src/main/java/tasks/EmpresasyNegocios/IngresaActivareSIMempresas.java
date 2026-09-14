@@ -76,7 +76,6 @@ public class IngresaActivareSIMempresas implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(2500),
-                ValidarTexto.validarTexto("Espera un momento"),
                 ValidarTexto.validarTexto(DECLARACION_SERVICIO),
                 ValidarTextoQueContengaX.elTextoContiene(VER),
                 WaitFor.aTime(1000)
@@ -94,12 +93,12 @@ public class IngresaActivareSIMempresas implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
-                WaitFor.aTime(10000),
+                WaitFor.aTime(11000),
                 Click.on(BOTON_SIGUIENTE_ESIM),
                 //WaitFor.aTime(2000),
                 //WaitUntil.the(BOTON_CONTINUAR_ESIM, WebElementStateMatchers.isEnabled()).forNoMoreThan(10).seconds(),
                 //Click.on(BOTON_CONTINUAR_ESIM),
-                ClickElementByText.clickElementByText("Continuar"),
+               // ClickElementByText.clickElementByText("Continuar"),
                 WaitUntil.the(LOADING_SPLASH, isNotPresent())
                 );
 
@@ -117,20 +116,6 @@ public class IngresaActivareSIMempresas implements Task {
 
 
 
-    }
-    private <T extends Actor> boolean visible(T actor, Target t) {
-        try {
-            return !Presence.of(t).viewedBy(actor).resolveAll().isEmpty();
-        } catch (Exception e) {
-            return false;
-        }
-    }
-    private <T extends Actor> boolean isVisible(T actor, Target element) {
-        try {
-            return !Presence.of(element).viewedBy(actor).resolveAll().isEmpty();
-        } catch (Exception e) {
-            return false;
-        }
     }
     public static Performable ingresaActivareSIMempresas() {
         return instrumented(IngresaActivareSIMempresas.class);

@@ -118,7 +118,6 @@ public class IngresaConsultarConsumos implements Task {
                 ScrollHorizontalCoordenadas.desde(366, 653 ,366, 339),
                 ClickTextoQueContengaX.elTextoContiene("Paquetes y recargas adicionales"),
                 WaitFor.aTime(7000)
-
         );
         EvidenciaUtils.registrarCaptura(paso9);
 

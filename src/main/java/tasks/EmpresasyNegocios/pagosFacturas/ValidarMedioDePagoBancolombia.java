@@ -16,6 +16,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_MEDIOS_DE_PAGO;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_PAGAR;
 
@@ -33,7 +34,7 @@ public class ValidarMedioDePagoBancolombia implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(1000),
                 Click.on(BTN_PAGAR),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
                 ScrollHorizontalCoordenadas.desde(339, 200, 339, 1490),
                 WaitFor.aTime(2000)
