@@ -17,6 +17,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.SELECIONAR_MEDIOS_DE_PAGO;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_PAGAR;
 
@@ -35,8 +36,8 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(2000),
                 Click.on(BTN_PAGAR),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Portal Pagos Claro",4),
                 ScrollHorizontalCoordenadas.desde(339, 200, 339, 1490),
                 WaitFor.aTime(2000)
         );
@@ -47,7 +48,6 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
                 ScrollHorizontalCoordenadas.desde(339, 1490, 339, 200),
                 WaitFor.aTime(2000),
                 Click.on(SELECIONAR_MEDIOS_DE_PAGO),
-                WaitFor.aTime(1000),
                 ClickTextoQueContengaX.elTextoContiene("Tarjeta de Crédito - Débito"),
                 WaitFor.aTime(2000)
         );
