@@ -38,7 +38,8 @@ public class ValidarMedioDePagoPSE implements Task {
                 WaitFor.aTime(1000),
                 Click.on(BTN_PAGAR),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
+                ValidarTextoQueContengaX.porTiempo("Portal Pagos Claro", 5),
+                //ValidarTextoQueContengaX.elTextoContiene("Portal Pagos Claro"),
                 ScrollHorizontalCoordenadas.desde(339, 200, 339, 1490),
                 WaitFor.aTime(2000)
         );
