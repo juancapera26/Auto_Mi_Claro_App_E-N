@@ -46,19 +46,18 @@ public class IngresaRoaminginternacional implements Task {
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Roaming"),
                 WaitFor.aTime(1000),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso2);
         
         actor.attemptsTo(
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
                 WaitFor.aTime(3000)
         );
 
         actor.attemptsTo(
-                WaitFor.aTime(2000),
-                ValidarTextoQueContengaX.elTextoContiene("Roaming internacional"),
+                ValidarTextoQueContengaX.porTiempo("Roaming internacional",5),
                 ValidarTextoQueContengaX.elTextoContiene("3226918354")
 
         );

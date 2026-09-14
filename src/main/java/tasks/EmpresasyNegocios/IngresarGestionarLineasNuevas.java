@@ -19,8 +19,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.BTN_CUENTAS_CORREO;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
-import static userinterfaces.LoginPage.BTN_CONTINUAR;
-import static userinterfaces.LoginPage.LOADING_SPLASH;
+import static userinterfaces.LoginPage.*;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
 
@@ -41,7 +40,7 @@ public class IngresarGestionarLineasNuevas implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Soluciones móviles"),
                 ClickTextoQueContengaX.elTextoContiene("Gestionar líneas nuevas empresas"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
         EvidenciaUtils.registrarCaptura(paso1);
         actor.attemptsTo(
@@ -56,7 +55,7 @@ public class IngresarGestionarLineasNuevas implements Task {
         WaitFor.aTime(2500);
 
         actor.attemptsTo(Click.on(BTN_VOLVER),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()));
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()));
 
         actor.attemptsTo(
 
@@ -69,14 +68,14 @@ public class IngresarGestionarLineasNuevas implements Task {
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Solicitudes finalizadas"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Solicitudes finalizadas")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Solicitudes finalizadas",3)
         );
         EvidenciaUtils.registrarCaptura(paso4);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("27/5/2026"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Estado de activación")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Estado de activación", 3)
         );
         EvidenciaUtils.registrarCaptura(paso5);
         actor.attemptsTo(
@@ -88,13 +87,12 @@ public class IngresarGestionarLineasNuevas implements Task {
         actor.attemptsTo(
                 Click.on(BTN_VOLVER),
                 ClickTextoQueContengaX.elTextoContiene("27/5/2026"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Estado de activación")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Estado de activación",3)
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Ver listado de líneas activadas"),
-                WaitFor.aTime(1500),
-                ValidarTextoQueContengaX.elTextoContiene("Plan 1")
+                ValidarTextoQueContengaX.porTiempo("Plan 1",3)
         );
         EvidenciaUtils.registrarCaptura(paso7);
         actor.attemptsTo(
@@ -106,20 +104,19 @@ public class IngresarGestionarLineasNuevas implements Task {
         );
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Solicitudes en curso"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Solicitudes en alistamiento")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Solicitudes en alistamiento",5)
         );
         EvidenciaUtils.registrarCaptura(paso8);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("10/9/2026"),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Solicitud")
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Solicitud", 5)
         );
         EvidenciaUtils.registrarCaptura(paso9);
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Ver resumen de la solicitud"),
-                WaitFor.aTime(1000),
-                ValidarTextoQueContengaX.elTextoContiene("Resumen de la solicitud")
+                ValidarTextoQueContengaX.porTiempo("Resumen de la solicitud", 5)
         );
         EvidenciaUtils.registrarCaptura(paso10);
     }
