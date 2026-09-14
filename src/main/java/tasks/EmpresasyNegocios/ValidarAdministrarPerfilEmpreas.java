@@ -72,7 +72,20 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ScrollHastaTexto.conTexto("Agregar nuevo perfil"),
+                ScrollHastaTexto.conTexto("Agregar nuevo perfil")
+        );
+        if (EMAIL.of(user.getemailSecundario()).resolveFor(actor).isPresent()) {
+            actor.attemptsTo(
+                    ScrollHorizontalText.izquierda(user.getemailSecundario()),
+                    WaitFor.aTime(3000),
+                    Click.on(BOTON_ELIMINAR),
+                    WaitFor.aTime(1000),
+                    ValidarTextoQueContengaX.elTextoContiene("¿Deseas eliminar el perfil asociado"),
+                    ClickTextoQueContengaX.elTextoContiene(ACEPTAR_2),
+                    WaitFor.aTime(4000)
+            );
+        }
+        actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 ClickTextoQueContengaX.elTextoContiene("Agregar nuevo perfil"),
                 WaitFor.aTime(1000)

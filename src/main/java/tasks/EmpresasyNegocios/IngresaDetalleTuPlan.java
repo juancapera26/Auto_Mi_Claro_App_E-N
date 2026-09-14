@@ -15,6 +15,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
+import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
 import static userinterfaces.PagosYConsultasPage.BTN_TRES_PUNTOS_MAS;
 import static utils.Constants.*;
@@ -62,12 +63,12 @@ public class IngresaDetalleTuPlan implements Task {
         EvidenciaUtils.registrarCaptura(paso4);
 
         actor.attemptsTo(
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR)
         );
 
         actor.attemptsTo(
-                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),
                 ValidarTextoQueContengaX.elTextoContiene("322 691 8354")
              //   ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
