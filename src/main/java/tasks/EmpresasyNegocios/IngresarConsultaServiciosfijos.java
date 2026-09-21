@@ -124,6 +124,8 @@ public class IngresarConsultaServiciosfijos implements Task {
         actor.attemptsTo(
                 NavegarAtras.enElDispositivo(),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                ClickTextoQueContengaX.elTextoContiene("Administra tu factura"),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene("Factura digital"),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 ValidarTextoQueContengaX.elTextoContiene("Factura digital")
@@ -158,8 +160,16 @@ public class IngresarConsultaServiciosfijos implements Task {
                 Click.on(BTN_CERRAR_MINPROGRAMA)
 
         );
+        /*
+        A espera de arreglar intermitencia con las opciones
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene("Tus servicios fijos"),
+                ClickTextoQueContengaX.elTextoContiene("Administra tu WiFi"),
+                WaitFor.aTime(1500),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
+        );
 
-
+*/
 
     }
 

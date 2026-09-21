@@ -59,7 +59,7 @@ public class IngresarBeneficiosHFC implements Task {
 
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Tus cuentas"),
-                ClickTextoQueContengaX.elTextoContiene("No. 56220783"),
+                ClickTextoQueContengaX.elTextoContiene("No. 12491848"),
                 ValidarTextoQueContengaX.porTiempo("Mis beneficios",4),
                 ValidarTextoQueContengaX.elTextoContiene("Cuenta")
         );
