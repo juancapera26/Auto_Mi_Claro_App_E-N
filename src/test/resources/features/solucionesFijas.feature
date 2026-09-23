@@ -35,18 +35,20 @@ Característica: ingresar al módulo Soluciones fijas
     Y ingresar a Visitas y traslados
 
   @SF005
-  Escenario: Ingresar a  Visitas y Traslados
+  Escenario: Ingresar a regresa tus equipos
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y ingresar a soluciones fijas
+    Y ingresar a regresa tus equipo
 
   @SF006
-  Escenario: Ingresar a  Visitas y Traslados
+  Escenario: Ingresar a certificado IPs
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y ingresar a soluciones fijas
+    Y ingresar a certificado IPs
 
   @SF007
   Escenario: Ingresar a  Visitas y Traslados

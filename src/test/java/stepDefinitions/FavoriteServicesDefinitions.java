@@ -131,6 +131,18 @@ public class FavoriteServicesDefinitions {
             IngresarBeneficiosHFC.ingresarBeneficiosHFC()
     );
   }
+  @And("^ingresar a regresa tus equipo$")
+  public void IngresarRegresaTusEquipos() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarRegresaTusEquipos.ingresarRegresaTusEquipos()
+    );
+  }
+  @And("^ingresar a certificado IPs$")
+  public void IngresarCertificadoIPs() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarCertificadoIPs.ingresarCertificadoIPs()
+    );
+  }
 //////////////////////////////////////////
   @And("^ingresar a pagos y facturas$")
   public void IngresarPagosFacuras() {

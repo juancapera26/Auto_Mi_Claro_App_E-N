@@ -27,6 +27,7 @@ public class IngresarSolucionesFijas implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Scroll.scrollUnaVista(),
                 ScrollHastaTexto.conTexto("Explora nuestros servicios")
         );
 
