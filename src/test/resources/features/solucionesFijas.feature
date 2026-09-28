@@ -56,6 +56,7 @@ Característica: ingresar al módulo Soluciones fijas
     Cuando el usuario realiza el ingreso
     Entonces verifica version de la super app
     Y ingresar a soluciones fijas
+    Y ingresar a administrar factura HFC
 
   @SF008
   Escenario: Ingresar a  Visitas y Traslados
@@ -65,13 +66,6 @@ Característica: ingresar al módulo Soluciones fijas
     Y ingresar a soluciones fijas
 
   @SF009
-  Escenario: Ingresar a  Visitas y Traslados
-    Dado que el usuario ingrese a super app
-    Cuando el usuario realiza el ingreso
-    Entonces verifica version de la super app
-    Y ingresar a soluciones fijas
-
-  @SF0010
   Escenario: Ingresar a  Visitas y Traslados
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso

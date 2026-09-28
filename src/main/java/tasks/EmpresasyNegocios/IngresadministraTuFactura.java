@@ -8,6 +8,7 @@ import interactions.validations.ExisteTexto;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -43,7 +44,8 @@ public class IngresadministraTuFactura implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(3000),
                 ClickTextoQueContengaX.elTextoContiene("Administra factura"),
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Administra tu factura")
         );
 
         EvidenciaUtils.registrarCaptura(paso1);

@@ -107,6 +107,12 @@ public class FavoriteServicesDefinitions {
             IngresarSolucionesFijas.ingresarSolucionesFijas()
     );
   }
+  @And("^ingresar a administrar factura HFC$")
+  public void IngresarAdministrarFacturaHFC() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresarAdministrarFacturaHFC.ingresarAdministrarFacturaHFC()
+    );
+  }
   @And("^ingresar a consulta servicios fijos$")
   public void IngresarConsultaServiciosfijos() {
     theActorInTheSpotlight().attemptsTo(
