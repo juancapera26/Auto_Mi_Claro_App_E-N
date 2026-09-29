@@ -11,6 +11,7 @@ import interactions.Scroll.ScrollHastaTexto;
 import models.User;
 import tasks.EmpresasyNegocios.*;
 
+import tasks.EmpresasyNegocios.SolucionesFibraOptica.*;
 import tasks.EmpresasyNegocios.pagosFacturas.IngresarPagosFacuras;
 import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoBancolombia;
 import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoPSE;
@@ -242,10 +243,37 @@ public class FavoriteServicesDefinitions {
     theActorInTheSpotlight().attemptsTo(
             IngresaActivareSIMempresas.ingresaActivareSIMempresas()
     );
-  }/*@And("^ingresa a Win Play$")
-  public void IngresaWinPlay(){
+  }
+  ///////////////Soluciones fibra optica /////////////////
+  @And("^ingresa a soluciones fibra optica$")
+  public void IngresaSolucionesFibraOptica() {
     theActorInTheSpotlight().attemptsTo(
-            IngresaWinPlay
+            IngresaSolucionesFibraOptica.ingresaSolucionesFibraOptica()
     );
-  }*/
+  }
+  @And("^ingresa a mis productos fibra optica$")
+  public void IngresaMisProductosFO() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaMisProductosFO.ingresaMisProductosFO()
+    );
+  }
+  @And("^ingresa a administrar factura FO$")
+  public void IngresaAdministrarFacturaFO() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaAdministrarFacturaFO.ingresaAdministrarFacturaFO()
+    );
+  }
+  @And("^ingresa a personaliza red wifi FO$")
+  public void IngresaPersonalizaWifiFO() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaPersonalizaWifiFO.ingresaPersonalizaWifiFO()
+    );
+  }
+  @And("^ingresa a mis beneficios FO$")
+  public void IngresaMisBeneficiosFO() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaMisBeneficiosFO.ingresaMisBeneficiosFO()
+    );
+  }
 }
+
