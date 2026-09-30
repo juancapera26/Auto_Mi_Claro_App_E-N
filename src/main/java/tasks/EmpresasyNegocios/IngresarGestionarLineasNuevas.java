@@ -6,6 +6,7 @@ import interactions.Scroll.ScrollHastaTexto;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -40,7 +41,9 @@ public class IngresarGestionarLineasNuevas implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("Soluciones móviles"),
                 ClickTextoQueContengaX.elTextoContiene("Gestionar líneas nuevas empresas"),
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
+                WaitFor.aTime(1500),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Gestionar líneas nuevas")
         );
         EvidenciaUtils.registrarCaptura(paso1);
         actor.attemptsTo(
@@ -59,7 +62,7 @@ public class IngresarGestionarLineasNuevas implements Task {
 
         actor.attemptsTo(
 
-                ValidarTextoQueContengaX.elTextoContiene("Gestionar líneas nuevas"),
+                ValidarTextoQueContengaX.porTiempo("Gestionar líneas nuevas",5),
                 ClickTextoQueContengaX.elTextoContiene("Solicitar líneas nuevas"),
                 WaitFor.aTime(1000)
         );

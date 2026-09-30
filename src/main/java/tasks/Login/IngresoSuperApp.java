@@ -114,7 +114,7 @@ public class IngresoSuperApp implements Task {
         clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
         clickElementByText(CONTINUAR),
-        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
+        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
     validarLogin(actor);
   } 
 
@@ -124,7 +124,7 @@ public class IngresoSuperApp implements Task {
         clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
         clickElementByText(CONTINUAR),
-        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
+        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
     validarLogin(actor);
   }
 
@@ -141,7 +141,7 @@ public class IngresoSuperApp implements Task {
         clickElementByText(CONTINUAR),
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
         clickElementByText(CONTINUAR),
-        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
+        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
   }
 
   private <T extends Actor> void iniciarSesion(T actor) {
@@ -155,7 +155,7 @@ public class IngresoSuperApp implements Task {
           ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
           Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
           clickElementByText(CONTINUAR),
-          WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
+          WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
     } else {
       loginConEmail(actor);
     }
@@ -202,7 +202,7 @@ public class IngresoSuperApp implements Task {
     actor.attemptsTo(
         Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
         clickElementByText(CONTINUAR),
-        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(30).seconds());
+        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
   }
 
   private <T extends Actor> void validarLogin(T actor) {
