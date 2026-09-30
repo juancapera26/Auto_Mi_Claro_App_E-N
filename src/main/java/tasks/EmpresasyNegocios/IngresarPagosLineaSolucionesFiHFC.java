@@ -3,7 +3,9 @@ package tasks.EmpresasyNegocios;
 import interactions.Click.ClickElementByText;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -34,11 +36,13 @@ public class IngresarPagosLineaSolucionesFiHFC implements Task {
 
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Pagos en línea"),
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Soluciones Fijas HFC")
         );
         EvidenciaUtils.registrarCaptura(paso1);
 
         actor.attemptsTo(
+                ValidarTextoQueContengaX.porTiempo("Soluciones Fijas HFC",3),
                 ClickTextoQueContengaX.elTextoContiene("Soluciones Fijas HFC"),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 Click.on(SELECIONAR_FACTURA_FIJAS_HFC)

@@ -3,6 +3,7 @@ import interactions.Click.ClickTextoQueContengaX;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -64,12 +65,14 @@ public class IngresaDetalleTuPlan implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
-                ClickTextoQueContengaX.elTextoContiene(CONTINUAR)
+                WaitForResponse.withText("Continuar"),
+                ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
 
         actor.attemptsTo(
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
-                ValidarTextoQueContengaX.elTextoContiene("Detalle de tu plan"),
+                WaitForResponse.withText("Detalle de tu plan"),
+                ValidarTextoQueContengaX.porTiempo("Detalle de tu plan", 5),
                 ValidarTextoQueContengaX.elTextoContiene("322 691 8354")
              //   ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
 

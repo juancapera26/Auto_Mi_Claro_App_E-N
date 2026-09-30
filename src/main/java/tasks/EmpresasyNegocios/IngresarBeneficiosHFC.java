@@ -6,6 +6,7 @@ import interactions.Scroll.ScrollHastaTexto;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -40,9 +41,12 @@ public class IngresarBeneficiosHFC implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                ValidarTextoQueContengaX.elTextoContiene("Soluciones HFC Emp"),
+                WaitForResponse.withText("Soluciones HFC Emp"),
+                ValidarTextoQueContengaX.porTiempo("Soluciones HFC Emp",3),
                 ClickTextoQueContengaX.elTextoContiene("Mis beneficios HFC"),
-                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
+                WaitFor.aTime(2000),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Tus cuentas")
         );
         EvidenciaUtils.registrarCaptura(paso1);
         WaitFor.aTime(2500);
