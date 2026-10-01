@@ -51,7 +51,9 @@ public static final Target SELECIONAR_MEDIOS_DE_PAGO =
 public static final Target SELECIONAR_CAMPO_DE_TEXTO =
             Target.the("Selecionar campo de texto de registro en claro empresas")
                     .located(By.xpath("//android.widget.EditText"));
-
+    public static final Target NUMERO_LINEA_MOVIL =
+            Target.the("Target de Escribe numero de linea movil en soluciones moviles")
+                    .located(By.xpath("//android.widget.EditText[@text=\"Escribe número de línea móvil\"]"));
     public static final Target PERFIL_DE_CONSULTA =
             Target.the("Perfil de consulta")
                     .located(By.xpath("//android.widget.RadioButton[@text=\"Elegir como perfil de consulta\"]/android.widget.TextView"));
