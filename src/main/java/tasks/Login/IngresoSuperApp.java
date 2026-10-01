@@ -13,6 +13,8 @@ import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitElement;
 import interactions.wait.WaitFor;
 import java.util.List;
+
+import interactions.wait.WaitForResponse;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -86,7 +88,7 @@ public class IngresoSuperApp implements Task {
    //CUando inicia sesion ya no esta disponible la opcion de "Mundo Claro"
     // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(5000));
   // 3. Validación final de que el login fue exitoso
-    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_FAVORITOS_EMPRESAS));
+    actor.attemptsTo(ValidarTextoQueContengaX.porTiempo(TUS_FAVORITOS_EMPRESAS,4));
     EvidenciaUtils.registrarCaptura(paso);
   }
 
@@ -155,7 +157,10 @@ public class IngresoSuperApp implements Task {
           ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
           Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
           clickElementByText(CONTINUAR),
-          WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
+          WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds(),
+              WaitForResponse.withText(TUS_FAVORITOS_EMPRESAS)
+      );
+
     } else {
       loginConEmail(actor);
     }
@@ -200,9 +205,11 @@ public class IngresoSuperApp implements Task {
       // No existe CONTINUAR → continúa el flujo normal
     }
     actor.attemptsTo(
-        Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-        clickElementByText(CONTINUAR),
-        WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
+            Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
+            clickElementByText(CONTINUAR),
+            WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds(),
+            WaitForResponse.withText(TUS_FAVORITOS_EMPRESAS)
+    );
   }
 
   private <T extends Actor> void validarLogin(T actor) {
@@ -221,7 +228,8 @@ public class IngresoSuperApp implements Task {
     // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(2000));
 
     // Validación final del login exitoso
-    actor.attemptsTo(ValidarTextoQueContengaX.elTextoContiene(TUS_FAVORITOS_EMPRESAS));
+    actor.attemptsTo(ValidarTextoQueContengaX.porTiempo(TUS_FAVORITOS_EMPRESAS,3),
+            WaitForResponse.withText(TUS_FAVORITOS_EMPRESAS));
   }
 
   private <T extends Actor> void maybeAceptarTerminos(T actor) {
