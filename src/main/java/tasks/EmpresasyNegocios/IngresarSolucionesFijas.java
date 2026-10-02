@@ -28,7 +28,7 @@ public class IngresarSolucionesFijas implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
-                ScrollHastaTexto.conTexto("Explora nuestros servicios")
+                ScrollHastaTexto.conTexto("Soluciones fibra óptica")
         );
 
         EvidenciaUtils.registrarCaptura(paso1);

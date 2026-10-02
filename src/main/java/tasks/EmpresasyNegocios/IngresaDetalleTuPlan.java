@@ -34,7 +34,9 @@ public class IngresaDetalleTuPlan implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Detalle de"),
-                WaitFor.aTime(3000)
+                WaitFor.aTime(3000),
+                WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Claro Cloud Gaming")
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
