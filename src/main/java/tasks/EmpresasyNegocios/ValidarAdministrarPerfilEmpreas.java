@@ -72,6 +72,10 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
                 ScrollHastaTexto.conTexto("Agregar nuevo perfil")
         );
         if (EMAIL.of(user.getemailSecundario()).resolveFor(actor).isPresent()) {
