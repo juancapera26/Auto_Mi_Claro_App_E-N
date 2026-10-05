@@ -86,7 +86,7 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
                     WaitFor.aTime(1000),
                     ValidarTextoQueContengaX.elTextoContiene("¿Deseas eliminar el perfil asociado"),
                     ClickTextoQueContengaX.elTextoContiene(ACEPTAR_2),
-                    WaitFor.aTime(4000)
+                    WaitFor.aTime(6000)
             );
         }
         actor.attemptsTo(
@@ -116,7 +116,7 @@ public class ValidarAdministrarPerfilEmpreas implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.elTextoContiene("¿Deseas eliminar el perfil asociado"),
                 ClickTextoQueContengaX.elTextoContiene(ACEPTAR_2),
-                WaitFor.aTime(4000)
+                WaitFor.aTime(6000)
         );
         // Verificar que el usuario ya no exista
         if (EMAIL.of(user.getemailSecundario()).resolveFor(actor).isPresent()) {
