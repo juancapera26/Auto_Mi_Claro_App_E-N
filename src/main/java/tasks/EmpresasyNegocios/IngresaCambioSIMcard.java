@@ -3,15 +3,19 @@ package tasks.EmpresasyNegocios;
 import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
+import interactions.mobile.EscribirConTeclado;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
 import models.User;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.questions.Presence;
+import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
@@ -19,6 +23,7 @@ import utils.TestDataProvider;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.EmpresasNegociosPage.CAMPO_INGRESO_SERIAL;
+import static userinterfaces.EmpresasNegociosPage.NUMERO_LINEA_MOVIL;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.LOADING_CAMBIO_SIM;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
@@ -43,13 +48,12 @@ public class IngresaCambioSIMcard implements Task {
                 ClickTextoQueContengaX.elTextoContiene("Cambio"),
                 WaitFor.aTime(2000),
                 WaitUntil.the(LOADING_CAMBIO_SIM, isNotPresent()),
-                WaitUntil.the(LOADING_SPLASH, isNotPresent())
+                WaitUntil.the(LOADING_SPLASH, isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Número",90)
 
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
-
-        EvidenciaUtils.registrarCaptura(paso2);
 
         actor.attemptsTo(
                 WaitFor.aTime(1000),
@@ -65,6 +69,29 @@ public class IngresaCambioSIMcard implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER),
                 WaitFor.aTime(1000)
         );
+
+        Target TARGET_NUMERO = Target.the("Número de línea móvil")
+                .located(By.xpath("//*[contains(@text, '" + user.getNumeroempresas() + "') or contains(@content-desc, '" + user.getNumeroempresas() + "')]"));
+
+        if (!isVisibleFast(actor, TARGET_NUMERO)) {
+            actor.attemptsTo(
+                    // 1. Damos clic al campo para garantizar que tenga el foco
+                    Click.on(NUMERO_LINEA_MOVIL),
+
+                    // 2. Pequeña espera para que el teclado/campo se habilite
+                    WaitFor.aTime(1000),
+
+                    // 3. Limpiamos e ingresamos el valor
+                    EscribirConTeclado.nativo(user.getNumeroempresas())
+            );
+        }
+
+
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene(user.getNumeroempresas())
+        );
+
+        EvidenciaUtils.registrarCaptura(paso2);
 
 
         actor.attemptsTo(
@@ -98,6 +125,13 @@ public class IngresaCambioSIMcard implements Task {
                 );
         EvidenciaUtils.registrarCaptura(paso6);
 
+    }
+    private <T extends Actor> boolean isVisibleFast(T actor, Target element) {
+        try {
+            return !Presence.of(element).viewedBy(actor).resolveAll().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
     public static Performable ingresaCambioSIMcard() {
         return instrumented(IngresaCambioSIMcard.class);
