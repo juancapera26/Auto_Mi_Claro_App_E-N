@@ -5,10 +5,12 @@ import interactions.Click.ClickEnCoordenadas;
 import interactions.Click.ClickTextoQueContengaX;
 import interactions.Scroll.Scroll;
 import interactions.mobile.ClickIfPresent;
+import interactions.mobile.EscribirConTeclado;
 import interactions.validations.ValidarTexto;
 import interactions.validations.ValidarTextoQueContengaX;
 import interactions.wait.WaitFor;
 import models.User;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -50,18 +52,40 @@ public class IngresaActivareSIMempresas implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene("Activa"),
-                WaitFor.aTime(1000),
-                WaitUntil.the(LOADING_SPLASH,  isNotPresent())
+                WaitFor.aTime(3500),
+                WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
+                ValidarTextoQueContengaX.porTiempo("Número",90)
 
         );
 
         EvidenciaUtils.registrarCaptura(paso1);
 
+        Target TARGET_NUMERO = Target.the("Número de línea móvil")
+                .located(By.xpath("//*[contains(@text, '" + user.getNumeroempresas() + "') or contains(@content-desc, '" + user.getNumeroempresas() + "')]"));
+
+        if (!isVisibleFast(actor, TARGET_NUMERO)) {
+            actor.attemptsTo(
+                    // 1. Damos clic al campo para garantizar que tenga el foco
+                    Click.on(NUMERO_LINEA_MOVIL),
+
+                    // 2. Pequeña espera para que el teclado/campo se habilite
+                    WaitFor.aTime(1000),
+
+                    // 3. Limpiamos e ingresamos el valor
+                    EscribirConTeclado.nativo(user.getNumeroempresas())
+            );
+        }
+        EvidenciaUtils.registrarCaptura(paso2);
+
+        actor.attemptsTo(
+                ValidarTextoQueContengaX.elTextoContiene(user.getNumeroempresas())
+        );
+
         actor.attemptsTo(
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
                 WaitFor.aTime(6000)
         );
-        EvidenciaUtils.registrarCaptura(paso2);
+
         actor.attemptsTo(
                 WaitFor.aTime(6000)
         );
@@ -70,7 +94,7 @@ public class IngresaActivareSIMempresas implements Task {
                 ClickEnCoordenadas.en(366, 1407),
                 WaitFor.aTime(3000)
         );
-
+        EvidenciaUtils.registrarCaptura(paso5);
         actor.attemptsTo(
                 WaitFor.aTime(1000),
                 Click.on(BTN_TRES_PUNTOS_MAS),
@@ -85,12 +109,7 @@ public class IngresaActivareSIMempresas implements Task {
         actor.attemptsTo(Click.on(BTN_VOLVER),
                 WaitFor.aTime(1000)
         );
-
-        actor.attemptsTo(Click.on(BTN_CONTINUAR),
-                WaitFor.aTime(1000)
-        );
-        EvidenciaUtils.registrarCaptura(paso5);
-
+/*
         actor.attemptsTo(
                 WaitUntil.the(ACTIVAR_ESIM,  isPresent()),
                 WaitFor.aTime(11000),
@@ -103,7 +122,7 @@ public class IngresaActivareSIMempresas implements Task {
                 );
 
         EvidenciaUtils.registrarCaptura(paso6);
-
+*/
         actor.attemptsTo(
                 WaitUntil.the(LOADING_SPLASH,  isNotPresent()),
                 ClickTextoQueContengaX.elTextoContiene("Elige la marca de tu celular"),
@@ -116,6 +135,13 @@ public class IngresaActivareSIMempresas implements Task {
 
 
 
+    }
+    private <T extends Actor> boolean isVisibleFast(T actor, Target element) {
+        try {
+            return !Presence.of(element).viewedBy(actor).resolveAll().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
     public static Performable ingresaActivareSIMempresas() {
         return instrumented(IngresaActivareSIMempresas.class);

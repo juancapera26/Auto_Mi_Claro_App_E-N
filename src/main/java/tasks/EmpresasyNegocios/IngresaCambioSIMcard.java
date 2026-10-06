@@ -67,7 +67,7 @@ public class IngresaCambioSIMcard implements Task {
         EvidenciaUtils.registrarCaptura(paso3);
 
         actor.attemptsTo(Click.on(BTN_VOLVER),
-                WaitFor.aTime(1000)
+                WaitFor.aTime(5000)
         );
 
         Target TARGET_NUMERO = Target.the("Número de línea móvil")
