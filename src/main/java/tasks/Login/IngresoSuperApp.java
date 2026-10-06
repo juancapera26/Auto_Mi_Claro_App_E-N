@@ -148,7 +148,8 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void iniciarSesion(T actor) {
     if (isVisible(actor, LBL_INICIAR_SESION)) {
-      actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(INICIAR_SESION));
+      actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(INICIAR_SESION),
+              WaitFor.aTime(15000));
     }
 
     if (isVisible(actor, BTN_CONTINUAR)) {
