@@ -118,7 +118,6 @@ public class IngresoSuperApp implements Task {
 
   private <T extends Actor> void loginConEmail(T actor) {
     actor.attemptsTo(
-            WaitForResponse.withText("Iniciar sesión"),
         Click.on(INGRESAR_EMPREZA),
         clickElementByText(CORREO_ELECTRONICO),
         WaitElement.isEnable(TXT_USERNAME),
