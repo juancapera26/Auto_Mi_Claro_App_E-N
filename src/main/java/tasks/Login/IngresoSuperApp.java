@@ -37,6 +37,7 @@ public class IngresoSuperApp implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
+
     if (isVisibleFast(actor, LBL_ZONA_INVITADOS_INICIO)) {
       EvidenciaUtils.registrarCaptura("Aparece modal de zona invitados al inicio");
       actor.attemptsTo(
@@ -68,6 +69,7 @@ public class IngresoSuperApp implements Task {
     if (isVisible(actor, LBL_SESION_CERRADA_POR_SEGURIDAD)) {
       EvidenciaUtils.registrarCaptura("Ruta: sesión cerrada por seguridad detectada");
       clickAceptarSesion(actor);
+      WaitFor.aTime(5000);
       loginViaIniciar(actor);
 
     } else if (isVisible(actor, LBL_INICIAR_SESION)) {
