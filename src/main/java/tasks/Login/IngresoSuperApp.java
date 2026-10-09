@@ -47,7 +47,7 @@ public class IngresoSuperApp implements Task {
     }
     // Manejo del popup de sesión abierta en otro dispositivo
     if (isVisibleFast(actor, LBL_SESION_ABIERTA)) {
-      actor.attemptsTo(clickElementByText(CONTINUAR), WaitFor.aTime(6000));
+      actor.attemptsTo(clickElementByText(CONTINUAR), WaitFor.aTime(6000), WaitForResponse.withText("Iniciar sesión"));
     }
 
     if (isVisible(actor, LBL_TUS_SERVICIOS_FAVORITOS)) {
