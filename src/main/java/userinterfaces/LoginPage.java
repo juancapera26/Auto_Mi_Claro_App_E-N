@@ -170,4 +170,7 @@ public class LoginPage {
   public static final Target OTRAS_FUN =
           Target.the("Ingresa a otras funcionalidades")
                   .located(By.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/card_mini_program_banner_top_title_tv\"]"));
+  public static final Target LBL_ZONA_INVITADOS_INICIO = Target.the("Modal Estás entrando a otra zona")
+          .located(By.xpath("//*[contains(@text, 'Estás entrando a otra zona') or contains(@content-desc, 'Estás entrando a otra zona')]"));
+
 }

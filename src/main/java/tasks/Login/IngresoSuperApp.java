@@ -37,6 +37,13 @@ public class IngresoSuperApp implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
+    if (isVisibleFast(actor, LBL_ZONA_INVITADOS_INICIO)) {
+      EvidenciaUtils.registrarCaptura("Aparece modal de zona invitados al inicio");
+      actor.attemptsTo(
+              clickElementByText("Volver"),
+              WaitFor.aTime(2000)
+      );
+    }
     // Manejo del popup de sesión abierta en otro dispositivo
     if (isVisibleFast(actor, LBL_SESION_ABIERTA)) {
       actor.attemptsTo(clickElementByText(CONTINUAR), WaitFor.aTime(6000));
