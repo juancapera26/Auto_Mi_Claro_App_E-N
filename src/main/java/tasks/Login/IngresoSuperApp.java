@@ -41,7 +41,7 @@ public class IngresoSuperApp implements Task {
     if (isVisibleFast(actor, LBL_ZONA_INVITADOS_INICIO)) {
       EvidenciaUtils.registrarCaptura("Aparece modal de zona invitados al inicio");
       actor.attemptsTo(
-              clickElementByText("Volver"),
+              clickElementByText("Continuar"),
               WaitFor.aTime(6500),
               WaitForResponse.withText("Iniciar sesión")
       );
