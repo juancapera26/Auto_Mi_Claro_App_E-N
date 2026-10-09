@@ -41,7 +41,8 @@ public class IngresoSuperApp implements Task {
       EvidenciaUtils.registrarCaptura("Aparece modal de zona invitados al inicio");
       actor.attemptsTo(
               clickElementByText("Volver"),
-              WaitFor.aTime(6500)
+              WaitFor.aTime(6500),
+              WaitForResponse.withText("Iniciar sesión")
       );
     }
     // Manejo del popup de sesión abierta en otro dispositivo
