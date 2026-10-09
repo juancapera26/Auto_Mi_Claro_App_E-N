@@ -118,7 +118,7 @@ public class IngresoSuperApp implements Task {
         clickElementByText(CONTINUAR),
         WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()).forNoMoreThan(150).seconds());
     validarLogin(actor);
-  } 
+  }
 
   private <T extends Actor> void loginConCedula(T actor) {
     actor.attemptsTo(
@@ -225,6 +225,7 @@ public class IngresoSuperApp implements Task {
     maybePermisoNotificaciones(actor);
     maybeAutorizarVelocidad(actor);
 
+    maybeManejarZonaInvitados(actor);
     //Ya no ingresa por MUNDO CLARO
     // actor.attemptsTo(clickElementByText(MUNDO_CLARO),WaitFor.aTime(2000));
 
@@ -315,6 +316,14 @@ public class IngresoSuperApp implements Task {
       T actor, Target condicion, Target checkbox, String botonTexto) {
     if (isVisible(actor, condicion)) {
       actor.attemptsTo(Click.on(checkbox), clickElementByText(botonTexto));
+    }
+  }
+  private <T extends Actor> void maybeManejarZonaInvitados(T actor) {
+    if (isVisibleFast(actor, LBL_ZONA_INVITADOS)) {
+      actor.attemptsTo(
+              clickElementByText("Volver"),
+              WaitFor.aTime(2000) // Breve espera para que la app cierre el modal y retome el flujo
+      );
     }
   }
 
