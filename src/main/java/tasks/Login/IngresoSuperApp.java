@@ -70,7 +70,7 @@ public class IngresoSuperApp implements Task {
       EvidenciaUtils.registrarCaptura("Ruta: sesión cerrada por seguridad detectada");
       clickAceptarSesion(actor);
       WaitFor.aTime(15000);
-      WaitForResponse.withText("Iniciar sesión");
+      ValidarTextoQueContengaX.porTiempo(INICIAR_SESION,90);
       loginViaIniciar(actor);
 
     } else if (isVisible(actor, LBL_INICIAR_SESION)) {
@@ -157,6 +157,7 @@ public class IngresoSuperApp implements Task {
   }
 
   private <T extends Actor> void iniciarSesion(T actor) {
+    actor.attemptsTo(ValidarTextoQueContengaX.porTiempo(INICIAR_SESION,90));
     if (isVisible(actor, LBL_INICIAR_SESION)) {
       actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(INICIAR_SESION),
               WaitFor.aTime(15000));
