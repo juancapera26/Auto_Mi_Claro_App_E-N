@@ -69,7 +69,8 @@ public class IngresoSuperApp implements Task {
     if (isVisible(actor, LBL_SESION_CERRADA_POR_SEGURIDAD)) {
       EvidenciaUtils.registrarCaptura("Ruta: sesión cerrada por seguridad detectada");
       clickAceptarSesion(actor);
-      WaitFor.aTime(5000);
+      WaitFor.aTime(15000);
+      WaitForResponse.withText("Iniciar sesión");
       loginViaIniciar(actor);
 
     } else if (isVisible(actor, LBL_INICIAR_SESION)) {
