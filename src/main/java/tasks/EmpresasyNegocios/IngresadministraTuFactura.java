@@ -14,12 +14,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.ClickOnBy;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static userinterfaces.EmpresasNegociosPage.ADMINISTRA_TU_FACTURA;
 import static userinterfaces.EntretenimientoPage.BTN_VOLVER;
 import static userinterfaces.LoginPage.LOADING_ESPERA_UN_MOMENTO;
 import static userinterfaces.LoginPage.LOADING_SPLASH;
@@ -42,8 +44,8 @@ public class IngresadministraTuFactura implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                WaitFor.aTime(3000),
-                ClickTextoQueContengaX.elTextoContiene("Administra factura"),
+                Click.on(ADMINISTRA_TU_FACTURA),
+                WaitFor.aTime(5000),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 WaitForResponse.withText("Administra tu factura")
         );
@@ -113,9 +115,9 @@ public class IngresadministraTuFactura implements Task {
         );
 
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene("Descarga"),
+                ClickElementByText.clickElementByText("Descarga tu factura"),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
-                ValidarTextoQueContengaX.porTiempo("Abrir documento",6)
+                ValidarTextoQueContengaX.porTiempo("Abrir documento",60)
         );
         EvidenciaUtils.registrarCaptura(paso6);
     }

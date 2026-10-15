@@ -38,7 +38,7 @@ public class Constants {
   public static final String MI_NEGOCIO_DIGITAL = "Mi negocio digital";
   public static final String ADMINISTRAR_TU_NEGOCIO = "Administrar";
   public static final String CONSULTAR_CONSUMO = "Consulta consumos";
-
+  public static final String ADMINISTRA_FACTURA = "Administra factura";
 
   public static final String VER_MAS = "Ver más";
   public static final String MUNDO_CLARO = "Mundo Claro";

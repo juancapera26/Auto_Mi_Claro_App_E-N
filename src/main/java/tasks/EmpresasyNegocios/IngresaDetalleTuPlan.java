@@ -90,14 +90,14 @@ public class IngresaDetalleTuPlan implements Task {
                 WaitFor.aTime(1000)
                 );
         EvidenciaUtils.registrarCaptura(paso4);
-
+        /*
         actor.attemptsTo(
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 WaitForResponse.withText("Continuar"),
                 ClickTextoQueContengaX.elTextoContiene(CONTINUAR),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent())
         );
-
+        */
         actor.attemptsTo(
                 WaitForResponse.withText("Detalle de tu plan"),
                 ValidarTextoQueContengaX.porTiempo("Detalle de tu plan", 5),

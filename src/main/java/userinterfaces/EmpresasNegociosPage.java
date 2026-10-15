@@ -27,9 +27,9 @@ public static final Target VER_PUNTOS_ATENCION =
             Target.the("ver puntos de atencion")
                     .located(By.xpath("//android.widget.TextView[@text=\"Ver puntos de atención\"]"));
 
-public static final Target MAS_INFORMACION =
-            Target.the("mas informacion elige tipo de servicio")
-                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View[3]/android.view.View"));
+public static final Target ADMINISTRA_TU_FACTURA =
+            Target.the("Administra factura")
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.widget.Image[7]"));
 public static final Target VER_MAS_OFCN =
             Target.the("Ver mas Otras Funcionalidades")
                     .located(By.xpath("(//android.widget.FrameLayout[@resource-id=\"com.clarocolombia.miclaro:id/mini_program_logo_container\"])[4]"));
