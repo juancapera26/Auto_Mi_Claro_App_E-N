@@ -122,7 +122,15 @@ public class IngresoSuperApp implements Task {
     EvidenciaUtils.registrarCaptura(
         "Inicio atascado cargando: se borran los datos de la app y se ingresa desde cero");
     ReparacionApp.borrarDatosYRelanzar();
-    loginDesdeCeroCompleto(actor);
+    ReparacionApp.atenderPantallasIniciales(90);
+    EvidenciaUtils.registrarCaptura("App con datos borrados: el Inicio volvió a cargar");
+    // Con los datos borrados la app ya no recuerda al usuario: Iniciar sesión → deslizar a
+    // Empresas → correo y contraseña (loginConEmail). loginDesdeCero va por "Otros métodos de
+    // ingreso", que en la versión 18.8.1 abre la hoja PIN / Correo electrónico.
+    if (isVisibleFast(actor, LBL_INICIAR_SESION)) {
+      actor.attemptsTo(Click.on(LBL_INICIAR_SESION), WaitFor.aTime(5000));
+    }
+    loginConEmail(actor);
     return true;
   }
 
@@ -248,6 +256,9 @@ public class IngresoSuperApp implements Task {
   }
 
   private <T extends Actor> void validarLogin(T actor) {
+    // Primer ingreso tras borrar los datos: carrusel de bienvenida con "Omitir".
+    ReparacionApp.omitirBienvenidaTrasIngreso(60);
+
     // Si ya está logueado, no continuar
     if (isUserAlreadyLoggedIn(actor)) {
       return;
@@ -294,6 +305,8 @@ public class IngresoSuperApp implements Task {
   private <T extends Actor> void maybeAutorizarVelocidad(T actor) {
     if (isVisibleFast(actor, TXT_AUTORIZACION_VELOCIDAD)) {
       actor.attemptsTo(WaitFor.aTime(1000), clickElementByText(ACEPTAR));
+      // Al aceptarla, la app pide la ubicación con el diálogo del sistema encima del Inicio.
+      ReparacionApp.responderPermisosDelSistema(8);
     }
     if (isVisibleFast(actor, TXT_AUTORIZACION_VELOCIDAD_2)) {
       actor.attemptsTo(
