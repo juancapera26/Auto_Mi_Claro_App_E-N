@@ -14,11 +14,9 @@ import org.openqa.selenium.WebElement;
 /**
  * Autorreparación de Mi Claro cuando el Inicio se queda cargando sin fin.
  *
- * <p>OPPO A80 5G (CPH2639, Android 16), 13 y 14-oct-2026: tras tocar "Iniciar sesión" en el
+ * <p>OPPO A80 5G: tras tocar "Iniciar sesión" en el
  * aviso de sesión cerrada, la app cae al Inicio con el indicador de carga girando y no sale de
- * ahí (30 de 30 corridas fallidas el 14-oct). En los demás celulares el Inicio carga normal. Se
- * arreglaba borrando a mano los datos de la app o reinstalándola; esto hace lo mismo desde la
- * prueba: detecta el Inicio atascado, borra los datos (pm clear) y relanza la app para ingresar
+ * ahí. detecta el Inicio atascado, borra los datos y relanza la app para ingresar
  * desde cero.
  *
  * <p>Se lee el page source en vez de buscar elementos para no depender de la espera implícita.
@@ -34,7 +32,6 @@ public class ReparacionApp {
 
   private ReparacionApp() {}
 
-  /** El driver de Appium real: Serenity lo entrega envuelto en un WebDriverFacade. */
   private static AndroidDriver driver() {
     WebDriver driver = SerenityWebdriverManager.inThisTestThread().getCurrentDriver();
     if (driver instanceof WebDriverFacade) {
@@ -52,10 +49,6 @@ public class ReparacionApp {
     }
   }
 
-  /**
-   * El aviso "Por seguridad, hemos cerrado tu sesión" trae su propio botón "Iniciar sesión":
-   * mientras siga en pantalla (justo después de tocarlo tarda en cerrarse) no prueba nada.
-   */
   private static boolean avisoSesionCerrada(String fuente) {
     return fuente.contains("hemos cerrado tu sesi");
   }

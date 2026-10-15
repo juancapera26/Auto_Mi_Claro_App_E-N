@@ -58,7 +58,7 @@ public class IngresoSuperApp implements Task {
       if (encabezado.contains("Tus favoritos Empresas")) {
         // Ya logueado, solo capturas
         EvidenciaUtils.registrarCaptura("Usuario ya tiene sesión iniciada");
-        return; // Se corta aquí
+        return;
       }
       if (encabezado.contains("Te puede interesar")) {
         // Usuario sin login, se continúa con flujo
@@ -66,7 +66,7 @@ public class IngresoSuperApp implements Task {
       }
     }
 
-    // 2. Elegir la ruta según prioridad usando if / else if
+    // 2. Elegir la ruta según prioridad
     if (isVisible(actor, LBL_SESION_CERRADA_POR_SEGURIDAD)) {
       EvidenciaUtils.registrarCaptura("Ruta: sesión cerrada por seguridad detectada");
       clickAceptarSesion(actor);
@@ -112,7 +112,7 @@ public class IngresoSuperApp implements Task {
   private static final int SEGUNDOS_ESPERA_INICIO = 45;
 
   /**
-   * Si el Inicio se quedó cargando sin fin (pasa en el OPPO A80 5G, ver {@link ReparacionApp}),
+   * Si el Inicio se quedó cargando sin fin (pasa en el OPPO A80 5G)
    * borra los datos de la app y hace el ingreso desde cero. Devuelve true si tuvo que repararla.
    */
   private <T extends Actor> boolean repararSiInicioAtascado(T actor) {
