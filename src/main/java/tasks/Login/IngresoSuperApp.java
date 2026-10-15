@@ -28,6 +28,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.AndroidObject;
 import utils.EvidenciaUtils;
+import utils.ReparacionApp;
 import utils.TestDataProvider;
 
 public class IngresoSuperApp implements Task {
@@ -71,12 +72,16 @@ public class IngresoSuperApp implements Task {
       clickAceptarSesion(actor);
       WaitFor.aTime(15000);
       ValidarTextoQueContengaX.porTiempo(INICIAR_SESION,120);
-      loginViaIniciar(actor);
+      if (!repararSiInicioAtascado(actor)) {
+        loginViaIniciar(actor);
+      }
 
     } else if (isVisible(actor, LBL_INICIAR_SESION)) {
       EvidenciaUtils.registrarCaptura("Ruta: botón iniciar sesión visible");
       actor.attemptsTo(Click.on(LBL_INICIAR_SESION));
-      loginViaIniciar(actor);
+      if (!repararSiInicioAtascado(actor)) {
+        loginViaIniciar(actor);
+      }
 
     } else if (isVisible(actor, LBL_NOS_ALEGRA_TENERTE_DE_VUELTA)) {
       EvidenciaUtils.registrarCaptura("Ruta: mensaje de bienvenida detectado");
@@ -90,7 +95,7 @@ public class IngresoSuperApp implements Task {
       EvidenciaUtils.registrarCaptura("Ruta: campo usuario visible + cédula válida");
       loginConCedula(actor);
 
-    } else {
+    } else if (!repararSiInicioAtascado(actor)) {
       EvidenciaUtils.registrarCaptura("Ruta: fallback - login desde cero completo");
       loginDesdeCeroCompleto(actor);
     }
@@ -101,6 +106,24 @@ public class IngresoSuperApp implements Task {
   // 3. Validación final de que el login fue exitoso
     actor.attemptsTo(ValidarTextoQueContengaX.porTiempo(TUS_FAVORITOS_EMPRESAS,4));
     EvidenciaUtils.registrarCaptura(paso);
+  }
+
+  /** Segundos que se le dan al Inicio para cargar antes de darlo por atascado. */
+  private static final int SEGUNDOS_ESPERA_INICIO = 45;
+
+  /**
+   * Si el Inicio se quedó cargando sin fin (pasa en el OPPO A80 5G, ver {@link ReparacionApp}),
+   * borra los datos de la app y hace el ingreso desde cero. Devuelve true si tuvo que repararla.
+   */
+  private <T extends Actor> boolean repararSiInicioAtascado(T actor) {
+    if (!ReparacionApp.inicioAtascado(SEGUNDOS_ESPERA_INICIO)) {
+      return false;
+    }
+    EvidenciaUtils.registrarCaptura(
+        "Inicio atascado cargando: se borran los datos de la app y se ingresa desde cero");
+    ReparacionApp.borrarDatosYRelanzar();
+    loginDesdeCeroCompleto(actor);
+    return true;
   }
 
   /** Ruta común para iniciar sesión + validar login. */
