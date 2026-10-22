@@ -100,7 +100,7 @@ public class IngresaActivareSIMempresas implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(2500),
-                ValidarTexto.validarTexto(DECLARACION_SERVICIO),
+                ValidarTextoQueContengaX.porTiempo(DECLARACION_SERVICIO,35),
                 ValidarTextoQueContengaX.elTextoContiene(VER),
                 WaitFor.aTime(1000)
         );
