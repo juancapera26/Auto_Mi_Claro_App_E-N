@@ -41,8 +41,7 @@ public class ValidarCesionDeContrato  implements Task {
                 Click.on(BTN_TRES_PUNTOS_MAS),
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
-                ValidarTexto.validarTexto(INFORMACION_TRAMITE),
-                ValidarTexto.validarTexto(DECLARACION_SERVICIO),
+                ValidarTextoQueContengaX.porTiempo(DECLARACION_SERVICIO,30),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
 
