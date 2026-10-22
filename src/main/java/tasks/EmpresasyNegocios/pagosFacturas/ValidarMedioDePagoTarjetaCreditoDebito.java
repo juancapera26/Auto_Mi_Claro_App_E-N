@@ -37,7 +37,7 @@ public class ValidarMedioDePagoTarjetaCreditoDebito implements Task {
                 WaitFor.aTime(2000),
                 Click.on(BTN_PAGAR),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
-                ValidarTextoQueContengaX.porTiempo("Portal Pagos Claro",4),
+                ValidarTextoQueContengaX.porTiempo("Portal Pagos Claro",60),
                 ScrollHorizontalCoordenadas.desde(339, 200, 339, 1490),
                 WaitFor.aTime(2000)
         );

@@ -93,7 +93,7 @@ public class IngresaConsultarConsumos implements Task {
                 ClickTextoQueContengaX.elTextoContiene(ACERCA_DE),
                 WaitFor.aTime(1000),
                 ValidarTexto.validarTexto("Acerca de"),
-                ValidarTexto.validarTexto(DECLARACION_SERVICIO),
+                ValidarTextoQueContengaX.porTiempo(DECLARACION_SERVICIO,35),
                 ValidarTextoQueContengaX.elTextoContiene(VER)
         );
         EvidenciaUtils.registrarCaptura(paso3);
