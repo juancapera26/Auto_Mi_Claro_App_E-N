@@ -188,7 +188,7 @@ public class IngresoSuperApp implements Task {
   }
 
   private <T extends Actor> void iniciarSesion(T actor) {
-    actor.attemptsTo(ValidarTextoQueContengaX.porTiempo(INICIAR_SESION,120));
+    actor.attemptsTo(ValidarTextoQueContengaX.porTiempo("Te damos la bienvenida a Mi Claro",120));
     if (isVisible(actor, LBL_INICIAR_SESION)) {
       actor.attemptsTo(ClickTextoQueContengaX.elTextoContiene(INICIAR_SESION),
               WaitFor.aTime(15000));

@@ -44,7 +44,9 @@ public class IngresarPagosLineaSolucionesFiHFC implements Task {
         actor.attemptsTo(
                 ValidarTextoQueContengaX.porTiempo("Soluciones Fijas HFC",3),
                 ClickTextoQueContengaX.elTextoContiene("Soluciones Fijas HFC"),
+                WaitFor.aTime(3000),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
+                WaitForResponse.withText("Pago de facturas Claro Empresas"),
                 Click.on(SELECIONAR_FACTURA_FIJAS_HFC)
         );
 
