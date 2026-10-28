@@ -57,3 +57,11 @@ Característica: ingresar al módulo Soluciones moviles
     Dado que el usuario ingrese a super app
     Cuando el usuario realiza el ingreso
     Y ingresar a soluciones moviles
+
+  @SM009
+  Escenario: Ingresar a soluciones moviles administra tu factura
+    Dado que el usuario ingrese a super app
+    Cuando el usuario realiza el ingreso
+    Entonces verifica version de la super app
+    Y ingresar a soluciones moviles
+    Y ingresar a administrar factura

@@ -93,6 +93,12 @@ public class FavoriteServicesDefinitions {
             IngresarGestionarLineasNuevas.ingresarGestionarLineasNuevas()
     );
   }
+  @And("^ingresar a administrar factura$")
+  public void IngresaAdministraFacturaSM() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaAdministraFacturaSM.ingresaAdministraFacturaSM()
+    );
+  }
 
   @And("^ingresar a gestiona tu equipo empresas$")
   public void IngresarGestionaEquipoEmpresas() {
