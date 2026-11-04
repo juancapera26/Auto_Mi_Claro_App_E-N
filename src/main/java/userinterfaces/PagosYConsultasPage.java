@@ -7,6 +7,22 @@ import org.openqa.selenium.By;
 import utils.TestDataProvider;
 
 public class PagosYConsultasPage {
+  public static final Target BTN_SOLUCIONES_FIJAS = Target.the("Tarjeta Soluciones Fijas")
+          .located(By.xpath("//*[contains(@text, 'Soluciones Fijas') or contains(@content-desc, 'Soluciones Fijas')]"));
+
+  public static final Target BTN_SOLUCIONES_MOVILES = Target.the("Tarjeta Soluciones Móviles")
+          .located(By.xpath("//*[contains(@text, 'Móviles') or contains(@content-desc, 'Móviles')]"));
+
+  public static final Target BTN_ORDENES_COMPRA = Target.the("Tarjeta Órdenes de Compra")
+          .located(By.xpath("//*[contains(@text, 'Órdenes') or contains(@content-desc, 'Órdenes')]"));
+
+   public static final Target BTN_INSCRIBIR_TARJETA2 =
+          Target.the("Boton para inscribir tarjeta")
+                  .located(By.xpath("//android.widget.Button[@resource-id=\"RegistraTarjeta\"]"));
+
+  public static final Target BTN_INSCRIBIR_TARJETA =
+          Target.the("Boton mas para inscribir tarjeta")
+                  .located(By.xpath("//android.view.View[@content-desc=\"phrame.php?action=despliegue_personal&clase=Multidomicilia&metodo=validarMedioPagoDomicilia&empresa=claro&id_objeto=10015&valor_llave=27629&TIPO_TRANS=5&REFERENCIA=6224489797&CANAL=27&Type=NIT&IdentificationId=900999998&CustomerName=Pruebas%20Cuidado%20Al%20Cliente%20Empresas&nombreUsuario=lorena.rodriguez@claro.com\"]"));
 
   public static final Target BTN_HOME =
           Target.the("Boton home")

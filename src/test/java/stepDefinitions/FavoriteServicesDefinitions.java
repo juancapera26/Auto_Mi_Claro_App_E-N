@@ -12,10 +12,7 @@ import models.User;
 import tasks.EmpresasyNegocios.*;
 
 import tasks.EmpresasyNegocios.SolucionesFibraOptica.*;
-import tasks.EmpresasyNegocios.pagosFacturas.IngresarPagosFacuras;
-import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoBancolombia;
-import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoPSE;
-import tasks.EmpresasyNegocios.pagosFacturas.ValidarMedioDePagoTarjetaCreditoDebito;
+import tasks.EmpresasyNegocios.pagosFacturas.*;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
@@ -163,6 +160,33 @@ public class FavoriteServicesDefinitions {
             IngresarPagosFacuras.ingresarPagosFacuras()
     );
   }
+  @And("^ingresar a pagos automaticos Soluciones moviles$")
+  public void IngresaPagosAutomaticos() {
+    theActorInTheSpotlight().attemptsTo(
+            IngresaPagosAutomaticos.ingresaPagosAutomaticos()
+    );
+  }
+  @And("^ingresar a consulta tu factura$")
+  public void ConsultaTuFactura() {
+    theActorInTheSpotlight().attemptsTo(
+            ConsultaTuFactura.consultaTuFactura()
+    );
+  }
+
+  @And("^ingresar a pagos a otras cuentas$")
+  public void PagosOtrasCuentas() {
+    theActorInTheSpotlight().attemptsTo(
+            PagosOtrasCuentas.pagosOtrasCuentas()
+    );
+  }
+  @And("^ingresar a tarjetas registradas$")
+  public void TarjetasRegistradas() {
+    theActorInTheSpotlight().attemptsTo(
+            TarjetasRegistradas.tarjetasRegistradas()
+    );
+  }
+
+
   @And("^validar ingreso a Administar perfiles Empresas$")
   public void ValidarAdministrarPerfilEmpreas() {
     theActorInTheSpotlight().attemptsTo(
