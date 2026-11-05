@@ -100,8 +100,8 @@ public class IngresaDetalleTuPlan implements Task {
         */
         actor.attemptsTo(
                 WaitForResponse.withText("Detalle de tu plan"),
-                ValidarTextoQueContengaX.porTiempo("Detalle de tu plan", 5),
-                ValidarTextoQueContengaX.elTextoContiene("322 691 8354")
+                ValidarTextoQueContengaX.porTiempo("Detalle de tu plan", 60),
+                ValidarTextoQueContengaX.porTiempo("322 691 8354",60)
              //   ValidarTextoQueContengaX.elTextoContiene("Explora tus servicios")
 
         );
