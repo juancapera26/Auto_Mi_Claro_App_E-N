@@ -44,7 +44,7 @@ public static final Target SELECIONAR_FACTURA =
                     .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
 public static final Target SELECIONAR_FACTURA_FIJAS_HFC =
             Target.the("Selecionar una factura")
-                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View[1]/android.widget.CheckBox/android.widget.CheckBox"));
+                    .located(By.xpath("//android.view.View[@resource-id=\"__react-content\"]/android.view.View/android.view.View/android.view.View[2]/android.widget.CheckBox/android.widget.CheckBox"));
 public static final Target SELECIONAR_MEDIOS_DE_PAGO =
             Target.the("Selecionar medios de pagos")
                     .located(By.xpath("//android.view.View[@resource-id=\"select\"]"));
