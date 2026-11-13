@@ -47,7 +47,7 @@ public class IngresarPagosLineaSolucionesFiHFC implements Task {
                 WaitFor.aTime(3000),
                 WaitUntil.the(LOADING_ESPERA_UN_MOMENTO, isNotPresent()),
                 WaitForResponse.withText("Pago de facturas Claro Empresas"),
-                Click.on(SELECIONAR_FACTURA_FIJAS_HFC)
+                Click.on(SELECIONAR_FACTURA)
         );
 
         EvidenciaUtils.registrarCaptura(paso2);

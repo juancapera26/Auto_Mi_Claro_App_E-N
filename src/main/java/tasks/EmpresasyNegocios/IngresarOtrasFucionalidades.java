@@ -35,6 +35,7 @@ public class IngresarOtrasFucionalidades implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
 
                 ScrollHorizontalCoordenadas.desde(533, 770,300,770)
         );
